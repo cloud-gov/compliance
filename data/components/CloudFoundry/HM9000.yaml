@@ -21,3 +21,4 @@ satisfies:
         \ will instruct the Cloud Controller to start the appropriate number of instances.\n\
         - Direct Cloud Controller to take action to correct any discrepancies in the\
         \ state of applications.\n"
+system: CloudFoundry

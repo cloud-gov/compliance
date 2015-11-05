@@ -30,3 +30,4 @@ satisfies:
         S3 bucket that is specified
 
         '
+system: AWS

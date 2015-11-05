@@ -42,3 +42,4 @@ satisfies:
       a: Additional temporary permission are delegated with the IAM roles usually
         for applications that run on EC2 Instanc.es in order to access AWS resources
         (i.e. Amazon S3 buckets, DynamoDB data)
+system: AWS

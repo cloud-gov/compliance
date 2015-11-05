@@ -24,3 +24,4 @@ satisfies:
         \ to provide security in depth\n  - Each Amazon VPC is a distinct, isolated\
         \ network within the cloud; network traffic within each Amazon VPC is isolated\
         \ from all other Amazon VPCs\n"
+system: AWS

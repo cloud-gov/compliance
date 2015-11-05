@@ -11,3 +11,4 @@ satisfies:
       manifest on the 18F GitHub and Cloud Foundry sites. DevOps implements manifest
       templates written in yml to automate deployment of multiple applications at
       once and the platform within AWS with consistency and reproducibility.
+system: CloudFoundry

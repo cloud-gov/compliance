@@ -15,3 +15,4 @@ satisfies:
     SI-4: Alienvault USM for AWS monitors for attacks and indicators of potential
       attacks,  unauthorized local, network, and remote connections using  built-in,
       essential security controls and threat intelligence
+system: AWS
