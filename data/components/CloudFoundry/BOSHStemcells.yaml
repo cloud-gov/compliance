@@ -1,3 +1,4 @@
+documentation_complete: false
 name: BOSH Stemcells
 references:
 - name: Bosh StemCells

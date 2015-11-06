@@ -1,3 +1,4 @@
+documentation_complete: false
 name: Manifests
 references:
 - name: Deploying with Application Manifests
