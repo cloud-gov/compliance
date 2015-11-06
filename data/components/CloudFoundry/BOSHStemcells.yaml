@@ -1,3 +1,4 @@
+documentation_complete: false
 name: BOSH Stemcells
 references:
 - name: Bosh StemCells
@@ -20,3 +21,4 @@ satisfies:
       are created with updates to address code issues, while new stemcells are created
       with patches for the latest security fixes to address any underlying operating
       system issues.
+system: CloudFoundry

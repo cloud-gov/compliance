@@ -1,3 +1,4 @@
+documentation_complete: false
 name: Amazon Machine Images
 references:
 - name: Amazon Machine Images
@@ -60,3 +61,4 @@ satisfies:
         on abnormal activity or attacks.
 
         '
+system: AWS

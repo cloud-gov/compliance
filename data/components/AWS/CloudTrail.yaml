@@ -1,3 +1,4 @@
+documentation_complete: false
 name: CloudTrail
 references:
 - name: AWS Cloud Trail Documentation
@@ -27,3 +28,4 @@ satisfies:
         \ security credentials for a role or federated user, or by another AWS service.\
         \ \n- CloudTrail publish Amazon SNS notifications when new log files are delivered\
         \ for 18F staff to review upon log file delivery.\n"
+system: AWS

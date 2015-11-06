@@ -1,3 +1,4 @@
+documentation_complete: false
 name: Sophos UTM
 references:
 - name: Sophos UTM
@@ -10,4 +11,5 @@ satisfies:
         '
       b: '- Sophos UTM 9 Endpoint Protection is deployed and configured on all instances.
 
-  '
+        '
+system: AWS
