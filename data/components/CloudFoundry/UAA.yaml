@@ -19,27 +19,44 @@ references:
 satisfies:
   NIST-800-53:
     AC-2:
-      a: "- Cloud Foundry user and role accounts are managed and maintained through\
-        \ the UAA Command Line Interface (UAAC). Cloud Foundry uses role-based access\
-        \ control with each role granting permissions in either an organization or\
-        \ an application space.\n- 18F uses Cloud Foundry\u2019s user accounts for\
-        \ individuals within the context of a Cloud Foundry. A user can have different\
-        \ roles in different spaces within an org, governing what level and type of\
-        \ access they have within that space. The combination of these roles defines\
-        \ the user\u2019s overall permissions in the org and within specific spaces\
-        \ in that org.  A list of standard cloud foundry user account types can be\
-        \ found in Table 9-2. Cloud Foundry User Roles and Privileges.\n- Cloud Foundry\
-        \ uses Application security groups (ASGs) to act as virtual firewalls to control\
-        \ outbound traffic from the applications in the deployment. A security group\
-        \ consists of a list of network egress access rules.\n- An administrator can\
-        \ assign one or more security groups to a Cloud Foundry deployment or to a\
-        \ specific space in an org within a deployment.\n- Cloud Foundry user, organization,\
-        \ and application roles and security groups are documented in section 9.3\
-        \ Types of Users. \n"
-      k: "- The Cloud Foundry platform utilizes role based access controls (RBAC)\
-        \ for group membership within the platform and does not issue shared/group\
-        \ account credentials. \n- 18F adds and removes individual users from defined\
-        \ user roles listed in Table 9-2. Cloud Foundry User Roles and Privileges.\n"
+      a: |
+      Cloud Foundry user and role accounts are managed and maintained through the UAA Command Line Interface (UAAC). Cloud Foundry uses role-based access control with each role granting permissions in either an organization or an application space. The Following types are used:
+        - Org Manager
+        - Org Auditor
+        - Space Manager
+        - Space Developer
+        - Space Auditor
+      c: |
+        Conditions for groups and roles membership in AWS and Cloud Foundry are based on an established need to manage and access the AWS and Cloud Foundry environments.  The user must meet the following the conditions in order for the System Owner/ Project Manager to approve a group membership request:
+          - The user’s assigned role is required to access a particular group
+          - The user has the requirements and understanding to assume permissions associated with the group
+          - The user has completed the security role-based training
+          - The user complies with any other group-specific conditions created by the system owner
+        Once conditions have been met, the system owner /Project manager will request access within GitHub 18F tracking and ticketing system. Once approved, the DevOps group implements the request for group and role memeberships within AWS and Cloud Foundy.
+      e: |
+        AWS/Cloud Foundry user account creation requires approval by the managing 18F project lead and Information System Technical Point of Contact. Prior to account creation users must have at least begun the GSA background investigative process and complete basic security awareness training.
+      f: |
+        User account establishment, activation, modification, disablement or removal requires approval by the managing 18F project lead and Cloud Foundry Information System Technical Point of Contact (Operating Environment).
+        Accounts will be created, enabled, modified, disabled, and removed from AWS in accordance with 18F/GSA policies, guidelines, requirements in NIST SP 800-37, and established by the 18F Project Lead and DevOps.
+      g: |
+        {Missing}
+      i: |
+        User and system access is provided only to those with an established need to access and manage the AWS and Clouf Foundry environments.
+        System access to local EC2 instance accounts is provided only to those with an established need to manage local services in the AWS environment. User group membership is restricted to the least privilege necessary for the user to accomplish their assigned duties.
+        All user accounts are issued only to those who have gained approval by 18F DevOps. Once approved, the DevOps team creates the user account and adds it to the appropriate role and organization.
+        18F and GSA identify authorized users of the information system and specify access rights/privileges. 18F grants access to the information system based on:
+          1. a valid need-to-know/need-to-share that is determined by assigned official duties and satisfying all personnel security criteria;
+          2.  Intended system usage. 18F and GSA requires proper identification for requests to establish information system accounts and approves all such requests; and
+          3. Organizational or mission/business function attributes.
+      j: |
+        User accounts will be monitored monthly and accounts will be disabled after 90 days of inactivity; this will be a manual review process every 30 days, but the disablement will be automatic.
+        A manual review of all user accounts will be conducted on an annual basis
+      k: |
+        The Cloud Foundry platform utilizes role based access controls (RBAC) for group membership within the platform and does not issue shared/group account credentials.
+    AC-2 (1): |
+      Cloud Foundry uses the UAA CLI which is a command line based account management system. This systems is currently semi-automated at this time
+    AC-2 (2): |
+      Cloud Foundry does not contain any guest/anonymous, group, or temporary user accounts. DevOps only creates individual user accounts and grants role based access to users within Cloud Foundry.
     AC-6: "- Cloud Foundry uses Feature Flags which allows an administrator to turn\
       \ on or off sub-sections, or features, of an application without deploying new\
       \ code.\n- Currently, there are six feature flags that can be set. They are\
@@ -70,7 +87,6 @@ satisfies:
       - Shared or group authenticators are not utilized, with the exception of a root
       administrative account. There are only two authorized users from the DevOps
       team who has access to the root administrative account.
-
       '
     SC-13: All traffic from the public internet to the Cloud Controller and UAA happens
       over HTTPS and operators configure encryption of the identity store in the UAA
