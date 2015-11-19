@@ -2,14 +2,19 @@ documentation_complete: false
 name: Manifests
 references:
 - name: Deploying with Application Manifests
+  type: URL
   url: https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html
 satisfies:
   NIST-800-53:
-    CM-2: Configure UAA clients and users using a standard BOSH manifest for cloud
-      Foundry Deployment, Limit and manage these clients and users as you would any
-      other kind of privileged account.
-    CM-6: Cloud Foundry configuration settings are documented within the deployment
-      manifest on the 18F GitHub and Cloud Foundry sites. DevOps implements manifest
-      templates written in yml to automate deployment of multiple applications at
-      once and the platform within AWS with consistency and reproducibility.
+    CM-2:
+      implementation_status: null
+      narrative: Configure UAA clients and users using a standard BOSH manifest for
+        cloud Foundry Deployment, Limit and manage these clients and users as you
+        would any other kind of privileged account.
+    CM-6:
+      implementation_status: null
+      narrative: Cloud Foundry configuration settings are documented within the deployment
+        manifest on the 18F GitHub and Cloud Foundry sites. DevOps implements manifest
+        templates written in yml to automate deployment of multiple applications at
+        once and the platform within AWS with consistency and reproducibility.
 system: CloudFoundry

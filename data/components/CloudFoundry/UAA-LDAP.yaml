@@ -2,9 +2,12 @@ documentation_complete: false
 name: User Account and Authentication LDAP Integration
 references:
 - name: UAA-LDAP Documentation
+  type: URL
   url: https://github.com/cloudfoundry/uaa/blob/master/docs/UAA-LDAP.md
 satisfies:
   NIST-800-53:
-    AC-1: Cloud Foundry integrates with an organization's Identity Provider (IDP)
-      which dictates further account management policies.
+    AC-1:
+      implementation_status: null
+      narrative: Cloud Foundry integrates with an organization's Identity Provider
+        (IDP) which dictates further account management policies.
 system: CloudFoundry
