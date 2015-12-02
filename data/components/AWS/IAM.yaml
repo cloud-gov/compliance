@@ -4,6 +4,15 @@ references:
 - name: AWS Identity and Access Management (IAM)
   type: URL
   url: https://aws.amazon.com/iam/
+verifications:
+  IAM_Sign_in:
+    name: Account Management Login of Administrative User Account
+    url: IAM/AC-2.1 Account Management Login of Administrative user account - 01.png
+    type: Image
+  IAM_Sign_in_2:
+    name: Account Management Login of Non administrative user account 2
+    url: IAM/AC-2.1 Account Management Login of Non administrative user account - 01-2.png
+    type: Image
 satisfies:
   NIST-800-53:
     AC-2:
@@ -158,16 +167,3 @@ satisfies:
 
         '
 system: AWS
-verifications:
-  Access Control Policy Section 3:
-    name: Access Control Policy Section 3
-    type: URL
-    url: Find artifact
-  Account Management Flow:
-    name: Account Management Flow
-    type: URL
-    url: Find artifact
-  Roles Used by 18F:
-    name: Roles Used by 18F
-    type: URL
-    url: Find artifact

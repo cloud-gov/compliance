@@ -148,12 +148,3 @@ satisfies:
         Bcrypt is a blowfish encryption algorithm, which enables cloud foundry to
         store a secure hash of your users' passwords.
 system: CloudFoundry
-verifications:
-  Acccount Managment Flow:
-    name: Acccount Managment Flow
-    type: URL
-    url: Find artifact
-  Access Control Policy Section 3:
-    name: Access Control Policy Section 3
-    type: URL
-    url: Find artifact
