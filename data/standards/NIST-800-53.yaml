@@ -1,653 +1,998 @@
 AC-1:
+  family: AC
   name: Access Control Policy and Procedures
 AC-10:
+  family: AC
   name: Concurrent Session Control
 AC-11:
+  family: AC
   name: Session Lock
 AC-11 (1):
-  name: Pattern-Hiding Displays
+  family: AC
+  name: Session Lock | Pattern-Hiding Displays
 AC-12:
+  family: AC
   name: Session Termination
 AC-14:
+  family: AC
   name: Permitted Actions Without Identification or Authentication
 AC-17:
+  family: AC
   name: Remote Access
 AC-17 (1):
-  name: Automated Monitoring / Control
+  family: AC
+  name: Remote Access | Automated Monitoring / Control
 AC-17 (2):
-  name: Protection of Confidentiality / Integrity Using Encryption
+  family: AC
+  name: Remote Access | Protection of Confidentiality / Integrity Using Encryption
 AC-17 (3):
-  name: Managed Access Control Points
+  family: AC
+  name: Remote Access | Managed Access Control Points
 AC-17 (4):
-  name: Privileged Commands / Access
+  family: AC
+  name: Remote Access | Privileged Commands / Access
 AC-17 (9):
-  name: Disconnect / Disable Access
+  family: AC
+  name: Remote Access | Disconnect / Disable Access
 AC-18:
+  family: AC
   name: Wireless Access
 AC-18 (1):
-  name: Authentication and Encryption
+  family: AC
+  name: Wireless Access | Authentication and Encryption
 AC-19:
+  family: AC
   name: Access Control For Mobile Devices
 AC-19 (5):
-  name: Full Device / Container-Based Encryption
+  family: AC
+  name: Access Control For Mobile Devices | Full Device / Container-Based Encryption
 AC-2:
+  family: AC
   name: Account Management
 AC-2 (1):
-  name: Automated System Account Management
+  family: AC
+  name: Account Management | Automated System Account Management
 AC-2 (10):
-  name: Shared / Group Account Credential Termination
+  family: AC
+  name: Account Management | Shared / Group Account Credential Termination
 AC-2 (12):
-  name: Account Monitoring / Atypical Usage
+  family: AC
+  name: Account Management | Account Monitoring / Atypical Usage
 AC-2 (2):
-  name: Removal of Temporary / Emergency Accounts
+  family: AC
+  name: Account Management | Removal of Temporary / Emergency Accounts
 AC-2 (3):
-  name: Disable Inactive Accounts
+  family: AC
+  name: Account Management | Disable Inactive Accounts
 AC-2 (4):
-  name: Automated Audit Actions
+  family: AC
+  name: Account Management | Automated Audit Actions
 AC-2 (5):
-  name: Inactivity Logout
+  family: AC
+  name: Account Management | Inactivity Logout
 AC-2 (7):
-  name: Role-Based Schemes
+  family: AC
+  name: Account Management | Role-Based Schemes
 AC-2 (9):
-  name: Restrictions on Use of Shared Groups / Accounts
+  family: AC
+  name: Account Management | Restrictions on Use of Shared Groups / Accounts
 AC-20:
+  family: AC
   name: Use of External Information Systems
 AC-20 (1):
-  name: Limits on Authorized Use
+  family: AC
+  name: Use of External Information Systems | Limits on Authorized Use
 AC-20 (2):
-  name: Portable Storage Devices
+  family: AC
+  name: Use of External Information Systems | Portable Storage Devices
 AC-21:
+  family: AC
   name: Information Sharing
 AC-22:
+  family: AC
   name: Publicly Accessible Content
 AC-3:
+  family: AC
   name: Access Enforcement
 AC-4:
+  family: AC
   name: Information Flow Enforcement
 AC-4 (21):
-  name: Physical / Logical Separation of Information Flows
+  family: AC
+  name: Information Flow Enforcement | Physical / Logical Separation of Information
+    Flows
 AC-5:
+  family: AC
   name: Separation of Duties
 AC-6:
+  family: AC
   name: Least Privilege
 AC-6 (1):
-  name: Authorize Access to Security Functions
+  family: AC
+  name: Least Privilege | Authorize Access to Security Functions
 AC-6 (10):
-  name: Prohibit Non-privileged Users from Executing Privileged Functions
+  family: AC
+  name: Least Privilege | Prohibit Non-privileged Users from Executing Privileged
+    Functions
 AC-6 (2):
-  name: Non-Privileged Access For No security Functions
+  family: AC
+  name: Least Privilege | Non-Privileged Access For No security Functions
 AC-6 (5):
-  name: Privileged Accounts
+  family: AC
+  name: Least Privilege | Privileged Accounts
 AC-6 (9):
-  name: Auditing Use of Privileged Functions
+  family: AC
+  name: Least Privilege | Auditing Use of Privileged Functions
 AC-7:
+  family: AC
   name: Unsuccessful Logon Attempts
 AC-8:
+  family: AC
   name: System Use Notification
 AT-1:
+  family: AT
   name: Security Awareness and Training Policy and Procedures
 AT-2:
+  family: AT
   name: Security Awareness Training
 AT-2 (2):
-  name: Insider Threat
+  family: AT
+  name: Security Awareness | Insider Threat
 AT-3:
+  family: AT
   name: Role-Based Security Training
 AT-4:
+  family: AT
   name: Security Training Records
 AU-1:
+  family: AU
   name: Audit and Accountability Policy and Procedures
 AU-11:
+  family: AU
   name: Audit Record Retention
 AU-12:
+  family: AU
   name: Audit Generation
 AU-2:
+  family: AU
   name: Audit Events
 AU-2 (3):
-  name: Reviews and Updates
+  family: AU
+  name: Audit Events | Reviews and Updates
 AU-3:
+  family: AU
   name: Content of Audit Records
 AU-3 (1):
-  name: Additional Audit Information
+  family: AU
+  name: Content of Audit Records | Additional Audit Information
 AU-4:
+  family: AU
   name: Audit Storage Capacity
 AU-5:
+  family: AU
   name: Response to Audit Processing Failures
 AU-6:
+  family: AU
   name: Audit Review, Analysis, and Reporting
 AU-6 (1):
-  name: Process Integration
+  family: AU
+  name: Audit Review, Analysis, and Reporting | Process Integration
 AU-6 (3):
-  name: Correlate Audit Repositories
+  family: AU
+  name: Audit Review, Analysis, and Reporting | Correlate Audit Repositories
 AU-7:
+  family: AU
   name: Audit Reduction and Report Generation
 AU-7 (1):
-  name: Automatic Processing
+  family: AU
+  name: Audit Reduction and Report Generation | Automatic Processing
 AU-8:
+  family: AU
   name: Time Stamps
 AU-8 (1):
-  name: Synchronization With Authoritative Time Source
+  family: AU
+  name: Time Stamps | Synchronization With Authoritative Time Source
 AU-9:
+  family: AU
   name: Protection of Audit Information
 AU-9 (2):
-  name: Audit Backup on Separate Physical Systems / Components
+  family: AU
+  name: Protection of Audit Information | Audit Backup on Separate Physical Systems
+    / Components
 AU-9 (4):
-  name: Access by Subset of Privileged Users
+  family: AU
+  name: Protection of Audit Information | Access by Subset of Privileged Users
 CA-1:
+  family: CA
   name: Security Assessment and Authorization Policies and Procedures
 CA-2:
+  family: CA
   name: Security Assessments
 CA-2 (1):
-  name: Independent Assessors
+  family: CA
+  name: Security Assessments | Independent Assessors
 CA-2 (2):
-  name: Specialized Assessments
+  family: CA
+  name: Security Assessments | Specialized Assessments
 CA-2 (3):
-  name: External Organizations
+  family: CA
+  name: Security Assessments | External Organizations
 CA-3:
+  family: CA
   name: System Interconnections
 CA-3 (3):
-  name: Unclassified Non-National Security System Connections
+  family: CA
+  name: System Interconnections | Unclassified Non-National Security System Connections
 CA-3 (5):
-  name: Restrictions on External Network Connections
+  family: CA
+  name: System Interconnections | Restrictions on External Network Connections
 CA-5:
+  family: CA
   name: Plan of Action and Milestones
 CA-6:
+  family: CA
   name: Security Authorization
 CA-7:
+  family: CA
   name: Continuous Monitoring
 CA-7 (1):
-  name: Independent Assessment
+  family: CA
+  name: Continuous Monitoring | Independent Assessment
 CA-8:
+  family: CA
   name: Penetration Testing
 CA-8 (1):
-  name: Independent Penetration Agent or Team
+  family: CA
+  name: Penetration Testing | Independent Penetration Agent or Team
 CA-9:
+  family: CA
   name: Internal System Connections
 CM-1:
+  family: CM
   name: Configuration Management Policy and Procedures
 CM-10:
+  family: CM
   name: Software Usage Restrictions
 CM-10 (1):
-  name: Open Source Software
+  family: CM
+  name: Software Usage Restrictions | Open Source Software
 CM-11:
+  family: CM
   name: User-Installed Software
 CM-2:
+  family: CM
   name: Baseline Configuration
 CM-2 (1):
-  name: Reviews and Updates
+  family: CM
+  name: Baseline Configuration | Reviews and Updates
 CM-2 (3):
-  name: Retention of Previous Configurations
+  family: CM
+  name: Baseline Configuration | Retention of Previous Configurations
 CM-2 (7):
-  name: Configure Systems, Components, or Devices for High-Risk Areas
+  family: CM
+  name: Baseline Configuration | Configure Systems, Components, or Devices for High-Risk
+    Areas
 CM-2(2):
-  name: Automation Support For Accuracy / Currency
+  family: CM
+  name: Baseline Configuration | Automation Support For Accuracy / Currency
 CM-3:
+  family: CM
   name: Configuration Change Control
 CM-4:
+  family: CM
   name: Security Impact Analysis
 CM-5:
+  family: CM
   name: Access Restrictions For Change
 CM-5 (1):
-  name: Automated Access Enforcement / Auditing
+  family: CM
+  name: Access Restrictions For Change | Automated Access Enforcement / Auditing
 CM-5 (3):
-  name: Signed Components
+  family: CM
+  name: Access Restrictions For Change | Signed Components
 CM-5 (5):
-  name: Limit Production / Operational Privileges
+  family: CM
+  name: Access Restrictions For Change | Limit Production / Operational Privileges
 CM-6:
+  family: CM
   name: Configuration Settings
 CM-6 (1):
-  name: Automated essential Management / Application / Verification
+  family: CM
+  name: Configuration Settings | Automated essential Management / Application / Verification
 CM-7:
+  family: CM
   name: Least Functionality
 CM-7 (1):
-  name: Periodic Review
+  family: CM
+  name: Least Functionality | Periodic Review
 CM-7 (2):
-  name: Prevent Program Execution
+  family: CM
+  name: Least Functionality | Prevent Program Execution
 CM-7 (5):
-  name: Authorized Software / Whitelisting
+  family: CM
+  name: Least Functionality | Authorized Software / Whitelisting
 CM-8:
+  family: CM
   name: Information System Component Inventory
 CM-8 (1):
-  name: Updates During Installations / Removals
+  family: CM
+  name: Information System Component Inventory | Updates During Installations / Removals
 CM-8 (3):
-  name: Automated Unauthorized Component Detection
+  family: CM
+  name: Information System Component Inventory | Automated Unauthorized Component
+    Detection
 CM-8 (5):
-  name: No Duplicate Accounting of Components
+  family: CM
+  name: Information System Component Inventory | No Duplicate Accounting of Components
 CM-9:
+  family: CM
   name: Configuration Management Plan
 CP-1:
+  family: CP
   name: Contingency Planning Policy and Procedures
 CP-10:
+  family: CP
   name: Information System Recovery and Reconstitution
 CP-10 (2):
-  name: Transaction Recovery
+  family: CP
+  name: Information System Recovery and Reconstitution | Transaction Recovery
 CP-2:
+  family: CP
   name: Contingency Plan
 CP-2 (1):
-  name: Coordinate With Related Plans
+  family: CP
+  name: Contingency Plan | Coordinate With Related Plans
 CP-2 (2):
-  name: Capacity Planning
+  family: CP
+  name: Contingency Plan | Capacity Planning
 CP-2 (3):
-  name: Resume Essential Missions / Business Functions
+  family: CP
+  name: Contingency Plan | Resume Essential Missions / Business Functions
 CP-2 (8):
-  name: Identify Critical Assets
+  family: CP
+  name: Contingency Plan | Identify Critical Assets
 CP-3:
+  family: CP
   name: Contingency Training
 CP-4:
+  family: CP
   name: Contingency Plan Testing
 CP-4 (1):
-  name: Coordinate With Related Plans
+  family: CP
+  name: Contingency Plan Testing | Coordinate With Related Plans
 CP-6:
+  family: CP
   name: Alternate Storage Site
 CP-6 (1):
-  name: Separation From Primary Site
+  family: CP
+  name: Alternate Storage Site | Separation From Primary Site
 CP-6 (3):
-  name: Accessibility
+  family: CP
+  name: Alternate Storage Site | Accessibility
 CP-7:
+  family: CP
   name: Alternate Processing Site
 CP-7 (1):
-  name: Separation From Primary Site
+  family: CP
+  name: Alternate Processing Site | Separation From Primary Site
 CP-7 (2):
-  name: Accessibility
+  family: CP
+  name: Alternate Processing Site | Accessibility
 CP-7 (3):
-  name: Priority of Service
+  family: CP
+  name: Alternate Processing Site | Priority of Service
 CP-8:
+  family: CP
   name: Telecommunications Services
 CP-8 (1):
-  name: Priority of Service Provisions
+  family: CP
+  name: Telecommunications Services | Priority of Service Provisions
 CP-8 (2):
-  name: Single Points of Failure
+  family: CP
+  name: Telecommunications Services | Single Points of Failure
 CP-9:
+  family: CP
   name: Information System Backup
 CP-9 (1):
-  name: Testing For Reliability / Integrity
+  family: CP
+  name: Information System Backup | Testing For Reliability / Integrity
 CP-9 (3):
-  name: Separate Storage for Critical Information
+  family: CP
+  name: Information System Backup | Separate Storage for Critical Information
 IA-1:
+  family: IA
   name: Identification and Authentication Policy and Procedures
 IA-2:
+  family: IA
   name: Identification and Authentication (Organizational Users)
 IA-2 (1):
-  name: Network Access to Privileged Accounts
+  family: IA
+  name: Identification and Authentication (Organizational Users) | Network Access
+    to Privileged Accounts
 IA-2 (11):
-  name: Remote Access - Separate Device
+  family: IA
+  name: Identification and Authentication (Organizational Users) | Remote Access -
+    Separate Device
 IA-2 (12):
-  name: Acceptance of PIV Credentials
+  family: IA
+  name: Identification and Authentication (Organizational Users) | Acceptance of PIV
+    Credentials
 IA-2 (2):
-  name: Network Access to Non-Privileged Accounts
+  family: IA
+  name: Identification and Authentication (Organizational Users) | Network Access
+    to Non-Privileged Accounts
 IA-2 (3):
-  name: Local Access to Privileged Accounts
+  family: IA
+  name: Identification and Authentication (Organizational Users) | Local Access to
+    Privileged Accounts
 IA-2 (5):
-  name: Group Authentication
+  family: IA
+  name: Identification and Authentication (Organizational Users) | Group Authentication
 IA-2 (8):
-  name: Network Access to Privileged Accounts - Replay Resistant
+  family: IA
+  name: Identification and Authentication (Organizational Users) | Network Access
+    to Privileged Accounts - Replay Resistant
 IA-3:
+  family: IA
   name: Device Identification and Authentication
 IA-4:
+  family: IA
   name: Identifier Management
 IA-4 (4):
-  name: Identify User Status
+  family: IA
+  name: Identifier Management | Identify User Status
 IA-5:
+  family: IA
   name: Authenticator Management
 IA-5 (1):
-  name: Password-Based Authentication
+  family: IA
+  name: Authenticator Management | Password-Based Authentication
 IA-5 (11):
-  name: Hardware Token-Based Authentication
+  family: IA
+  name: Authenticator Management | Hardware Token-Based Authentication
 IA-5 (2):
-  name: PKI-Based Authentication
+  family: IA
+  name: Authenticator Management | PKI-Based Authentication
 IA-5 (3):
-  name: In-Person or Trusted Third-Party Registration
+  family: IA
+  name: Authenticator Management | In-Person or Trusted Third-Party Registration
 IA-5 (4):
-  name: Automated Support for Password Strength Determination
+  family: IA
+  name: Authenticator Management | Automated Support for Password Strength Determination
 IA-5 (6):
-  name: Protection of Authenticators
+  family: IA
+  name: Authenticator Management | Protection of Authenticators
 IA-5 (7):
-  name: No Embedded Unencrypted Static Authenticators
+  family: IA
+  name: Authenticator Management | No Embedded Unencrypted Static Authenticators
 IA-6:
+  family: IA
   name: Authenticator Feedback
 IA-7:
+  family: IA
   name: Cryptographic Module Authentication
 IA-8:
+  family: IA
   name: Identification and Authentication (Non-Organizational Users)
 IA-8 (1):
-  name: Acceptance of PIV Credentials from Other Agencies
+  family: IA
+  name: Identification and Authentication (Non-Organizational Users) | Acceptance
+    of PIV Credentials from Other Agencies
 IA-8 (2):
-  name: Acceptance of Third-Party Credentials
+  family: IA
+  name: Identification and Authentication (Non-Organizational Users) | Acceptance
+    of Third-Party Credentials
 IA-8 (3):
-  name: Use of FICAM-Approved Products
+  family: IA
+  name: Identification and Authentication (Non-Organizational Users) | Use of FICAM-Approved
+    Products
 IA-8 (4):
-  name: Use of FICAM-Issued Profiles
+  family: IA
+  name: Identification and Authentication (Non-Organizational Users) | Use of FICAM-Issued
+    Profiles
 IR-1:
+  family: IR
   name: Incident Response Policy and Procedures
 IR-2:
+  family: IR
   name: Incident Response Training
 IR-3:
+  family: IR
   name: Incident Response Testing
 IR-3 (2):
-  name: Coordination With Related Plans
+  family: IR
+  name: Incident Response Testing | Coordination With Related Plans
 IR-4:
+  family: IR
   name: Incident Handling
 IR-4 (1):
-  name: Automated Incident Handling Processes
+  family: IR
+  name: Incident Handling | Automated Incident Handling Processes
 IR-5:
+  family: IR
   name: Incident Monitoring
 IR-6:
+  family: IR
   name: Incident Reporting
 IR-6 (1):
-  name: Automated Reporting
+  family: IR
+  name: Incident Reporting | Automated Reporting
 IR-7:
+  family: IR
   name: Incident Response Assistance
 IR-7 (1):
-  name: Automation Support For Availability of Information / Support
+  family: IR
+  name: Incident Response Assistance | Automation Support For Availability of Information
+    / Support
 IR-7 (2):
-  name: Coordination With External Providers
+  family: IR
+  name: Incident Response Assistance | Coordination With External Providers
 IR-8:
+  family: IR
   name: Incident Response Plan
 IR-9:
+  family: IR
   name: Information Spillage Response
 IR-9 (1):
-  name: Responsible Personnel
+  family: IR
+  name: Information Spillage Response | Responsible Personnel
 IR-9 (2):
-  name: Training
+  family: IR
+  name: Information Spillage Response | Training
 IR-9 (3):
-  name: Post-Spill Operations
+  family: IR
+  name: Information Spillage Response | Post-Spill Operations
 IR-9 (4):
-  name: Exposure to Unauthorized Personnel
+  family: IR
+  name: Information Spillage Response | Exposure to Unauthorized Personnel
 MA-1:
+  family: MA
   name: System Maintenance Policy and Procedures
 MA-2:
+  family: MA
   name: Controlled Maintenance
 MA-3:
+  family: MA
   name: Maintenance Tools
 MA-3 (1):
-  name: Inspect Tools
+  family: MA
+  name: Maintenance Tools | Inspect Tools
 MA-3 (2):
-  name: Inspect Media
+  family: MA
+  name: Maintenance Tools | Inspect Media
 MA-3 (3):
-  name: Prevent Unauthorized Removal
+  family: MA
+  name: Maintenance Tools | Prevent Unauthorized Removal
 MA-4:
+  family: MA
   name: Nonlocal Maintenance
 MA-4 (2):
-  name: Document Nonlocal Maintenance
+  family: MA
+  name: Nonlocal Maintenance | Document Nonlocal Maintenance
 MA-5:
+  family: MA
   name: Maintenance Personnel
 MA-5 (1):
-  name: Individuals Without Appropriate Access
+  family: MA
+  name: Maintenance Personnel | Individuals Without Appropriate Access
 MA-6:
+  family: MA
   name: Timely Maintenance
 MP-1:
+  family: MP
   name: Media Protection Policy and Procedures
 MP-2:
+  family: MP
   name: Media Access
 MP-3:
+  family: MP
   name: Media Marking
 MP-4:
+  family: MP
   name: Media Storage
 MP-5:
+  family: MP
   name: Media Transport
 MP-5 (4):
-  name: Cryptographic Protection
+  family: MP
+  name: Media Transport | Cryptographic Protection
 MP-6:
+  family: MP
   name: Media Sanitization
 MP-6 (2):
-  name: Equipment Testing
+  family: MP
+  name: Media Sanitization | Equipment Testing
 MP-7:
+  family: MP
   name: Media Use
 MP-7 (1):
-  name: Prohibit Use without Owner
+  family: MP
+  name: Media Use | Prohibit Use without Owner
 PE-1:
+  family: PE
   name: Physical and Environmental Protection Policy and Procedures
 PE-10:
+  family: PE
   name: Emergency Shutoff
 PE-11:
+  family: PE
   name: Emergency Power
 PE-12:
+  family: PE
   name: Emergency Lighting
 PE-13:
+  family: PE
   name: Fire Protection
 PE-13 (2):
-  name: Suppression Devices / Systems
+  family: PE
+  name: Fire Protection | Suppression Devices / Systems
 PE-13 (3):
-  name: Automatic Fire Suppression
+  family: PE
+  name: Fire Protection | Automatic Fire Suppression
 PE-14:
+  family: PE
   name: Temperature and Humidity Controls
 PE-14 (2):
-  name: Monitoring With Alarms / Notifications
+  family: PE
+  name: Temperature and Humidity Controls | Monitoring With Alarms / Notifications
 PE-15:
+  family: PE
   name: Water Damage Protection
 PE-16:
+  family: PE
   name: Delivery and Removal
 PE-17:
+  family: PE
   name: Alternate Work Site
 PE-2:
+  family: PE
   name: Physical Access Authorizations
 PE-3:
+  family: PE
   name: Physical Access Control
 PE-4:
+  family: PE
   name: Access Control For Transmission Medium
 PE-5:
+  family: PE
   name: Access Control For Output Devices
 PE-6:
+  family: PE
   name: Monitoring Physical Access
 PE-6 (1):
-  name: Intrusion Alarms / Surveillance Equipment
+  family: PE
+  name: Monitoring Physical Access | Intrusion Alarms / Surveillance Equipment
 PE-8:
+  family: PE
   name: Visitor Access Records
 PE-9:
+  family: PE
   name: Power Equipment and Cabling
 PL-1:
+  family: PL
   name: Security Planning Policy and Procedures
 PL-2:
+  family: PL
   name: System Security Plan
 PL-2 (3):
-  name: Plan / Coordinate With Other Organizational Entities
+  family: PL
+  name: System Security Plan | Plan / Coordinate With Other Organizational Entities
 PL-4:
+  family: PL
   name: Rules of Behavior
 PL-4 (1):
-  name: Social Media and Networking Restrictions
+  family: PL
+  name: Rules of Behavior | Social Media and Networking Restrictions
 PL-8:
+  family: PL
   name: Information Security Architecture
 PS-1:
+  family: PS
   name: Personnel Security Policy and Procedures
 PS-2:
+  family: PS
   name: Position Risk Designation
 PS-3:
+  family: PS
   name: Personnel Screening
 PS-3 (3):
-  name: Information With Special Protection Measures
+  family: PS
+  name: Personnel Screening | Information With Special Protection Measures
 PS-4:
+  family: PS
   name: Personnel Termination
 PS-5:
+  family: PS
   name: Personnel Transfer
 PS-6:
+  family: PS
   name: Access Agreements
 PS-7:
+  family: PS
   name: Third-Party Personnel Security
 PS-8:
+  family: PS
   name: Personnel Sanctions
 RA-1:
+  family: RA
   name: Risk Assessment Policy and Procedures
 RA-2:
+  family: RA
   name: Security Categorization
 RA-3:
+  family: RA
   name: Risk Assessment
 RA-5:
+  family: RA
   name: Vulnerability Scanning
 RA-5 (1):
-  name: Update Tool Capability
+  family: RA
+  name: Vulnerability Scanning | Update Tool Capability
 RA-5 (2):
-  name: Update by Frequency / Prior to New Scan / When Identified
+  family: RA
+  name: Vulnerability Scanning | Update by Frequency / Prior to New Scan / When Identified
 RA-5 (3):
-  name: Breadth / Depth of Coverage
+  family: RA
+  name: Vulnerability Scanning | Breadth / Depth of Coverage
 RA-5 (5):
-  name: Privileged Access
+  family: RA
+  name: Vulnerability Scanning | Privileged Access
 RA-5 (6):
-  name: Automated Trend Analyses
+  family: RA
+  name: Vulnerability Scanning | Automated Trend Analyses
 RA-5 (8):
-  name: Review Historic Audit Logs
+  family: RA
+  name: Vulnerability Scanning | Review Historic Audit Logs
 SA-1:
+  family: SA
   name: System and Services Acquisition Policy and Procedures
 SA-10:
+  family: SA
   name: Developer Configuration Management
 SA-10 (1):
-  name: Software / Firmware Integrity Verification
+  family: SA
+  name: Developer Configuration Management | Software / Firmware Integrity Verification
 SA-11:
+  family: SA
   name: Developer Security Testing and Evaluation
 SA-11 (1):
-  name: Static Code Analysis
+  family: SA
+  name: Developer Security Testing and Evaluation | Static Code Analysis
 SA-11 (2):
-  name: Threat and Vulnerability Analyses
+  family: SA
+  name: Developer Security Testing and Evaluation | Threat and Vulnerability Analyses
 SA-11 (8):
-  name: Dynamic Code Analysis
+  family: SA
+  name: Developer Security Testing and Evaluation | Dynamic Code Analysis
 SA-2:
+  family: SA
   name: Allocation of Resources
 SA-22:
+  family: SA
   name: UNSUPPORTED SYSTEM COMPONENTS
 SA-3:
+  family: SA
   name: System Development Life Cycle
 SA-4:
+  family: SA
   name: Acquisition Process
 SA-4 (1):
-  name: Functional Properties of Security Controls
+  family: SA
+  name: Acquisition Process | Functional Properties of Security Controls
 SA-4 (10):
-  name: Use of Approved PIV Products
+  family: SA
+  name: Acquisition Process | Use of Approved PIV Products
 SA-4 (2):
-  name: Design / Implementation Information for Security Controls
+  family: SA
+  name: Acquisition Process | Design / Implementation Information for Security Controls
 SA-4 (8):
-  name: Continuous Monitoring Plan
+  family: SA
+  name: Acquisition Process | Continuous Monitoring Plan
 SA-4 (9):
-  name: Functions / Ports / Protocols / Services in Use
+  family: SA
+  name: Acquisition Process | Functions / Ports / Protocols / Services in Use
 SA-5:
+  family: SA
   name: Information System Documentation
 SA-8:
+  family: SA
   name: Security Engineering Principles
 SA-9:
+  family: SA
   name: External Information System Services
 SA-9 (1):
-  name: Risk Assessments / Organizational Approvals
+  family: SA
+  name: External Information Systems | Risk Assessments / Organizational Approvals
 SA-9 (2):
-  name: Identification of Functions / Ports / Protocols / Services
+  family: SA
+  name: External Information Systems | Identification of Functions / Ports / Protocols
+    / Services
 SA-9 (4):
-  name: Consistent Interests of Consumers and Providers
+  family: SA
+  name: External Information Systems | Consistent Interests of Consumers and Providers
 SA-9 (5):
-  name: Processing, Storage, and Service Location
+  family: SA
+  name: External Information Systems | Processing, Storage, and Service Location
 SC-1:
+  family: SC
   name: System and Communications Protection Policy and Procedures
 SC-10:
+  family: SC
   name: Network Disconnect
 SC-12:
+  family: SC
   name: Cryptographic Key Establishment and Management
 SC-12 (2):
-  name: Symmetric Keys
+  family: SC
+  name: Cryptographic Key Establishment and Management | Symmetric Keys
 SC-12 (3):
-  name: Asymmetric Keys
+  family: SC
+  name: Cryptographic Key Establishment and Management | Asymmetric Keys
 SC-13:
+  family: SC
   name: Cryptographic Protection
 SC-15:
+  family: SC
   name: Collaborative Computing Devices
 SC-17:
+  family: SC
   name: Public Key Infrastructure Certificates
 SC-18:
+  family: SC
   name: Mobile Code
 SC-19:
+  family: SC
   name: Voice Over Internet Protocol
 SC-2:
+  family: SC
   name: Application Partitioning
 SC-20:
+  family: SC
   name: Secure Name / Address Resolution Service (Authoritative Source)
 SC-21:
+  family: SC
   name: Secure Name / Address Resolution Service (Recursive or Caching Resolver)
 SC-22:
+  family: SC
   name: Architecture and Provisioning for Name / Address Resolution Service
 SC-23:
+  family: SC
   name: Session Authenticity
 SC-28:
+  family: SC
   name: Protection of Information At Rest
 SC-28 (1):
-  name: Cryptographic Protection
+  family: SC
+  name: Protection Of Information At Rest | Cryptographic Protection
 SC-39:
+  family: SC
   name: Process Isolation
 SC-4:
+  family: SC
   name: Information In Shared Resources
 SC-5:
+  family: SC
   name: Denial of Service Protection
 SC-6:
+  family: SC
   name: Resource Availability
 SC-7:
+  family: SC
   name: Boundary Protection
 SC-7 (12):
-  name: Host-Based Protection
+  family: SC
+  name: Boundary Protection | Host-Based Protection
 SC-7 (13):
-  name: Isolation of Security Tools / Mechanisms / Support Components
+  family: SC
+  name: Boundary Protection | Isolation of Security Tools / Mechanisms / Support Components
 SC-7 (18):
-  name: Fail Secure
+  family: SC
+  name: Boundary Protection | Fail Secure
 SC-7 (3):
-  name: Access Points
+  family: SC
+  name: Boundary Protection | Access Points
 SC-7 (4):
-  name: External Telecommunications Services
+  family: SC
+  name: Boundary Protection | External Telecommunications Services
 SC-7 (5):
-  name: Deny by Default / Allow by Exception
+  family: SC
+  name: Boundary Protection | Deny by Default / Allow by Exception
 SC-7 (7):
-  name: Prevent Split Tunneling for Remote Devices
+  family: SC
+  name: Boundary Protection | Prevent Split Tunneling for Remote Devices
 SC-7 (8):
-  name: Route Traffic to Authenticated Proxy Servers
+  family: SC
+  name: Boundary Protection | Route Traffic to Authenticated Proxy Servers
 SC-8:
+  family: SC
   name: Transmission Confidentiality and Integrity
 SC-8 (1):
-  name: Cryptographic or Alternate Physical Protection
+  family: SC
+  name: Transmission Confidentiality and Integrity | Cryptographic or Alternate Physical
+    Protection
 SI-1:
+  family: SI
   name: System and Information Integrity Policy and Procedures
 SI-10:
+  family: SI
   name: Information Input Validation
 SI-11:
+  family: SI
   name: Error Handling
 SI-12:
+  family: SI
   name: Information Handling and Retention
 SI-16:
+  family: SI
   name: Memory Protection
 SI-2:
+  family: SI
   name: Flaw Remediation
 SI-2 (2):
-  name: Automated Flaw Remediation Status
+  family: SI
+  name: Flaw Remediation | Automated Flaw Remediation Status
 SI-2 (3):
-  name: Time to Remediate Flaws / Benchmarks for Corrective Actions
+  family: SI
+  name: Flaw Remediation | Time to Remediate Flaws / Benchmarks for Corrective Actions
 SI-3:
+  family: SI
   name: Malicious Code Protection
 SI-3 (1):
-  name: essential Management
+  family: SI
+  name: Malicious Code Protection | essential Management
 SI-3 (2):
-  name: Automatic Updates
+  family: SI
+  name: Malicious Code Protection | Automatic Updates
 SI-3 (7):
-  name: Nonsignature-Based Detection
+  family: SI
+  name: Malicious Code Protection | Nonsignature-Based Detection
 SI-4:
+  family: SI
   name: Information System Monitoring
 SI-4 (1):
-  name: System-Wide Intrusion Detection System
+  family: SI
+  name: Information System Monitoring | System-Wide Intrusion Detection System
 SI-4 (16):
-  name: Correlate Monitoring Information
+  family: SI
+  name: Information System Monitoring | Correlate Monitoring Information
 SI-4 (2):
-  name: Automated Tools For Real-Time Analysis
+  family: SI
+  name: Information System Monitoring | Automated Tools For Real-Time Analysis
 SI-4 (23):
-  name: Host-Based Devices
+  family: SI
+  name: Information System Monitoring | Host-Based Devices
 SI-4 (4):
-  name: Inbound and Outbound Communications Traffic
+  family: SI
+  name: Information System Monitoring | Inbound and Outbound Communications Traffic
 SI-4 (5):
-  name: System-Generated Alerts
+  family: SI
+  name: Information System Monitoring | System-Generated Alerts
 SI-4(14):
-  name: Wireless Intrusion Detection
+  family: SI
+  name: Information System Monitoring | Wireless Intrusion Detection
 SI-5:
+  family: SI
   name: Security Alerts, Advisories, and Directives
 SI-6:
+  family: SI
   name: Security Function Verification
 SI-7:
+  family: SI
   name: Software, Firmware, and Information Integrity
 SI-7 (1):
-  name: Integrity Checks
+  family: SI
+  name: Software, Firmware, and Information Integrity | Integrity Checks
 SI-7 (7):
-  name: Integration of Detection and Response
+  family: SI
+  name: Software, Firmware, and Information Integrity | Integration of Detection and
+    Response
 SI-8:
+  family: SI
   name: Spam Protection
 SI-8 (1):
-  name: essential Management
+  family: SI
+  name: Spam Protection | essential Management
 SI-8 (2):
-  name: Automatic Updates
+  family: SI
+  name: Spam Protection | Automatic Updates
 name: NIST-800-53

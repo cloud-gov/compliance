@@ -1,98 +1,150 @@
 documentation_complete: false
-governors:
-- name: Access Control Policy Section 3
-  url: Find artifact
-- name: Acccount Managment Flow
-  url: Find artifact
 name: User Account and Authentication (UAA) Server
 references:
 - name: User Account and Authentication (UAA) Server
+  type: URL
   url: http://docs.pivotal.io/pivotalcf/concepts/architecture/uaa.html
 - name: Creating and Managing Users with the UAA CLI (UAAC)
+  type: URL
   url: http://docs.pivotal.io/pivotalcf/adminguide/uaa-user-management.html
 - name: UAA Roles
+  type: URL
   url: https://cf-p1-docs-prod.cfapps.io/pivotalcf/concepts/roles.html
 - name: Cloud Foundry Org Access
+  type: URL
   url: https://github.com/cloudfoundry/cloud_controller_ng/blob/master/spec/unit/access/organization_access_spec.rb
 - name: Cloud Foundry Space Access
+  type: URL
   url: https://github.com/cloudfoundry/cloud_controller_ng/blob/master/spec/unit/access/space_access_spec.rb
 satisfies:
   NIST-800-53:
     AC-2:
-      a: |
-      Cloud Foundry user and role accounts are managed and maintained through the UAA Command Line Interface (UAAC). Cloud Foundry uses role-based access control with each role granting permissions in either an organization or an application space. The Following types are used:
-        - Org Manager
-        - Org Auditor
-        - Space Manager
-        - Space Developer
-        - Space Auditor
-      c: |
-        Conditions for groups and roles membership in AWS and Cloud Foundry are based on an established need to manage and access the AWS and Cloud Foundry environments.  The user must meet the following the conditions in order for the System Owner/ Project Manager to approve a group membership request:
-          - The user’s assigned role is required to access a particular group
-          - The user has the requirements and understanding to assume permissions associated with the group
-          - The user has completed the security role-based training
-          - The user complies with any other group-specific conditions created by the system owner
-        Once conditions have been met, the system owner /Project manager will request access within GitHub 18F tracking and ticketing system. Once approved, the DevOps group implements the request for group and role memeberships within AWS and Cloud Foundy.
-      e: |
-        AWS/Cloud Foundry user account creation requires approval by the managing 18F project lead and Information System Technical Point of Contact. Prior to account creation users must have at least begun the GSA background investigative process and complete basic security awareness training.
-      f: |
-        User account establishment, activation, modification, disablement or removal requires approval by the managing 18F project lead and Cloud Foundry Information System Technical Point of Contact (Operating Environment).
-        Accounts will be created, enabled, modified, disabled, and removed from AWS in accordance with 18F/GSA policies, guidelines, requirements in NIST SP 800-37, and established by the 18F Project Lead and DevOps.
-      g: |
-        {Missing}
-      i: |
-        User and system access is provided only to those with an established need to access and manage the AWS and Clouf Foundry environments.
-        System access to local EC2 instance accounts is provided only to those with an established need to manage local services in the AWS environment. User group membership is restricted to the least privilege necessary for the user to accomplish their assigned duties.
-        All user accounts are issued only to those who have gained approval by 18F DevOps. Once approved, the DevOps team creates the user account and adds it to the appropriate role and organization.
-        18F and GSA identify authorized users of the information system and specify access rights/privileges. 18F grants access to the information system based on:
-          1. a valid need-to-know/need-to-share that is determined by assigned official duties and satisfying all personnel security criteria;
-          2.  Intended system usage. 18F and GSA requires proper identification for requests to establish information system accounts and approves all such requests; and
-          3. Organizational or mission/business function attributes.
-      j: |
-        User accounts will be monitored monthly and accounts will be disabled after 90 days of inactivity; this will be a manual review process every 30 days, but the disablement will be automatic.
-        A manual review of all user accounts will be conducted on an annual basis
-      k: |
-        The Cloud Foundry platform utilizes role based access controls (RBAC) for group membership within the platform and does not issue shared/group account credentials.
-    AC-2 (1): |
-      Cloud Foundry uses the UAA CLI which is a command line based account management system. This systems is currently semi-automated at this time
-    AC-2 (2): |
-      Cloud Foundry does not contain any guest/anonymous, group, or temporary user accounts. DevOps only creates individual user accounts and grants role based access to users within Cloud Foundry.
-    AC-6: "- Cloud Foundry uses Feature Flags which allows an administrator to turn\
-      \ on or off sub-sections, or features, of an application without deploying new\
-      \ code.\n- Currently, there are six feature flags that can be set. They are\
-      \ all enabled by default except user_org_creation.\n  - `user_org_creation`&colon;\
-      \ When enabled, any user can create and organization via the API.\n  - `private_domain_creation`&colon;\
-      \ When enabled, and organization manager can create private domains for that\
-      \ organization.\n  - `app_bits_upload`&colon; When enabled, space developers\
-      \ can upload app bits.\n  - `app_scaling`&colon; When enabled, space developers\
-      \ can perform scaling operations (i.e. change memory, disk or instances).\n\
-      \  - `route_creation`&colon; When enabled, a space developer can create routes\
-      \ in a space.\n  - `service_instance_creation`&colon; When enabled, a space\
-      \ developer can create service instances in a space.\n- 18F uses Orgs, Spaces,\
-      \ and Roles to implement least privileged access to the platform as a service.\
-      \ Cloud Foundry uses role-based access control (RBAC), with each role granting\
-      \ permissions in either an org or a space. Please see Table 9-2. Cloud Foundry\
-      \ User Roles and Privileges. \n"
-    IA-2: '- The UAA is the identity management service for Cloud Foundry. Its primary
-      role is as an OAuth2 provider, issuing tokens for client applications to use
-      when they act on behalf of Cloud Foundry users. In collaboration with the login
-      server, it authenticates users with their Cloud Foundry credentials, and act
-      as a Single Sign-On (SSO) service using those credentials (or others). It has
-      endpoints for managing user accounts and for registering OAuth2 clients, as
-      well as various other management functions.
+      implementation_status: null
+      narrative:
+        ? Cloud Foundry user and role accounts are managed and maintained through
+          the UAA Command Line Interface (UAAC). Cloud Foundry uses role-based access
+          control with each role granting permissions in either an organization or
+          an application space. The Following types are used
+        : - Org Manager
+          - Org Auditor
+          - Space Manager
+          - Space Developer
+          - Space Auditor
+        a: ''
+        c: "Conditions for groups and roles membership in AWS and Cloud Foundry are\
+          \ based on an established need to manage and access the AWS and Cloud Foundry\
+          \ environments.  The user must meet the following the conditions in order\
+          \ for the System Owner/ Project Manager to approve a group membership request:\n\
+          \  - The user\u2019s assigned role is required to access a particular group\n\
+          \  - The user has the requirements and understanding to assume permissions\
+          \ associated with the group\n  - The user has completed the security role-based\
+          \ training\n  - The user complies with any other group-specific conditions\
+          \ created by the system owner\nOnce conditions have been met, the system\
+          \ owner /Project manager will request access within GitHub 18F tracking\
+          \ and ticketing system. Once approved, the DevOps group implements the request\
+          \ for group and role memeberships within AWS and Cloud Foundy.\n"
+        e: 'AWS/Cloud Foundry user account creation requires approval by the managing
+          18F project lead and Information System Technical Point of Contact. Prior
+          to account creation users must have at least begun the GSA background investigative
+          process and complete basic security awareness training.
 
-      - All users have individually unique identifiers to access and authenticates  to
-      the environment
+          '
+        f: 'User account establishment, activation, modification, disablement or removal
+          requires approval by the managing 18F project lead and Cloud Foundry Information
+          System Technical Point of Contact (Operating Environment).
 
-      - Shared or group authenticators are not utilized, with the exception of a root
-      administrative account. There are only two authorized users from the DevOps
-      team who has access to the root administrative account.
-      '
-    SC-13: All traffic from the public internet to the Cloud Controller and UAA happens
-      over HTTPS and operators configure encryption of the identity store in the UAA
-    SC-28 (1): Operators configure encryption of the identity store in the UAA. When
-      users register an account with the Cloud Foundry platform, the UAA, acts as
-      the user store and stores user passwords in the UAA database using bcrypt. Bcrypt
-      is a blowfish encryption algorithm, which enables cloud foundry to store a secure
-      hash of your users' passwords.
+          Accounts will be created, enabled, modified, disabled, and removed from
+          AWS in accordance with 18F/GSA policies, guidelines, requirements in NIST
+          SP 800-37, and established by the 18F Project Lead and DevOps.
+
+          '
+        g: '{Missing}
+
+          '
+        i: "User and system access is provided only to those with an established need\
+          \ to access and manage the AWS and Clouf Foundry environments.\nSystem access\
+          \ to local EC2 instance accounts is provided only to those with an established\
+          \ need to manage local services in the AWS environment. User group membership\
+          \ is restricted to the least privilege necessary for the user to accomplish\
+          \ their assigned duties.\nAll user accounts are issued only to those who\
+          \ have gained approval by 18F DevOps. Once approved, the DevOps team creates\
+          \ the user account and adds it to the appropriate role and organization.\n\
+          18F and GSA identify authorized users of the information system and specify\
+          \ access rights/privileges. 18F grants access to the information system\
+          \ based on:\n  1. a valid need-to-know/need-to-share that is determined\
+          \ by assigned official duties and satisfying all personnel security criteria;\n\
+          \  2.  Intended system usage. 18F and GSA requires proper identification\
+          \ for requests to establish information system accounts and approves all\
+          \ such requests; and\n  3. Organizational or mission/business function attributes.\n"
+        j: 'User accounts will be monitored monthly and accounts will be disabled
+          after 90 days of inactivity; this will be a manual review process every
+          30 days, but the disablement will be automatic.
+
+          A manual review of all user accounts will be conducted on an annual basis
+
+          '
+        k: 'The Cloud Foundry platform utilizes role based access controls (RBAC)
+          for group membership within the platform and does not issue shared/group
+          account credentials.
+
+          '
+    AC-2 (1):
+      implementation_status: null
+      narrative: 'Cloud Foundry uses the UAA CLI which is a command line based account
+        management system. This systems is currently semi-automated at this time
+
+        '
+    AC-2 (2):
+      implementation_status: null
+      narrative: 'Cloud Foundry does not contain any guest/anonymous, group, or temporary
+        user accounts. DevOps only creates individual user accounts and grants role
+        based access to users within Cloud Foundry.
+
+        '
+    AC-6:
+      implementation_status: null
+      narrative: "- Cloud Foundry uses Feature Flags which allows an administrator\
+        \ to turn on or off sub-sections, or features, of an application without deploying\
+        \ new code.\n- Currently, there are six feature flags that can be set. They\
+        \ are all enabled by default except user_org_creation.\n  - `user_org_creation`&colon;\
+        \ When enabled, any user can create and organization via the API.\n  - `private_domain_creation`&colon;\
+        \ When enabled, and organization manager can create private domains for that\
+        \ organization.\n  - `app_bits_upload`&colon; When enabled, space developers\
+        \ can upload app bits.\n  - `app_scaling`&colon; When enabled, space developers\
+        \ can perform scaling operations (i.e. change memory, disk or instances).\n\
+        \  - `route_creation`&colon; When enabled, a space developer can create routes\
+        \ in a space.\n  - `service_instance_creation`&colon; When enabled, a space\
+        \ developer can create service instances in a space.\n- 18F uses Orgs, Spaces,\
+        \ and Roles to implement least privileged access to the platform as a service.\
+        \ Cloud Foundry uses role-based access control (RBAC), with each role granting\
+        \ permissions in either an org or a space. Please see Table 9-2. Cloud Foundry\
+        \ User Roles and Privileges. \n"
+    IA-2:
+      implementation_status: null
+      narrative: '- The UAA is the identity management service for Cloud Foundry.
+        Its primary role is as an OAuth2 provider, issuing tokens for client applications
+        to use when they act on behalf of Cloud Foundry users. In collaboration with
+        the login server, it authenticates users with their Cloud Foundry credentials,
+        and act as a Single Sign-On (SSO) service using those credentials (or others).
+        It has endpoints for managing user accounts and for registering OAuth2 clients,
+        as well as various other management functions.
+
+        - All users have individually unique identifiers to access and authenticates  to
+        the environment
+
+        - Shared or group authenticators are not utilized, with the exception of a
+        root administrative account. There are only two authorized users from the
+        DevOps team who has access to the root administrative account. '
+    SC-13:
+      implementation_status: null
+      narrative: All traffic from the public internet to the Cloud Controller and
+        UAA happens over HTTPS and operators configure encryption of the identity
+        store in the UAA
+    SC-28 (1):
+      implementation_status: null
+      narrative: Operators configure encryption of the identity store in the UAA.
+        When users register an account with the Cloud Foundry platform, the UAA, acts
+        as the user store and stores user passwords in the UAA database using bcrypt.
+        Bcrypt is a blowfish encryption algorithm, which enables cloud foundry to
+        store a secure hash of your users' passwords.
 system: CloudFoundry
