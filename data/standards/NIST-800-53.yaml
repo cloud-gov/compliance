@@ -939,7 +939,7 @@ SI-3:
   name: Malicious Code Protection
 SI-3 (1):
   family: SI
-  name: Malicious Code Protection | essential Management
+  name: Malicious Code Protection | Central Management
 SI-3 (2):
   family: SI
   name: Malicious Code Protection | Automatic Updates
