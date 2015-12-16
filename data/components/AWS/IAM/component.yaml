@@ -1,0 +1,57 @@
+documentation_complete: false
+name: Identity and Access Management
+references:
+- name: AWS Identity and Access Management (IAM)
+  type: URL
+  path: https://aws.amazon.com/iam/
+satisfies:
+  NIST-800-53:
+    AC-2:
+      implementation_status: null
+      narrative:
+        a: |
+          AWS accounts are managed through AWS Identity and Access Management (IAM). Only users with a need to operate the AWS management console are provided individual AWS user accounts. The following types are used:
+            * User – Individual IAM accounts
+            * System – system and application account not used for interactive access
+          There are no guest/anonymous, groups, or temporary user accounts in the 18F Environment
+    AC-2 (1):
+      implementation_status: null
+      narrative: |
+        Coud.gov requires the creation of a single system IAM account through a manual process.
+    AC-2 (2):
+      implementation_status: null
+      narrative: |
+        This control is not applicable. All Temporary accounts are handled by associating resources with IAM Roles. There are no guest/anonymous, group, or temporary user accounts in the 18F AWS environment.
+    AC-2 (5):
+      implementation_status: null
+      narrative: |
+        Account log out is set to 15 minutes of inactivity within the IAM console per accountwithin the 18F virtual infrastructure.
+    AC-5:
+      implementation_status: null
+      narrative:
+        a: |
+          IAM policies are attached to the users, enabling centralized control of permissions for users under 18Fs AWS Account.
+        b: |
+          18F documents separation of duties of AWS and Cloud Foundry users. All AWS IAM users, groups and roles can be viewed wthin the AWS console. IAM users reports are generated to show all separation of duties. Cloud Checkr also generates an a report of all IAM users within 18F AWS environment.
+    AC-6:
+      implementation_status: null
+      narrative: |
+        IAM policies are attached to the users, enabling centralized control of permissions for users under 18F AWS Account to access services, buckets or objects. With IAM policies, 18F only grant users within its own AWS account permission to access its Amazon resources.
+        18F AWS IAM policies are defined to grant only the required access for 18F staff necessary to perform their functions. 18F defines least privilege access to each user, group or role.
+        Security functions within the AWS infrastructure are explicitly defined within IAM to include read-only permissions for any user functions.
+        18F incorporate running the IAM Policy Simulator to test policies for least privilege access for users and groups.
+    AC-6 (1):
+      implementation_status: null
+      narrative: |
+        18F explicitly authorizes access to administrative and security functions of its virtual infrastructure and Cloud.Gov platform to designated indiviuals within the Devops and SecOps team.  No other authrozations to security and administrative information is granted to individuals outside these teams.
+    AC-6 (5):
+      implementation_status: null
+      narrative: |
+        18F restricts priviledged accounts such as administrator and root access accounts to designated members within the18F Devops and SecOps teams. Within the virtual infrastructure the admin account is not used for priviledged access. It’s only used for billing and metrics.
+    AC-14:
+      implementation_status: null
+      narrative:
+        a: |
+          There are no user or administrative actions than can be performed within 18F virtual private cloud without multifactor authentication.  Per AWS, users can not gain access to the AWS console without identification and authorization to its a vpc.
+        b: |
+          It is not possible for members of the 18F Devops and SecOps teams to aceess the 18F virtual private cloud infrastructure without muitifactor authetication and identification. All clinet users of Cloud.gov must login using authenticated credentials in order to acess the system as stated in Part A above.

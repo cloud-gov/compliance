@@ -1,0 +1,100 @@
+documentation_complete: false
+name: Access Control Policies for 18F
+references:
+- name: Policy Document
+  type: URL
+  path: https://drive.google.com/drive/u/1/folders/0B6fPl5s12igNfnhnZWJqQVluNUxybWo5WVQwaHUwN29qRmVaQlczN0tpVUZEa25WZFdsTjg
+satisfies:
+  NIST-800-53:
+    AC-1:
+      implementation_status: null
+      narrative:
+        a: |
+          The 18F Program Office develops, documents, and disseminates to all 18F staff, the 18F Access Control Policy which  addresses purpose, scope, roles, responsibilities, management commitment, coordination among organizational entities, and compliance and procedures to facilitate the implementation of the access control policy and associated access controls. The 18F accecss control policy is listed within 18F’s  private Github repository and the docs.cloud.gov site that is accessible to all 18F staff.'
+        b: |
+          The 18F Program Office will review and update the current 18F Access control policy at least every 3 years and any documented access procedures at least annually.
+    AC-2:
+      implementation_status: null
+      narrative:
+        a: |
+          The 18F Program identifies and selects the following types of information system accounts to support organizational missions/business functions:
+        b: |
+          18F has establised designated Devops personnel as the assgiend account managers for all information system accounts realting to the infrastructure and the Cloud.Gov platform.
+          Sytem Owners, whose web applications and/or websites reside on the Cloud.Gov platform have the respossibility to assign an account manager fot their information systems.
+        c: |
+          18F establishes conditions for group and role membership within the Cloud.Gov Platform and its virtual environment.
+          Conditions for groups and roles membership are based on an established need to manage and access the virtual infrastructure and Cloud.Gov environments. The user must meet the following conditions in order for the System Owner/ Project Manager to approve a group membership request:
+          * The user’s assigned role is required to access a particular group
+          * The user has the requirements and understanding to assume permissions associated with the group
+          * The user has completed the security role-based training (18F Staff only)
+          * The user complies with any other group-specific conditions created by the system owner
+
+          Once conditions have been met, the system owner /Project manager will request access within GitHub, 18F’s tracking and ticketing system. Once approved, the 18F Devops group completes the request for group and role memeberships within its infrastructure and Cloud.Gov platform.
+
+        d: |
+          The 18F Program Office specifies authorized users of the information system, group and role membership, and access authorizations (i.e., privileges) and other attributes (as required) for each account. Systems Onwers/ Project managers provide the details of what type of access is needed for an authorized authorized user.
+          All accounts will be documented within their respective information systems, detailing their group and role membership, and access authorizations. This documentation will be exported by Devops and archived for up to a year from the date of account creation by the managing 18F project lead and Cloud.Gov Technical Point of Contact (Operating Environment) in accordance with best business and security practices.
+        e: |
+          18F requires approvals by the project lead and system owners for requests to create information system accounts. All accounts will be documented within the Github ticketing and tracking system with their respective information systems, detailing their group, role membership, and access authorizations.
+          AWS/Cloud Foundry  user account creation requires approval by the managing 18F project lead and Information System Technical Point of Contact. Prior to account creation users must have at least begun a background investigative process and complete basic security awareness training.
+        f: |
+          18F creates, enables, modifies, disables, and removes information system accounts in accordance with the 18F access control policy and approvals from 18F Devops.
+          * User account establishment, activation, modification, disablement or removal requires approval by the managing  project lead and Cloud.Gov Information System Technical Point of Contact
+          * Accounts will be created, enabled, modified, disabled, and removed from AWS in accordance with 18F policies, guidelines and established by the project lead and Devops.
+
+        g: |
+          18F Monitors the use of all information system accounts within its environment.
+        h: |
+          18F notifies its Devops account managers, when accounts are no longer required, users are terminated or transferred, and when individual’s information system usage or need-to-know changes within the Cloud.Gov platform and virtual private cloud infrastructure.
+          The project manager or information system owner will be notified when accounts have been terminated, disabled or transferred based on the access request submitted via Githib.  Notification will be sent via e-mail or the GitHub ticketing and tracking system when changes to user and system access occur.
+        i: |
+          18F authorizes access to its information systems based on a valid access authorization from system owners and Devops, intended system usage within the network environment, and other attributes as required by the organization or associated missions/business functions. This is documented within section 3 of  the 18F access control policy “Access Management”.
+          User and system access is provided only to those with an established need to access and manage the virtual private cloud and Cloud.Gov environments.
+          * User group membership is restricted to the least privilege necessary for the user to accomplish their assigned duties.
+          * All user accounts are issued only to those who have gained approval by 18F Devops. Once approved, the Devops team creates the user account and adds it to the appropriate role and organization within its information systems.
+          18F grants access to the information system based on:
+            * a valid need-to-know/need-to-share that is determined by assigned official duties and satisfying all personnel security criteria
+            * Intended system usage. 18F requires proper identification for requests to establish information system accounts and approves all such requests Organizational or mission/business function attributes.
+
+        j: |
+          18F reviews user and system accounts for compliance with account management requirements at least on an annual basis.  Currently, system and user accounts are being monitored manually on a monthly basis and programmatically on a continuous basis.
+        k: |
+          18F establishes a process for reissuing shared/group account credentials when individuals are removed from the group. 18F utilizes its GitHub tracking and ticketing system for requests to reissue and remove individuals from group memberships within its environment.
+          18F does not allow shared/group account credentials within the AWS environment. All users have individual accounts to access the AWS environment. 18F has created specific policies that allow individual users to assume a role within the AWS environment.
+    AC-2 (3):
+      implementation_status: null
+      narrative: |
+        In addition to using credential reports, 18F also determines when a password or access key was last used.
+    AC-2 (7):
+      implementation_status: null
+      narrative:
+        a: |
+          18F establishes conditions for group and role membership within its information systems and network environment.
+          Conditions for group membership are based on an established need to manage the infrstructure and Cloud.Gov. The user must meet the following the conditions on order for the system owner to approve membership request:
+          * The user’s assigned role is required to access a particular group
+          * The user has the requirements and understanding to assume permissions associated with the group
+          * The user has completed the security role-based training
+          * The user complies with any other group-specific conditions created by the system owner
+          * User group membership is restricted to the least privileged access necessary for the user to accomplish their assigned duties.
+          18F staff request access within the GitHub tracking and ticketing system for one of several roles that are established in the IaaS. Once approved, designated Devops Administrators creates group and role memberships within the virtual private cloud and Cloud.Gov platform.
+            
+        b: |
+          18F removes users from priviledged access rights when privileged role assignments are no longer appropriate or have been requested by the system owner and program manager. Remval of access is sent to the DevOps team through a change request within the GitHub tickting system.
+    AC-3:
+      implementation_status: null
+      narrative: |
+        18F information systems enforces approved authorizations for logical access to information and system resources in accordance with the 18F access control policy Section 3 “Access Enforcement
+    AC-4:
+      implementation_status: null
+      narrative: |
+        The information system enforces approved authorizations for controlling the flow of information within the system and between interconnected systems based on the 18F Access Control Policy
+    AC-5:
+      implementation_status: null
+      narrative:
+        a: |
+          18F implements Identity and Access Management (IAM) Policies roles and individual user accounts for separation of duties.
+    AC-17 (4):
+      implementation_status: null
+      narrative:
+        a: |
+          18F authorizes the execution of privileged commands and access to security-relevant information via remote access only for monitoring, managing, and troubleshooting  the 18F virtual infrastructer and Cloud.Gov platform. This authorization is only given to specifc members of the Devops and SecOps teams. All other members are excluded from this type of access.

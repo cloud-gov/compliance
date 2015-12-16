@@ -1,0 +1,27 @@
+documentation_complete: false
+name: Application Security Groups
+references:
+- name: ASG Documentation
+  path: https://docs.pivotal.io/pivotalcf/adminguide/app-sec-groups.html
+  type: URL
+satisfies:
+  NIST-800-53:
+    AC-3:
+      implementation_status: null
+      narrative: |
+        18F has created specific Cloud.Gov security groups associated with VPCs to provide full control over inbound and outbound traffic. 18F has created a specific set of VPCs (Live production and staging) for its Cloud.Gov implementation.  All VPCs have subnets used to separate and control IP address space within each individual VPC.  Subnets must be created in order to launch Availability Zone (AZ) specific services within a VPC. 18F has setup VPC Peering between the Staging VPC and the CF Live production VPC.
+    AC-4:
+      implementation_status: null
+      narrative: |
+        Cloud.Gov enforces security groups and other network traffic rules in a strict priority order. Cloud.Gov returns an allow, deny, or reject result for the first rule that matches the outbound traffic request parameters, and does not evaluate any lower-priority rules
+        Cloud.Gov implements network traffic rules using Linux iptables on the component VMs. Devops configures rules to prevent system access from external networks and between internal components, and to restrict applications from establishing connections over the DEA network interface.
+        Cloud.Gov application security groups (ASG) consists of a list of access rules to control application outbound traffic..
+        DEA Network Properties: Operators configure the allow_networks and deny_networks parameters for DEAs to prohibit communication between system components and applications.
+    AC-4 (21):
+      implementation_status: null
+      narrative: |
+        Cloud.Gov uses application security groups act as virtual firewalls to control outbound traffic from the applications in deployment. Cloud.Gov evaluates security groups and other network traffic rules in a strict priority order. Cloud Foundry returns and allow, deny, or reject result for the first rule that matches the outbound traffic request parameters, and does not evaluate any lower-priority rules. Cloud Foundry evaluates the network traffic rules for an application in the following order:
+        1. Security Groups: The rules described by the Default Staging set, the Default Running set, and all security groups bound to the space.
+        2. Warden ALLOW rules: Any Warden Server configuration `allow` rules. Set Warden Server configuration rules in the Droplet Execution Agent (DEA) configuration section of your deployment manifest.
+        3. Warden DENY rules: Any Warden Server configuration `deny` rules. Set Warden Server configuration rules in the DEA configuration section of your deployment manifest.
+        4. Hard-coded REJECT rule: Cloud Foundry returns a `reject` result for all outbound traffic from a container if not allowed by a higher-priority rule.

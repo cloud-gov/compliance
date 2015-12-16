@@ -1,0 +1,27 @@
+documentation_complete: false
+name: ELKStack
+references:
+- name: Reference Name
+  path: https://www.elastic.co/webinars/introduction-elk-stack
+  type: URL
+satisfies:
+  NIST-800-53:
+    AC-2:
+      implementation_status: null
+      narrative:
+        g: |
+          The UAA API interface is used to monitor user accounts within the Cloud.Gov It list Cloud Foundry instance users. By default it returns information about each user account including GUID, name, permission groups, activity status, and metadata.
+          18F uses the ELK stack to provide a visual way to monitor all user and system accounts within Coud.Gov by interfacing with Cloud.Gov API calls to its internal system components (i.e. Loggregator, Cloud Controller, DEA, Warden, Metrics Collector)
+    AC-2 (4):
+      implementation_status: null
+      narrative: |
+        Cloud.Gov provides an audit trail through the bosh tasks command which shows all actions that an operator has taken with the platform. It also records an audit trail of all relevant API invocations of an app. The CLI command cf events returns this information.
+        ELK ( Logstash, Elasticsearch, Kibana) a front end component for loggregator is used to automatically audit all actions within the Cloud.Gov platform. By binding an instance of the service to, Cloud.Gov applications logs will be drained to a Logstash syslog receiver and stored in Elasticsearch to perform realtime data analytics with Kibana as the interface for search and visualization.
+    AC-6 (9):
+      implementation_status: null
+      narrative: |
+        The ELK (Logstash elasticsearch Kibana ) is used to collect, manage and display all  auditing of privileged functions within the Cloud.Gov platform
+    AC-17 (1):
+      implementation_status: null
+      narrative: |
+        The Cloud Controller authenticates every request with the Service Broker API using HTTP or HTTPS. The 18F DevOp team only uses the BOSH Command Line Interface (CLI) to log into the Cloud.Gov jumpbox using SSH as a remote connectionton. These remote connections are monitored by the Cloud.Gov Cloud Controller which send this data to the ELK logging and monitoring visualization tool stack.
