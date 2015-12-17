@@ -1,0 +1,12 @@
+documentation_complete: false
+name: System and Services Acquisition Policy for 18F
+references:
+- name: Policy Document
+  type: URL
+  path: https://drive.google.com/drive/u/1/folders/0B6fPl5s12igNfnhnZWJqQVluNUxybWo5WVQwaHUwN29qRmVaQlczN0tpVUZEa25WZFdsTjg
+satisfies:
+  NIST-800-53:
+    SA-1:
+      implementation_status: null
+      narrative: 18F Policy
+system: 18F

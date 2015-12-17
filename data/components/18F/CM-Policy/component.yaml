@@ -1,0 +1,43 @@
+documentation_complete: false
+name: Configuration Management Policy for 18F
+references:
+- name: Policy Document
+  type: URL
+  path: https://drive.google.com/drive/u/1/folders/0B6fPl5s12igNfnhnZWJqQVluNUxybWo5WVQwaHUwN29qRmVaQlczN0tpVUZEa25WZFdsTjg
+satisfies:
+  NIST-800-53:
+    CM-1:
+      implementation_status: null
+      narrative: 18F Policy
+    CM-3:
+      implementation_status: null
+      narrative:
+        a: |
+          18F uses version control systems with its cloud formation templates to know exactly what changes were made, who made them, and when. If at any point 18F needs to reverse changes to infrastructure, you can use a previous version of a template.
+          18F uses GitHub for additional tracking and documenting of authorized changes within the infrastructure and applications including Cloud Foundry platform as a service. Within  GitHub, a diff function is used to compare and contrast any changes made to configurations of Cloud Foundry.
+        b: |
+          18F uses version control systems with its cloud formation templates to know exactly what changes were made, who made them, and when. If at any point 18F needs to reverse changes to infrastructure, you can use a previous version of a template.
+          18F uses GitHub for additional tracking and documenting of authorized changes within the infrastructure and applications including Cloud Foundry platform as a service. Within  GitHub, a diff function is used to compare and contrast any changes made to configurations of Cloud Foundry.
+        c: |
+          18F uses the following methods to document configuration change decisions associated with its information systems.
+          All configuration changes related to applications and websites hosted within the 18F AWS and Cloud Foundry environment are requested by the systems owner and approved by DevOps within the 18F GitHub tracking systems.
+        d: |
+          When configuration changes have been approved through 18F's GitHub ticketing and tracking system, the DevOps team implements approved configuration-controlled changes to the information system and then provides a status of the changes completed and closes out the ticket.
+        e: |
+          Records of configuration-controlled changes are retained for at least 1 year in accordance with the 18F Configuration Management policy and utilizing the 18F GitHub site and S3 to store all changes requested, approved, disapproved, implemented and pending.
+        f: |
+          Audits for 18F virtual infrastructure and the Cloud.Gov platform are conducted by 18F DevOps, 18F ISSOs and Cloud Foundry project manager of all configuration-controlled changes to the information system.  These audits take place no less than once a month and are documented in 18 F's GitHub ticketing and tracking system, per the 18F Configuration management policy Section 3 which states
+          18F will conduct a monthly audit of information system which identifies and eliminates unnecessary functions, ports, protocols, and/or services.
+        g: |
+          18F coordinates and provides oversight for configuration change control activities through its GitHub tracking and ticketing systems and Slack communications channel which is integrated with GitHub that convenes whenever there are significant and pending changes to the 18F security, cloud infrastructure and applications.
+    CM-6:
+      implementation_status: null
+      narrative:
+        a: |
+          18F uses established and documents configuration settings for its information technology products employed within the Cloud Foundry platform that reflect the most restrictive mode consistent with operational requirements
+        b: |
+          18F Implements the configuration settings based on its documented process and practices. DevOps implements the configuration benchmarks identified in Part a, maintains the baseline configuration for all cloud infrastructure and Cloud Foundry components and is responsible for ensuring all systems are configured in accordance with applicable hardening guides.
+        c: |
+          DevOps and 18F system owners documents any exceptions to established baseline configurations for all of 18F's virtual infrastructure and information systems. 18F maintains exception documents which detail specific items from the established configuration settings which cannot be applied to instances due to operational requirements.
+        d: |
+          18F Monitors and controls changes to the configuration settings in accordance with its documented configuration management policy and procedures.

@@ -1,0 +1,27 @@
+documentation_complete: false
+name: Loggregator
+references:
+- name: Loggregator code
+  type: URL
+  path: https://github.com/cloudfoundry/loggregator
+- name: Cloud Foundry Logging
+  type: URL
+  path: https://docs.cloudfoundry.org/running/managing-cf/logging.html
+satisfies:
+  NIST-800-53:
+    AU-2:
+      implementation_status: null
+      narrative:
+        a: |
+          Cloud.Gov provides an audit trail through the bosh tasks command. This command shows all actions that an operator has taken with the platform. Additionally, operators can redirect Cloud Foundry component logs to a Logstash syslog server using the syslog_daemon_config property in the metron_agent job of cf-release.
+          For end users, Cloud.Gov records an audit trail of all relevant API invocations of and app. The CLI command cf events returns this information.
+        b: |
+          Cloud.Gov provides an audit trail through the bosh tasks command. This command shows all actions that an operator has taken with the platform. For users, Cloud Foundry records an audit trail of all relevant API invocations of and app. The CLI command cf events returns this information.
+          Loggregator, the component responsible for logging, provides a stream of log output from 18F applications and system components that interact with a hosted app during updates and execution.
+    AU-2 (3):
+      implementation_status: null
+      narrative: |
+        Contents of a Log Line:  Every log line contains four fields: 
+        Timestamp
+        Log type (origin code)
+        Channel: either STDOUT or STDERR Message
