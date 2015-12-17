@@ -49,7 +49,7 @@ satisfies:
           * Security group modified
           * Successful login to AWS Management Console
           * Unauthorized access attempt
-            
+
         b: |
           Cloud Checkr reports atypical usage of information system accounts to designated 18F SecOps and Devops teams. Monitoring and intrusion information contained within Cloud Checkr and cloudtrail logs are  sent to 18F security personnel. The  logs are protected from unauthorized access by limiting access to authorized privileged users only.
     AC-6 (9):
@@ -60,3 +60,34 @@ satisfies:
       implementation_status: null
       narrative: |
         Cloud Checkr provides a unified view of all infrastructure monitoring which captures all remote activites within 18F virtual infrastructure. The log files are organized by AWS Account ID, region, service name, date, and time. CloudTrail can be configured to aggregate log files from multiple regions into a single Amazon S3 bucket. From there, 18F Devops and SecOps teams view the logs files within Cloud Checkr to perform security analysis and detect user behavior patterns.
+    AU-2:
+      implementation_status: null
+      narrative:
+        a: |
+          18F has implemented Cloudtrail and Cloudwatch for its account and system  monitoring. It provides visibility into user activity by recording API calls made on an AWS account. CloudTrail captures and records important information about each API call for the list of audtiable events:
+          * User – the IAM user name of the person who was interacting with your AWS account.
+          * IP Address – the IP Address where the interactions originated from.
+          * Event Name – the type of interaction that occurred.
+          * Service – the AWS Service that was interacted with.
+          * Time – the date and time that the event occurred.
+          * Region – the AWS Region(s) where the interactions occurred.
+          * Resource ID – the resource ID from the event.
+
+        b: |
+          When CloudTrail logging is enabled, API calls made to EC2, EBS, and VPC actions are tracked in log files, along with any other AWS service records. Every log entry contains information about who generated the request. When looking at the full details of an event the audut trail shows:
+          * User – the IAM user name of the person who was interacting with the AWS account.
+          * IP Address – the IP Address where the interactions originated from.
+          * Event Name – the type of interaction that occurred.
+          * Service – the AWS Service that was interacted with.
+          * Time – the date and time that the event occurred.
+          * Region – the AWS Region(s) where the interactions occurred.
+          * Resource ID – the resource ID from the event.
+    AU-3:
+      implementation_status: null
+      narrative: |
+        CloudTrail Log File Name Format CloudTrail uses the following file name format for the log file objects it uploads to your S3 bucket: AccountID_CloudTrail_RegionName_YYYYMMDDTHHmmZ_UniqueString.FileNameFormat YYYY, MM, DD, HH, and mm are the digits of the year, month, day, hour, and minute (respectively) when the log file was delivered. Hours are in 24-hour format. The Z indicates that the time is in UTC.
+    CM-3:
+      implementation_status: null
+      narrative:
+        c: |
+          For changes related to the virtual infrastructure, 18F uses VisualOps and Cloud Checkr for real-time configuration changes which are documented, approved and tracked within GitHub. All Cloud Foundry configuration changes are documented, approved and tracked within 18 F’s GitHub site.

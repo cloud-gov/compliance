@@ -55,3 +55,9 @@ satisfies:
           There are no user or administrative actions than can be performed within 18F virtual private cloud without multifactor authentication.  Per AWS, users can not gain access to the AWS console without identification and authorization to its a vpc.
         b: |
           It is not possible for members of the 18F Devops and SecOps teams to aceess the 18F virtual private cloud infrastructure without muitifactor authetication and identification. All clinet users of Cloud.gov must login using authenticated credentials in order to acess the system as stated in Part A above.
+    IA-2:
+      implementation_status: null
+      narrative: |
+        All users have individually unique identifiers to access and authenticate to the AWS environment through the AWS management console. 18F AWS IAM users are placed into IAM roles based on their assigned roles and permissions
+        Additional temporary permission are delegated with the IAM roles usually for applications that run on EC2 Instances in order to access AWS resources All user accounts for 18F staff are maintained within the 18F AWS Environment.
+        Shared or group authenticators are not utilized, Service accounts are implemented as Managed Services Accounts within AWS.

@@ -25,3 +25,12 @@ satisfies:
       implementation_status: null
       narrative: |
         The Cloud Controller authenticates every request with the Service Broker API using HTTP or HTTPS. The 18F DevOp team only uses the BOSH Command Line Interface (CLI) to log into the Cloud.Gov jumpbox using SSH as a remote connectionton. These remote connections are monitored by the Cloud.Gov Cloud Controller which send this data to the ELK logging and monitoring visualization tool stack.
+    AU-2:
+      implementation_status: null
+      narrative:
+        a: |
+          Data produced by CF Loggregator is stored on the ELK Stack
+    AU-2 (3):
+      implementation_status: null
+      narrative: |
+        The Devops and Secops teams review all audtiable events on a real time basis using ELK monitoring and logging solution for the Cloud.Gov paltform. 
