@@ -77,9 +77,13 @@ satisfies:
           * The user complies with any other group-specific conditions created by the system owner
           * User group membership is restricted to the least privileged access necessary for the user to accomplish their assigned duties.
           18F staff request access within the GitHub tracking and ticketing system for one of several roles that are established in the IaaS. Once approved, designated Devops Administrators creates group and role memberships within the virtual private cloud and Cloud.Gov platform.
-            
+
         b: |
           18F removes users from priviledged access rights when privileged role assignments are no longer appropriate or have been requested by the system owner and program manager. Remval of access is sent to the DevOps team through a change request within the GitHub tickting system.
+    AC-2 (2):
+      implementation_status: null
+      narrative: |
+        This control is not applicable. Cloud.Gov does not contain any guest/anonymous, group, or temporary user accounts. Devops only creates individual user accounts and grants role based access to users within Cloud.Gov.
     AC-3:
       implementation_status: null
       narrative: |
