@@ -1,1 +1,3 @@
 exports/
+*.env
+*__pycache__/
