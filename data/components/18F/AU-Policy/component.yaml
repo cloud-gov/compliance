@@ -11,14 +11,14 @@ satisfies:
       narrative:
         a: |
           The 18F Program Office develops, documents, and disseminates to all 18F staff,
-          The 18F Audit and Accountability Policy which  addresses purpose, scope, roles, responsibilities, management commitment, coordination among organizational entities, and compliance and procedures to facilitate the implementation of the audit and aaccountabilty policy and associated audit controls. The 18F Audit and Accountability policy is listed within 18F’s  private Github repository and the docs.cloud.gov site that is accessible to all 18F staff.
+          The 18F Audit and Accountability Policy which  addresses purpose, scope, roles, responsibilities, management commitment, coordination among organizational entities, ompliance and procedures to facilitate the implementation of the audit and aaccountability policy and associated audit controls. The 18F Audit and Accountability policy is listed within 18F’s  private Github repository and the docs.cloud.gov site that is accessible to all 18F staff.
         b: |
           The 18F Program Office will review and update the current 18F Audit control policy at least every 3 years and any documented audit procedures at least annually.
     AU-2:
       implementation_status: null
       narrative:
         b: |
-          Audit logs will be made available to organizations for mutual support in responce to security breaches, system and user access, incident reporting and continuous monitoring.
+          Audit logs will be made available to organizations for mutual support in response to security breaches, system and user access, incident reporting and continuous monitoring.
           18F will generate and distribute audit reports, provide customized dashoard access for audited events, and send audit log data to SIEM and log analysis systems from its  audit logging and metrics tools for the Cloud.Gov platform and virtual infrastructure as needed.
         c: |
           18F retains audit logs according to NARA retention standards to provide support for after-the-fact investigations of security incidents and to meet regulatory and organizational information retention requirements.

@@ -32,7 +32,7 @@ satisfies:
       implementation_status: null
       narrative: |
         User accounts for 18F staff are monitored monthly and are disabled after 90 days of inactivity; this will be a manual review process every 30 days however the disablement will be automatic through the UAA.
-        Client organzations using the Cloud.Gov platform are responsible for monitoring inactive user accounts created within their Cloud.Gov Org account. 18F staff are not responsible for these accounts
+        Client organizations using the Cloud.Gov platform are responsible for monitoring inactive user accounts created within their Cloud.Gov Org account. 18F staff are not responsible for these accounts
     AC-2 (5):
       implementation_status: null
       narrative: |

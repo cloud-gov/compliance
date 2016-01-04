@@ -20,7 +20,7 @@ satisfies:
     AC-17 (4):
       implementation_status: null
       narrative: |
-        Since the Cloud.Gov platform resides within the 18F virtual infrastructure, 18F Devops must use the SSH remote access method to troubleshoot issues and update services that are only resolved by logging into the Cloud.Gov jumpboxes. The jumpboxes themselves are virtual machine deployed within the 18F’s virtual private cloud. They are the only access points for designated Devops members to run priviledged commnds that affect the entire platform. No other privileged remote access is available to the information system.
+        Since the Cloud.Gov platform resides within the 18F virtual infrastructure, 18F Devops must use the SSH remote access method to troubleshoot issues and update services that are only resolved by logging into the Cloud.Gov jumpboxes. The jumpboxes themselves are virtual machine deployed within the 18F’s virtual private cloud. They are the only access points for designated Devops members to run privileged commnds that affect the entire platform. No other privileged remote access is available to the information system.
     CM-6:
       implementation_status: null
       narrative: |
