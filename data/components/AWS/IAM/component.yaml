@@ -43,18 +43,18 @@ satisfies:
     AC-6 (1):
       implementation_status: null
       narrative: |
-        18F explicitly authorizes access to administrative and security functions of its virtual infrastructure and Cloud.Gov platform to designated indiviuals within the Devops and SecOps team.  No other authrozations to security and administrative information is granted to individuals outside these teams.
+        18F explicitly authorizes access to administrative and security functions of its virtual infrastructure and Cloud.Gov platform to designated individuals within the Devops and SecOps team.  No other authrozations to security and administrative information is granted to individuals outside these teams.
     AC-6 (5):
       implementation_status: null
       narrative: |
-        18F restricts priviledged accounts such as administrator and root access accounts to designated members within the18F Devops and SecOps teams. Within the virtual infrastructure the admin account is not used for priviledged access. It’s only used for billing and metrics.
+        18F restricts privileged accounts such as administrator and root access accounts to designated members within the18F Devops and SecOps teams. Within the virtual infrastructure the admin account is not used for privileged access. It’s only used for billing and metrics.
     AC-14:
       implementation_status: null
       narrative:
         a: |
           There are no user or administrative actions than can be performed within 18F virtual private cloud without multifactor authentication.  Per AWS, users can not gain access to the AWS console without identification and authorization to its a vpc.
         b: |
-          It is not possible for members of the 18F Devops and SecOps teams to aceess the 18F virtual private cloud infrastructure without muitifactor authetication and identification. All clinet users of Cloud.gov must login using authenticated credentials in order to acess the system as stated in Part A above.
+          It is not possible for members of the 18F Devops and SecOps teams to aceess the 18F virtual private cloud infrastructure without muitifactor authetication and identification. All clinet users of Cloud.gov must login using authenticated credentials in order to access the system as stated in Part A above.
     IA-2:
       implementation_status: null
       narrative: |

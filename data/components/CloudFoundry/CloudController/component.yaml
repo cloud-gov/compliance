@@ -59,7 +59,7 @@ satisfies:
       narrative: |
         The Cloud.Gov platform has built-in Role based access controls (RBAC). This ensures that users can only view and affect the spaces for which they have been granted access to. It also prevents non-privileged users from executing privileged functions to include disabling, circumventing, or altering implemented security safeguards/countermeasures.
         Only designated Org Managers from the DevOps team can execute privileged functions to the Cloud.Gov platform. All other accounts are non-prilviledged accounts.
-        Client agencies using Cloud.Gov are only permitted to change settings within their associated  Org account, spaces and roles. These accounts do not have access to the the underlying Cloud.Gov Platform.
+        Client agencies using Cloud.Gov are only permitted to change settings within their associated  Org account, spaces and roles. These accounts do not have access to the underlying Cloud.Gov Platform.
     AC-14:
       implementation_status: null
       narrative:

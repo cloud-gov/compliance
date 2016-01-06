@@ -19,8 +19,8 @@ satisfies:
         a: |
           The 18F Program identifies and selects the following types of information system accounts to support organizational missions/business functions:
         b: |
-          18F has establised designated Devops personnel as the assgiend account managers for all information system accounts realting to the infrastructure and the Cloud.Gov platform.
-          Sytem Owners, whose web applications and/or websites reside on the Cloud.Gov platform have the respossibility to assign an account manager fot their information systems.
+          18F has established designated Devops personnel as the assgiend account managers for all information system accounts realting to the infrastructure and the Cloud.Gov platform.
+          System Owners, whose web applications and/or websites reside on the Cloud.Gov platform have the respossibility to assign an account manager fot their information systems.
         c: |
           18F establishes conditions for group and role membership within the Cloud.Gov Platform and its virtual environment.
           Conditions for groups and roles membership are based on an established need to manage and access the virtual infrastructure and Cloud.Gov environments. The user must meet the following conditions in order for the System Owner/ Project Manager to approve a group membership request:
@@ -79,7 +79,7 @@ satisfies:
           18F staff request access within the GitHub tracking and ticketing system for one of several roles that are established in the IaaS. Once approved, designated Devops Administrators creates group and role memberships within the virtual private cloud and Cloud.Gov platform.
 
         b: |
-          18F removes users from priviledged access rights when privileged role assignments are no longer appropriate or have been requested by the system owner and program manager. Remval of access is sent to the DevOps team through a change request within the GitHub tickting system.
+          18F removes users from privileged access rights when privileged role assignments are no longer appropriate or have been requested by the system owner and program manager. Remval of access is sent to the DevOps team through a change request within the GitHub tickting system.
     AC-2 (2):
       implementation_status: null
       narrative: |
@@ -101,4 +101,4 @@ satisfies:
       implementation_status: null
       narrative:
         a: |
-          18F authorizes the execution of privileged commands and access to security-relevant information via remote access only for monitoring, managing, and troubleshooting  the 18F virtual infrastructer and Cloud.Gov platform. This authorization is only given to specifc members of the Devops and SecOps teams. All other members are excluded from this type of access.
+          18F authorizes the execution of privileged commands and access to security-relevant information via remote access only for monitoring, managing, and troubleshooting  the 18F virtual infrastructer and Cloud.Gov platform. This authorization is only given to specific members of the Devops and SecOps teams. All other members are excluded from this type of access.
