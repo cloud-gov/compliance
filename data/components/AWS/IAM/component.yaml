@@ -17,7 +17,7 @@ satisfies:
     AC-2 (1):
       implementation_status: null
       narrative: |
-        Coud.gov requires the creation of a single system IAM account through a manual process.
+        Cloud.gov requires the creation of a single system IAM account through a manual process.
     AC-2 (2):
       implementation_status: null
       narrative: |
