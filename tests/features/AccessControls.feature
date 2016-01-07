@@ -9,7 +9,13 @@ Feature: Access Controls
         | space_manager_user    |
         | space_developer_user  |
         | space_auditor_user    |
-      then all the accounts exist
+      then all of the accounts from the list below exist
+        | user                  |
+        | org_manager_user      |
+        | org_auditor_user      |
+        | space_manager_user    |
+        | space_developer_user  |
+        | space_auditor_user    |
 
   Scenario: Demonstrate Master Account Giving Permissions
     Given I am using a master account
@@ -191,4 +197,10 @@ Feature: Access Controls
         | space_manager_user    |
         | space_developer_user  |
         | space_auditor_user    |
-      then all the accounts exist
+      then none of the accounts from the list below exist
+        | user                  |
+        | org_manager_user      |
+        | org_auditor_user      |
+        | space_manager_user    |
+        | space_developer_user  |
+        | space_auditor_user    |
