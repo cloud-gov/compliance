@@ -55,7 +55,7 @@ def step_impl(context):
 def step_impl(context):
     for row in context.table:
         username = row['user']
-        context.user.delete_user(username) 
+        context.user.get_user(username).delete_user()
 
 @when('I try to create an org')
 def step_impl(context):
@@ -128,13 +128,13 @@ def step_impl(context):
 def step_impl(context):
     for row in context.table:
         username = row['user']
-        assert context.user.find_user(username)
+        assert context.user.get_user(username)
 
 @then('none of the accounts from the list below exist')
 def step_impl(context):
     for row in context.table:
         username = row['user']
-        assert not context.user.find_user(username)
+        assert not context.user.get_user(username)
 
 @then('all the permission changes succeed')
 def step_impl(context):
