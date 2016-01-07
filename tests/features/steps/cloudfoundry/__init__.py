@@ -2,6 +2,9 @@ import time
 import requests
 import json
 
+from cloudfoundry.user import User
+
+
 class Client:
 
     def __init__(self, api_url, username, password, verify_ssl=True):
@@ -73,30 +76,23 @@ class Client:
             )
         return res
 
-    def __api_request(self, endpoint, method='get', **kwargs):
+    def api_request(self, endpoint, method='get', **kwargs):
         url = self.api_url + endpoint
         return self.__request(url=url, method=method, **kwargs)
 
-    def __uaa_request(self, endpoint, method='get', **kwargs):
+    def uaa_request(self, endpoint, method='get', **kwargs):
         url = self.info['token_endpoint'] + endpoint
         return self.__request(url=url, method=method, **kwargs)
 
-    def yield_request(self, endpoint):
-        """ Yield all of the request pages """
-        while endpoint:
-            res = self.__request(endpoint=endpoint).json()
-            endpoint = res.get('next_url')
-            yield res
-
-    def find_user(self, username):
+    def get_user(self, username):
         """ Find a CF user """
         params = {
                 'attributes': 'id,userName',
                 'filter': "userName eq '%s'" % username
         }
-        uaa_user_res = self.__uaa_request(endpoint='/Users', params=params).json()
+        uaa_user_res = self.uaa_request(endpoint='/Users', params=params).json()
         if len(uaa_user_res.get('resources', [])) > 0:
-            return uaa_user_res['resources'][0]
+            return User(guid=uaa_user_res['resources'][0]['id'], client=self)
         return {}
 
     def create_user(self, username, password):
@@ -114,23 +110,13 @@ class Client:
             }
         }
         headers = {'content-type': 'application/json'}
-        uaa_user_res = self.__uaa_request(
+        uaa_user_res = self.uaa_request(
             endpoint='/Users', method='post', headers=headers, data=json.dumps(user_data)
         ).json()
         # Create user in Cloud Controller
         user_id_data = {
             'guid': uaa_user_res.get('id', uaa_user_res.get('user_id'))
         }
-        cf_user_res = self.__api_request(endpoint='/v2/users', method='post', data=json.dumps(user_id_data))
-        return cf_user_res.json()
+        cf_user_res = self.api_request(endpoint='/v2/users', method='post', data=json.dumps(user_id_data))
+        return User(guid=user_id_data['guid'], client=self)
 
-    def delete_user(self, username):
-        """ Delete a Cloud Foundry user """
-        user_guid = self.find_user(username)['id']
-        # Delete from Cloud Controller        
-        api_delete_endpoint = '/v2/users/%s' % user_guid
-        api_user_del_res = self.__api_request(endpoint=api_delete_endpoint, method='delete')
-        # Delete from UAA
-        uaa_delete_endpoint = '/Users/%s' % user_guid
-        uaa_user_del_res = self.__uaa_request(endpoint=uaa_delete_endpoint, method='delete')
-        
