@@ -2,12 +2,17 @@ import os
 
 from behave import given, when, then
 
-from cloudfoundry import CloudFoundry
+from cloudfoundry import Client
 
 # Givens
 @given('I am using a master account')
 def step_impl(context):
-    pass
+    context.user = Client(
+        api_url=os.getenv('CF_URL', 'https://api.bosh-lite.com') ,
+        username=os.getenv('MASTER_USERNAME', 'admin'), 
+        password=os.getenv('MASTER_PASSWORD', 'admin'),
+        verify_ssl=False
+    )
 
 @given('I am using an Org Manager account')
 def step_impl(context):
@@ -33,7 +38,8 @@ def step_impl(context):
 @when('I create the accounts from the list below')
 def step_impl(context):
     for row in context.table:
-        print(row['user'])
+        username = row['user']
+        context.user.create_user(username, os.getenv(username, username))
 
 @when('I give the the user the role as listed')
 def step_impl(context):
@@ -48,8 +54,8 @@ def step_impl(context):
 @when('I delete the accounts from the list below')
 def step_impl(context):
     for row in context.table:
-        print(row['user'])
-
+        username = row['user']
+        context.user.delete_user(username) 
 
 @when('I try to create an org')
 def step_impl(context):
@@ -118,9 +124,17 @@ def step_impl(context):
 
 
 # Thens
-@then('all the accounts exist')
+@then('all of the accounts from the list below exist')
 def step_impl(context):
-    pass
+    for row in context.table:
+        username = row['user']
+        assert context.user.find_user(username)
+
+@then('none of the accounts from the list below exist')
+def step_impl(context):
+    for row in context.table:
+        username = row['user']
+        assert not context.user.find_user(username)
 
 @then('all the permission changes succeed')
 def step_impl(context):
