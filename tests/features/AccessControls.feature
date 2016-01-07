@@ -24,7 +24,7 @@ Feature: Access Controls
         | org_manager_user      | org manager role        |
         | org_auditor_user      | org auditor role        |
         | space_manager_user    | space manager role      |
-        | space_developer_user  | a space developer role |
+        | space_developer_user  | a space developer role  |
         | space_auditor_user    | space auditor role      |
       then all the permission changes succeed
 
@@ -35,10 +35,10 @@ Feature: Access Controls
 
    Examples: Action-Results for Master Account
     | action          |  result         |
-    | create an Org   |  succeed        |
-    | view an Org     |  succeed        |
-    | update an Org   |  succeed        |
-    | delete an Org   |  succeed        |
+    | create an org   |  succeed        |
+    | view an org     |  succeed        |
+    | update an org   |  succeed        |
+    | delete an org   |  succeed        |
     | create a space  |  succeed        |
     | view a space    |  succeed        |
     | update a space  |  succeed        |
@@ -54,17 +54,17 @@ Feature: Access Controls
 
 
 
-  Scenario Outline: Org Manager Permissions
-     Given I am using an Org Manager account
+  Scenario Outline: org Manager Permissions
+     Given I am using an org Manager account
       when I try to <action>
       then the action should <result>
 
-   Examples: Action-Results for Org Manager Account
+   Examples: Action-Results for org Manager Account
     | action          |  result         |
-    | create an Org   |  fail           |
-    | view an Org     |  succeed        |
-    | update an Org   |  succeed        |
-    | delete an Org   |  fail           |
+    | create an org   |  fail           |
+    | view an org     |  succeed        |
+    | update an org   |  succeed        |
+    | delete an org   |  fail           |
     | create a space  |  succeed        |
     | view a space    |  succeed        |
     | update a space  |  succeed        |
@@ -79,17 +79,17 @@ Feature: Access Controls
     | delete an user  |  fail           |
 
 
-  Scenario Outline: Org Auditor Permissions
-     Given I am using an Org Auditor account
+  Scenario Outline: org Auditor Permissions
+     Given I am using an org Auditor account
       when I try to <action>
       then the action should <result>
 
-   Examples: Action-Results for Org Auditor Account
+   Examples: Action-Results for org Auditor Account
     | action          |  result         |
-    | create an Org   |  fail           |
-    | view an Org     |  succeed        |
-    | update an Org   |  fail           |
-    | delete an Org   |  fail           |
+    | create an org   |  fail           |
+    | view an org     |  succeed        |
+    | update an org   |  fail           |
+    | delete an org   |  fail           |
     | create a space  |  fail           |
     | view a space    |  fail           |
     | update a space  |  fail           |
@@ -110,10 +110,10 @@ Feature: Access Controls
 
    Examples: Action-Results for Space Manager Account
     | action          |  result         |
-    | create an Org   |  fail           |
-    | view an Org     |  fail           |
-    | update an Org   |  fail           |
-    | delete an Org   |  fail           |
+    | create an org   |  fail           |
+    | view an org     |  fail           |
+    | update an org   |  fail           |
+    | delete an org   |  fail           |
     | create a space  |  fail           |
     | view a space    |  succeed        |
     | update a space  |  succeed        |
@@ -135,10 +135,10 @@ Feature: Access Controls
 
    Examples: Action-Results for Space Developer Account
     | action          |  result         |
-    | create an Org   |  fail           |
-    | view an Org     |  fail           |
-    | update an Org   |  fail           |
-    | delete an Org   |  fail           |
+    | create an org   |  fail           |
+    | view an org     |  fail           |
+    | update an org   |  fail           |
+    | delete an org   |  fail           |
     | create a space  |  fail           |
     | view a space    |  succeed        |
     | update a space  |  fail           |
@@ -160,10 +160,10 @@ Feature: Access Controls
 
    Examples: Action-Results for Space Auditor Account
     | action          |  result         |
-    | create an Org   |  fail           |
-    | view an Org     |  fail           |
-    | update an Org   |  fail           |
-    | delete an Org   |  fail           |
+    | create an org   |  fail           |
+    | view an org     |  fail           |
+    | update an org   |  fail           |
+    | delete an org   |  fail           |
     | create a space  |  fail           |
     | view a space    |  succeed        |
     | update a space  |  fail           |
