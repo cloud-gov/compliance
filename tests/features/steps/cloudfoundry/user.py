@@ -5,7 +5,7 @@ class User:
         self.guid = guid
         self.client = client
     
-    def delete_user(self):
+    def delete(self):
         """ Delete this Cloud Foundry user """
         # Delete from Cloud Controller        
         api_delete_endpoint = '/v2/users/%s' % self.guid
