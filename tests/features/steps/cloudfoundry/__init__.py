@@ -3,6 +3,7 @@ import requests
 import json
 
 from cloudfoundry.user import User
+from cloudfoundry.org import Org
 
 
 class Client:
@@ -91,8 +92,9 @@ class Client:
                 'filter': "userName eq '%s'" % username
         }
         uaa_user_res = self.uaa_request(endpoint='/Users', params=params).json()
-        if len(uaa_user_res.get('resources', [])) > 0:
-            return User(guid=uaa_user_res['resources'][0]['id'], client=self)
+        resources = uaa_user_res.get('resources', [])
+        if len(resources) == 1:
+            return User(guid=resources[0]['id'], client=self)
         return {}
 
     def create_user(self, username, password):
@@ -120,3 +122,19 @@ class Client:
         cf_user_res = self.api_request(endpoint='/v2/users', method='post', data=json.dumps(user_id_data))
         return User(guid=user_id_data['guid'], client=self)
 
+    def get_org(self, name):
+        """ Get an org """
+        params = {
+                'q': 'name:%s' % name
+        }
+        cf_org_res = self.api_request('/v2/organizations', params=params).json()
+        resources = cf_org_res.get('resources', [])
+        if len(resources) == 1:
+            return Org(guid=resources[0]['metadata']['guid'], client=self)
+
+    def create_org(self, name):
+        """ Create an org """
+        cf_org_res = self.api_request(
+            endpoint='/v2/organizations', method='post', data=json.dumps({'name': name})
+        ).json()
+        return Org(guid=cf_org_res['metadata']['guid'], client=self)
