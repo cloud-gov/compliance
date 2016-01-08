@@ -41,6 +41,24 @@ def step_impl(context):
         username = row['user']
         context.user.create_user(username, os.getenv(username, username))
 
+@when('I create an org and a space')
+def step_impl(context):
+    org = context.user.create_org(os.getenv('test_org', 'test_org'))
+    assert org
+    space = org.create_space(os.getenv('test_space', 'test_space'))
+    assert space
+
+
+@when('I delete an org and a space')
+def step_impl(context):
+    org = context.user.get_org(os.getenv('test_org', 'test_org'))
+    space = org.get_space(os.getenv('test_space', 'test_space'))
+    space.delete()
+    assert not org.get_space(os.getenv('test_space', 'test_space'))
+    org.delete()
+    assert not context.user.get_org(os.getenv('test_org', 'test_org'))
+
+
 @when('I give the the user the role as listed')
 def step_impl(context):
     for row in context.table:
@@ -55,7 +73,7 @@ def step_impl(context):
 def step_impl(context):
     for row in context.table:
         username = row['user']
-        context.user.get_user(username).delete_user()
+        context.user.get_user(username).delete()
 
 @when('I try to create an org')
 def step_impl(context):
@@ -106,19 +124,19 @@ def step_impl(context):
 def step_impl(context):
     pass
 
-@when('I try to create an user')
+@when('I try to create a user')
 def step_impl(context):
     pass
 
-@when('I try to view an user')
+@when('I try to view a user')
 def step_impl(context):
     pass
 
-@when('I try to update an user')
+@when('I try to update a user')
 def step_impl(context):
     pass
 
-@when('I try to delete an user')
+@when('I try to delete a user')
 def step_impl(context):
     pass
 
@@ -147,3 +165,4 @@ def step_impl(context):
 @then('the action should fail')
 def step_impl(context):
     pass
+
