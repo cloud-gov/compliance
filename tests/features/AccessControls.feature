@@ -85,3 +85,32 @@ Feature: Access Controls
       | a space manager  |  exists         |
       | a space developer|  does not exist |
       | a space auditor  |  exists         |
+
+
+  Scenario Outline: Creating Users
+     Given I am using <account> account
+       when I try to create a user
+       then the user <status>
+
+   Examples: Action-Results for creating users
+     | account          |  status         |
+     | a master         |  exists         |
+     | an org manager   |  does not exist |
+     | an org auditor   |  does not exist |
+     | a space manager  |  does not exist |
+     | a space developer|  does not exist |
+     | a space auditor  |  does not exist |
+
+   Scenario Outline: Deleting Users
+      Given I am using <account> account
+        when I try to delete a user
+        then the user <status>
+
+    Examples: Action-Results for deleting apps
+      | account          |  status 	       |
+      | a master         |  does not exist |
+      | an org manager   |  exists         |
+      | an org auditor   |  exists         |
+      | a space manager  |  exists         |
+      | a space developer|  exists         |
+      | a space auditor  |  exists         |
