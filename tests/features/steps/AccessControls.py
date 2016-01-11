@@ -109,14 +109,14 @@ def step_impl(context):
     space = org.get_space(os.getenv("TEST_SPACE", "TEST_SPACE"))
     # Create the app
     space.client = context.user
-    space.create_app(os.getenv("TEST_APP_2", "TEST_APP_2"))
+    space.create_app(os.getenv("TEST_APP", "TEST_APP"))
 
 @when('I try to delete an app')
 def step_impl(context):
     # Get the app
     org = ADMIN.get_org(os.getenv("TEST_ORG", "TEST_ORG"))
     space = org.get_space(os.getenv("TEST_SPACE", "TEST_SPACE"))
-    app = space.create_app(os.getenv("TEST_APP_2", "TEST_APP_2"))
+    app = space.create_app(os.getenv("TEST_APP", "TEST_APP"))
     # Destory the app
     app.client = context.user
     app.delete()
@@ -174,7 +174,7 @@ def step_impl(context):
 def step_impl(context):
     org = ADMIN.get_org(os.getenv("TEST_ORG", "TEST_ORG"))
     space = org.get_space(os.getenv("TEST_SPACE", "TEST_SPACE"))
-    app = space.get_app(os.getenv("TEST_APP_2", "TEST_APP_2"))
+    app = space.get_app(os.getenv("TEST_APP", "TEST_APP"))
     assert app
     app.delete()
 
@@ -182,7 +182,7 @@ def step_impl(context):
 def step_impl(context):
     org = ADMIN.get_org(os.getenv("TEST_ORG", "TEST_ORG"))
     space = org.get_space(os.getenv("TEST_SPACE", "TEST_SPACE"))
-    app = space.get_app(os.getenv("TEST_APP_2", "TEST_APP_2"))
+    app = space.get_app(os.getenv("TEST_APP", "TEST_APP"))
     assert not app
 
 @then('the user exists')
