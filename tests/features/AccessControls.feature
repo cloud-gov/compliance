@@ -129,3 +129,18 @@ Feature: Access Controls
       | a space manager  |  exists         |
       | a space developer|  exists         |
       | a space auditor  |  exists         |
+
+
+  Scenario Outline: Viewing Audits
+     Given I am using <account> account
+       when I view my audit logs
+       then I find "<number>" events
+
+   Examples: Action-Results for deleting apps
+     | account          |  number |
+     | a master         |  36     |
+     | an org manager   |  0      |
+     | an org auditor   |  36     |
+     | a space manager  |  0      |
+     | a space developer|  20     |
+     | a space auditor  |  20     |
