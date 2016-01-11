@@ -6,10 +6,40 @@ BBD style tests for verifying Cloud.gov's compliance with FedRAMP controls
 #### Install Dependencies  
 `pip install -r requirements.txt`
 
-#### Setup environment variables
-`export CF_DOMAIN=<<Local Cloud Foundry domain>>`
-`export CF_USER=<<Local Cloud Foundry user>>`
-`export CF_PASSWORD=<<Local Cloud Foundry user password>>`
+#### Setup environment variables (optional for local deployment)
+`export CF_URL=<<Cloud Foundry API>>`
+
+Existing Account
+`export MASTER_USERNAME=<<Cloud Foundry Admin Account>>`
+`export MASTER_PASSWORD=<<Cloud Foundry Admin password>>`
+
+Accounts that will be created
+`export ORG_MANAGER=<<Org Manager Account Name>>`
+`export ORG_MANAGER_PASSWORD=<<Org Manager Password>>`
+
+`export ORG_AUDITOR=<<Org Auditor Account Name>>`
+`export ORG_AUDITOR_PASSWORD=<<Org Auditor Account Password>>`
+
+`export SPACE_MANAGER=<<Space Manager Account Name>>`
+`export SPACE_MANAGER_PASSWORD=<<Space Manager Account Password>>`
+
+`export SPACE_DEVELOPER=<<Space Developer Account Name>>`
+`export SPACE_DEVELOPER_PASSWORD=<<Space Developer Account Password>>`
+
+`export SPACE_AUDITOR=<<Space Auditor Account Name>>`
+`export SPACE_AUDITOR_PASSWORD=<<Space Auditor Account Password>>`
+
+`export TEST_ORG=<<Test Org Name>>`
+`export TEST_ORG_2=<<Test Org 2 Name>>`
+`export TEST_ORG_UPDATE=<<Name Change for TEST_ORG>>`
+
+`export TEST_SPACE=<<Test Space Name>>`
+`export TEST_SPACE_2=<<Test Space 2 Name>>`
+`export TEST_SPACE_UPDATE=<<Name Change for TEST_SPACE>>`
+
+`export TEST_APP=<<Test App Name>>`
+`export TEST_APP_UPDATE=<<Name Change for TEST_APP_UPDATE>>`
+
 
 #### Run tests
 `behave`
