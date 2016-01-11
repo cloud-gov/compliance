@@ -21,7 +21,7 @@ class Client:
         # Store username and password
         self.__username = username
         self.__password = password
-        
+
         # Init token
         self.__request_token()
 
@@ -38,7 +38,7 @@ class Client:
             'grant_type': 'password'
         }
         r = requests.post(
-            url=self.info['token_endpoint'] + '/oauth/token', 
+            url=self.info['token_endpoint'] + '/oauth/token',
             headers=headers,
             params=params,
             verify=self.verify_ssl
@@ -137,4 +137,5 @@ class Client:
         cf_org_res = self.api_request(
             endpoint='/v2/organizations', method='post', data=json.dumps({'name': name})
         ).json()
-        return Org(guid=cf_org_res['metadata']['guid'], client=self)
+        if 'error_code' not in cf_org_res:
+            return Org(guid=cf_org_res['metadata']['guid'], client=self)
