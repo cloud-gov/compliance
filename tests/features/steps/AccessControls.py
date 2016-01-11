@@ -1,9 +1,11 @@
 import os
+import datetime
 
 from behave import given, when, then
 
 from cloudfoundry import Client
 
+TEST_START = datetime.datetime.utcnow().isoformat()
 ADMIN = Client(
     api_url=os.getenv('CF_URL', 'https://api.bosh-lite.com') ,
     username=os.getenv('MASTER_USERNAME', 'admin'),
@@ -135,6 +137,13 @@ def step_impl(context):
     user.client = context.user
     user.delete()
 
+
+@when('I view my audit logs')
+def step_impl(context):
+    logs = context.user.events(filters={'q': 'timestamp>' + TEST_START})
+    context.number_of_results = logs.get('total_results')
+
+
 # Thens
 @then('the org exists')
 def step_impl(context):
@@ -207,3 +216,8 @@ def step_impl(context):
 def step_impl(context):
     org_new_name = ADMIN.get_org(os.getenv("TEST_ORG_UPDATE", "TEST_ORG_UPDATE"))
     assert not org_new_name
+
+
+@then('I find "{number}" events')
+def step_impl(context, number):
+    assert int(number) == context.number_of_results
