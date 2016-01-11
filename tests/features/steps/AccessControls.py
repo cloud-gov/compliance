@@ -4,165 +4,153 @@ from behave import given, when, then
 
 from cloudfoundry import Client
 
+ADMIN = Client(
+    api_url=os.getenv('CF_URL', 'https://api.bosh-lite.com') ,
+    username=os.getenv('MASTER_USERNAME', 'admin'),
+    password=os.getenv('MASTER_PASSWORD', 'admin'),
+    verify_ssl=False
+)
+
 # Givens
 @given('I am using a master account')
 def step_impl(context):
+    context.user = ADMIN
+
+@given('I am using an org manager account')
+def step_impl(context):
     context.user = Client(
         api_url=os.getenv('CF_URL', 'https://api.bosh-lite.com') ,
-        username=os.getenv('MASTER_USERNAME', 'admin'), 
-        password=os.getenv('MASTER_PASSWORD', 'admin'),
+        username=os.getenv('ORG_MANAGER', 'ORG_MANAGER'),
+        password=os.getenv('ORG_MANAGER_PASSWORD', 'ORG_MANAGER_PASSWORD'),
         verify_ssl=False
     )
 
-@given('I am using an Org Manager account')
+@given('I am using an org auditor account')
 def step_impl(context):
-    pass
+    context.user = Client(
+        api_url=os.getenv('CF_URL', 'https://api.bosh-lite.com') ,
+        username=os.getenv('ORG_AUDITOR', 'ORG_AUDITOR'),
+        password=os.getenv('ORG_AUDITOR_PASSWORD', 'ORG_AUDITOR_PASSWORD'),
+        verify_ssl=False
+    )
 
-@given('I am using an Org Auditor account')
+@given('I am using a space manager account')
 def step_impl(context):
-    pass
+    context.user = Client(
+        api_url=os.getenv('CF_URL', 'https://api.bosh-lite.com') ,
+        username=os.getenv('SPACE_MANAGER', 'SPACE_MANAGER'),
+        password=os.getenv('SPACE_MANAGER_PASSWORD', 'SPACE_MANAGER_PASSWORD'),
+        verify_ssl=False
+    )
 
-@given('I am using a Space Manager account')
+@given('I am using a space developer account')
 def step_impl(context):
-    pass
+    context.user = Client(
+        api_url=os.getenv('CF_URL', 'https://api.bosh-lite.com') ,
+        username=os.getenv('SPACE_DEVELOPER', 'SPACE_DEVELOPER'),
+        password=os.getenv('SPACE_DEVELOPER_PASSWORD', 'SPACE_DEVELOPER_PASSWORD'),
+        verify_ssl=False
+    )
 
-@given('I am using a Space Developer account')
+@given('I am using a space auditor account')
 def step_impl(context):
-    pass
-
-@given('I am using a Space Auditor account')
-def step_impl(context):
-    pass
+    context.user = Client(
+        api_url=os.getenv('CF_URL', 'https://api.bosh-lite.com') ,
+        username=os.getenv('SPACE_AUDITOR', 'SPACE_AUDITOR'),
+        password=os.getenv('SPACE_AUDITOR_PASSWORD', 'SPACE_AUDITOR_PASSWORD'),
+        verify_ssl=False
+    )
 
 # Whens
-@when('I create the accounts from the list below')
-def step_impl(context):
-    for row in context.table:
-        username = row['user']
-        context.user.create_user(username, os.getenv(username, username))
-
-@when('I create an org and a space')
-def step_impl(context):
-    org = context.user.create_org(os.getenv('test_org', 'test_org'))
-    assert org
-    space = org.create_space(os.getenv('test_space', 'test_space'))
-    assert space
-
-
-@when('I delete an org and a space')
-def step_impl(context):
-    org = context.user.get_org(os.getenv('test_org', 'test_org'))
-    space = org.get_space(os.getenv('test_space', 'test_space'))
-    space.delete()
-    assert not org.get_space(os.getenv('test_space', 'test_space'))
-    org.delete()
-    assert not context.user.get_org(os.getenv('test_org', 'test_org'))
-
-
-@when('I give the the user the role as listed')
-def step_impl(context):
-    for row in context.table:
-        print(row['user'], row['role'])
-
-@when('I remove the user from the role as listed')
-def step_impl(context):
-    for row in context.table:
-        print(row['user'], row['role'])
-
-@when('I delete the accounts from the list below')
-def step_impl(context):
-    for row in context.table:
-        username = row['user']
-        context.user.get_user(username).delete()
-
 @when('I try to create an org')
 def step_impl(context):
-    pass
-
-@when('I try to view an org')
-def step_impl(context):
-    pass
-
-@when('I try to update an org')
-def step_impl(context):
-    pass
+    # Create an org
+    context.user.create_org(os.getenv("TEST_ORG_2", "TEST_ORG_2"))
 
 @when('I try to delete an org')
 def step_impl(context):
-    pass
+    # Create or get an org
+    org = ADMIN.create_org(os.getenv("TEST_ORG_2", "TEST_ORG_2"))
+    if not org:
+        org = ADMIN.get_org(os.getenv("TEST_ORG_2", "TEST_ORG_2"))
+    # Destory the org using the user
+    org.client = context.user
+    org.delete()
+
 
 @when('I try to create a space')
 def step_impl(context):
-    pass
-
-@when('I try to view a space')
-def step_impl(context):
-    pass
-
-@when('I try to update a space')
-def step_impl(context):
-    pass
+    # Get the org
+    org = ADMIN.get_org(os.getenv("TEST_ORG", "TEST_ORG"))
+    # Create the space
+    org.client = context.user
+    org.create_space('TEST_SPACE_2')
 
 @when('I try to delete a space')
 def step_impl(context):
-    pass
-
+    # Get the space
+    org = ADMIN.get_org(os.getenv("TEST_ORG", "TEST_ORG"))
+    space = org.create_space(os.getenv("TEST_SPACE_2", "TEST_SPACE_2"))
+    # Destory the space
+    space.client = context.user
+    space.delete()
 
 @when('I try to create an app')
 def step_impl(context):
-    pass
-
-@when('I try to view an app')
-def step_impl(context):
-    pass
-
-@when('I try to update an app')
-def step_impl(context):
-    pass
+    # Get the space
+    org = ADMIN.get_org(os.getenv("TEST_ORG", "TEST_ORG"))
+    space = org.get_space(os.getenv("TEST_SPACE", "TEST_SPACE"))
+    # Create the app
+    space.client = context.user
+    space.create_app(os.getenv("TEST_APP_2", "TEST_APP_2"))
 
 @when('I try to delete an app')
 def step_impl(context):
-    pass
-
-@when('I try to create a user')
-def step_impl(context):
-    pass
-
-@when('I try to view a user')
-def step_impl(context):
-    pass
-
-@when('I try to update a user')
-def step_impl(context):
-    pass
-
-@when('I try to delete a user')
-def step_impl(context):
-    pass
-
+    # Get the app
+    org = ADMIN.get_org(os.getenv("TEST_ORG", "TEST_ORG"))
+    space = org.get_space(os.getenv("TEST_SPACE", "TEST_SPACE"))
+    app = space.create_app(os.getenv("TEST_APP_2", "TEST_APP_2"))
+    # Destory the app
+    app.client = context.user
+    app.delete()
 
 # Thens
-@then('all of the accounts from the list below exist')
+@then('the org exists')
 def step_impl(context):
-    for row in context.table:
-        username = row['user']
-        assert context.user.get_user(username)
+    org = ADMIN.get_org(os.getenv("TEST_ORG_2", "TEST_ORG_2"))
+    assert org
+    org.client = ADMIN
+    org.delete()
 
-@then('none of the accounts from the list below exist')
+@then('the org does not exist')
 def step_impl(context):
-    for row in context.table:
-        username = row['user']
-        assert not context.user.get_user(username)
+    org = ADMIN.get_org(os.getenv("TEST_ORG_2", "TEST_ORG_2"))
+    assert not org
 
-@then('all the permission changes succeed')
+@then('the space exists')
 def step_impl(context):
-    pass
+    org = ADMIN.get_org(os.getenv("TEST_ORG", "TEST_ORG"))
+    space = org.get_space(os.getenv("TEST_SPACE_2", "TEST_SPACE_2"))
+    assert space
+    space.delete()
 
-@then('the action should succeed')
+@then('the space does not exist')
 def step_impl(context):
-    pass
+    org = ADMIN.get_org(os.getenv("TEST_ORG", "TEST_ORG"))
+    space = org.get_space(os.getenv("TEST_SPACE_2", "TEST_SPACE_2"))
+    assert not space
 
-@then('the action should fail')
+@then('the app exists')
 def step_impl(context):
-    pass
+    org = ADMIN.get_org(os.getenv("TEST_ORG", "TEST_ORG"))
+    space = org.get_space(os.getenv("TEST_SPACE", "TEST_SPACE"))
+    app = space.get_app(os.getenv("TEST_APP_2", "TEST_APP_2"))
+    assert app
+    app.delete()
 
+@then('the app does not exist')
+def step_impl(context):
+    org = ADMIN.get_org(os.getenv("TEST_ORG", "TEST_ORG"))
+    space = org.get_space(os.getenv("TEST_SPACE", "TEST_SPACE"))
+    app = space.get_app(os.getenv("TEST_APP_2", "TEST_APP_2"))
+    assert not app
