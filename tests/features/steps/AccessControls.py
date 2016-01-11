@@ -114,6 +114,22 @@ def step_impl(context):
     app.client = context.user
     app.delete()
 
+@when('I try to create a user')
+def step_impl(context):
+    context.user.create_user(
+        os.getenv("TEST_USER", "TEST_USER"),
+        os.getenv("TEST_USER", "TEST_USER_PASSWORD"),
+    )
+
+@when('I try to delete a user')
+def step_impl(context):
+    user = ADMIN.create_user(
+        os.getenv("TEST_USER", "TEST_USER"),
+        os.getenv("TEST_USER", "TEST_USER_PASSWORD"),
+    )
+    user.client = context.user
+    user.delete()
+
 # Thens
 @then('the org exists')
 def step_impl(context):
@@ -154,3 +170,18 @@ def step_impl(context):
     space = org.get_space(os.getenv("TEST_SPACE", "TEST_SPACE"))
     app = space.get_app(os.getenv("TEST_APP_2", "TEST_APP_2"))
     assert not app
+
+@then('the user exists')
+def step_impl(context):
+    user = ADMIN.get_user(
+        os.getenv("TEST_USER", "TEST_USER"),
+    )
+    assert user
+    user.delete()
+
+@then('the user does not exist')
+def step_impl(context):
+    user = ADMIN.get_user(
+        os.getenv("TEST_USER", "TEST_USER"),
+    )
+    assert not user
