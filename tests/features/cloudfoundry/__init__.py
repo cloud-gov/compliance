@@ -59,6 +59,7 @@ class Client:
         headers.update(kwargs.get('headers', {}))
         params = kwargs.get('params')
         data = kwargs.get('data')
+        method = method.lower()
         if method == 'get':
             res = requests.get(
                 url=url, headers=headers, params=params, verify=self.verify_ssl

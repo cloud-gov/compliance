@@ -45,3 +45,19 @@ class Org:
     def unset_user_role(self, role, user_guid):
         endpoint = '/v2/organizations/{0}/{1}/{2}'.format(self.guid, role + 's', user_guid)
         api_user_res = self.client.api_request(endpoint=endpoint, method='delete')
+
+    def update(self, name=None, status=None, quota_definition_guid=None):
+        """ Update an organizations name, status, or quota definition  """
+        data = {}
+        if name:
+            data['name'] = name
+        if name:
+            data['status'] = status
+        if name:
+            data['quota_definition_guid'] = quota_definition_guid
+        endpoint = '/v2/organizations/%s' % self.guid
+        self.client.api_request(
+            endpoint=endpoint,
+            method='put',
+            data=json.dumps(data)
+        )
