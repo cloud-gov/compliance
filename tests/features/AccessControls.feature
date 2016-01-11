@@ -14,6 +14,21 @@ Feature: Access Controls
      | a space developer|  does not exist |
      | a space auditor  |  does not exist |
 
+     Scenario Outline: Updating Organizations
+        Given I am using <account> account
+          when I try to update an org name
+          then the org name <status>
+
+      Examples: Action-Results for updating orgs
+        | account          |  status         |
+        | a master         |  changes        |
+        | an org manager   |  changes        |
+        | an org auditor   |  stays the same |
+        | a space manager  |  stays the same |
+        | a space developer|  stays the same |
+        | a space auditor  |  stays the same |
+
+
    Scenario Outline: Destroying Organizations
       Given I am using <account> account
         when I try to delete an org
