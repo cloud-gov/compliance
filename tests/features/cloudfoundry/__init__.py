@@ -50,7 +50,7 @@ class Client:
         """ Check if token is expired and open access token """
         time_elapsed = time.time() - self.__token['time_stamp']
         if time_elapsed > self.__token['expires_in']:
-            self.request_token()
+            self.__request_token()
         return self.__token['access_token']
 
     def __request(self, url, method, **kwargs):
@@ -140,3 +140,9 @@ class Client:
         ).json()
         if 'error_code' not in cf_org_res:
             return Org(guid=cf_org_res['metadata']['guid'], client=self)
+
+    def events(self, filters=None):
+        """ Get events """
+        if filters:
+            params = filters
+        return self.api_request(endpoint='/v2/events', params=filters).json()
