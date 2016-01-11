@@ -71,12 +71,17 @@ def step_impl(context):
 def step_impl(context):
     # Create or get an org
     org = ADMIN.create_org(os.getenv("TEST_ORG_2", "TEST_ORG_2"))
-    if not org:
-        org = ADMIN.get_org(os.getenv("TEST_ORG_2", "TEST_ORG_2"))
     # Destory the org using the user
     org.client = context.user
     org.delete()
 
+@when('I try to update an org name')
+def step_impl(context):
+    # Get an org
+    org = ADMIN.get_org(os.getenv("TEST_ORG", "TEST_ORG"))
+    # Try to update the org with user
+    org.client = context.user
+    org.update(name=os.getenv("TEST_ORG_UPDATE", "TEST_ORG_UPDATE"))
 
 @when('I try to create a space')
 def step_impl(context):
@@ -185,3 +190,20 @@ def step_impl(context):
         os.getenv("TEST_USER", "TEST_USER"),
     )
     assert not user
+
+@then('the org name changes')
+def step_impl(context):
+    # Check for updated name
+    org_new_name = ADMIN.get_org(os.getenv("TEST_ORG_UPDATE", "TEST_ORG_UPDATE"))
+    assert org_new_name
+    # Return to old name
+    ADMIN.get_org(
+        os.getenv("TEST_ORG_UPDATE", "TEST_ORG_UPDATE")
+    ).update(
+        os.getenv("TEST_ORG", "TEST_ORG")
+    )
+
+@then('the org name stays the same')
+def step_impl(context):
+    org_new_name = ADMIN.get_org(os.getenv("TEST_ORG_UPDATE", "TEST_ORG_UPDATE"))
+    assert not org_new_name
