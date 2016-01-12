@@ -1,3 +1,4 @@
 exports/
 *.env
+*.swp
 *__pycache__/
