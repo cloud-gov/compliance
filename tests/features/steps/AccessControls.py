@@ -102,6 +102,15 @@ def step_impl(context):
     space.client = context.user
     space.delete()
 
+@when('I try to update a space name')
+def step_impl(context):
+    # Get an org
+    org = ADMIN.get_org(os.getenv("TEST_ORG", "TEST_ORG"))
+    space = org.get_space(os.getenv("TEST_SPACE", "TEST_SPACE"))
+    # Try to update the org with user
+    space.client = context.user
+    space.update(name=os.getenv("TEST_SPACE_UPDATE", "TEST_SPACE_UPDATE"))
+
 @when('I try to create an app')
 def step_impl(context):
     # Get the space
@@ -206,18 +215,29 @@ def step_impl(context):
     org_new_name = ADMIN.get_org(os.getenv("TEST_ORG_UPDATE", "TEST_ORG_UPDATE"))
     assert org_new_name
     # Return to old name
-    ADMIN.get_org(
-        os.getenv("TEST_ORG_UPDATE", "TEST_ORG_UPDATE")
-    ).update(
-        os.getenv("TEST_ORG", "TEST_ORG")
-    )
+    org_new_name.update(name=os.getenv("TEST_ORG", "TEST_ORG"))
 
 @then('the org name stays the same')
 def step_impl(context):
     org_new_name = ADMIN.get_org(os.getenv("TEST_ORG_UPDATE", "TEST_ORG_UPDATE"))
     assert not org_new_name
 
+@then('the space name changes')
+def step_impl(context):
+    # Check for updated name
+    org = ADMIN.get_org(os.getenv("TEST_ORG", "TEST_ORG"))
+    space_new_name = org.get_space(os.getenv("TEST_SPACE_UPDATE", "TEST_SPACE_UPDATE"))
+    assert space_new_name
+    # Return to old name
+    space_new_name.update(name=os.getenv("TEST_SPACE", "TEST_SPACE"))
+
+@then('the space name stays the same')
+def step_impl(context):
+    org = ADMIN.get_org(os.getenv("TEST_ORG", "TEST_ORG"))
+    space_new_name = org.get_space(os.getenv("TEST_SPACE_UPDATE", "TEST_SPACE_UPDATE"))
+    assert not space_new_name
 
 @then('I find "{number}" events')
 def step_impl(context, number):
+    print(context.number_of_results)
     assert int(number) == context.number_of_results
