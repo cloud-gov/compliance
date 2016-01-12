@@ -20,7 +20,6 @@ class Org:
         if len(resources) == 1:
             return Space(guid=resources[0]['metadata']['guid'], client=self.client)
 
-
     def create_space(self, name):
         """ Create a space within this org """
         data = {

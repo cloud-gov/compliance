@@ -32,7 +32,6 @@ class Space:
         if 'error_code' not in cf_app_res:
             return App(guid=cf_app_res['metadata']['guid'], client=self.client)
 
-
     def set_user_role(self, role, user_guid):
         """ Give a user a specific role """
         endpoint = '/v2/spaces/{0}/{1}/{2}'.format(self.guid, role + 's', user_guid)
@@ -41,3 +40,12 @@ class Space:
     def unset_user_role(self, role, user_guid):
         endpoint = '/v2/spaces/{0}/{1}/{2}'.format(self.guid, role + 's', user_guid)
         api_user_res = self.client.api_request(endpoint=endpoint, method='delete')
+
+    def update(self, **kwargs):
+        """ Update a space """
+        endpoint = '/v2/spaces/%s' % self.guid
+        self.client.api_request(
+            endpoint=endpoint,
+            method='put',
+            data=json.dumps(kwargs)
+        )
