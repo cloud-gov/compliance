@@ -42,14 +42,13 @@ Feature: Access Controls
       | a space developer|  exists         |
       | a space auditor  |  exists         |
 
-
   Scenario Outline: Creating Spaces
      Given I am using <account> account
        when I try to create a space
        then the space <status>
 
    Examples: Action-Results for creating spaces
-     | account          |  status	        |
+     | account          |  status	  |
      | a master         |  exists         |
      | an org manager   |  exists         |
      | an org auditor   |  does not exist |
@@ -85,7 +84,6 @@ Feature: Access Controls
       | a space developer|  exists         |
       | a space auditor  |  exists         |
 
-
   Scenario Outline: Creating Apps
      Given I am using <account> account
        when I try to create an app
@@ -106,14 +104,13 @@ Feature: Access Controls
         then the app <status>
 
     Examples: Action-Results for deleting apps
-      | account          |  status 	       |
+      | account          |  status 	   |
       | a master         |  does not exist |
       | an org manager   |  exists         |
       | an org auditor   |  exists         |
       | a space manager  |  exists         |
       | a space developer|  does not exist |
       | a space auditor  |  exists         |
-
 
   Scenario Outline: Creating Users
      Given I am using <account> account
@@ -129,19 +126,19 @@ Feature: Access Controls
      | a space developer|  does not exist |
      | a space auditor  |  does not exist |
 
-   Scenario Outline: Deleting Users
-      Given I am using <account> account
-        when I try to delete a user
-        then the user <status>
+  Scenario Outline: Deleting Users
+     Given I am using <account> account
+       when I try to delete a user
+       then the user <status>
 
-    Examples: Action-Results for deleting apps
-      | account          |  status 	       |
-      | a master         |  does not exist |
-      | an org manager   |  exists         |
-      | an org auditor   |  exists         |
-      | a space manager  |  exists         |
-      | a space developer|  exists         |
-      | a space auditor  |  exists         |
+   Examples: Action-Results for deleting apps
+     | account          |  status 	  |
+     | a master         |  does not exist |
+     | an org manager   |  exists         |
+     | an org auditor   |  exists         |
+     | a space manager  |  exists         |
+     | a space developer|  exists         |
+     | a space auditor  |  exists         |
 
 
   Scenario Outline: Viewing Audits
@@ -149,7 +146,7 @@ Feature: Access Controls
        when I view my audit logs
        then I find "<number>" events
 
-   Examples: Action-Results for deleting apps
+   Examples: Action-Results for auditing
      | account          |  number |
      | a master         |  42     |
      | an org manager   |  0      |
