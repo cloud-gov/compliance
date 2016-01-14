@@ -63,6 +63,21 @@ def step_impl(context):
         verify_ssl=False
     )
 
+@given('I am a user that can login')
+def step_impl(context):
+    ADMIN.create_user(
+        os.getenv('TEST_USER', 'TEST_USER'),
+        os.getenv('TEST_USER_PASSWORD', 'TEST_USER_PASSWORD')
+    )
+    user = Client(
+        api_url=os.getenv('CF_URL', 'https://api.bosh-lite.com') ,
+        username=os.getenv('TEST_USER', 'TEST_USER'),
+        password=os.getenv('TEST_USER_PASSWORD', 'TEST_USER_PASSWORD'),
+        verify_ssl=False
+    )
+    assert user.is_logged_in()
+
+
 # Whens
 @when('I try to create an org')
 def step_impl(context):
@@ -174,6 +189,16 @@ def step_impl(context):
     logs = context.user.events(filters={'q': 'timestamp>' + TEST_START})
     context.number_of_results = logs.get('total_results')
 
+@when('I attempt to login 6 times and fail')
+def step_impl(context):
+    for _ in range(6):
+        user = Client(
+            api_url=os.getenv('CF_URL', 'https://api.bosh-lite.com') ,
+            username=os.getenv('TEST_USER', 'TEST_USER'),
+            password=os.getenv('TEST_USER_PASSWORD', 'TEST_USER_PASSWORD') + 'wrong',
+            verify_ssl=False
+        )
+        assert not user.is_logged_in()
 
 # Thens
 @then('the org exists')
@@ -278,3 +303,15 @@ def step_impl(context):
 def step_impl(context, number):
     print(context.number_of_results)
     assert int(number) == context.number_of_results
+
+@then('I am locked out')
+def step_impl(context):
+    # Attempt to correctly login
+    user = Client(
+        api_url=os.getenv('CF_URL', 'https://api.bosh-lite.com') ,
+        username=os.getenv('TEST_USER', 'TEST_USER'), 
+        password=os.getenv('TEST_USER_PASSWORD', 'TEST_USER_PASSWORD'),
+        verify_ssl=False
+    )
+    assert not user.is_logged_in()
+    ADMIN.get_user(os.getenv('TEST_USER', 'TEST_USER')).delete() 

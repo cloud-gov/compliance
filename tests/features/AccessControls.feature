@@ -176,3 +176,9 @@ Feature: Access Controls
      | a space manager  |  0      |
      | a space developer|  27     |
      | a space auditor  |  27     |
+
+     
+  Scenario: Account Lockout (AC-7)
+    Given I am a user that can login
+      when I attempt to login 6 times and fail
+      then I am locked out
