@@ -40,6 +40,8 @@ Accounts that will be created
 `export TEST_APP=<<Test App Name>>`
 `export TEST_APP_UPDATE=<<Name Change for TEST_APP_UPDATE>>`
 
+`export TEST_USER=<<Test User Name>>`
+`export TEST_USER_PASSWORD=<<Test Password Name>>`
 
 #### Run tests
 `behave`
