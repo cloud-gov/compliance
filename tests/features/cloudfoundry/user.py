@@ -1,3 +1,4 @@
+import json
 
 class User:
 
@@ -13,4 +14,15 @@ class User:
         # Delete from UAA
         uaa_delete_endpoint = '/Users/%s' % self.guid
         uaa_user_del_res = self.client.uaa_request(endpoint=uaa_delete_endpoint, method='delete')
-        
+   
+    def get_associated_workspace_for(self, role):
+       """ Returns the workspace for which the user have the stored role """
+       endpoint = "/v2/users/{0}/{1}".format(self.guid, role)
+       workspaces = self.client.api_request(endpoint=endpoint)
+       return workspaces.json()
+
+
+    def summary(self):
+       """ Returns the workspace for which the user have the stored role """
+       endpoint = "/v2/users/{0}/summary".format(self.guid)
+       return self.client.api_request(endpoint=endpoint).json()

@@ -34,16 +34,16 @@ class Org:
 
     def delete(self):
         api_delete_endpoint = '/v2/organizations/%s' % self.guid
-        api_user_del_res = self.client.api_request(endpoint=api_delete_endpoint, method='delete')
+        return self.client.api_request(endpoint=api_delete_endpoint, method='delete')
 
     def set_user_role(self, role, user_guid):
         """ Give a user a specific role """
         endpoint = '/v2/organizations/{0}/{1}/{2}'.format(self.guid, role + 's', user_guid)
-        api_user_res = self.client.api_request(endpoint=endpoint, method='put')
+        return self.client.api_request(endpoint=endpoint, method='put')
 
     def unset_user_role(self, role, user_guid):
         endpoint = '/v2/organizations/{0}/{1}/{2}'.format(self.guid, role + 's', user_guid)
-        api_user_res = self.client.api_request(endpoint=endpoint, method='delete')
+        return self.client.api_request(endpoint=endpoint, method='delete')
 
     def update(self, name=None, status=None, quota_definition_guid=None):
         """ Update an organizations name, status, or quota definition  """
