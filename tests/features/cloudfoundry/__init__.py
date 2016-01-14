@@ -46,6 +46,16 @@ class Client:
         self.__token = r.json()
         self.__token['time_stamp'] = time.time()
 
+    def is_logged_in(self):
+        """ Check if a users token has expired """
+        try:
+            self.__prepare_token()
+        except:
+            pass
+        if not self.__token.get('error'):
+            return True
+        return False
+
     def __prepare_token(self):
         """ Check if token is expired and open access token """
         time_elapsed = time.time() - self.__token['time_stamp']
