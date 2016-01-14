@@ -126,6 +126,28 @@ Feature: Access Controls
      | a space developer|  does not exist |
      | a space auditor  |  does not exist |
 
+  Scenario Outline: Updating Users
+     Given I am using <account> account
+       when I try to give a user access to a "<workspace>"
+       then the user <status>
+
+   Examples: Action-Results for updating users
+     | account          | workspace |  status               |
+     | a master         | org       |  has access           |
+     | an org manager   | org       |  has access           |
+     | an org auditor   | org       |  does not have access |
+     | a space manager  | org       |  does not have access |
+     | a space developer| org       |  does not have access |
+     | a space auditor  | org       |  does not have access |
+     | a master         | space     |  has access           |
+     | an org manager   | space     |  has access           |
+     | an org auditor   | space     |  does not have access |
+     | a space manager  | space     |  does not have access |
+     | a space developer| space     |  does not have access |
+     | a space auditor  | space     |  does not have access |
+
+
+
   Scenario Outline: Deleting Users
      Given I am using <account> account
        when I try to delete a user
@@ -148,9 +170,9 @@ Feature: Access Controls
 
    Examples: Action-Results for auditing
      | account          |  number |
-     | a master         |  42     |
+     | a master         |  43     |
      | an org manager   |  0      |
-     | an org auditor   |  42     |
+     | an org auditor   |  43     |
      | a space manager  |  0      |
-     | a space developer|  26     |
-     | a space auditor  |  26     |
+     | a space developer|  27     |
+     | a space auditor  |  27     |

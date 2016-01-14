@@ -16,16 +16,27 @@ def before_feature(context, feature):
     # Create a space
     space = org.create_space(os.getenv("TEST_SPACE", "TEST_SPACE"))
     # Create accounts that will be used and set permissions
+    admin = admin_client.get_user(os.getenv('MASTER_USERNAME', 'admin'))
+    org.set_user_role('user', admin.guid)
+    org.set_user_role('manager', admin.guid)
+    space.set_user_role('user', admin.guid)
+    space.set_user_role('manager', admin.guid)
+    
+
     org_manager = admin_client.create_user(
         os.getenv("ORG_MANAGER", "ORG_MANAGER"),
         os.getenv("ORG_MANAGER_PASSWORD", "ORG_MANAGER_PASSWORD"),
     )
+    org.set_user_role('user', org_manager.guid)
     org.set_user_role('manager', org_manager.guid)
+    
     org_auditor = admin_client.create_user(
         os.getenv("ORG_AUDITOR", "ORG_AUDITOR"),
         os.getenv("ORG_AUDITOR_PASSWORD", "ORG_AUDITOR_PASSWORD"),
     )
+    org.set_user_role('user', org_auditor.guid)
     org.set_user_role('auditor', org_auditor.guid)
+    
     space_manager = admin_client.create_user(
         os.getenv("SPACE_MANAGER", "SPACE_MANAGER"),
         os.getenv("SPACE_MANAGER_PASSWORD", "SPACE_MANAGER_PASSWORD"),
@@ -33,6 +44,7 @@ def before_feature(context, feature):
     org.set_user_role('user', space_manager.guid)
     space.set_user_role('user', space_manager.guid)
     space.set_user_role('manager', space_manager.guid)
+    
     space_developer = admin_client.create_user(
         os.getenv("SPACE_DEVELOPER", "SPACE_DEVELOPER"),
         os.getenv("SPACE_DEVELOPER_PASSWORD", "SPACE_DEVELOPER_PASSWORD"),
@@ -40,12 +52,12 @@ def before_feature(context, feature):
     org.set_user_role('user', space_developer.guid)
     space.set_user_role('user', space_developer.guid)
     space.set_user_role('developer', space_developer.guid)
+    
     space_auditor = admin_client.create_user(
         os.getenv("SPACE_AUDITOR", "SPACE_AUDITOR"),
         os.getenv("SPACE_AUDITOR_PASSWORD", "SPACE_AUDITOR_PASSWORD"),
     )
     org.set_user_role('user', space_auditor.guid)
-    space.set_user_role('user', space_auditor.guid)
     space.set_user_role('auditor', space_auditor.guid)
 
 
