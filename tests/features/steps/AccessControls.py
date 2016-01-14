@@ -26,7 +26,7 @@ def step_impl(context):
         password=os.getenv('ORG_MANAGER_PASSWORD', 'ORG_MANAGER_PASSWORD'),
         verify_ssl=False
     )
-
+    
 @given('I am using an org auditor account')
 def step_impl(context):
     context.user = Client(
@@ -137,6 +137,28 @@ def step_impl(context):
         os.getenv("TEST_USER", "TEST_USER_PASSWORD"),
     )
 
+@when('I try to give a user access to a "{workspace}"')
+def step_impl(context, workspace):
+    # Get a user
+    ADMIN.create_user(
+        os.getenv("TEST_USER", "TEST_USER"),
+        os.getenv("TEST_USER", "TEST_USER_PASSWORD"),
+    )
+    new_user = ADMIN.get_user(os.getenv("TEST_USER", "TEST_USER"))
+    ws = ADMIN.get_org(os.getenv("TEST_ORG", "TEST_ORG"))
+    context.workspace = 'audited_organizations'
+    if workspace == 'audited_space':
+        # Make user org user before making them space user
+        ws.set_user_role('user', new_user.guid)
+        ws.set_user_role('auditor', new_user.guid)        
+        ws = ws.get_space(os.getenv("TEST_SPACE", "TEST_SPACE"))
+        context.workspace = 'spaces'
+    # Try to update the org/space with user
+    ws.client = context.user
+    ws.set_user_role('user', new_user.guid)
+    ws.set_user_role('auditor', new_user.guid)
+
+
 @when('I try to delete a user')
 def step_impl(context):
     user = ADMIN.create_user(
@@ -236,6 +258,21 @@ def step_impl(context):
     org = ADMIN.get_org(os.getenv("TEST_ORG", "TEST_ORG"))
     space_new_name = org.get_space(os.getenv("TEST_SPACE_UPDATE", "TEST_SPACE_UPDATE"))
     assert not space_new_name
+
+@then('the user does not have access')
+def step_impl(context):
+    user = ADMIN.get_user(os.getenv("TEST_USER", "TEST_USER"))
+    summary = user.summary()
+    user.delete()    
+    assert len(summary['entity'].get(context.workspace)) == 0
+
+@then('the user has access')
+def step_impl(context):
+    user = ADMIN.get_user(os.getenv("TEST_USER", "TEST_USER"))
+    summary = user.summary()
+    user.delete()
+    print(summary)
+    assert len(summary['entity'].get(context.workspace)) == 1
 
 @then('I find "{number}" events')
 def step_impl(context, number):
