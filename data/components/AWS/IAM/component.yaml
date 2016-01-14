@@ -14,10 +14,13 @@ satisfies:
             * User – Individual IAM accounts
             * System – system and application account not used for interactive access
           There are no guest/anonymous, groups, or temporary user accounts in the 18F Environment
+        k: |
+          18F does not allow shared/group account credentials within the AWS environment. All users have individual accounts to access the AWS environment. 18F has created specific policies that allow individual users to assume a role within the AWS environment.
+
     AC-2 (1):
       implementation_status: null
       narrative: |
-        Cloud.gov requires the creation of a single system IAM account through a manual process.
+        AWS infrastructure as a service Management Life Cycle is automated to use AWS CLI scripts. 18F AWS Virtual Private Cloud can use the AWS Command Line Interface (CLI) to automate the account management LifeCycle within its envoriment. 18F uses the AWS IAM console for semi-automated automated account manamgemt
     AC-2 (2):
       implementation_status: null
       narrative: |
@@ -26,11 +29,22 @@ satisfies:
       implementation_status: null
       narrative: |
         Account log out is set to 15 minutes of inactivity within the IAM console per accountwithin the 18F virtual infrastructure.
+    AC-3:
+      implementation_status: null
+      narrative: |
+        18F follows best practices by implementing the majority of the following:
+          - Create individual accounts for anyone that requires access to the virtual infrastructure or APIs or use IAM federation from enterprise identity management system
+          - Use groups or roles to assign permissions to IAM users and Cloud.gov
+          - Enable multi factor authentication for all IAM users
+          - Use roles for applications that run on EC2 instances
+          - Delegate by using roles instead of sharing credentials
+          - Rotate credentials regularly
+          - Store SSH keys securely to prevent disclosure, and promptly replace lost or compromised keys.
     AC-5:
       implementation_status: null
       narrative:
         a: |
-          IAM policies are attached to the users, enabling centralized control of permissions for users under 18Fs AWS Account.
+          18F  implements Identity and Access Management (IAM) Policies roles and  individual user accounts for separation of duties.  IAM policies are attached to the users, enabling centralized control of permissions for users under 18Fs AWS Account.
         b: |
           18F documents separation of duties of AWS and Cloud Foundry users. All AWS IAM users, groups and roles can be viewed wthin the AWS console. IAM users reports are generated to show all separation of duties. Cloud Checkr also generates an a report of all IAM users within 18F AWS environment.
     AC-6:

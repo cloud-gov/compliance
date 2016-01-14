@@ -13,18 +13,19 @@ satisfies:
     AC-2 (3):
       implementation_status: null
       narrative: |
-        User accounts will be monitored monthly and accounts will be disabled after 90 days of inactivity; this will be a manual review process every 30 days. 18F genereates a credential report that lists all IAM users and the status of their credentials, including passwords, access keys, and MFA devices.
+        User accounts will be monitored monthly and accounts will be disabled after 90 days of inactivity; this will be a manual review process every 30 days. 18F generates a credential report that lists all IAM users and the status of their credentials, including passwords, access keys, and MFA devices.
     AC-2 (4):
       implementation_status: null
       narrative: |
-        18F has implemented cloudtrail for monitoring EC2, EBS, and VPCs that captures API calls and delivers the log files to an S3 bucket. By default, all cloudtrail log files are encrypted by using Amazon S3 server-side encryption (SSE)
-        Every log entry contains information about who generated the request. The user identity information in the log helps determine whether the request was made with root or IAM user credentials, with temporary security credentials for a role or federated user, or by another AWS service.
-        Secops utilizes Cloud Checkr as a central way to automactically audit account management functions for its virtual infrastrcuture
+        #TODO
+        18F has implemented CloudWatch for its system account monitoring. It monitors resources in near real-time, including EC2 instances, EBS volumes, Elastic Load Balancers, and RDS DB instances. Metrics such as CPU utilization, latency, and request counts are provided automatically for these AWS resources. It allows 18F to supply logs or custom application and system metrics, such as memory usage, transaction volumes, or error rates.
+        CloudTrail captures all IAM API calls from  command-line tools, the AWS SDK, and the AWS Management Console. Monitoring data is retained for two weeks, even if AWS resources have been terminated. This enables 18F to quickly look back at the metrics preceding an event of interest.
+        Metrics are accessed in either the EC2 tab or the CloudWatch tab of the AWS Management Console. Secops personnel monitors the use of all infrastructure accounts  through Cloud Checkr
     AC-2 (7):
       implementation_status: null
       narrative:
         b: |
-          18F monitors all privileged role assignments to their vpcs through the AWS IAM console , AWS CloudTrail audit logs and Cloud Watch alerts.  18F uses Cloud Checkr to provide centralized monitoring and alerting within its VPC.
+          18F monitors all privileged role assignments to the VPS through the IAM console, CloudTrail audit logs and Cloud Watch alerts.  18F uses Cloud Checkr to provide centralized monitoring and alerting within its VPC.
     AC-2 (12):
       implementation_status: null
       narrative:
@@ -51,7 +52,7 @@ satisfies:
           * Unauthorized access attempt
 
         b: |
-          Cloud Checkr reports atypical usage of information system accounts to designated 18F SecOps and Devops teams. Monitoring and intrusion information contained within Cloud Checkr and cloudtrail logs are  sent to 18F security personnel. The  logs are protected from unauthorized access by limiting access to authorized privileged users only.
+          Cloud Checkr reports atypical usage of information system accounts to designated 18F SecOps and Devops teams. Monitoring and intrusion information contained within Cloud Checkr and Cloudtrail logs are  sent to 18F security personnel. The  logs are protected from unauthorized access by limiting access to authorized privileged users only.
     AC-6 (9):
       implementation_status: null
       narrative: |
