@@ -156,3 +156,8 @@ class Client:
         if filters:
             params = filters
         return self.api_request(endpoint='/v2/events', params=filters).json()
+
+    def revoke_user_token(self, other_user):
+       """ Revokes the token for the other_user """
+       endpoint = "/oauth/token/revoke/user/{0}".format(other_user.guid)
+       return self.uaa_request(endpoint=endpoint).json()

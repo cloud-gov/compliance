@@ -177,8 +177,14 @@ Feature: Access Controls
      | a space developer|  27     |
      | a space auditor  |  27     |
 
-     
+
   Scenario: Account Lockout (AC-7)
     Given I am a user that can login
       when I attempt to login 6 times and fail
       then I am locked out
+
+  Scenario: Forced Logout (AC-17(9))
+    Given I am using a master account
+      And I have a second user
+      when I can force the second user to logout
+      then the second user is logged out

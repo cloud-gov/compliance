@@ -26,7 +26,7 @@ def step_impl(context):
         password=os.getenv('ORG_MANAGER_PASSWORD', 'ORG_MANAGER_PASSWORD'),
         verify_ssl=False
     )
-    
+
 @given('I am using an org auditor account')
 def step_impl(context):
     context.user = Client(
@@ -76,6 +76,22 @@ def step_impl(context):
         verify_ssl=False
     )
     assert user.is_logged_in()
+
+@given('I have a second user')
+def step_impl(context):
+    ADMIN.create_user(
+        os.getenv('TEST_USER', 'TEST_USER'),
+        os.getenv('TEST_USER_PASSWORD', 'TEST_USER_PASSWORD')
+    )
+    user = Client(
+        api_url=os.getenv('CF_URL', 'https://api.bosh-lite.com') ,
+        username=os.getenv('TEST_USER', 'TEST_USER'),
+        password=os.getenv('TEST_USER_PASSWORD', 'TEST_USER_PASSWORD'),
+        verify_ssl=False
+    )
+    assert user.is_logged_in()
+    context.second_user = user
+    context.second_user_info = context.user.get_user(os.getenv("TEST_USER", "TEST_USER"))
 
 
 # Whens
@@ -165,7 +181,7 @@ def step_impl(context, workspace):
     if workspace == 'audited_space':
         # Make user org user before making them space user
         ws.set_user_role('user', new_user.guid)
-        ws.set_user_role('auditor', new_user.guid)        
+        ws.set_user_role('auditor', new_user.guid)
         ws = ws.get_space(os.getenv("TEST_SPACE", "TEST_SPACE"))
         context.workspace = 'spaces'
     # Try to update the org/space with user
@@ -199,6 +215,10 @@ def step_impl(context):
             verify_ssl=False
         )
         assert not user.is_logged_in()
+
+@when('I can force the second user to logout')
+def step_impl(context):
+    context.user.revoke_user_token(context.second_user_info)
 
 # Thens
 @then('the org exists')
@@ -288,7 +308,7 @@ def step_impl(context):
 def step_impl(context):
     user = ADMIN.get_user(os.getenv("TEST_USER", "TEST_USER"))
     summary = user.summary()
-    user.delete()    
+    user.delete()
     assert len(summary['entity'].get(context.workspace)) == 0
 
 @then('the user has access')
@@ -309,9 +329,13 @@ def step_impl(context):
     # Attempt to correctly login
     user = Client(
         api_url=os.getenv('CF_URL', 'https://api.bosh-lite.com') ,
-        username=os.getenv('TEST_USER', 'TEST_USER'), 
+        username=os.getenv('TEST_USER', 'TEST_USER'),
         password=os.getenv('TEST_USER_PASSWORD', 'TEST_USER_PASSWORD'),
         verify_ssl=False
     )
     assert not user.is_logged_in()
-    ADMIN.get_user(os.getenv('TEST_USER', 'TEST_USER')).delete() 
+    ADMIN.get_user(os.getenv('TEST_USER', 'TEST_USER')).delete()
+
+@then('the second user is logged out')
+def step_impl(context):
+    assert not context.second_user.is_logged_in()
