@@ -3,3 +3,4 @@ exports/
 *.swp
 *__pycache__/
 *.pyc
+tests/security-group-test-app/Godeps/_workspace/
