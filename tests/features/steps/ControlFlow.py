@@ -1,6 +1,7 @@
 import os
 import datetime
 import requests
+import time
 
 from behave import given, when, then
 
@@ -13,24 +14,26 @@ ADMIN = Client(
     verify_ssl=False
 )
 
-ORG = os.getenv("ASG_TEST_ORG", 'test')
-SPACE = os.getenv("ASG_TEST_SPACE", 'test')
-APP = os.getenv("ASG_TEST_SPACE", 'go-example')
-CLOSED_GROUP = os.getenv("CLOSED_GROUP", "CLOSED_GROUP")
-OPEN_GROUP = os.getenv("OPEN_GROUP", "OPEN_GROUP")
+ASG_ORG = os.getenv("ASG_ORG", 'ASG_ORG')
+ASG_SPACE = os.getenv("ASG_SPACE", 'ASG_SPACE')
+ASG_APP = os.getenv("ASG_APP", 'security-group-test')
+ASG_APP_URL = os.getenv('ASG_APP_URL', 'http://security-group-test.bosh-lite.com')
+
+CLOSED_SECURITY_GROUP = os.getenv("CLOSED_GROUP", "CLOSED_GROUP")
+OPEN_SECURITY_GROUP = os.getenv("OPEN_GROUP", "OPEN_GROUP")
 
 # Givens
 @given('an application')
 def step_impl(context):
-    assert ADMIN.get_org(ORG).get_space(SPACE).get_app(APP)
+    assert ADMIN.get_org(ASG_ORG).get_space(ASG_SPACE).get_app(ASG_APP)
 
 @given('a security group that closes all outgoing tcp connections')
 def step_impl(context):
-    assert ADMIN.get_security_group(name=CLOSED_GROUP)
+    assert ADMIN.get_security_group(name=CLOSED_SECURITY_GROUP)
 
 @given('a security group that is open to all public outgoing connections')
 def step_impl(context):
-    assert ADMIN.get_security_group(name=OPEN_GROUP)
+    assert ADMIN.get_security_group(name=OPEN_SECURITY_GROUP)
 
 @when('I try to view all the ASGs')
 def step_impl(context):
@@ -39,20 +42,18 @@ def step_impl(context):
 
 @when('I bind the application security group with open settings to the running app')
 def step_impl(context):
-    space = ADMIN.get_org(ORG).get_space(SPACE)
-    sg = ADMIN.get_security_group(name=OPEN_GROUP)
+    space = ADMIN.get_org(ASG_ORG).get_space(ASG_SPACE)
+    sg = ADMIN.get_security_group(name=OPEN_SECURITY_GROUP)
     sg.set_space(space_guid=space.guid)
-    space.get_app(APP).restart()
-    import time
+    space.get_app(ASG_APP).restart()
     time.sleep(30)
 
 @when('I bind the application security group with closed settings to the running app')
 def step_impl(context):
-    space = ADMIN.get_org(ORG).get_space(SPACE)
-    sg = ADMIN.get_security_group(name=CLOSED_GROUP)
+    space = ADMIN.get_org(ASG_ORG).get_space(ASG_SPACE)
+    sg = ADMIN.get_security_group(name=CLOSED_SECURITY_GROUP)
     sg.set_space(space_guid=space.guid)
-    space.get_app(APP).restart()
-    import time
+    space.get_app(ASG_APP).restart()
     time.sleep(30)
 
 @then('I can view and print all the ASGs')
@@ -63,26 +64,22 @@ def step_impl(context):
 
 @then('the application can ping an external site')
 def step_impl(context):
-    space =  ADMIN.get_org(ORG).get_space(SPACE)
-    app = space.get_app(APP)
+    space =  ADMIN.get_org(ASG_ORG).get_space(ASG_SPACE)
+    app = space.get_app(ASG_APP)
     routes = app.get_routes()
-    CR_URL = os.getenv('CF_URL', 'https://api.bosh-lite.com')
-    CR_URL = CR_URL.replace('api', routes[0]['entity']['host']) + '/ping'
-    result = requests.get(CR_URL, verify=False).text
-    sg = ADMIN.get_security_group(name=OPEN_GROUP)
+    result = requests.get(ASG_APP_URL, verify=False).text
+    sg = ADMIN.get_security_group(name=OPEN_SECURITY_GROUP)
     sg.unset_space(space_guid=space.guid)
     print(result)
     assert 'Success' in result
 
 @then('the application cannot ping an external site')
 def step_impl(context):
-    space =  ADMIN.get_org(ORG).get_space(SPACE)
-    app = space.get_app(APP)
+    space =  ADMIN.get_org(ASG_ORG).get_space(ASG_SPACE)
+    app = space.get_app(ASG_APP)
     routes = app.get_routes()
-    CR_URL = os.getenv('CF_URL', 'https://api.bosh-lite.com')
-    CR_URL = CR_URL.replace('api', routes[0]['entity']['host']) + '/ping'
-    result = requests.get(CR_URL, verify=False).text
-    sg = ADMIN.get_security_group(name=CLOSED_GROUP)
+    result = requests.get(ASG_APP_URL, verify=False).text
+    sg = ADMIN.get_security_group(name=CLOSED_SECURITY_GROUP)
     sg.unset_space(space_guid=space.guid)
     print(result)
     assert 'Failed' in result
