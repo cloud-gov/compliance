@@ -15,7 +15,7 @@ def before_feature(context, feature):
         password=os.getenv('MASTER_PASSWORD', 'admin'),
         verify_ssl=False
     )
-    if 'AccessControls' in feature.name:
+    if 'Access' in feature.name:
         # Create and org
         org = admin_client.create_org(os.getenv("TEST_ORG", "TEST_ORG"))
         # Create a space
@@ -65,12 +65,13 @@ def before_feature(context, feature):
         org.set_user_role('user', space_auditor.guid)
         space.set_user_role('auditor', space_auditor.guid)
 
-    elif 'Flow' in feature.name:
+    if 'Flow' in feature.name:
         admin_client.create_security_group(
             name=CLOSED_GROUP,
             rules=[{
               "protocol": "udp",
               "destination": "1.1.1.1",
+              "ports": "1"
             }]
         )
         admin_client.create_security_group(
@@ -91,7 +92,7 @@ def after_feature(context, feature):
         password=os.getenv('MASTER_PASSWORD', 'admin'),
         verify_ssl=False
     )
-    if 'AccessControls' in feature.name:
+    if 'Access' in feature.name:
         # Delete users
         admin_client.get_user(os.getenv("ORG_MANAGER", "ORG_MANAGER")).delete()
         admin_client.get_user(os.getenv("ORG_AUDITOR", "ORG_AUDITOR")).delete()
@@ -104,6 +105,6 @@ def after_feature(context, feature):
         space.delete()
         org.delete()
 
-    elif 'Flow' in feature.name:
+    if 'Flow' in feature.name:
         admin_client.get_security_group(name=OPEN_GROUP).delete()
         admin_client.get_security_group(name=CLOSED_GROUP).delete()
