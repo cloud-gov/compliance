@@ -6,6 +6,13 @@ BBD style tests for verifying Cloud.gov's compliance with FedRAMP controls
 #### Install Dependencies  
 `pip install -r requirements.txt`
 
+#### Deploy Application Security Group Testing app
+`cd security-group-test-app`
+`cf target -o ASG_ORG -s ASG_SPACE`
+`cf push`
+
+Store the org, space, app, and app route in `ASG_ORG`, `ASG_SPACE`, `ASG_APP`, `ASG_APP_URL` to export as env variables. 
+
 #### Setup environment variables (optional for local deployment)
 `export CF_URL=<<Cloud Foundry API>>`
 
@@ -42,6 +49,14 @@ Accounts that will be created
 
 `export TEST_USER=<<Test User Name>>`
 `export TEST_USER_PASSWORD=<<Test Password Name>>`
+
+`export ASG_ORG=<<The org that contains a special app for testing application security groups>>`
+`export ASG_SPACE=<<The space that contains a special app for testing application security groups>>`
+`export ASG_APP=<<The app for testing application security groups>>`
+`export ASG_APP_URL=<<The url for testing application security groups>>`
+`export CLOSED_SECURITY_GROUP=<<The name of the closed security group>>`
+`export OPEN_SECURITY_GROUP=<<The name of the open security group>>`
+
 
 #### Run tests
 `behave`
