@@ -103,7 +103,9 @@ class Client:
                 'attributes': 'id,userName',
                 'filter': "userName eq '%s'" % username
         }
-        uaa_user_res = self.uaa_request(endpoint='/Users', params=params).json()
+        uaa_user_res = self.uaa_request(
+            endpoint='/Users', params=params
+        ).json()
         resources = uaa_user_res.get('resources', [])
         if len(resources) == 1:
             return User(guid=resources[0]['id'], client=self)
@@ -125,13 +127,17 @@ class Client:
         }
         headers = {'content-type': 'application/json'}
         uaa_user_res = self.uaa_request(
-            endpoint='/Users', method='post', headers=headers, data=json.dumps(user_data)
+            endpoint='/Users', method='post',
+            headers=headers, data=json.dumps(user_data)
         ).json()
         # Create user in Cloud Controller
         user_id_data = {
             'guid': uaa_user_res.get('id', uaa_user_res.get('user_id'))
         }
-        cf_user_res = self.api_request(endpoint='/v2/users', method='post', data=json.dumps(user_id_data))
+        self.api_request(
+            endpoint='/v2/users', method='post',
+            data=json.dumps(user_id_data),
+        )
         return User(guid=user_id_data['guid'], client=self)
 
     def get_org(self, name):
@@ -139,7 +145,9 @@ class Client:
         params = {
                 'q': 'name:%s' % name
         }
-        cf_org_res = self.api_request('/v2/organizations', params=params).json()
+        cf_org_res = self.api_request(
+            '/v2/organizations', params=params
+        ).json()
         resources = cf_org_res.get('resources', [])
         if len(resources) == 1:
             return Org(guid=resources[0]['metadata']['guid'], client=self)
@@ -147,7 +155,8 @@ class Client:
     def create_org(self, name):
         """ Create an org """
         cf_org_res = self.api_request(
-            endpoint='/v2/organizations', method='post', data=json.dumps({'name': name})
+            endpoint='/v2/organizations',
+            method='post', data=json.dumps({'name': name})
         ).json()
         if 'error_code' not in cf_org_res:
             return Org(guid=cf_org_res['metadata']['guid'], client=self)
@@ -157,7 +166,9 @@ class Client:
         params = {
                 'q': 'name:%s' % name
         }
-        security_group_res = self.api_request('/v2/security_groups', params=params).json()
+        security_group_res = self.api_request(
+            '/v2/security_groups', params=params
+        ).json()
         resources = security_group_res.get('resources', [])
         if len(resources) == 1:
             return SecurityGroup(
@@ -178,10 +189,12 @@ class Client:
         ).json()
         print(cf_sg_res)
         if 'error_code' not in cf_sg_res:
-            return SecurityGroup(guid=cf_sg_res['metadata']['guid'], client=self)
+            return SecurityGroup(
+                guid=cf_sg_res['metadata']['guid'], client=self
+            )
 
     def events(self, filters=None):
         """ Get events """
         if filters:
             params = filters
-        return self.api_request(endpoint='/v2/events', params=filters).json()
+        return self.api_request(endpoint='/v2/events', params=params).json()
