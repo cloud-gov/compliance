@@ -8,10 +8,12 @@ BBD style tests for verifying Cloud.gov's compliance with FedRAMP controls
 
 #### Deploy Application Security Group Testing app
 `cd security-group-test-app`
+`cf create-org ASG_ORG`
+`cf create-space ASG_SPACE`
 `cf target -o ASG_ORG -s ASG_SPACE`
 `cf push`
 
-Store the org, space, app, and app route in `ASG_ORG`, `ASG_SPACE`, `ASG_APP`, `ASG_APP_URL` to export as env variables. 
+Store the org, space, app, and app route in `ASG_ORG`, `ASG_SPACE`, `ASG_APP`, `ASG_APP_URL` to export as env variables.
 
 #### Setup environment variables (optional for local deployment)
 `export CF_URL=<<Cloud Foundry API>>`
