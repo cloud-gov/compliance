@@ -32,4 +32,4 @@ satisfies:
     AC-17 (9):
       implementation_status: null
       narrative: |
-        Access keys and user accounts can be revoked using IAM
+        Access keys and user accounts can be revoked using IAM. Sessions terminate after 10 minutes. 
