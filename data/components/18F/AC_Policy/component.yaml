@@ -146,10 +146,24 @@ satisfies:
         18F incorporate running the IAM Policy Simulator to test policies for least privilege access for users and groups.
       references:
         - verification: POLICY_DOC
-    AC-6 (2):
+    AC-6 (1):
       implementation_status: null
       narrative: |
         Because Cloud.gov is a PaaS all accessible functions are privileged functions. Nevertheless, 18F team members use different accounts with increasing security requirements for accessing CloudFoundry as a user, CloudFoundry as a administrator, and AWS as an administrator.
+      references:
+        - verification: POLICY_DOC
+    AC-6 (2):
+      implementation_status: null
+      narrative: |
+        This control is not applicable because all Cloud.gov accounts are privileged accounts.
+      references:
+        - verification: POLICY_DOC
+    AC-6 (5):
+      implementation_status: null
+      narrative: |
+        18F restricts privileged accounts such as administrator and root access accounts to designated members within the18F Devops and SecOps teams. Within the virtual infrastructure the admin account is not used for privileged access. It’s only used for billing and metrics.
+      references:
+        - verification: POLICY_DOC
       references:
         - verification: POLICY_DOC
     AC-17 (4):
@@ -159,3 +173,40 @@ satisfies:
           18F authorizes the execution of privileged commands and access to security-relevant information via remote access only for monitoring, managing, and troubleshooting  the 18F virtual infrastructer and Cloud.Gov platform. This authorization is only given to specific members of the Devops and SecOps teams. All other members are excluded from this type of access.
       references:
         - verification: POLICY_DOC
+
+    AC-18:
+      implementation_status: null
+      narrative: |
+        Not Applicable for the Cloud Foundry Platform
+    AC-18 (1):
+      implementation_status: null
+      narrative: |
+        Not Applicable for the Cloud Foundry Platform
+    AC-19:
+      implementation_status: null
+      narrative: |
+        Not Applicable for the Cloud Foundry Platform
+    AC-19 (5):
+      implementation_status: null
+      narrative: |
+        Not Applicable for the Cloud Foundry Platform
+    AC-20:
+      implementation_status: null
+      narrative: |
+        Not Applicable for the Cloud Foundry Platform
+    AC-20 (1):
+      implementation_status: null
+      narrative: |
+        Not Applicable for the Cloud Foundry Platform
+    AC-20 (2):
+      implementation_status: null
+      narrative: |
+        Not Applicable for the Cloud Foundry Platform
+    AC-21:
+      implementation_status: null
+      narrative: |
+        Not applicable to the the Cloud.gov platform. The cloud.Gov platform is for use of development of and deployment of web applications. This control would be handeld at the application level and is the responsibility of the application system owner.
+    AC-22:
+      implementation_status: null
+      narrative: |
+        Not applicable to the the Cloud.gov platform. The cloud.Gov platform is for use of development of and deployment of web applications. This control would be handeld at the application level and is the responsibility of the application system owner.

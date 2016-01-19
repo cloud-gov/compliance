@@ -56,7 +56,7 @@ satisfies:
     AC-6 (9):
       implementation_status: null
       narrative: |
-        All  priviledeged user account activity and API calls to Cloud.Gov are auditied by CloudTrail and monitored by CloudWatch.
+        All privileged user account activity and API calls to Cloud.Gov are audited by CloudTrail and monitored by CloudWatch. CloudTrail provides a log of all requests for AWS resources within the 18F AWS account. For each event recorded, 18F can see what service was accessed, what action was performed, any parameters for the action, and who made the request. Cloudtrail also shows whether it was as the AWS root account user or an IAM user, or whether it was with temporary security credentials for a role or federated user.
     AC-17 (1):
       implementation_status: null
       narrative: |

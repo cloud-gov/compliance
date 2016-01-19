@@ -16,6 +16,12 @@ references:
 - name: Cloud Foundry Space Access
   type: URL
   path: https://github.com/cloudfoundry/cloud_controller_ng/blob/master/spec/unit/access/space_access_spec.rb
+verifications:
+  CLOUDGOV_LOGIN_PAGE:
+    name: Cloud.gov Login Page
+    type: URL
+    path: https://login.cloud.gov/login
+
 satisfies:
   NIST-800-53:
     AC-2:
@@ -69,6 +75,55 @@ satisfies:
           - 18F shall use flow control restrictions to include: keeping export controlled information from being transmitted in the clear to the Internet, blocking outside traffic that claims to be from within the organization and not passing any web requests to the Internet that are not from the internal web proxy.
           - 18F shall use boundary protection devices (e.g., proxies, gateways, guards, encrypted tunnels, firewalls, and routers) that employ rule sets or establish configuration settings that restrict information system services, provide a packet-filtering capability based on header information, or message-filtering capability based on content (e.g., using key word searches or document characteristics.
 
+    AC-7:
+      implementation_status: null
+      narrative:
+        a: |
+          Cloud.gov a limit of 5 consecutive invalid logon attempts by a user during a 15 minute period
+        b: |
+          Automatically; locks the account/node for 20 minutes when the maximum number of unsuccessful attempts is exceeded
+
+    AC-7:
+      implementation_status: null
+      narrative:
+        a: |
+          Cloud.gov displays banner on the cloud.gov login page
+        b: |
+          The banner displays on the login page until the user is logged in
+        c: |
+          The banner displays all requirements
+      references:
+        - verification: CLOUDGOV_LOGIN_PAGE
+
+    AC-10:
+      implementation_status: null
+      narrative: |
+        Cloud.gov does not support capability to limit active sessions and as a cloud-based system it was not designed to limit the number of active sessions.
+
+    AC-11:
+      implementation_status: null
+      narrative: |
+        A session limit of 15 minutes is implemented on inactive accounts within the Cloud.gov platform. All sessions are terminated after this period, but sesssion are not locked.
+
+    AC-11 (1):
+      implementation_status: null
+      narrative: |
+        The Cloud.gov login page hides user passwords using asterisks, the Cloud Foundry along with the bosh cli also obfuscate user passwords.
+      references:
+        - verification: CLOUDGOV_LOGIN_PAGE
+
+    AC-12:
+      implementation_status: null
+      narrative: |
+        A session limit of 15 minutes is implemented on inactive accounts within the Cloud.gov platform.
+
+    AC-14:
+      implementation_status: null
+      narrative:
+        a: |
+          There are no permitted actions without identification and authentication to Cloud.Gov. The Cloud Controller rejects any broker registration that does not contain a username and password. The Cloud Controller authenticates every request with the Service Broker API using HTTP or HTTPS, depending on which protocol you specify during broker registration.
+        b: |
+          It is not possible for members of the 18F Devops and SecOps teams to aceess the 18F virtual private cloud infrastructure without muitifactor authetication and identification. All clinet users of Cloud.gov must login using authenticated credentials in order to acess the system as stated in Part A above.
     IA-2:
       implementation_status: null
       narrative: |
