@@ -4,6 +4,7 @@ import json
 
 from cloudfoundry.user import User
 from cloudfoundry.org import Org
+from cloudfoundry.security_group import SecurityGroup
 
 
 class Client:
@@ -150,6 +151,34 @@ class Client:
         ).json()
         if 'error_code' not in cf_org_res:
             return Org(guid=cf_org_res['metadata']['guid'], client=self)
+
+    def get_security_group(self, name):
+        """ Get a security groups """
+        params = {
+                'q': 'name:%s' % name
+        }
+        security_group_res = self.api_request('/v2/security_groups', params=params).json()
+        resources = security_group_res.get('resources', [])
+        if len(resources) == 1:
+            return SecurityGroup(
+                guid=resources[0]['metadata']['guid'], client=self
+            )
+
+    def get_security_groups(self):
+        """ Get all security groups """
+        security_group_res = self.api_request('/v2/security_groups').json()
+        return security_group_res.get('resources', [])
+
+    def create_security_group(self, name, rules):
+        """ Create a security group """
+        cf_sg_res = self.api_request(
+            endpoint='/v2/security_groups',
+            method="post",
+            data=json.dumps({'name': name, 'rules': rules})
+        ).json()
+        print(cf_sg_res)
+        if 'error_code' not in cf_sg_res:
+            return SecurityGroup(guid=cf_sg_res['metadata']['guid'], client=self)
 
     def events(self, filters=None):
         """ Get events """
