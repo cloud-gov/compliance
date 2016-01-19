@@ -1,0 +1,8 @@
+documentation_complete: false
+name: DEA
+satisfies:
+  NIST-800-53:
+    AC-4 (21):
+      implementation_status: null
+      narrative: |
+        The DEA manages the Warder Containers and controls both outbound and inbound network rules

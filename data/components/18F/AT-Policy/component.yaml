@@ -1,12 +1,35 @@
 documentation_complete: false
 name: Security Awareness Training Policy for 18F
-references:
-- name: Policy Document
-  type: URL
-  path: https://drive.google.com/drive/u/1/folders/0B6fPl5s12igNfnhnZWJqQVluNUxybWo5WVQwaHUwN29qRmVaQlczN0tpVUZEa25WZFdsTjg
+verifications:
+  POLICY_DOC:
+    name: Policy Document
+    type: URL
+    path: https://drive.google.com/drive/u/1/folders/0B6fPl5s12igNfnhnZWJqQVluNUxybWo5WVQwaHUwN29qRmVaQlczN0tpVUZEa25WZFdsTjg
 satisfies:
   NIST-800-53:
     AT-1:
       implementation_status: null
-      narrative: 18F Policy
+      narrative: 18F Policy - Created Draft Security Awareness Training Policy for the 18F program.
+      references:
+        - verification: POLICY_DOC
+    AT-2:
+      implementation_status: null
+      narrative: Completed the development of the Awareness training policy specifically for 18F program. ISSO support is looking into possible solutions for specific security awareness training for 18F staff. currently reviewing the SEI training programs for Secure DevOps and Online line Learning management system.
+      references:
+        - verification: POLICY_DOC
+    AT-2 (2):
+      implementation_status: null
+      narrative: Completed the development of the Awareness training policy specifically for 18F program. ISSO support is looking into possible solutions for specific security awareness training for 18F staff. currently reviewing the SEI training programs for Secure DevOps and Online line Learning management system.
+      references:
+        - verification: POLICY_DOC
+    AT-3:
+      implementation_status: null
+      narrative: Completed the development of the Awareness training policy specifically for 18F program. ISSO support is looking into possible solutions for specific security awareness training for 18F staff. currently reviewing the SEI training programs for Secure DevOps and Online line Learning management system.
+      references:
+        - verification: POLICY_DOC
+    AT-4:
+      implementation_status: null
+      narrative: Completed the development of the Awareness training policy specifically for 18F program. ISSO support is looking into possible solutions for specific security awareness training for 18F staff. currently reviewing the SEI training programs for Secure DevOps and Online line Learning management system.
+      references:
+        - verification: POLICY_DOC
 system: 18F

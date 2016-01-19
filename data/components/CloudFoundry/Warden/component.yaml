@@ -1,0 +1,9 @@
+name: Warden
+documentation_complete: false
+satisfies:
+  NIST-800-53:
+    AC-4 (21):
+      implementation_status: null
+      narrative: |
+        Warden ALLOW rules: Any Warden Server configuration `allow` rules. Set Warden Server configuration rules in the Droplet Execution Agent (DEA) configuration section of your deployment manifest.
+        Warden DENY rules: Any Warden Server configuration `deny` rules. Set Warden Server configuration rules in the DEA configuration section of your deployment manifest.

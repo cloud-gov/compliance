@@ -9,7 +9,7 @@ satisfies:
     AC-4:
       implementation_status: null
       narrative: |
-        18F incorporates security features within its vpc which include security groups, network ACLs, routing tables, and external gateways. Each of these items is complementary to providing a secure, isolated network.
+        18F incorporates security features within its vpc such as IAM security groups, network ACLs, routing tables, and external gateways. Each of these items is complementary to providing a secure, isolated network.
         Network Access control lists (ACLs) are created to allow or deny traffic entering or exiting these subnets. Each subnet has routing tables attached to them to direct the flow of network traffic to Internet gateways, virtual private gateways, Network Address Translation (NAT) for private subnets.
         18F’s virtual private cloud infrastructure has firewalls enabling filtering on both ingress and egress traffic from its instances. The default group enables inbound communication from other members of the same group and outbound communication to any destination.
         Traffic is restricted by IP protocol, by service port, as well as source/destination IP address (individual IP or Classless Inter-Domain Routing (CIDR) block).
