@@ -156,3 +156,8 @@ satisfies:
       implementation_status: null
       narrative: |
         PIV card access is Not applicable for the Cloud Foundry PaaS
+
+    IA-3:
+      implementation_status: null
+      narrative: |
+        Not Applicable to Cloud Foundry
