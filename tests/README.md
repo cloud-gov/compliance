@@ -7,6 +7,7 @@ BBD style tests for verifying Cloud.gov's compliance with FedRAMP controls
 `pip install -r requirements.txt`
 
 #### Deploy Application Security Group Testing app
+`git clone https://github.com/18F/security-group-test-app.git`
 `cd security-group-test-app`
 `cf create-org ASG_ORG`
 `cf create-space ASG_SPACE`
