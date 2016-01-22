@@ -1,5 +1,10 @@
-from cloudfoundry import Client
+import os
+import datetime
+import yaml
+
 import config
+
+from cloudfoundry import Client
 
 
 def before_feature(context, feature):
@@ -104,3 +109,28 @@ def after_feature(context, feature):
             name=config.OPEN_SECURITY_GROUP).delete()
         admin_client.get_security_group(
             name=config.CLOSED_SECURITY_GROUP).delete()
+
+
+def after_tag(context, tag):
+    if 'Component' in tag:
+        _, name, system, component = tag.split('-')
+        component_file = os.path.join(
+            '..', 'data', 'components', system,
+            component, 'component.yaml'
+        )
+        with open(component_file, 'r') as yaml_file:
+            data = yaml.load(yaml_file)
+            data['verifications'][name] = {
+                'name': '{0} {1}'.format(
+                    context.feature.name, context.scenario.name
+                ),
+                'type': 'TEST',
+                'path': 'Feature: {0} Scenario: {1}'.format(
+                    context.feature.name, context.scenario.name
+                ),
+                'last_run': datetime.datetime.now()
+            }
+        with open(component_file, 'w') as yaml_file:
+            yaml_file.write(
+                yaml.dump(data, default_flow_style=False, indent=2)
+            )
