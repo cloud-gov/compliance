@@ -115,7 +115,7 @@ verifications:
     path: https://apidocs.cloudfoundry.org/228/events/list_all_events.html
     type: URL
   LOG_TESTS:
-    last_run: 2016-01-22 13:55:03.305097
+    last_run: 2016-01-22 15:11:23.029640
     name: Audit and Accountability Content of Audit Records
     path: 'Feature: Audit and Accountability Scenario: Content of Audit Records'
     type: TEST
