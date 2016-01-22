@@ -195,6 +195,4 @@ class Client:
 
     def events(self, filters=None):
         """ Get events """
-        if filters:
-            params = filters
-        return self.api_request(endpoint='/v2/events', params=params).json()
+        return self.api_request(endpoint='/v2/events', params=filters).json()

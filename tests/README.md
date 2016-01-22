@@ -57,8 +57,8 @@ Accounts that will be created
 `export ASG_SPACE=<<The space that contains a special app for testing application security groups>>`
 `export ASG_APP=<<The app for testing application security groups>>`
 `export ASG_APP_URL=<<The url for testing application security groups>>`
-`export CLOSED_SECURITY_GROUP=<<The name of the closed security group>>`
-`export OPEN_SECURITY_GROUP=<<The name of the open security group>>`
+`export CLOSED_GROUP=<<The name of the closed security group>>`
+`export OPEN_GROUP=<<The name of the open security group>>`
 
 
 #### Run tests
