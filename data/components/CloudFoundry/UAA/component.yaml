@@ -36,7 +36,7 @@ satisfies:
           Cloud.Gov utilizes role based access controls (RBAC) for group membership within the platform and does not issue shared/group account credentials.
 
     AC-2 (1):
-      implementation_status: null
+      implementation_status: true
       narrative: |
         Cloud.Gov uses the UAA CLI which is a semi-automated command line based account management system that enables operators to create, modify and deleted user accounts and roles within the platform. https://docs.cloudfoundry.org/adminguide/uaa-user-management.html
     AC-2 (2):
@@ -129,3 +129,35 @@ satisfies:
       narrative: |
         The UAA is the identity management service for Cloud Foundry. Its primary role is as an OAuth2 provider, issuing tokens for client applications to use when they act on behalf of Cloud Foundry users. In collaboration with the login server, it authenticates users with their Cloud Foundry credentials, and act as a Single Sign-On (SSO) service using those credentials (or others). It has endpoints for managing user accounts and for registering OAuth2 clients, as well as various other management functions.
         All users have individually unique identifiers to access and authenticates  to the environment. Shared or group authenticators are not utilized, with the exception of a root administrative account. There are only two authorized users from the DevOps team who has access to the root administrative account.
+
+    IA-2 (1):
+      implementation_status: null
+      narrative: |
+        Cloud.Gov does not have MFA capabilities implemented. Cloud.Gov currently utilizes username and password for identification and authentication of non-privileged accounts.
+
+    IA-2 (5):
+      implementation_status: null
+      narrative: |
+        This controls is not applicable. here are are no group accounts within the Cloud.Gov platform.
+
+    IA-2 (8):
+      implementation_status: null
+      narrative: |
+        Cloud.gov a limit of 5 consecutive invalid logon attempts by a user during a 15 minute period
+        Automatically; locks the account/node for 20 minutes when the maximum number of unsuccessful attempts is exceeded
+        Account log out is set to 15 minutes of inactivity.
+
+    IA-2 (11):
+      implementation_status: null
+      narrative: |
+        Cloud.Gov does not have MFA capabilities implemented. Cloud.Gov currently utilizes username and password for identification and authentication of non-privileged accounts.
+
+    IA-2 (12):
+      implementation_status: null
+      narrative: |
+        PIV card access is Not applicable for the Cloud Foundry PaaS
+
+    IA-3:
+      implementation_status: null
+      narrative: |
+        Not Applicable to Cloud Foundry

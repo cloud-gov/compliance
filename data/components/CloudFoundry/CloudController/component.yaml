@@ -13,6 +13,10 @@ verifications:
     name: Cloud Controller Role Implmentation Specs
     path: https://github.com/cloudfoundry/cloud_controller_ng/blob/master/spec/unit/lib/cloud_controller/membership_spec.rb
     type: URL
+  EVENTS_ENDPOINT:
+    name: CF Events Endpoint
+    path: https://apidocs.cloudfoundry.org/228/events/list_all_events.html
+    type: URL
 satisfies:
   NIST-800-53:
     AC-2:
@@ -53,7 +57,7 @@ satisfies:
       references:
         - verification: CF_ROLES
         - verification: CF_ROLES_CODE
-        - verification: CF_ROLES_CODE_SPECS  
+        - verification: CF_ROLES_CODE_SPECS
     AC-6 (10):
       implementation_status: null
       narrative: |
@@ -65,3 +69,10 @@ satisfies:
       narrative:
         a: |
           There are no permitted actions without identification and authentication to Cloud.Gov. The Cloud Controller rejects any broker registration that does not contain a username and password. The Cloud Controller authenticates every request with the Service Broker API using HTTP or HTTPS, depending on which protocol you specify during broker registration.
+    AU-3:
+      implementation_status: null
+      narrative: |
+        Cloud Foundry stores detailed events which can be accessed through the CF API. A list the events is avaiable in the API documentation.
+      references:
+        - verification: EVENTS_ENDPOINT
+    
