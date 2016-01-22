@@ -32,4 +32,14 @@ satisfies:
     AC-17 (9):
       implementation_status: null
       narrative: |
-        Access keys and user accounts can be revoked using IAM. Sessions terminate after 10 minutes. 
+        Access keys and user accounts can be revoked using IAM. Sessions terminate after 10 minutes.
+    IA-2 (1):
+      narrative: |
+        Cloud.Gov currently does not have MFA capabilities implemented for users; however, any administrative actions taken on the platform requires authentication via encrypted ssh keys which are limited to specific users on the jumpbox.
+    IA-2 (3):
+      narrative: |
+        Any administrative actions taken on the platform requires authentication via encrypted ssh keys which are limited to specific users on the jumpbox.
+    IA-2 (8):
+      implementation_status: null
+      narrative: |
+        Access keys and user accounts can be revoked using IAM. Sessions terminate after 10 minutes.

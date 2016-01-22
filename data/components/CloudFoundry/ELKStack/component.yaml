@@ -41,8 +41,5 @@ satisfies:
       implementation_status: null
       narrative:
         a: |
-          Data produced by CF Loggregator is stored on the ELK Stack
-    AU-2 (3):
-      implementation_status: null
-      narrative: |
-        The Devops and Secops teams review all audtiable events on a real time basis using ELK monitoring and logging solution for the Cloud.Gov paltform.
+          Cloud.Gov provides an audit trail through the bosh tasks command. This command shows all actions that an operator has taken with the platform. Additionally, operators can redirect Cloud Foundry component logs to a Logstash syslog server using the syslog_daemon_config property in the metron_agent job of cf-release.
+          For end users, Cloud.Gov records an audit trail of all relevant API invocations of and app. The CLI command cf events returns this information.

@@ -1,9 +1,10 @@
 documentation_complete: false
 name: Audit and Accountability Policy for 18F
-references:
-- name: Policy Document
-  type: URL
-  path: https://drive.google.com/drive/u/1/folders/0B6fPl5s12igNfnhnZWJqQVluNUxybWo5WVQwaHUwN29qRmVaQlczN0tpVUZEa25WZFdsTjg
+verifications:
+  POLICY_DOC:
+    name: Policy Document
+    type: URL
+    path:  https://drive.google.com/drive/u/1/folders/0B6fPl5s12igNfnhnZWJqQVluNUxybWo5WVQwaHUwN29qRmVaQlczN0tpVUZEa25WZFdsTjg
 satisfies:
   NIST-800-53:
     AU-1:
@@ -14,6 +15,8 @@ satisfies:
           The 18F Audit and Accountability Policy which  addresses purpose, scope, roles, responsibilities, management commitment, coordination among organizational entities, ompliance and procedures to facilitate the implementation of the audit and aaccountability policy and associated audit controls. The 18F Audit and Accountability policy is listed within 18F’s  private Github repository and the docs.cloud.gov site that is accessible to all 18F staff.
         b: |
           The 18F Program Office will review and update the current 18F Audit control policy at least every 3 years and any documented audit procedures at least annually.
+    references:
+      - verification: POLICY_DOC
     AU-2:
       implementation_status: null
       narrative:
@@ -24,6 +27,38 @@ satisfies:
           18F retains audit logs according to NARA retention standards to provide support for after-the-fact investigations of security incidents and to meet regulatory and organizational information retention requirements.
           The log management framework will provide the capability to retain logs for 90 days online and one-year offline, with sufficient capacity as to mitigate the risk of exceeding storage space.
           Specific Policies, Procedures, Points of Contact, and Guidance will be established between 18F and other agencies to support after-the-fact investigations, by the 18F Project Lead.
+    references:
+      - verification: POLICY_DOC
+    AU-6:
+      implementation_status: null
+      narrative: |
+        Audit Monitoring, Analysis and Reporting
+         * 18F establishes processes for regularly reviewing audit log information, and reporting security issues if discovered. Reviews will occur at a minimum of weekly. These processes should be integrated with processes for incident response, in order to ensure standardization and cross-functional collaboration
+         * 18F employs automated mechanisms to integrate audit monitoring, analysis and reporting into an overall process for investigation and response to suspicious activities.
+         * 18F employs automated mechanisms to immediately alert security personnel of inappropriate or unusual activities that have security implications.
+        Upon implementation, 18F will monitor information security news and alerts for indications of a need to heighten information system security monitoring. Sources such as product vendors, United States Computer Emergency Readiness Team (US-CERT) and other security community resources will be leveraged to provide information on emerging threats and changes to the landscape.  At GSA’s request or the determination of 18F the review of audit logs shall be increased and any appropriate changes to audit content collection shall be implemented.
+        Findings & Incident Reports will be sent weekly for findings, and monthly for incidents. All incidents involving data breaches which could result in identity theft are coordinated through the GSA OCIO Office of the Senior Agency Information Security Officer (OSAISO) and the GSA Management Incident Response Team (MIRT) using the GSA breach notification plan per OMB Memorandum M-07-16, “Safeguarding Against and Responding to the Breach of Personally Identifiable Information;”
+        Upon request from the appropriate personnel, Reports, Logs,  Auditable Events, and other Data will be provided via secure means such as encrypted email, encrypted file transfer, or other such supported media, depending on the size of data requested.
+      references:
+        - verification: POLICY_DOC
+    AU-6 (1):
+      narrative: |
+        Audit Monitoring, Analysis and Reporting
+         * 18F establishes processes for regularly reviewing audit log information, and reporting security issues if discovered. Reviews will occur at a minimum of weekly. These processes should be integrated with processes for incident response, in order to ensure standardization and cross-functional collaboration
+         * 18F employs automated mechanisms to integrate audit monitoring, analysis and reporting into an overall process for investigation and response to suspicious activities.
+         * 18F employs automated mechanisms to immediately alert security personnel of inappropriate or unusual activities that have security implications.
+
+      references:
+        - verification: POLICY_DOC
+    AU-6 (3):
+      narrative: |
+        Audit Monitoring, Analysis and Reporting
+         * 18F establishes processes for regularly reviewing audit log information, and reporting security issues if discovered. Reviews will occur at a minimum of weekly. These processes should be integrated with processes for incident response, in order to ensure standardization and cross-functional collaboration
+         * 18F employs automated mechanisms to integrate audit monitoring, analysis and reporting into an overall process for investigation and response to suspicious activities.
+         * 18F employs automated mechanisms to immediately alert security personnel of inappropriate or unusual activities that have security implications.
+
+      references:
+        - verification: POLICY_DOC   
     AU-9:
       implementation_status: null
       narrative: |
