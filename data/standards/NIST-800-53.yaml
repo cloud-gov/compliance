@@ -995,4 +995,7 @@ SI-8 (1):
 SI-8 (2):
   family: SI
   name: Spam Protection | Automatic Updates
+SA-22 (1):
+  family: SA
+  name: Unsupported System Components
 name: NIST-800-53

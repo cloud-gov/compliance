@@ -1,0 +1,33 @@
+documentation_complete: false
+name: BOSH
+references:
+- name: Bosh source code
+  path: https://github.com/cloudfoundry/bosh
+  type: URL
+- name: Bosh Documentation
+  path: https://bosh.io/docs
+  type: URL
+satisfies:
+  NIST-800-53:
+    CM-2:
+      implementation_status: null
+      narrative: |
+        18F utilizes the Cloud Foundry Secure Deployment best practices which include the following:
+        Configure UAA clients and users using a standard BOSH manifest for cloud Foundry Deployment. Limit and manage these clients and users as you would any other kind of privileged account.
+        Deploy within a VPC that limits network traffic to individual VMs. This reduces the possibility of unauthorized access to the VMs within your BOSH-managed cloud.
+        Enable HTTPS for applications and SSL database connections to protect sensitive data transmitted to and from applications.
+        Ensure that the jumpbox is secure, along with the load balancer and NAT VM.
+        Encrypt stored files and data within databases to meet data security requirements. Deploy using industry standard encryption and the best practices for your language or framework.
+        Prohibit promiscuous network interfaces on the trusted network.
+        Review and monitor data sharing and security practices with third-party services that you use to provide additional functionality to your application.
+        Store SSH keys securely to prevent disclosure, and promptly replace lost or compromised keys.
+        Use Cloud Foundry’s RBAC model to restrict users’ access to only what is necessary to complete their tasks.
+        Use a strong passphrase for both Cloud Foundry user account and SSH keys.
+
+        Store SSH keys securely to prevent disclosure, and promptly replace lost or compromised keys.
+        Use Cloud Foundry’s RBAC model to restrict users’ access to only what is necessary to complete their tasks.
+        Use a strong passphrase for both Cloud Foundry user account and SSH keys.
+
+        For further information regarding Cloud Foundry best practices please refer to:
+        https://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html
+        https://docs.cloudfoundry.org/concepts/security.html
