@@ -110,12 +110,19 @@ verifications:
     name: Cloud Controller Role Implmentation Specs
     path: https://github.com/cloudfoundry/cloud_controller_ng/blob/master/spec/unit/lib/cloud_controller/membership_spec.rb
     type: URL
+  CRUD:
+    last_run: 2016-01-25 11:24:07.847588
+    name: Access Controls all
+    path: 'Feature: Access Controls Scenario: all'
+    test_passed: true
+    type: TEST
   EVENTS_ENDPOINT:
     name: CF Events Endpoint
     path: https://apidocs.cloudfoundry.org/228/events/list_all_events.html
     type: URL
   LOG_TESTS:
-    last_run: 2016-01-22 15:11:23.029640
+    last_run: 2016-01-25 11:24:08.084862
     name: Audit and Accountability Content of Audit Records
     path: 'Feature: Audit and Accountability Scenario: Content of Audit Records'
+    test_passed: true
     type: TEST

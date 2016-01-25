@@ -114,20 +114,24 @@ def after_feature(context, feature):
 def after_tag(context, tag):
     if 'Component' in tag:
         _, name, system, component = tag.split('-')
+        feature = context.feature.name
+        try:
+            scenario = context.scenario.name
+        except:
+            scenario = "all"
         component_file = os.path.join(
             '..', 'data', 'components', system,
             component, 'component.yaml'
         )
         with open(component_file, 'r') as yaml_file:
             data = yaml.load(yaml_file)
+            if not 'verifications' in data:
+                data['verifications'] = {}
             data['verifications'][name] = {
-                'name': '{0} {1}'.format(
-                    context.feature.name, context.scenario.name
-                ),
+                'name': '{0} {1}'.format(feature, scenario),
                 'type': 'TEST',
-                'path': 'Feature: {0} Scenario: {1}'.format(
-                    context.feature.name, context.scenario.name
-                ),
+                'test_passed': not context.failed,
+                'path': 'Feature: {0} Scenario: {1}'.format(feature, scenario),
                 'last_run': datetime.datetime.now()
             }
         with open(component_file, 'w') as yaml_file:

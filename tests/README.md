@@ -11,8 +11,9 @@ BBD style tests for verifying Cloud.gov's compliance with FedRAMP controls
 git clone https://github.com/18F/security-group-test-app.git
 cd security-group-test-app
 cf create-org ASG_ORG
+cf target -o ASG_ORG
 cf create-space ASG_SPACE
-cf target -o ASG_ORG -s ASG_SPACE
+cf target -s ASG_SPACE
 cf push
 ```
 
