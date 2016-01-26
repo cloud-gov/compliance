@@ -1,5 +1,102 @@
 documentation_complete: false
 name: Cloud Controller
+satisfies:
+  NIST-800-53:
+    AC-14:
+      implementation_status: null
+      narrative:
+        a: 'There are no permitted actions without identification and authentication
+          to Cloud.Gov. The Cloud Controller rejects any broker registration that
+          does not contain a username and password. The Cloud Controller authenticates
+          every request with the Service Broker API using HTTP or HTTPS, depending
+          on which protocol you specify during broker registration.
+
+          '
+    AC-2:
+      implementation_status: null
+      narrative:
+        a: 'Cloud Foundry user and role accounts are managed and maintained through
+          the Cloud Controller. Cloud Foundry uses role-based access control with
+          each role granting permissions in either an organization or an application
+          space. The Following types are used:
+
+          * Org Manager
+
+          * Org Auditor
+
+          * Space Manager
+
+          * Space Developer
+
+          * Space Auditor
+
+          '
+      references:
+      - verification: CF_ROLES
+      - verification: CF_ROLES_CODE
+      - verification: CF_ROLES_CODE_SPECS
+    AC-2 (9):
+      implementation_status: null
+      narrative: 'This control is not applicable. Group accounts are not allowed  within
+        the 18F VPC and the Cloud.Gov PaaS
+
+        '
+    AC-5:
+      implementation_status: null
+      narrative:
+        a: "The Cloud Controller is used to create invidual user accounts and roles\
+          \ within the PaaS for separation of duty functions. The following is a list\
+          \ of roles a user can assume within the Cloud.Gov platform.\n* Org Manager\
+          \  - Managers or other users who need to administer the account\n* Org Auditor\
+          \ - Can view but not edit user information and org quota usage information\n\
+          * Space Manager - managers or other users who need to administer a space\n\
+          * Space Developer - application developers or other users who need to manage\
+          \ applications and services in a space\n* Space Auditor\t- Can view but\
+          \ not edit the space\n"
+        b: 'The  Cloud Controller API has an enpoint for viewing extensive information
+          about user roles.
+
+          '
+    AC-6:
+      implementation_status: null
+      narrative: 'Cloud.Gov uses feature flags which allows an administrator to turn
+        on or off sub-sections, or features, of an application without deploying new
+        code.
+
+        18F uses Orgs, Spaces, and Roles to implement least privileged access to the
+        platform as a service. Cloud.Gov uses role-based access control (RBAC), with
+        each role granting permissions in either an org or a space.
+
+        '
+      references:
+      - verification: CF_ROLES
+      - verification: CF_ROLES_CODE
+      - verification: CF_ROLES_CODE_SPECS
+    AC-6 (10):
+      implementation_status: null
+      narrative: 'The Cloud.Gov platform has built-in Role based access controls (RBAC).
+        This ensures that users can only view and affect the spaces for which they
+        have been granted access to. It also prevents non-privileged users from executing
+        privileged functions to include disabling, circumventing, or altering implemented
+        security safeguards/countermeasures.
+
+        Only designated Org Managers from the DevOps team can execute privileged functions
+        to the Cloud.Gov platform. All other accounts are non-prilviledged accounts.
+
+        Client agencies using Cloud.Gov are only permitted to change settings within
+        their associated  Org account, spaces and roles. These accounts do not have
+        access to the underlying Cloud.Gov Platform.
+
+        '
+    AU-3:
+      implementation_status: null
+      narrative: 'Cloud Foundry stores detailed events which can be accessed through
+        the CF API. A list the events is avaiable in the API documentation.
+
+        '
+      references:
+      - verification: EVENTS_ENDPOINT
+      - verification: LOG_TESTS
 verifications:
   CF_ROLES:
     name: Cloud Controller Role Documentation
@@ -13,66 +110,19 @@ verifications:
     name: Cloud Controller Role Implmentation Specs
     path: https://github.com/cloudfoundry/cloud_controller_ng/blob/master/spec/unit/lib/cloud_controller/membership_spec.rb
     type: URL
+  CRUD:
+    last_run: 2016-01-26 10:41:31.608962
+    name: Access Controls all
+    path: 'Feature: Access Controls Scenario: all'
+    test_passed: true
+    type: TEST
   EVENTS_ENDPOINT:
     name: CF Events Endpoint
     path: https://apidocs.cloudfoundry.org/228/events/list_all_events.html
     type: URL
-satisfies:
-  NIST-800-53:
-    AC-2:
-      implementation_status: null
-      narrative:
-        a: |
-          Cloud Foundry user and role accounts are managed and maintained through the Cloud Controller. Cloud Foundry uses role-based access control with each role granting permissions in either an organization or an application space. The Following types are used:
-          * Org Manager
-          * Org Auditor
-          * Space Manager
-          * Space Developer
-          * Space Auditor
-      references:
-        - verification: CF_ROLES
-        - verification: CF_ROLES_CODE
-        - verification: CF_ROLES_CODE_SPECS
-    AC-2 (9):
-      implementation_status: null
-      narrative: |
-        This control is not applicable. Group accounts are not allowed  within the 18F VPC and the Cloud.Gov PaaS
-    AC-5:
-      implementation_status: null
-      narrative:
-        a: |
-          The Cloud Controller is used to create invidual user accounts and roles within the PaaS for separation of duty functions. The following is a list of roles a user can assume within the Cloud.Gov platform.
-          * Org Manager  - Managers or other users who need to administer the account
-          * Org Auditor - Can view but not edit user information and org quota usage information
-          * Space Manager - managers or other users who need to administer a space
-          * Space Developer - application developers or other users who need to manage applications and services in a space
-          * Space Auditor	- Can view but not edit the space
-        b: |
-          The  Cloud Controller API has an enpoint for viewing extensive information about user roles.
-    AC-6:
-      implementation_status: null
-      narrative: |
-        Cloud.Gov uses feature flags which allows an administrator to turn on or off sub-sections, or features, of an application without deploying new code.
-        18F uses Orgs, Spaces, and Roles to implement least privileged access to the platform as a service. Cloud.Gov uses role-based access control (RBAC), with each role granting permissions in either an org or a space.
-      references:
-        - verification: CF_ROLES
-        - verification: CF_ROLES_CODE
-        - verification: CF_ROLES_CODE_SPECS
-    AC-6 (10):
-      implementation_status: null
-      narrative: |
-        The Cloud.Gov platform has built-in Role based access controls (RBAC). This ensures that users can only view and affect the spaces for which they have been granted access to. It also prevents non-privileged users from executing privileged functions to include disabling, circumventing, or altering implemented security safeguards/countermeasures.
-        Only designated Org Managers from the DevOps team can execute privileged functions to the Cloud.Gov platform. All other accounts are non-prilviledged accounts.
-        Client agencies using Cloud.Gov are only permitted to change settings within their associated  Org account, spaces and roles. These accounts do not have access to the underlying Cloud.Gov Platform.
-    AC-14:
-      implementation_status: null
-      narrative:
-        a: |
-          There are no permitted actions without identification and authentication to Cloud.Gov. The Cloud Controller rejects any broker registration that does not contain a username and password. The Cloud Controller authenticates every request with the Service Broker API using HTTP or HTTPS, depending on which protocol you specify during broker registration.
-    AU-3:
-      implementation_status: null
-      narrative: |
-        Cloud Foundry stores detailed events which can be accessed through the CF API. A list the events is avaiable in the API documentation.
-      references:
-        - verification: EVENTS_ENDPOINT
-    
+  LOG_TESTS:
+    last_run: 2016-01-26 10:41:32.121808
+    name: Audit and Accountability Content of Audit Records
+    path: 'Feature: Audit and Accountability Scenario: Content of Audit Records'
+    test_passed: true
+    type: TEST

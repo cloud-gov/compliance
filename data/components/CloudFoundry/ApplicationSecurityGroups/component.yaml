@@ -8,16 +8,58 @@ satisfies:
   NIST-800-53:
     AC-3:
       implementation_status: null
-      narrative: |
-        18F has created specific Cloud.Gov security groups associated with VPCs to provide full control over inbound and outbound traffic. 18F has created a specific set of VPCs (Live production and staging) for its Cloud.Gov implementation.  All VPCs have subnets used to separate and control IP address space within each individual VPC.  Subnets must be created in order to launch Availability Zone (AZ) specific services within a VPC. 18F has setup VPC Peering between the Staging VPC and the CF Live production VPC.
+      narrative: '18F has created specific Cloud.Gov security groups associated with
+        VPCs to provide full control over inbound and outbound traffic. 18F has created
+        a specific set of VPCs (Live production and staging) for its Cloud.Gov implementation.  All
+        VPCs have subnets used to separate and control IP address space within each
+        individual VPC.  Subnets must be created in order to launch Availability Zone
+        (AZ) specific services within a VPC. 18F has setup VPC Peering between the
+        Staging VPC and the CF Live production VPC.
+
+        '
     AC-4:
       implementation_status: null
-      narrative: |
-        Cloud.Gov enforces security groups and other network traffic rules in a strict priority order. Cloud.Gov returns an allow, deny, or reject result for the first rule that matches the outbound traffic request parameters, and does not evaluate any lower-priority rules
-        Cloud.Gov implements network traffic rules using Linux iptables on the component VMs. DevOps configures rules to prevent system access from external networks and between internal components, and to restrict applications from establishing connections over the DEA network interface. Cloud.Gov application security groups (ASG) consists of a list of access rules to control application outbound traffic.
-        DEA Network Properties allow DevOps to configure the allow_networks and deny_networks parameters for DEAs to prohibit communication between system components and applications.
+      narrative: 'Cloud.Gov enforces security groups and other network traffic rules
+        in a strict priority order. Cloud.Gov returns an allow, deny, or reject result
+        for the first rule that matches the outbound traffic request parameters, and
+        does not evaluate any lower-priority rules
+
+        Cloud.Gov implements network traffic rules using Linux iptables on the component
+        VMs. DevOps configures rules to prevent system access from external networks
+        and between internal components, and to restrict applications from establishing
+        connections over the DEA network interface. Cloud.Gov application security
+        groups (ASG) consists of a list of access rules to control application outbound
+        traffic.
+
+        DEA Network Properties allow DevOps to configure the allow_networks and deny_networks
+        parameters for DEAs to prohibit communication between system components and
+        applications.
+
+        '
     AC-4 (21):
       implementation_status: null
-      narrative: |
-        Cloud.Gov uses application security groups act as virtual firewalls to control outbound traffic from the applications in deployment. Cloud.Gov evaluates security groups and other network traffic rules in a strict priority order. Cloud Foundry returns and allow, deny, or reject result for the first rule that matches the outbound traffic request parameters, and does not evaluate any lower-priority rules. Cloud Foundry evaluates the network traffic rules for an application in the following order:
-        Security Groups: The rules described by the Default Staging set, the Default Running set, and all security groups bound to the space.
+      narrative: 'Cloud.Gov uses application security groups act as virtual firewalls
+        to control outbound traffic from the applications in deployment. Cloud.Gov
+        evaluates security groups and other network traffic rules in a strict priority
+        order. Cloud Foundry returns and allow, deny, or reject result for the first
+        rule that matches the outbound traffic request parameters, and does not evaluate
+        any lower-priority rules. Cloud Foundry evaluates the network traffic rules
+        for an application in the following order:
+
+        Security Groups: The rules described by the Default Staging set, the Default
+        Running set, and all security groups bound to the space.
+
+        '
+verifications:
+  ASG_LIST:
+    last_run: 2016-01-26 10:41:36.009750
+    name: Access Control Flow View Application Security Groups
+    path: 'Feature: Access Control Flow Scenario: View Application Security Groups'
+    test_passed: true
+    type: TEST
+  ASG_OPEN_AND_CLOSED:
+    last_run: 2016-01-26 10:41:38.391335
+    name: Access Control Flow all
+    path: 'Feature: Access Control Flow Scenario: all'
+    test_passed: true
+    type: TEST
