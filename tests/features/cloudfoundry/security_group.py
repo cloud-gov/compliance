@@ -22,6 +22,11 @@ class SecurityGroup:
             method='delete'
         )
 
+    def associated_spaces(self):
+        return self.client.api_request(
+            endpoint='/v2/security_groups/{0}/spaces'.format(self.guid)
+        ).json()
+
     def delete(self):
         return self.client.api_request(
             endpoint='/v2/security_groups/%s?' % self.guid,
