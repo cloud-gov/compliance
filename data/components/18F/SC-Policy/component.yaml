@@ -1,12 +1,22 @@
 documentation_complete: false
 name: System and Communications Protection Policy for 18F
-references:
-- name: Policy Document
-  type: URL
-  path: https://drive.google.com/drive/u/1/folders/0B6fPl5s12igNfnhnZWJqQVluNUxybWo5WVQwaHUwN29qRmVaQlczN0tpVUZEa25WZFdsTjg
+verifications:
+  POLICY_DOC:
+    name: Policy Document
+    type: URL
+    path: https://drive.google.com/drive/u/1/folders/0B6fPl5s12igNfnhnZWJqQVluNUxybWo5WVQwaHUwN29qRmVaQlczN0tpVUZEa25WZFdsTjg
 satisfies:
   NIST-800-53:
     SC-1:
       implementation_status: null
       narrative: 18F Policy
+      references:
+        - verification: POLICY_DOC
+    SC-7:
+      implementation_status: null
+      narrative:
+        b: |
+          18F Implements subnetworks for publicly accessible system components that are logically separated from internal organizational networks
+      references:
+        - verification: POLICY_DOC
 system: 18F

@@ -6,3 +6,10 @@ satisfies:
       implementation_status: null
       narrative: |
         The DEA manages the Warder Containers and controls both outbound and inbound network rules
+    SC-7:
+      implementation_status: null
+      narrative:
+        a: |
+          Cloud Foundry Boundary Protection
+          Cloud Foundry implements network traffic rules using Linux iptables on the component VMs. Operators can configure rules to prevent system access from external networks and between internal components, and to restrict applications from establishing connections over the DEA network interface.
+          Spoofing- If an IP, MAC, or ARP spoofing attack bypasses the physical firewall for the deployment, Cloud Foundry network traffic rules help prevent the attack from accessing application containers. Cloud Foundry uses application isolation, operating system restrictions, and encrypted connections to further mitigate risk.

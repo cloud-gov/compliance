@@ -1,5 +1,39 @@
 documentation_complete: false
 name: Cloud Controller
+verifications:
+  CF_ROLES:
+    name: Cloud Controller Role Documentation
+    path: https://ocs.cloudfoundry.org/concepts/roles.html
+    type: URL
+  CF_ROLES_CODE:
+    name: Cloud Controller Role Implmentation
+    path: https://docs.cloudfoundry.org/concepts/roles.html
+    type: URL
+  CF_ROLES_CODE_SPECS:
+    name: Cloud Controller Role Implmentation Specs
+    path: https://github.com/cloudfoundry/cloud_controller_ng/blob/master/spec/unit/lib/cloud_controller/membership_spec.rb
+    type: URL
+  EVENTS_ENDPOINT:
+    name: CF Events Endpoint
+    path: https://apidocs.cloudfoundry.org/228/events/list_all_events.html
+    type: URL
+  STATIC_CODE_ANALYSIS:
+    name: Cloud Controller source code static analysis
+    type: URL
+    path: https://codeclimate.com/github/cloudfoundry/cloud_controller_ng
+  CRUD:
+    last_run: 2016-01-26 10:41:31.608962
+    name: Access Controls all
+    test_path: 'Feature: Access Controls Scenario: all'
+    test_passed: true
+    type: TEST
+  LOG_TESTS:
+    last_run: 2016-01-26 10:41:32.121808
+    name: Audit and Accountability Content of Audit Records
+    test_path: 'Feature: Audit and Accountability Scenario: Content of Audit Records'
+    test_passed: true
+    type: TEST
+
 satisfies:
   NIST-800-53:
     AC-14:
@@ -69,9 +103,9 @@ satisfies:
 
         '
       references:
-      - verification: CF_ROLES
-      - verification: CF_ROLES_CODE
-      - verification: CF_ROLES_CODE_SPECS
+        - verification: CF_ROLES
+        - verification: CF_ROLES_CODE
+        - verification: CF_ROLES_CODE_SPECS
     AC-6 (10):
       implementation_status: null
       narrative: 'The Cloud.Gov platform has built-in Role based access controls (RBAC).
@@ -95,34 +129,17 @@ satisfies:
 
         '
       references:
-      - verification: EVENTS_ENDPOINT
-      - verification: LOG_TESTS
-verifications:
-  CF_ROLES:
-    name: Cloud Controller Role Documentation
-    path: https://ocs.cloudfoundry.org/concepts/roles.html
-    type: URL
-  CF_ROLES_CODE:
-    name: Cloud Controller Role Implmentation
-    path: https://docs.cloudfoundry.org/concepts/roles.html
-    type: URL
-  CF_ROLES_CODE_SPECS:
-    name: Cloud Controller Role Implmentation Specs
-    path: https://github.com/cloudfoundry/cloud_controller_ng/blob/master/spec/unit/lib/cloud_controller/membership_spec.rb
-    type: URL
-  CRUD:
-    last_run: 2016-01-26 10:41:31.608962
-    name: Access Controls all
-    path: 'Feature: Access Controls Scenario: all'
-    test_passed: true
-    type: TEST
-  EVENTS_ENDPOINT:
-    name: CF Events Endpoint
-    path: https://apidocs.cloudfoundry.org/228/events/list_all_events.html
-    type: URL
-  LOG_TESTS:
-    last_run: 2016-01-26 10:41:32.121808
-    name: Audit and Accountability Content of Audit Records
-    path: 'Feature: Audit and Accountability Scenario: Content of Audit Records'
-    test_passed: true
-    type: TEST
+        - verification: EVENTS_ENDPOINT
+        - verification: LOG_TESTS
+
+    SA-11 (1):
+      implementation_status: implemented
+      narrative: |
+        The Cloud Controller uses CodeClimate as it's primary static code analysis tool. The results of the test are publicly avaiable.
+      references:
+        - verification: STATIC_CODE_ANALYSIS
+
+    SI-10:
+      implementation_status: implemented
+      narrative: |
+        The UAA uses a Restful API with set endpoint and parameters. Users depending on thier authorized access can only make request to specific endpoint that activate specific functions that take a limited and defined set of parameters.

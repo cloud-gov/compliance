@@ -1,9 +1,10 @@
 documentation_complete: false
 name: Security Assessment and Authorization Policy for 18F
-references:
-- name: Policy Document
-  type: URL
-  path: https://drive.google.com/drive/u/1/folders/0B6fPl5s12igNfnhnZWJqQVluNUxybWo5WVQwaHUwN29qRmVaQlczN0tpVUZEa25WZFdsTjg
+verifications:
+  POLICY_DOC:
+    name: Policy Document
+    type: URL
+    path: https://drive.google.com/drive/u/1/folders/0B6fPl5s12igNfnhnZWJqQVluNUxybWo5WVQwaHUwN29qRmVaQlczN0tpVUZEa25WZFdsTjg
 satisfies:
   NIST-800-53:
     CA-1:
@@ -14,3 +15,32 @@ satisfies:
           The 18F Security Assessnet and authorization policy which  addresses purpose, scope, roles, responsibilities, management commitment, coordination among organizational entities, and compliance and procedures to facilitate the implementation of the security assessment and authroization policy and associated security assessnet controls. The 18F security assessnet and authorization policy is listed within its private Github repository that is accessible to all 18F staff.
         b: |
           The 18F Program Office will review and update the current 18F Security Assessment policy at least every 3 years and any documented assessment procedures at least annually.
+      references:
+        - verification: POLICY_DOC
+    CA-8:
+      implementation_status: null
+      narrative: |
+
+        AWS/Cloud Foundry  Penetration Testing:
+        External Penetration testing
+        External penetration testing activities are conducted by GSA OCISO on an annual basis. These activites are designed to perform the necessary vulnerability analysis against the Cloud Foundry System based on all necessary security requirements. The GSA OCISO follows the GSA CIO IT Security Procedural Guide, CIO-IT Security-11-51, Conducting Penetration Test Exercises when performing these tests.
+        For external public facing penetration testing, 18F must request permission from AWS using the AWS Vulnerability / Penetration Testing Request Form to conduct penetration test activities against its own Virtual Private Cloud infrastructure and follow the AWS Acceptable Use Policy.
+        Amazon requires customers to obtain authorization for penetration testing (or vulnerability assessments) both from or to their AWS resources.
+        AWS Acceptable Use Policy, http://aws.amazon.com/aup/
+        AWS Penetration testing,  http://aws.amazon.com/security/penetration-testing/
+
+        ISE performs penetration testing services for the information systems. It is also bound by the AWS penetration testing policy and procedures.
+
+        Internal Penetration testing
+        For internal penetration testing inside 18 F's Virtual Private Cloud, 18F team members will conduct authenticated vulnerability scans using Nessus,, whitebox/greybox testing of the 18F environment using AWS friendly and approved assessment tools.
+        For compliance with NIST Publication 800-53 CA-8, Parameter 1 Penetration Testing of all 18F Infrastructure and Application Components will occur annually. Parameter 2 Penetration Testing of Publicly Accessible Infrastructure will be performed on the direction of the GSA ISSO.
+        18F will use GSA CIO-IT Security 11-51  rev 2” Conducting Penetration Test exercises” procedural guide as a reference
+
+      references:
+        - verification: POLICY_DOC
+    CA-8 (1):
+      implementation_status: null
+      narrative: |
+        The GSA ISE will perform Penetration testing of the all 18F systems that are in the purview of GSA. All other penration testing functions will be conducted by a Independent Third party assessor (3PAO)
+      references:
+        - verification: POLICY_DOC

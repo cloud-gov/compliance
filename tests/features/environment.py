@@ -133,7 +133,9 @@ def after_tag(context, tag):
                 'name': '{0} {1}'.format(feature, scenario),
                 'type': 'TEST',
                 'test_passed': not context.failed,
-                'path': 'Feature: {0} Scenario: {1}'.format(feature, scenario),
+                'test_path': 'Feature: {0} Scenario: {1}'.format(
+                    feature, scenario
+                ),
                 'last_run': datetime.datetime.now()
             }
         with open(component_file, 'w') as yaml_file:
