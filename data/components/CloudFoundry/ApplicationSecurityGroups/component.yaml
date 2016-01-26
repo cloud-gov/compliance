@@ -50,6 +50,12 @@ satisfies:
         Running set, and all security groups bound to the space.
 
         '
+    SC-7:
+      implementation_status: null
+      narrative:
+        a: |
+          Cloud Foundry recommends that the use of Cloud Foundry ASGs to specify egress access rules for your applications. This functionality enables secure restricted application outbound traffic to predefined routes.
+
 verifications:
   ASG_LIST:
     last_run: 2016-01-26 10:41:36.009750
