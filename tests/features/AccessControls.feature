@@ -1,3 +1,4 @@
+@Component-CRUD-CloudFoundry-CloudController
 Feature: Access Controls
 
   Scenario Outline: Creating Organizations
@@ -14,6 +15,7 @@ Feature: Access Controls
      | a space developer|  does not exist |
      | a space auditor  |  does not exist |
 
+
   Scenario Outline: Updating Organizations
      Given I am using <account> account
        when I try to update an org name
@@ -27,6 +29,7 @@ Feature: Access Controls
      | a space manager  |  stays the same |
      | a space developer|  stays the same |
      | a space auditor  |  stays the same |
+
 
    Scenario Outline: Destroying Organizations
       Given I am using <account> account
@@ -42,6 +45,7 @@ Feature: Access Controls
       | a space developer|  exists         |
       | a space auditor  |  exists         |
 
+
   Scenario Outline: Creating Spaces
      Given I am using <account> account
        when I try to create a space
@@ -55,6 +59,7 @@ Feature: Access Controls
      | a space manager  |  does not exist |
      | a space developer|  does not exist |
      | a space auditor  |  does not exist |
+
 
    Scenario Outline: Updating Spaces
       Given I am using <account> account
@@ -70,6 +75,7 @@ Feature: Access Controls
       | a space developer|  stays the same |
       | a space auditor  |  stays the same |
 
+
    Scenario Outline: Destroying Spaces
       Given I am using <account> account
         when I try to delete a space
@@ -83,6 +89,7 @@ Feature: Access Controls
       | a space manager  |  exists         |
       | a space developer|  exists         |
       | a space auditor  |  exists         |
+
 
   Scenario Outline: Creating Apps
      Given I am using <account> account
@@ -98,6 +105,7 @@ Feature: Access Controls
      | a space developer|  exists         |
      | a space auditor  |  does not exist |
 
+
    Scenario Outline: Destroying Apps
       Given I am using <account> account
         when I try to delete an app
@@ -112,6 +120,7 @@ Feature: Access Controls
       | a space developer|  does not exist |
       | a space auditor  |  exists         |
 
+
   Scenario Outline: Creating Users
      Given I am using <account> account
        when I try to create a user
@@ -125,6 +134,7 @@ Feature: Access Controls
      | a space manager  |  does not exist |
      | a space developer|  does not exist |
      | a space auditor  |  does not exist |
+
 
   Scenario Outline: Updating Users
      Given I am using <account> account
@@ -147,14 +157,13 @@ Feature: Access Controls
      | a space auditor  | space     |  does not have access |
 
 
-
   Scenario Outline: Deleting Users
      Given I am using <account> account
        when I try to delete a user
        then the user <status>
 
    Examples: Action-Results for deleting apps
-     | account          |  status 	  |
+     | account          |  status 	      |
      | a master         |  does not exist |
      | an org manager   |  exists         |
      | an org auditor   |  exists         |
@@ -177,7 +186,8 @@ Feature: Access Controls
      | a space developer|  27     |
      | a space auditor  |  27     |
 
-     
+
+  @Component-ACCOUNT_LOCKOUT-CloudFoundry-UAA
   Scenario: Account Lockout (AC-7)
     Given I am a user that can login
       when I attempt to login 6 times and fail

@@ -1,6 +1,6 @@
 Feature: Audit and Accountability
 
-
+@Component-LOG_TESTS-CloudFoundry-CloudController
 Scenario: Content of Audit Records
   Given I am using a master account
     when I look at the audit logs
@@ -8,3 +8,4 @@ Scenario: Content of Audit Records
     And audit logs have type of event
     And audit logs have actor
     And audit logs have actee
+ 
