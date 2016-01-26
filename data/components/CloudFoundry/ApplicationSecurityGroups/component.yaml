@@ -60,12 +60,12 @@ verifications:
   ASG_LIST:
     last_run: 2016-01-26 10:41:36.009750
     name: Access Control Flow View Application Security Groups
-    path: 'Feature: Access Control Flow Scenario: View Application Security Groups'
+    test_path: 'Feature: Access Control Flow Scenario: View Application Security Groups'
     test_passed: true
     type: TEST
   ASG_OPEN_AND_CLOSED:
     last_run: 2016-01-26 10:41:38.391335
     name: Access Control Flow all
-    path: 'Feature: Access Control Flow Scenario: all'
+    test_path: 'Feature: Access Control Flow Scenario: all'
     test_passed: true
     type: TEST

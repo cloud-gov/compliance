@@ -24,13 +24,13 @@ verifications:
   CRUD:
     last_run: 2016-01-26 10:41:31.608962
     name: Access Controls all
-    path: 'Feature: Access Controls Scenario: all'
+    test_path: 'Feature: Access Controls Scenario: all'
     test_passed: true
     type: TEST
   LOG_TESTS:
     last_run: 2016-01-26 10:41:32.121808
     name: Audit and Accountability Content of Audit Records
-    path: 'Feature: Audit and Accountability Scenario: Content of Audit Records'
+    test_path: 'Feature: Audit and Accountability Scenario: Content of Audit Records'
     test_passed: true
     type: TEST
 

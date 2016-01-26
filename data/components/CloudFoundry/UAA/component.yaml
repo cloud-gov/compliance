@@ -20,7 +20,7 @@ verifications:
   ACCOUNT_LOCKOUT:
     last_run: 2016-01-26 10:41:30.033023
     name: Access Controls Account Lockout (AC-7)
-    path: 'Feature: Access Controls Scenario: Account Lockout (AC-7)'
+    test_path: 'Feature: Access Controls Scenario: Account Lockout (AC-7)'
     test_passed: true
     type: TEST
   CLOUDGOV_LOGIN_PAGE:
