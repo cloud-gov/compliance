@@ -6,17 +6,6 @@ BBD style tests for verifying Cloud.gov's compliance with FedRAMP controls
 #### Install Dependencies  
 `pip install -r requirements.txt`
 
-#### Deploy Application Security Group Testing app
-```bash
-git clone https://github.com/18F/security-group-test-app.git
-cd security-group-test-app
-cf create-org ASG_ORG
-cf target -o ASG_ORG
-cf create-space ASG_SPACE
-cf target -s ASG_SPACE
-cf push
-```
-
 Store the org, space, app, and app route in `ASG_ORG`, `ASG_SPACE`, `ASG_APP`, `ASG_APP_URL` to export as env variables.
 
 #### Setup environment variables (optional for local deployment)
@@ -58,10 +47,6 @@ export TEST_APP_UPDATE="Name Change for TEST_APP_UPDATE"
 export TEST_USER="Test User Name"
 export TEST_USER_PASSWORD="Test Password Name"
 
-export ASG_ORG="The org that contains a special app for testing application security groups"
-export ASG_SPACE="The space that contains a special app for testing application security groups"
-export ASG_APP="The app for testing application security groups"
-export ASG_APP_URL="The url for testing application security groups"
 export CLOSED_GROUP="The name of the closed security group"
 export OPEN_GROUP="The name of the open security group"
 ```

@@ -15,11 +15,11 @@ def before_feature(context, feature):
         password=config.MASTER_PASSWORD,
         verify_ssl=False
     )
+    # Create and org
+    org = admin_client.create_org(config.TEST_ORG)
+    # Create a space
+    space = org.create_space(config.TEST_SPACE)
     if 'Access' in feature.name:
-        # Create and org
-        org = admin_client.create_org(config.TEST_ORG)
-        # Create a space
-        space = org.create_space(config.TEST_SPACE)
         # Create accounts that will be used and set permissions
         admin = admin_client.get_user(config.MASTER_USERNAME)
         org.set_user_role('user', admin.guid)
@@ -91,6 +91,7 @@ def after_feature(context, feature):
         password=config.MASTER_PASSWORD,
         verify_ssl=False
     )
+
     if 'Access' in feature.name:
         # Delete users
         admin_client.get_user(config.ORG_MANAGER).delete()
@@ -98,17 +99,18 @@ def after_feature(context, feature):
         admin_client.get_user(config.SPACE_MANAGER).delete()
         admin_client.get_user(config.SPACE_DEVELOPER).delete()
         admin_client.get_user(config.SPACE_AUDITOR).delete()
-        # Delete org and space
-        org = admin_client.get_org(config.TEST_ORG)
-        space = org.get_space(config.TEST_SPACE)
-        space.delete()
-        org.delete()
 
     if 'Flow' in feature.name:
         admin_client.get_security_group(
             name=config.OPEN_SECURITY_GROUP).delete()
         admin_client.get_security_group(
             name=config.CLOSED_SECURITY_GROUP).delete()
+
+    # Delete org and space
+    org = admin_client.get_org(config.TEST_ORG)
+    space = org.get_space(config.TEST_SPACE)
+    space.delete()
+    org.delete()
 
 
 def after_tag(context, tag):
@@ -125,7 +127,7 @@ def after_tag(context, tag):
         )
         with open(component_file, 'r') as yaml_file:
             data = yaml.load(yaml_file)
-            if not 'verifications' in data:
+            if 'verifications' not in data:
                 data['verifications'] = {}
             data['verifications'][name] = {
                 'name': '{0} {1}'.format(feature, scenario),
