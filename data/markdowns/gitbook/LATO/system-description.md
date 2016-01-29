@@ -47,8 +47,7 @@ View the status, number of instances, service bindings, and resource use of each
 ## Network Architecture
 The following architectural diagram(s) provides a visual depiction of the system network components that constitute Cloud.Gov.
 
-## System Environment
-Leveraged from AWS - None
+# System Environment
 
 ## Hardware Inventory
 Leveraged from AWS - None
@@ -106,7 +105,7 @@ Graphical user interface for Cloud.gov
 Leveraged from AWS - None
 
 ## Ports, Protocols and Services
-Ports (TCP/UDP) |	Protocols |	Services |	Purpose	Used By
+Ports (TCP/UDP) |	Protocols |	Services |	Purpose |	Used By 
 --- | --- | --- | ---
 80/TCP |	HTTP |	HTTP Web service |	Cloud.Gov EC2 Web service |	Tomcat
 443/TCP |	HTTPS |	HTTPS Web Service |	Cloud.Gov EC2 Web service	 |
