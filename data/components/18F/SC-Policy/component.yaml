@@ -5,6 +5,10 @@ verifications:
     name: Policy Document
     type: URL
     path: https://drive.google.com/drive/u/1/folders/0B6fPl5s12igNfnhnZWJqQVluNUxybWo5WVQwaHUwN29qRmVaQlczN0tpVUZEa25WZFdsTjg
+  KEY_ROTATION:
+    name: Key Rotation Policy
+    type: URL
+    path: https://github.com/18F/cg-docs/blob/master/content/ops/key-rotation.md
 satisfies:
   NIST-800-53:
     SC-1:
@@ -17,6 +21,10 @@ satisfies:
       narrative:
         b: |
           18F Implements subnetworks for publicly accessible system components that are logically separated from internal organizational networks
+    SC-12 (1):
+      implementation_status: true
+      narrative: |
+        Authorized federal staff rotate, encrypt, and backup keys monthly. Privileged users can access the keys only with two-factor authentication and a decryption passphrase. In the rare case that both the keys and the decryption passphrase for the backup are lost or compromised, new keys can be rotated in by authorized federal staff, while maintaining availability of information.
       references:
-        - verification: POLICY_DOC
+        - verification: KEY_ROTATION 
 system: 18F
