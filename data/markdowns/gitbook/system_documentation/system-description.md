@@ -89,7 +89,7 @@ The metrics collector gather metrics from the components. Operators can use this
 A full-featured user-facing command-line interface for to the Cloud Foundry environment which is used to create and manage Cloud Foundry applications and services.
 
 ## Cloud Foundry System Architecture Diagram
-![Cloud Foundry System Architecture](/LATO/Cloud_Foundry_System_Architecture.png)
+![Cloud Foundry System Architecture](/system_documentation/Cloud_Foundry_System_Architecture.png)
 
 ## Hardware Inventory
 Leveraged from AWS - None
