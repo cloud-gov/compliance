@@ -19,7 +19,7 @@ def before_feature(context, feature):
     org = admin_client.create_org(config.TEST_ORG)
     # Create a space
     space = org.create_space(config.TEST_SPACE)
-    if 'Access' in feature.name:
+    if 'Cloud Controller' in feature.name:
         # Create accounts that will be used and set permissions
         admin = admin_client.get_user(config.MASTER_USERNAME)
         org.set_user_role('user', admin.guid)
@@ -64,7 +64,7 @@ def before_feature(context, feature):
         org.set_user_role('user', space_auditor.guid)
         space.set_user_role('auditor', space_auditor.guid)
 
-    if 'Flow' in feature.name:
+    if 'ASG' in feature.name:
         admin_client.create_security_group(
             name=config.CLOSED_SECURITY_GROUP,
             rules=[{
@@ -92,7 +92,7 @@ def after_feature(context, feature):
         verify_ssl=False
     )
 
-    if 'Access' in feature.name:
+    if 'Cloud Controller' in feature.name:
         # Delete users
         admin_client.get_user(config.ORG_MANAGER).delete()
         admin_client.get_user(config.ORG_AUDITOR).delete()
@@ -100,7 +100,7 @@ def after_feature(context, feature):
         admin_client.get_user(config.SPACE_DEVELOPER).delete()
         admin_client.get_user(config.SPACE_AUDITOR).delete()
 
-    if 'Flow' in feature.name:
+    if 'ASG' in feature.name:
         admin_client.get_security_group(
             name=config.OPEN_SECURITY_GROUP).delete()
         admin_client.get_security_group(

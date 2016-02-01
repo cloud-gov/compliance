@@ -1,5 +1,4 @@
-@Component-ASG_OPEN_AND_CLOSED-CloudFoundry-ApplicationSecurityGroups
-Feature: Access Control Flow
+Feature: ASG
 
   Background:
     Given a space
@@ -15,7 +14,7 @@ Feature: Access Control Flow
     Given I am using a master account
     when I try to bind the application security group with closed settings to the space
     then the security group is bound
- 
+
   Scenario: Open Application Security Group
     Given I am using a master account
     when I try to bind the application security group with open settings to the space
