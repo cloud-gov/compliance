@@ -17,12 +17,6 @@ references:
   path: https://github.com/cloudfoundry/cloud_controller_ng/blob/master/spec/unit/access/space_access_spec.rb
   type: URL
 verifications:
-  ACCOUNT_LOCKOUT:
-    last_run: 2016-01-26 10:41:30.033023
-    name: Access Controls Account Lockout (AC-7)
-    test_path: 'Feature: Access Controls Scenario: Account Lockout (AC-7)'
-    test_passed: true
-    type: TEST
   CLOUDGOV_LOGIN_PAGE:
     name: Cloud.gov Login Page
     path: https://login.cloud.gov/login
