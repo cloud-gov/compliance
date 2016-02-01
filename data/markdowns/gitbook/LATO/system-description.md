@@ -48,6 +48,48 @@ View the status, number of instances, service bindings, and resource use of each
 The following architectural diagram(s) provides a visual depiction of the system network components that constitute Cloud.Gov.
 
 # System Environment
+The Cloud Foundry environment is comprised of three general classes of components, infrastructure abstraction, access control and self-service application deployment.
+
+### Infrastructure Abstraction
+
+#### BOSH:
+A provider-agnostic system for describing and managing the lifecycle of hardened virtual machines which provide the foundation for Cloud Foundry components
+
+### Routing & Access Control
+
+#### Router
+Routes external traffic to the appropriate Cloud Foundry component, usually the Cloud Controller or a running application on an Droplet Execution Agent node.
+#### Authentication Service
+The OAuth2 server and Login Server work together to provide identity management.
+
+### Self-service Applications
+
+#### Cloud Controller
+The Cloud Controller is responsible for managing the lifecycle of applications.
+
+#### Health Monitor
+Monitors and reconciles applications to determine their state, version and number of instances, and directs Cloud Controller to take action to correct any discrepancies.
+
+#### Droplet Execution Agent
+The Droplet Execution Agent manages application instances running compiled applications (droplets), tracks started instances, and broadcasts state messages.
+
+#### Blob Store
+The blob store holds, application code, build-packs and droplets.
+
+#### Service Brokers
+When a developer provisions and binds a service to an application, the service broker for that service is responsible for providing the service instance.
+
+#### Message Bus
+Cloud Foundry uses NATS, a lightweight publish-subscribe and distributed queueing messaging system, for internal communication between components.
+
+#### Logging
+The metrics collector gather metrics from the components. Operators can use this information to monitor an instance of Cloud Foundry.
+
+#### CLI
+A full-featured user-facing command-line interface for to the Cloud Foundry environment which is used to create and manage Cloud Foundry applications and services.
+
+## Cloud Foundry System Architecture Diagram
+![Cloud Foundry System Architecture](/LATO/Cloud_Foundry_System_Architecture.png)
 
 ## Hardware Inventory
 Leveraged from AWS - None
@@ -105,7 +147,7 @@ Graphical user interface for Cloud.gov
 Leveraged from AWS - None
 
 ## Ports, Protocols and Services
-Ports (TCP/UDP) |	Protocols |	Services |	Purpose |	Used By 
+Ports (TCP/UDP) |	Protocols |	Services |	Purpose |	Used By
 --- | --- | --- | ---
 80/TCP |	HTTP |	HTTP Web service |	Cloud.Gov EC2 Web service |	Tomcat
 443/TCP |	HTTPS |	HTTPS Web Service |	Cloud.Gov EC2 Web service	 |
