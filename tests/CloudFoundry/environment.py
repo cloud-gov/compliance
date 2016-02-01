@@ -122,7 +122,7 @@ def after_tag(context, tag):
         except:
             scenario = "all"
         component_file = os.path.join(
-            '..', 'data', 'components', system,
+            '..', '..', 'data', 'components', system,
             component, 'component.yaml'
         )
         with open(component_file, 'r') as yaml_file:

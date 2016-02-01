@@ -178,7 +178,7 @@ Feature: Cloud Controller Features
 
    Examples: Action-Results for auditing
      | account          |  number |
-     | a master         |  43     |
+     | a master         |  45     |
      | an org manager   |  0      |
      | an org auditor   |  43     |
      | a space manager  |  0      |

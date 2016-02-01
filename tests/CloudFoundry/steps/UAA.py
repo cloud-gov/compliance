@@ -5,8 +5,6 @@ from behave import given, when, then
 
 from cloudfoundry import Client
 
-TEST_START = datetime.datetime.utcnow().isoformat()
-
 
 ADMIN = Client(
     api_url=config.API_URL,
@@ -41,7 +39,7 @@ def step_impl(context):
 def step_impl(context):
     print(context.sample_log)
     assert 'actor' in context.sample_log['entity']
-    
+
 
 @then('audit logs have actee')
 def step_impl(context):

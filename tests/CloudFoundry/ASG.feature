@@ -5,7 +5,6 @@ Feature: ASG
       And a security group that is open to all public outgoing connections
       And a security group that closes all outgoing tcp connections
 
-  @Component-ASG_LIST-CloudFoundry-ApplicationSecurityGroups
   Scenario: View Application Security Groups
     Given I am using a master account
       then I can view and print all the ASGs
