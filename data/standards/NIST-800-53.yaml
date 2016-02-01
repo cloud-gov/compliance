@@ -822,6 +822,9 @@ SC-10:
 SC-12:
   family: SC
   name: Cryptographic Key Establishment and Management
+SC-12 (1):
+  family: SC
+  name: Cryptographic Key Establishment and Management | Availability
 SC-12 (2):
   family: SC
   name: Cryptographic Key Establishment and Management | Symmetric Keys
