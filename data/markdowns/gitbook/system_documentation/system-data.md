@@ -43,7 +43,7 @@ Noah Kunin | 18F Infrastructure Director | 18F/GSA | 1800 F Street, NW Washingto
 # Authorizing Official
 Name | Title | Organization | Address | Phone Number | Email Address
 --- | --- | --- | --- | --- | ---
-Aaron Snow | Authorizing Official | 18F/GSA | 1800 F Street, NW Washington DC 20405 |  | aaron.snow.gsa.gov
+Aaron Snow | Authorizing Official | 18F/GSA | 1800 F Street, NW Washington DC 20405 |  | aaron.snow [at] gsa.gov
 
 # Other Designated Contacts
 

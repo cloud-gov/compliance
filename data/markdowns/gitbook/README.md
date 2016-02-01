@@ -1,7 +1,6 @@
-# FedRAMP System Security Plan
+# FedRAMP Low System Security Plan
 ### 18F - Cloud.Gov  
 
-* [About the SSP](FedRAMP/about-the-ssp.md)
-* [Cloud.gov System Classification](FedRAMP/system-data.md)
-* [Cloud.gov General System Description](FedRAMP/system-description.md)  
-  
+* [About the SSP](system_documentation/about-the-ssp.md)
+* [Cloud.gov System Classification](system_documentation/system-data.md)
+* [Cloud.gov General System Description](system_documentation/system-description.md)  

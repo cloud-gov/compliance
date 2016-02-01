@@ -29,6 +29,13 @@ satisfies:
           Specific Policies, Procedures, Points of Contact, and Guidance will be established between 18F and other agencies to support after-the-fact investigations, by the 18F Project Lead.
     references:
       - verification: POLICY_DOC
+    AU-2 (3):
+      implementation_status: null
+      narrative: |
+        The Devops and SecOps teams review all events that can be audited on a real time basis using its event and monitoring solution for Cloud.Gov and through captured user and event api calls within its virtual infrastructure.
+    references:
+      - verification: POLICY_DOC
+
     AU-6:
       implementation_status: null
       narrative:
