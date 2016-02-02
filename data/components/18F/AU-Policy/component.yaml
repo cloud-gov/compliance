@@ -8,7 +8,7 @@ verifications:
 satisfies:
   NIST-800-53:
     AU-1:
-      implementation_status: null
+      implementation_status: true
       narrative:
         a: |
           The 18F Program Office develops, documents, and disseminates to all 18F staff,
@@ -18,7 +18,7 @@ satisfies:
     references:
       - verification: POLICY_DOC
     AU-2:
-      implementation_status: null
+      implementation_status: true
       narrative:
         b: |
           Audit logs will be made available to organizations for mutual support in response to security breaches, system and user access, incident reporting and continuous monitoring.
