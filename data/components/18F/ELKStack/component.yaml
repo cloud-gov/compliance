@@ -43,3 +43,13 @@ satisfies:
         a: |
           Cloud.Gov provides an audit trail through the bosh tasks command. This command shows all actions that an operator has taken with the platform. Additionally, operators can redirect Cloud Foundry component logs to a Logstash syslog server using the syslog_daemon_config property in the metron_agent job of cf-release.
           For end users, Cloud.Gov records an audit trail of all relevant API invocations of and app. The CLI command cf events returns this information.
+
+    AU-3:
+      implementation_status: null
+      narrative: |
+        The Cloud.Gov platform as a service generates audit logs from its Loggregator componement and is passed through the ELK stack to produce audit records which contain sufficient information to establish at a minumum:
+          what type of event occured,
+          when (date and time the event occurance)
+          the source of the event
+          the outcome (success or failure) of the event
+          the identity of any user/subject associated with the event
