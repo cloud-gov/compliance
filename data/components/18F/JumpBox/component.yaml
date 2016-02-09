@@ -17,13 +17,13 @@ satisfies:
         * Remote access shall be routed through a limited number of managed access control points.
         * Privileged commands and access to security-relevant information via remote access shall only be permitted as described in the System Security Plan (SSP).
     AC-17 (2):
-      implementation_status: null
+      implementation_status: implemented
       narrative: |
         18F DevOps teams remotely access the Cloud.Gov jumpbox using SSH version 2. There are no other remote connections to the platform. Client end users login to the their Org environment through the CF-Deck within the Cloud.Gov portal. The Cloud.Gov Portal uses TLS v1.2 connections and AES 128 bit encrption for all access.
     AC-17 (3):
-      implementation_status: null
+      implementation_status: implemented
       narrative: |
-        Cloud.Gov remote access connections are manageed through jumpbox virtula machines within the Cloud.Gov VPC. The remote connections are SSH sessions using the BOSH CLI API. There are no other remote connections to the platform as stated in AC-17(2)
+        Cloud.Gov remote access connections are manageed through jumpbox Virtual machines within the Cloud.Gov VPC. The remote connections are SSH sessions using the BOSH CLI API. There are no other remote connections to the platform as stated in AC-17(2)
     AC-17 (4):
       implementation_status: null
       narrative: |
