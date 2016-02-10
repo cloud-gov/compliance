@@ -4,7 +4,11 @@
 Cloud.Gov is 18F’s product line for the tools, tech, and services 18F provides to help teams delivering federal digital services to operate efficiently at-scale in a cloud-hosted environment, while complying with federal regulatory requirements. It’s based on and built using the open source Cloud Foundry project, which is an open platform as a service, providing a choice of developer frameworks, and application services which makes it faster and easier to build, test, deploy, and scale applications.
 
 ## Information System Components and Boundaries
+18F has created a specific set of VPCs (Live production and staging) for its Cloud.Gov implementation. All VPCs have subnets used to separate and control IP address space within each individual VPC. Subnets must be created in order to launch Availability Zone (AZ) specific services within a VPC. 18F has setup VPC Peering between the Staging VPC and the CF Live production VPC.
 
+The CF PaaS Information System is hosted within the AWS East Public Cloud in the Northern Virginia Region. AWS services utilized include ENI, EC2, EBS, VPC, RDS, S3, MFA, Route 53 and IAM. These are listed as leveraged hardware, network and server components in Table 10.1 and are FedRAMP ATO services that are authorized through the HHS ATO referenced in section 8.2.
+
+Physical aspects of the CF PasS information system are outside of the Cloud Foundry accreditation boundary due to all hardware being physically managed by Amazon AWS. While other services are reviewed and approved for use by the GSA OCISO as they were deemed to be ancillary support services that do not directly process/store data but rather provide general support services. These services include Cloudfront, Cloudtrail.
 
 ## Types of Users
 | Role            | Internal or External | Sensitivity Level | Authorized Privileges and Functions Performed                                                                                                                                                                                                                                                                                                                                                                                                                                               |
