@@ -1,5 +1,4 @@
-@Component-CRUD-CloudFoundry-CloudController
-Feature: Access Controls
+Feature: Cloud Controller Features
 
   Scenario Outline: Creating Organizations
      Given I am using <account> account
@@ -179,16 +178,9 @@ Feature: Access Controls
 
    Examples: Action-Results for auditing
      | account          |  number |
-     | a master         |  43     |
+     | a master         |  45     |
      | an org manager   |  0      |
      | an org auditor   |  43     |
      | a space manager  |  0      |
      | a space developer|  27     |
      | a space auditor  |  27     |
-
-
-  @Component-ACCOUNT_LOCKOUT-CloudFoundry-UAA
-  Scenario: Account Lockout (AC-7)
-    Given I am a user that can login
-      when I attempt to login 6 times and fail
-      then I am locked out
