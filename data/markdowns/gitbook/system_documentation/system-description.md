@@ -7,42 +7,13 @@ Cloud.Gov is 18F’s product line for the tools, tech, and services 18F provides
 
 
 ## Types of Users
-#### Org Manager
-Internal, Low	sensitivity
-Add and manage users
-View users and edit org roles
-View the org quota
-Create, view, edit, and delete spaces
-Invite and manage users in spaces
-View the status, number of instances, service bindings, and resource use of each application in every space in the org
-Add domains
-
-#### Org Auditor
-Internal, Low Sensitivity
-View users and org roles
-View the org quota
-
-#### Space Manager
-Internal, Low Sensitivity
-Add and manage users in the space
-View the status, number of instances, service bindings, and resource use of each application in the space
-
-#### Space Developer
-Internal, Moderate Sensitivity
-Deploy an application
-Start or stop an application
-Rename an application
-Delete an application
-Create, view, edit, and delete services in a space
-Bind or unbind a service to an application
-Rename a space
-View the status, number of instances, service bindings, and resource use of each application in the space
-Change the number of instances, memory allocation, and disk limit of each application in the space
-Associate an internal or external URL with an application
-
-#### Space Auditor
-Internal, Low Sensitivity
-View the status, number of instances, service bindings, and resource use of each application in the space
+| Role            | Internal or External | Sensitivity Level | Authorized Privileges and Functions Performed                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+|-----------------|----------------------|-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Org Manager     | Internal             | High              | Add and manage users, View users and edit org roles, View the org quota, Create, view, edit, and delete spaces, Invite and manage users in spaces, View the status, number of instances, service bindings, and resource use of each application in every space in the org, Add domains                                                                                                                                                                                                      |
+| Org Auditor     | Internal             | Low               | View users and org roles, View the org quota                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| Space Manager   | Internal             | High              | Add and manage users in the space, View the status, number of instances, service bindings, and resource use of each application in the space                                                                                                                                                                                                                                                                                                                                                |
+| Space Developer | Internal             | Moderate          | Deploy an application, Start or stop an application, Rename an application, Delete an application, Create, view, edit, and delete services in a space, Bind or unbind a service to an application, Rename a space, View the status, number of instances, service bindings, and resource use of each application in the space, Change the number of instances, memory allocation, and disk limit of each application in the space, Associate an internal or external URL with an application |
+| Space Auditor   | Internal             | Low               | View the status, number of instances, service bindings, and resource use of each application in the space                                                                                                                                                                                                                                                                                                                                                                                   |
 
 ## Network Architecture
 The following architectural diagram(s) provides a visual depiction of the system network components that constitute Cloud.Gov.
@@ -147,25 +118,25 @@ Graphical user interface for Cloud.gov
 Leveraged from AWS - None
 
 ## Ports, Protocols and Services
-Ports (TCP/UDP) |	Protocols |	Services |	Purpose |	Used By
---- | --- | --- | ---
-80/TCP |	HTTP |	HTTP Web service |	Cloud.Gov EC2 Web service |	Tomcat
-443/TCP |	HTTPS |	HTTPS Web Service |	Cloud.Gov EC2 Web service	 |
-22/SSH |	SSH |	Secure Shell |	CF and BOSH command line interface |
-53/UDP |	DNS |	DNS Service |	Inbound DNS requests	|
-4222/TCP | TCP |	NATS Bus Messaging Service |	Publish- subscribe messaging service between Cloud.Gov components |
-6868/TCP |	HTTP |	BOSH agent interface |	Executes tasks it receives from the BOSH Director	|
-123/TCP |	NTP |	Network Time Protocol	| |
-17/UDP |	QOTD |		Provide Quote of the day	| |
-1/ICMP	| | | |
-6/TCP	 | | |	|		
-2222/TCP |	SSH	 | Secure Shell Deamon |	External port for SSH access to Apps	|
-4443/TCP	 |  | | |			
-5432/TCP 	 |  | | |
-8081/TCP   |  | | |			
-25250/TCP	 |  | | |			
-25555/TCP  |  | | |			
-25777/TCP	 |  | | |			
+| Ports (T or U) | Protocols | Services                                     | Purpose                                                                                                                                     | Used By                                |
+|----------------|-----------|----------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------|
+| 443 (T)        | HTTPS     | HTTPS                                        | CF ec2 web service                                                                                                                          | AWS, Cloud Foundry                     |
+| 80 (T)         | HTTP      | HTTP                                         | CF ec2 web service                                                                                                                          | AWS, Cloud Foundry                     |
+| 22 (T)         | SSH       | Secure Shell (SSH)                           | Secure command line interface                                                                                                               | AWS, Cloud Foundry Jumpbox             |
+| 53 (U)         | DNS       | DNS Service                                  | Inbound DNS requests                                                                                                                        | AWS, Cloud Foundry                     |
+| 4222 (T)       | TCP       | NATS bus messaging service                   | Provides publish-subscribe and distributed queueing messaging system internally between all CF components                                   | Cloud Foundry                          |
+| 6868 (T)       | HTTP      | Bosh agent interface                         | The Agent executes tasks in response to messages it receives from the Director.                                                             | Cloud Foundry                          |
+| 123 (T)        | NTP       | Network Time Protocol (NTP)                  | Sync time within the network                                                                                                                | Cloud Foundry, AWS CloudTrail, Syslogs |
+| 17             | UDP       | QOTD                                         | Provide quote of the day                                                                                                                    |                                        |
+| 1              | ICMP      | Internet Control Message                     | Information and diagnostics for network devices (Ping)                                                                                      | AWS, Cloud Foundry                     |
+| 6 (T)          | TCP       | AWS Elastic Cache                            | Mem Cache                                                                                                                                   | AWS, Cloud Foundry                     |
+| 2222 (T)       | SSH       | Secure Shell deamon (SSH)                    | External port for SSH access for apps                                                                                                       | CF SSH Jump box                        |
+| 4443 (T)       | TCP       | WSS                                          | TCP /Websocket Traffic                                                                                                                      | Cloud Foundry                          |
+| 5432           | TCP       | PostgreSQL                                   | Director bosh_db                                                                                                                            | CF BOSH                                |
+| 8081 (T)       | TCP       | User account and authentication server (UAA) | Provide identity management and authorization services                                                                                      | CF UAA, Login Server                   |
+| 25250 (T)      | TCP       | BOSH Blobstore                               | repository where BOSH stores release artifacts, logs, stemcells, and other content, at various times during the lifecycle of a BOSH release | Cloud Foundry Jumpbox                  |
+| 25555 (T)      | HTTP      | BOSH Director                                | Coordinates the Agents and responds to user requests and system events.                                                                     | Cloud Foundry Jumpbox                  |
+| 25777 (T)      | TCP       | BOSH                                         | BOSH Registry                                                                                                                               | Cloud Foundry Jumpbox                  |
 
 ## System Interconnections
 None
