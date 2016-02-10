@@ -7,165 +7,97 @@ Cloud.Gov is 18F’s product line for the tools, tech, and services 18F provides
 
 
 ## Types of Users
-#### Org Manager
-Internal, Low	sensitivity
-Add and manage users
-View users and edit org roles
-View the org quota
-Create, view, edit, and delete spaces
-Invite and manage users in spaces
-View the status, number of instances, service bindings, and resource use of each application in every space in the org
-Add domains
-
-#### Org Auditor
-Internal, Low Sensitivity
-View users and org roles
-View the org quota
-
-#### Space Manager
-Internal, Low Sensitivity
-Add and manage users in the space
-View the status, number of instances, service bindings, and resource use of each application in the space
-
-#### Space Developer
-Internal, Moderate Sensitivity
-Deploy an application
-Start or stop an application
-Rename an application
-Delete an application
-Create, view, edit, and delete services in a space
-Bind or unbind a service to an application
-Rename a space
-View the status, number of instances, service bindings, and resource use of each application in the space
-Change the number of instances, memory allocation, and disk limit of each application in the space
-Associate an internal or external URL with an application
-
-#### Space Auditor
-Internal, Low Sensitivity
-View the status, number of instances, service bindings, and resource use of each application in the space
+| Role            | Internal or External | Sensitivity Level | Authorized Privileges and Functions Performed                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+|-----------------|----------------------|-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Org Manager     | Internal             | High              | Add and manage users, View users and edit org roles, View the org quota, Create, view, edit, and delete spaces, Invite and manage users in spaces, View the status, number of instances, service bindings, and resource use of each application in every space in the org, Add domains                                                                                                                                                                                                      |
+| Org Auditor     | Internal             | Low               | View users and org roles, View the org quota                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| Space Manager   | Internal             | High              | Add and manage users in the space, View the status, number of instances, service bindings, and resource use of each application in the space                                                                                                                                                                                                                                                                                                                                                |
+| Space Developer | Internal             | Moderate          | Deploy an application, Start or stop an application, Rename an application, Delete an application, Create, view, edit, and delete services in a space, Bind or unbind a service to an application, Rename a space, View the status, number of instances, service bindings, and resource use of each application in the space, Change the number of instances, memory allocation, and disk limit of each application in the space, Associate an internal or external URL with an application |
+| Space Auditor   | Internal             | Low               | View the status, number of instances, service bindings, and resource use of each application in the space                                                                                                                                                                                                                                                                                                                                                                                   |
 
 ## Network Architecture
 The following architectural diagram(s) provides a visual depiction of the system network components that constitute Cloud.Gov.
 
 # System Environment
-The Cloud Foundry environment is comprised of three general classes of components, infrastructure abstraction, access control and self-service application deployment.
+The following describes the Cloud Foundry Platform as a service (PaaS) as deployed in production based on the network diagram above. The Cloud Foundry platform as a service is implemented as hardened EC2 instances or virtual servers operating within Cloud Foundry Virtual Private Cloud (VPC).  The instances are deployed to grow and shrink based on demand.
 
-### Infrastructure Abstraction
+To provide high availability, Cloud Foundry’s blob store is on AWS S3, the backend DB is on AWS Relational Database Service (RDS), which is hosted in two different geographically separate locations and the load is distributed amongst the instances (runners) running cloud foundry. The backups of the database are configured with a Retention Point Objective (RPO) within the last five minutes.
 
-#### BOSH:
-A provider-agnostic system for describing and managing the lifecycle of hardened virtual machines which provide the foundation for Cloud Foundry components
+CF is a system with multiple components. Only "runner" instances have containers. Traffic goes from the ELB through the "router" to the "runner". When an application is deployed to Cloud Foundry, an image is created for it and stored internally. The image is then deployed to a Warden container to run in. For multiple instances, multiple images are started on multiple containers. Cloud Foundry's internal Controller leverages the underlying infrastructure to spin up virtual machines to run the Warden containers. When an application is terminated, all its VMs can be recycled for another application to use. If the application instance crashes, its container is killed and a new Warden container is started automatically. A container only ever runs one application ensuring isolation, security and resilience.
 
-### Routing & Access Control
+A load-balancing router sits at the front of Cloud Foundry to route incoming requests to the correct application - essentially to one of the containers where the application is running.  The only access points visible on a public network are a load balancer that maps to one or more Cloud Foundry routers and, optionally, a NAT VM and a Bastion Host (jump box). Because of the limited number of contact points with the public internet, the surface area for possible security vulnerabilities is minimized.
 
-#### Router
-Routes external traffic to the appropriate Cloud Foundry component, usually the Cloud Controller or a running application on an Droplet Execution Agent node.
-#### Authentication Service
-The OAuth2 server and Login Server work together to provide identity management.
+Applications deployed to Cloud Foundry access external resources via Services. Applications can also access any service that can be reached through the network (either public or private).  In  the Cloud Foundry PaaS environment, all external dependencies such as databases, messaging systems, and file systems are considered Services. When an application is pushed to Cloud Foundry, the services it should consumed also can be specified. Services have to be deployed to the platform first and then are available to any application using it. Users of the Open Source Cloud Foundry must make services available by writing and running BOSH scripts.
 
-### Self-service Applications
+### 18F Virtual Private Cloud (VPC) environment
 
-#### Cloud Controller
-The Cloud Controller is responsible for managing the lifecycle of applications.
+#### Public Subnet
+The hosts within the Public subnet are only used for system maintenance and DNS purposes only.  Instances do not contain any GSA operational data.  The Public subnet allows only the necessary inbound and outbound access with the Internet defined by AWS Security Groups.  In the public subnet there exists a Cloud Foundry bastion host (jump box), A VM that acts as a single access point for the deployed instances as disabling direct access to the instances is a common security measure.  The bastion host (jump box) is used for the purpose of executing the BOSH commands within Cloud Foundry.
 
-#### Health Monitor
-Monitors and reconciles applications to determine their state, version and number of instances, and directs Cloud Controller to take action to correct any discrepancies.
+#### Private Subnet - Core Tier
+The Core Tier is a production subnet where the Cloud Foundry PaaS instances reside.   Access to this subnet is restricted to only administrators.  All application development, maintenance and deployment are conducted within the Core Tier subnet.
 
-#### Droplet Execution Agent
-The Droplet Execution Agent manages application instances running compiled applications (droplets), tracks started instances, and broadcasts state messages.
+#### Private Subnet - Services Tier
+The Services Tier is a production subnet where applications deployed to Cloud Foundry within the Core Tier can access external resources via Services maintained in the Services Tier through the private network. In the CF PaaS environment, all external dependencies such as databases (i.e., Mongo DB, PostgreSQL) and messaging systems are within the Services Tier.
 
-#### Blob Store
-The blob store holds, application code, build-packs and droplets.
+#### Private Subnet - Database Tier
+The Database Tier hosts the Cloud Foundry configurations within a PostgreSQL database (i.e. users, orgs, and spaces). These are hosted in geographically separated, isolated by failure physical locations; in short the RDS database is in a Multi-AZ deployment.
 
-#### Service Brokers
-When a developer provisions and binds a service to an application, the service broker for that service is responsible for providing the service instance.
+#### Cloud Foundry PaaS internal system environment
+Cloud Foundry has a flexible organizational structure representation defined through Organizations, Spaces, and Roles. The illustration in figure 10.1 provides a high level view of how Orgs, Space and users are organized within 18F.
 
-#### Message Bus
-Cloud Foundry uses NATS, a lightweight publish-subscribe and distributed queueing messaging system, for internal communication between components.
+#### Organizations “Orgs”
+At the top of the structural hierarchy are Organizations. They serve as the boundary for governance provided to all the users in that Organization along three different dimensions: quotas, service availability, and custom domains and routes. This allows a single instance of Cloud Foundry to host different Organizations representing different companies, departments, or even projects, and keep separate the resources associated with each of them. Organizations can be defined any way that you like. Typically, they’re defined around things like line of businesses, or particular projects, or a specific division, or an initiative.  An org contains at least one space and can have multiple spaces within it. All collaborators can access an org with user accounts.
 
-#### Logging
-The metrics collector gather metrics from the components. Operators can use this information to monitor an instance of Cloud Foundry.
+#### Spaces
+Within organizations are sets of spaces. Spaces define a more narrowed set of resources, scoped to a particular project, team, or environment. All application development and maintenance has to happen inside of a space. Spaces are where developers, QA, and operations usually are found.  A space gives access to a shared location for application development, deployment, and maintenance, and users will have specific space-related roles.
 
-#### CLI
-A full-featured user-facing command-line interface for to the Cloud Foundry environment which is used to create and manage Cloud Foundry applications and services.
-
-## Cloud Foundry System Architecture Diagram
-![Cloud Foundry System Architecture](/system_documentation/Cloud_Foundry_System_Architecture.png)
+#### User Accounts
+A user account represents an individual person within the context of a Cloud Foundry installation. A user can have different roles in different spaces within an org, governing what level and type of access they have within that space. The combination of these roles defines the user’s overall permissions in the org and within specific spaces in that org.  A list of standard cloud foundry user account types can be found in Table 9-2. Cloud Foundry User Roles and Privileges.
 
 ## Hardware Inventory
 Leveraged from AWS - None
 
 ## Software Inventory
-#### Cloud Controller (CC)
-Version 2, Virtual
-Primary API entry point for Cloud Foundry. It’s responsible for managing the lifecycle of applications. The Cloud Controller also maintains records of orgs, spaces, services, service instances, user roles, and more
-
-#### GO router
-Version 2, Virtual
-Central router that manages traffic to applications deployed on Cloud Foundry
-
-#### Droplet execution agent (DEA)
-Version 2, Virtual
-Performs staging and hosting applications
-
-#### Health manager
-Version 2, Virtual
-Monitors the state of the applications and ensures that started applications are indeed running, their versions and number of instances correct
-
-#### User Account and Authentication (UAA)
-Version 2, Virtual
-Identity management service for Cloud Foundry
-
-#### Login Server
-Version 2, Virtual
-Handles authentication for Cloud Foundry and delegates all other identity management tasks to the UAA. Also provides OAuth2 endpoints issuing tokens to client apps for Cloud Foundry (the tokens come from the UAA and no data are stored locally).
-
-#### Collector
-Version 2, Virtual
-Discovers the various components on the message bus and query their /healthz and /varz interfaces
-
-#### Loggregator
-Version 2, Virtual
-User application logging subsystem for Cloud Foundry
-
-#### Jump Box
-Version 2, Virtual
-Used to run BOSH commands
-
-#### BOSH
-Version 2 (230), Virtual
-Open source tool chain for release engineering, deployment and lifecycle management of large scale distributed services
-
-#### ELK
-Version 2, Virtual
-General logging system
-
-#### CF Deck
-Version 2, Virtual
-Graphical user interface for Cloud.gov
+| Hostname                              | Function                                                                                                                                                                                                                                             | Version   | Patch Level | Virtual (Yes / No) |
+|---------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------|-------------|--------------------|
+| Cloud Controller (CC)                 | Primary API entry point for Cloud Foundry. It’s responsible for managing the lifecycle of applications. The Cloud Controller also maintains records of orgs, spaces, services, service instances, user roles, and more                               | Version 2 | 212         | Yes                |
+| GOrouter                              | Central router that manages traffic to applications deployed on Cloud Foundry                                                                                                                                                                        | Version 2 | 212         | Yes                |
+| Droplet execution agent (DEA)         | Performs staging and hosting applications                                                                                                                                                                                                            | Version 2 | 212         | Yes                |
+| Health manager                        | monitors the state of the applications and ensures that started applications are indeed running, their versions and number of instances correct                                                                                                      | Version 2 | 212         | Yes                |
+| User Account and Authentication (UAA) | identity management service for Cloud Foundry                                                                                                                                                                                                        | Version 2 | 212         | Yes                |
+| Login Server                          | Handles authentication for Cloud Foundry and delegates all other identity management tasks to the UAA. Also provides OAuth2 endpoints issuing tokens to client apps for Cloud Foundry (the tokens come from the UAA and no data are stored locally). | Version 2 | 212         | Yes                |
+| Collector                             | discover the various components on the message bus and query their /healthz and /varz interfaces                                                                                                                                                     | Version 2 | 212         | Yes                |
+| Loggregator                           | user application logging subsystem for Cloud Foundry                                                                                                                                                                                                 | Version 2 | 212         | Yes                |
+| Jump Box                              | Used to run BOSH commands                                                                                                                                                                                                                            | Version 2 | 212         | Yes                |
+| BOSH                                  | open source tool chain for release engineering, deployment and lifecycle management of large scale distributed services                                                                                                                              | Version 2 | 152         | Yes                |
+| ELK Logging                           | General logging system                                                                                                                                                                                                                               | Version 1 | 212         | Yes                |
+| CF Deck                               | Graphical user interface for cloud.gov                                                                                                                                                                                                               | Version 2 | 212         | Yes                |
+| CF CLI                                | Command line user interface for cloud.gov                                                                                                                                                                                                            | Version 2 | 212         | Yes                |
 
 ## Network Inventory
 Leveraged from AWS - None
 
 ## Ports, Protocols and Services
-Ports (TCP/UDP) |	Protocols |	Services |	Purpose |	Used By
---- | --- | --- | ---
-80/TCP |	HTTP |	HTTP Web service |	Cloud.Gov EC2 Web service |	Tomcat
-443/TCP |	HTTPS |	HTTPS Web Service |	Cloud.Gov EC2 Web service	 |
-22/SSH |	SSH |	Secure Shell |	CF and BOSH command line interface |
-53/UDP |	DNS |	DNS Service |	Inbound DNS requests	|
-4222/TCP | TCP |	NATS Bus Messaging Service |	Publish- subscribe messaging service between Cloud.Gov components |
-6868/TCP |	HTTP |	BOSH agent interface |	Executes tasks it receives from the BOSH Director	|
-123/TCP |	NTP |	Network Time Protocol	| |
-17/UDP |	QOTD |		Provide Quote of the day	| |
-1/ICMP	| | | |
-6/TCP	 | | |	|		
-2222/TCP |	SSH	 | Secure Shell Deamon |	External port for SSH access to Apps	|
-4443/TCP	 |  | | |			
-5432/TCP 	 |  | | |
-8081/TCP   |  | | |			
-25250/TCP	 |  | | |			
-25555/TCP  |  | | |			
-25777/TCP	 |  | | |			
+| Ports (T or U) | Protocols | Services                                     | Purpose                                                                                                                                     | Used By                                |
+|----------------|-----------|----------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------|
+| 443 (T)        | HTTPS     | HTTPS                                        | CF ec2 web service                                                                                                                          | AWS, Cloud Foundry                     |
+| 80 (T)         | HTTP      | HTTP                                         | CF ec2 web service                                                                                                                          | AWS, Cloud Foundry                     |
+| 22 (T)         | SSH       | Secure Shell (SSH)                           | Secure command line interface                                                                                                               | AWS, Cloud Foundry Jumpbox             |
+| 53 (U)         | DNS       | DNS Service                                  | Inbound DNS requests                                                                                                                        | AWS, Cloud Foundry                     |
+| 4222 (T)       | TCP       | NATS bus messaging service                   | Provides publish-subscribe and distributed queueing messaging system internally between all CF components                                   | Cloud Foundry                          |
+| 6868 (T)       | HTTP      | Bosh agent interface                         | The Agent executes tasks in response to messages it receives from the Director.                                                             | Cloud Foundry                          |
+| 123 (T)        | NTP       | Network Time Protocol (NTP)                  | Sync time within the network                                                                                                                | Cloud Foundry, AWS CloudTrail, Syslogs |
+| 17             | UDP       | QOTD                                         | Provide quote of the day                                                                                                                    |                                        |
+| 1              | ICMP      | Internet Control Message                     | Information and diagnostics for network devices (Ping)                                                                                      | AWS, Cloud Foundry                     |
+| 6 (T)          | TCP       | AWS Elastic Cache                            | Mem Cache                                                                                                                                   | AWS, Cloud Foundry                     |
+| 2222 (T)       | SSH       | Secure Shell deamon (SSH)                    | External port for SSH access for apps                                                                                                       | CF SSH Jump box                        |
+| 4443 (T)       | TCP       | WSS                                          | TCP /Websocket Traffic                                                                                                                      | Cloud Foundry                          |
+| 5432           | TCP       | PostgreSQL                                   | Director bosh_db                                                                                                                            | CF BOSH                                |
+| 8081 (T)       | TCP       | User account and authentication server (UAA) | Provide identity management and authorization services                                                                                      | CF UAA, Login Server                   |
+| 25250 (T)      | TCP       | BOSH Blobstore                               | repository where BOSH stores release artifacts, logs, stemcells, and other content, at various times during the lifecycle of a BOSH release | Cloud Foundry Jumpbox                  |
+| 25555 (T)      | HTTP      | BOSH Director                                | Coordinates the Agents and responds to user requests and system events.                                                                     | Cloud Foundry Jumpbox                  |
+| 25777 (T)      | TCP       | BOSH                                         | BOSH Registry                                                                                                                               | Cloud Foundry Jumpbox                  |
 
 ## System Interconnections
 None
