@@ -1,15 +1,15 @@
 documentation_complete: false
 name: Code Climate
 verifications:
-  HAKIRI:
+  hakiri:
     name: Hakiri Results
     path: https://hakiri.io/github/18F/confidential-survey/develop
     type: URL
-  GEMNASIUM:
+  gemnasium:
     name: Gemnasium Results
     path: https://gemnasium.com/18F/confidential-survey
     type: URL
-  CODE_CLIMATE:
+  code_climate:
     name: Code Climate Results
     path: https://codeclimate.com/github/18F/confidential-survey
     type: URL
@@ -19,6 +19,6 @@ satisfies:
       narrative: |
         Code Climate is a code analysis tool that combines the results of multiple static analysis tools. The Confidential Survey application uses the Hakiri and Gemnasium engines in Code Climate to verify that the code is secure and has no outdated dependencies.
       references:
-      - verification: CODE_CLIMATE
-      - verification: GEMNASIUM
-      - verification: HAKIRI
+      - verification: code_climate
+      - verification: gemnasium
+      - verification: hakiri
