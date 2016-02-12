@@ -1,11 +1,12 @@
 documentation_complete: false
 name: Security Awareness Training Policy for 18F
+system: 18F
 verifications:
   POLICY_DOC:
     name: Policy Document
     type: URL
-    path: https://drive.google.com/drive/u/1/folders/0B6fPl5s12igNfnhnZWJqQVluNUxybWo5WVQwaHUwN29qRmVaQlczN0tpVUZEa25WZFdsTjg
-satisfies:
+    path: https://github.com/18F/compliance-docs/blob/master/AT-Policy.md
+satisfies: 
   NIST-800-53:
     AT-1:
       implementation_status: null

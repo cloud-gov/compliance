@@ -1,11 +1,10 @@
 documentation_complete: false
 name: Risk Assessment Policy for 18F
-references:
 verifications:
   POLICY_DOC:
-    name: Policy Document
-    type: URL
-    path: https://drive.google.com/drive/u/1/folders/0B6fPl5s12igNfnhnZWJqQVluNUxybWo5WVQwaHUwN29qRmVaQlczN0tpVUZEa25WZFdsTjg
+    name: policy document
+    type: url
+    path: https://github.com/18f/compliance-docs/blob/master/RA-policy.md
 satisfies:
   NIST-800-53:
     RA-1:
