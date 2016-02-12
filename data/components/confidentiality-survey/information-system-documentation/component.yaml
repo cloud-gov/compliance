@@ -1,0 +1,14 @@
+documentation_complete: false
+name: Information System Documentation
+verifications:
+  db_schema:
+    name: Rails Database Schema
+    path: https://github.com/18F/confidential-survey/blob/develop/db/schema.rb
+    type: URL
+satisfies:
+  NIST-800-53:
+    SA-5:
+      narrative: |
+        The database for the survey system consists on only a single table that records the tallies for any given _survey_id, question key, question choice_ triple.
+      references:
+        - verification: db_schema
