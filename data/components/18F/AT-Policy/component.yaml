@@ -1,11 +1,12 @@
 documentation_complete: false
 name: Security Awareness Training Policy for 18F
+system: 18F
 verifications:
   POLICY_DOC:
     name: Policy Document
     type: URL
-    path: https://drive.google.com/drive/u/1/folders/0B6fPl5s12igNfnhnZWJqQVluNUxybWo5WVQwaHUwN29qRmVaQlczN0tpVUZEa25WZFdsTjg
-satisfies:
+    path: https://github.com/18F/compliance-docs/blob/master/AT-Policy.md
+satisfies: 
   NIST-800-53:
     AT-1:
       implementation_status: null
@@ -15,20 +16,22 @@ satisfies:
           The 18F Security Awareness policy which  addresses purpose, scope, roles, responsibilities, management commitment, coordination among organizational entities, and compliance and procedures to facilitate the implementation of the security awareness access and training policy and associated security awareness controls. The 18F accecss control policy is listed within its private Github repository that is accessible to all 18F staff.
         b: |
           The 18F Program Office will review and update the current 18F Security Awareness and training control policy at least every 3 years and any documented access  procedures at least annually.
+
       references:
         - verification: POLICY_DOC
     AT-2:
       implementation_status: null
-      narrative:
+      narrative: The 18F Program office reviews AT-2
       references:
         - verification: POLICY_DOC
     AT-2 (2):
       implementation_status: null
+      narrative: The 18F Program office reviews AT-2
       references:
         - verification: POLICY_DOC
     AT-3:
       implementation_status: null
-      narrative:
+      narrative: The 18F Program office reviews AT-2
       references:
         - verification: POLICY_DOC
     AT-4:
@@ -36,4 +39,3 @@ satisfies:
       narrative: Completed the development of the Awareness training policy specifically for 18F program. ISSO support is looking into possible solutions for specific security awareness training for 18F staff. currently reviewing the SEI training programs for Secure DevOps and Online line Learning management system.
       references:
         - verification: POLICY_DOC
-system: 18F

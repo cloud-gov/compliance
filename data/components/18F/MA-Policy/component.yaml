@@ -1,9 +1,10 @@
 documentation_complete: false
 name: System Maintenance Policy for 18F
-references:
-- name: Policy Document
-  type: URL
-  path: https://drive.google.com/drive/u/1/folders/0B6fPl5s12igNfnhnZWJqQVluNUxybWo5WVQwaHUwN29qRmVaQlczN0tpVUZEa25WZFdsTjg
+verifications:
+  POLICY_DOC:
+    name: Policy Document
+    type: URL
+    path: https://github.com/18F/compliance-docs/blob/master/MA-Policy.md
 satisfies:
   NIST-800-53:
     MA-1:

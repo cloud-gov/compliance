@@ -118,7 +118,6 @@ satisfies:
         '
       references:
         - verification: EVENTS_ENDPOINT
-        - verification: LOG_TESTS
 
     SA-11 (1):
       implementation_status: implemented
