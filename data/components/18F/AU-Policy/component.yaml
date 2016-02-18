@@ -1,10 +1,5 @@
 documentation_complete: false
 name: Audit and Accountability Policy for 18F
-verifications:
-  POLICY_DOC:
-    name: Policy Document
-    type: URL
-    path: https://github.com/18F/compliance-docs/blob/master/AU-Policy.md
 satisfies:
   NIST-800-53:
     AU-1:
@@ -58,7 +53,7 @@ satisfies:
     AU-5:
       implementation_status: null
       narrative: |
-      # this is a planned control and a work in progress #
+        In progress
 
     AU-6:
       implementation_status: null
@@ -110,18 +105,15 @@ satisfies:
 
     AU-7 (1):
       implementation_status: null
-      narrative:
-
-
-
+      narrative: In Progress
 
     AU-8:
       implementation_status: null
-      narrative:
+      narrative: In Progress
 
     AU-8 (1):
       implementation_status: null
-      narrative:
+      narrative: In Progress
 
     AU-9:
       implementation_status: null
@@ -130,16 +122,16 @@ satisfies:
 
     AU-9(2):
       implementation_status: null
-      narrative:
+      narrative: In Progress
 
     AU-9(4):
       implementation_status: null
-      narrative:
+      narrative: In Progress
 
     AU-11:
       implementation_status: null
-      narrative:
+      narrative: In Progress
 
     AU-12:
       implementation_status: null
-      narrative:
+      narrative: In Progress

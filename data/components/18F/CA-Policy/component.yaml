@@ -1,10 +1,5 @@
 documentation_complete: false
 name: Security Assessment and Authorization Policy for 18F
-verifications:
-  POLICY_DOC:
-    name: Policy Document
-    type: URL
-    path: https://github.com/18F/compliance-docs/blob/master/CA-Policy.md
 satisfies:
   NIST-800-53:
     CA-1:
@@ -130,7 +125,7 @@ satisfies:
     CA-9:
       implementation_status:
       narrative: |
-
+        In progress
 
       references:
         - verification: POLICY_DOC
