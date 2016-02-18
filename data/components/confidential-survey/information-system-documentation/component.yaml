@@ -3,12 +3,17 @@ name: Information System Documentation
 verifications:
   db_schema:
     name: Rails Database Schema
-    path: https://github.com/18F/confidential-survey/blob/develop/db/schema.rb
+    path: https://github.com/18F/confidential-survey/blob/master/db/schema.rb
+    type: URL
+  survey:
+    name: Sample Survey Configuration
+    path: https://github.com/18F/confidential-survey/blob/master/config/surveys/sample-survey.yml
     type: URL
 satisfies:
   NIST-800-53:
     SA-5:
       narrative: |
-        The database for the survey system consists on only a single table that records the tallies for any given _survey_id, question key, question choice_ triple.
+        The database for the survey system consists of only a single table that records the tallies for any given _survey_id, question key, question choice_ triple. Surveys themselves are not stored in a database but are loaded from read-only configuration files that are deployed to the server.
       references:
         - verification: db_schema
+        - verification: survey
