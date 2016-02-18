@@ -25,13 +25,12 @@ Using this categorization, in conjunction with the risk assessment and any uniqu
 
 
 # E-Authentication Determination
-The information system e-Authentication Determination is described in the table that follows.
 
-Security Objective | Low, Moderate or High
+yes | No | E-Authentication Question
 --- | --- | ---
-Confidentiality | Low
-Integrity | Moderate
-Availability | High
+ | x | Does the system require authentication via the Internet?
+ | x | Is data being transmitted over the Internet via browsers?
+ x |  | Do users connect to the system from over the Internet?
 
 Note: Refer to OMB Memo M-04-04 E-Authentication Guidance for Federal Agencies for more information on e-Authentication.
 
