@@ -15,8 +15,8 @@ satisfies:
           The 18F Audit and Accountability Policy which  addresses purpose, scope, roles, responsibilities, management commitment, coordination among organizational entities, ompliance and procedures to facilitate the implementation of the audit and aaccountability policy and associated audit controls. The 18F Audit and Accountability policy is listed within 18F’s  private Github repository and the docs.cloud.gov site that is accessible to all 18F staff.
         b: |
           The 18F Program Office will review and update the current 18F Audit control policy at least every 3 years and any documented audit procedures at least annually.
-    references:
-      - verification: POLICY_DOC
+      references:
+        - verification: POLICY_DOC
     AU-2:
       implementation_status: true
       narrative:
@@ -27,17 +27,33 @@ satisfies:
           18F retains audit logs according to NARA retention standards to provide support for after-the-fact investigations of security incidents and to meet regulatory and organizational information retention requirements.
           The log management framework will provide the capability to retain logs for 90 days online and one-year offline, with sufficient capacity as to mitigate the risk of exceeding storage space.
           Specific Policies, Procedures, Points of Contact, and Guidance will be established between 18F and other agencies to support after-the-fact investigations, by the 18F Project Lead.
-    references:
-      - verification: POLICY_DOC
+      references:
+        - verification: POLICY_DOC
     AU-2 (3):
       implementation_status: null
       narrative: |
         The Devops and SecOps teams review all events that can be audited on a real time basis using its event and monitoring solution for Cloud.Gov and through captured user and event api calls within its virtual infrastructure.
-    references:
-      - verification: POLICY_DOC
+      references:
+        - verification: POLICY_DOC
+
+
+    AU-3 (1):
+      implementation_status: null
+      narrative: |
+
+
+    AU-4:
+      implementation_status: null
+      narrative:
+
+    AU-5:
+      implementation_status: null
+      narrative:
 
     AU-6:
       implementation_status: null
+      references:
+        - verification: POLICY_DOC
       narrative:
         a: |
           AWS Auditable Events:
@@ -58,8 +74,7 @@ satisfies:
           When a credible source to the GSA Agency provides information that causes reason to enhance audit activities, develop and implement an enhanced auditing use-case that will adequately enhance auditing practices in a fashion necessary per the identified threat and following the Incident Reporting Procedures in GSA IT Security Procedural Guide 01-02 (04/07/2015), Incident Response. The GSA Agency may also, through analysis pertaining to the GSA Agency environment provide additional audit measures that will require an increase in review, analysis, and reporting for a necessary.
           Upon implementation, 18F will monitor information security news and alerts for indications of a need to heighten information system security monitoring.
 
-      references:
-        - verification: POLICY_DOC
+
     AU-6 (1):
       narrative: |
         Audit Monitoring, Analysis and Reporting
@@ -78,7 +93,40 @@ satisfies:
 
       references:
         - verification: POLICY_DOC
+
+    AU-7:
+      implementation_status: null
+      narrative:
+
+    AU-7 (1):
+      implementation_status: null
+      narrative:
+
+    AU-8:
+      implementation_status: null
+      narrative:
+
+    AU-8 (1):
+      implementation_status: null
+      narrative:
+
     AU-9:
       implementation_status: null
       narrative: |
-        Audit logs are stored and  protected in a specified S3 bucket for Cloud.Gov that is limited to access by security staff will ensure the logs cannot be modified without proper authorization.
+        Audit logs are stored and protected in a specified S3 bucket for Cloud.Gov that is limited to access by security staff will ensure the logs cannot be modified without proper authorization.
+
+    AU-9(2):
+      implementation_status: null
+      narrative:
+
+    AU-9(4):
+      implementation_status: null
+      narrative:
+
+    AU-11:
+      implementation_status: null
+      narrative:
+
+    AU-12:
+      implementation_status: null
+      narrative:
