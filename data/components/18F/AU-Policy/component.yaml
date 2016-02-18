@@ -40,15 +40,25 @@ satisfies:
     AU-3 (1):
       implementation_status: null
       narrative: |
+        The Cloud.Gov system includes more detailed information in the audit events identified by tpye, location or subject. The Loggregator componett of Cloud.Gov produces additionl information based on the log type and orgin of the logs. There are six log types within Cloud.Gov
+          API - logs all API calls from a user
+          STG - logs when staging or restaging an app
+          DEA - logs when the Droplet excution agent starts and stops an app
+          RTR - logs when it routes HTTP requests to the application
+          LGR - logs when there are problems with the logging process itself
+          APP - logs all application data based on choices by the developer
 
+        All of the audit logs from Cloud.Gov are drained to the ELK Stack which has even more versitility in producing additional audit capabilities for the 18FDevOps and SecOps team for reivew.
 
     AU-4:
       implementation_status: null
-      narrative:
+      narrative: |
+        Cloud.Gov audit logs are stored within the elasticsearch component of the ELK stack which is clusterd for redundancy and failover functions. This solutions provide the capability to extend the audit storage capacity without the likelihood of the capacity being exceeded. 18F plans to incorporate the use of the S3 cloud service for greater storage capacity if needed.
 
     AU-5:
       implementation_status: null
-      narrative:
+      narrative: |
+      # this is a planned control and a work in progress #
 
     AU-6:
       implementation_status: null
@@ -93,14 +103,17 @@ satisfies:
 
       references:
         - verification: POLICY_DOC
-
     AU-7:
       implementation_status: null
-      narrative:
+      narrative: |
+        The ELK Stack logging and monitoring system provides additional audit reduction and report generation capabilites for 18F Devops and end users of the Cloud.Gov platform. With the elasticsearch capabiltiy 18F DevOps and SecOps teams can structure and customize audit logs queries to specific app instances, API calls, system metrics, user access, system components, network traffic flow and other functions. Kibana is used to generate customized dashboards and Logstash to generate reports for analysis and review.
 
     AU-7 (1):
       implementation_status: null
       narrative:
+
+
+
 
     AU-8:
       implementation_status: null
@@ -113,7 +126,7 @@ satisfies:
     AU-9:
       implementation_status: null
       narrative: |
-        Audit logs are stored and protected in a specified S3 bucket for Cloud.Gov that is limited to access by security staff will ensure the logs cannot be modified without proper authorization.
+        Audit logs are stored and protected in specified S3 buckets and elasticsearch clusters for Cloud.Gov. Access to logs are limited to designated 18F Devops and Security staff and logs cannot be modified without proper authorization to the platform. Client agencies are restircted to access and view only their specified audit logs pertaining to the corresponding Org and space accounts.
 
     AU-9(2):
       implementation_status: null
