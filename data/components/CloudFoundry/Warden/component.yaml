@@ -3,7 +3,7 @@ name: Warden
 satisfies:
 - control_key: AC-4 (21)
   covered_by: []
-  implementation_status: null
+  implementation_status: none
   narrative: 'Warden ALLOW rules: Any Warden Server configuration `allow` rules. Set
     Warden Server configuration rules in the Droplet Execution Agent (DEA) configuration
     section of your deployment manifest.

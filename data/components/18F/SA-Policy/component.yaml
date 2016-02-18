@@ -4,7 +4,7 @@ satisfies:
 - control_key: SA-22 (1)
   covered_by:
   - verification_key: POLICY_DOC
-  implementation_status: null
+  implementation_status: none
   narrative: "18F will replace information system components when support for the\
     \ components is no longer available from the developer, vendor, or manufacturer;\
     \ and will provide justification and documents approval for the continued use\
@@ -25,7 +25,7 @@ satisfies:
 - control_key: SA-1
   covered_by:
   - verification_key: POLICY_DOC
-  implementation_status: null
+  implementation_status: none
   narrative: 18F Policy
   standard_key: NIST-800-53
 - control_key: SA-11 (1)

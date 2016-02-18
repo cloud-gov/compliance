@@ -17,7 +17,7 @@ satisfies:
   standard_key: NIST-800-53
 - control_key: IA-3
   covered_by: []
-  implementation_status: null
+  implementation_status: none
   narrative: 'The underlying AWS infrastructure does not permit unauthenticated privileged
     user access for console or API access.
 

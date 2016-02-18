@@ -7,7 +7,7 @@ references:
 satisfies:
 - control_key: SC-13
   covered_by: []
-  implementation_status: null
+  implementation_status: none
   narrative: 'Cloud.gov forces https using SecureProxy:
 
     Applications running on Cloud Foundry receive requests through the URLs configured

@@ -4,7 +4,7 @@ satisfies:
 - control_key: PL-8
   covered_by:
   - verification_key: POLICY_DOC
-  implementation_status: null
+  implementation_status: none
   narrative:
     a: '18F has developed the system security plan (SSP) for Cloud Foundry PaaS containing
       the information security architecture for the information system that:
@@ -42,7 +42,7 @@ satisfies:
 - control_key: PL-1
   covered_by:
   - verification_key: POLICY_DOC
-  implementation_status: null
+  implementation_status: none
   narrative: 18F Policy
   standard_key: NIST-800-53
 schema_version: 2.0

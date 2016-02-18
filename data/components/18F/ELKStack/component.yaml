@@ -7,7 +7,7 @@ references:
 satisfies:
 - control_key: AC-2 (7)
   covered_by: []
-  implementation_status: null
+  implementation_status: none
   narrative:
     b: '18F monitors all privileged access API calls through the Cloud Foundry command
       line interface and BOSH command line interface within Cloud.Gov. These API calls
@@ -17,7 +17,7 @@ satisfies:
   standard_key: NIST-800-53
 - control_key: AC-6 (9)
   covered_by: []
-  implementation_status: null
+  implementation_status: none
   narrative: 'The ELK (Logstash elasticsearch Kibana ) is used to collect, manage
     and display all  auditing of privileged functions within the Cloud.Gov platform
 
@@ -25,7 +25,7 @@ satisfies:
   standard_key: NIST-800-53
 - control_key: AC-2 (4)
   covered_by: []
-  implementation_status: null
+  implementation_status: none
   narrative: 'Cloud.Gov provides an audit trail through the bosh tasks command which
     shows all actions that an operator has taken with the platform. It also records
     an audit trail of all relevant API invocations of an app. The CLI command cf events
@@ -41,7 +41,7 @@ satisfies:
   standard_key: NIST-800-53
 - control_key: AC-2 (12)
   covered_by: []
-  implementation_status: null
+  implementation_status: none
   narrative:
     a: 'Information system account activites are monitors via ELK
 
@@ -53,7 +53,7 @@ satisfies:
   standard_key: NIST-800-53
 - control_key: AC-17 (1)
   covered_by: []
-  implementation_status: null
+  implementation_status: none
   narrative: 'The Cloud Controller authenticates every request with the Service Broker
     API using HTTP or HTTPS. The 18F DevOp team only uses the BOSH Command Line Interface
     (CLI) to log into the Cloud.Gov jumpbox using SSH as a remote connectionton. These
@@ -64,7 +64,7 @@ satisfies:
   standard_key: NIST-800-53
 - control_key: AU-3
   covered_by: []
-  implementation_status: null
+  implementation_status: none
   narrative: "The Cloud.Gov platform as a service generates audit logs from its Loggregator\
     \ componement and is passed through the ELK stack to produce audit records which\
     \ contain sufficient information to establish at a minumum:\n  what type of event\
@@ -74,7 +74,7 @@ satisfies:
   standard_key: NIST-800-53
 - control_key: AC-2
   covered_by: []
-  implementation_status: null
+  implementation_status: none
   narrative:
     g: 'The UAA API interface is used to monitor privileged/non privileged user accounts
       within the Cloud.Gov It list Cloud Foundry instance users. By default it returns
@@ -90,7 +90,7 @@ satisfies:
   standard_key: NIST-800-53
 - control_key: AU-2
   covered_by: []
-  implementation_status: null
+  implementation_status: none
   narrative:
     a: 'Cloud.Gov provides an audit trail through the bosh tasks command. This command
       shows all actions that an operator has taken with the platform. Additionally,

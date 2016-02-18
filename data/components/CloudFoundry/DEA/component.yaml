@@ -3,7 +3,7 @@ name: DEA
 satisfies:
 - control_key: AC-4 (21)
   covered_by: []
-  implementation_status: null
+  implementation_status: none
   narrative: 'The DEA manages the Warder Containers and controls both outbound and
     inbound network rules
 
@@ -11,7 +11,7 @@ satisfies:
   standard_key: NIST-800-53
 - control_key: SC-7
   covered_by: []
-  implementation_status: null
+  implementation_status: none
   narrative:
     a: 'Cloud Foundry Boundary Protection
 

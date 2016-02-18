@@ -4,7 +4,7 @@ satisfies:
 - control_key: CM-6
   covered_by:
   - verification_key: POLICY_DOC
-  implementation_status: null
+  implementation_status: none
   narrative:
     a: '18F uses established and documents configuration settings for its information
       technology products employed within the Cloud Foundry platform that reflect
@@ -60,7 +60,7 @@ satisfies:
 - control_key: CM-8
   covered_by:
   - verification_key: POLICY_DOC
-  implementation_status: null
+  implementation_status: none
   narrative: '18F posts its current inventory of information systems on its dashboard
     located at  https://18f.gsa.gov/dashboard/. Several sources are used to capture
     complete inventories of the virtual infrastructure and its information systems
@@ -98,7 +98,7 @@ satisfies:
 - control_key: CM-3
   covered_by:
   - verification_key: POLICY_DOC
-  implementation_status: null
+  implementation_status: none
   narrative:
     a: 'All Configuration Change control:
 
@@ -167,7 +167,7 @@ satisfies:
   standard_key: NIST-800-53
 - control_key: CM-1
   covered_by: []
-  implementation_status: null
+  implementation_status: none
   narrative: 18F Policy
   standard_key: NIST-800-53
 schema_version: 2.0

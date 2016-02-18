@@ -3,7 +3,7 @@ name: System and Communications Protection Policy for 18F
 satisfies:
 - control_key: SC-7
   covered_by: []
-  implementation_status: null
+  implementation_status: none
   narrative:
     b: '18F Implements subnetworks for publicly accessible system components that
       are logically separated from internal organizational networks
@@ -13,7 +13,7 @@ satisfies:
 - control_key: SC-12 (1)
   covered_by:
   - verification_key: KEY_ROTATION
-  implementation_status: true
+  implementation_status: complete
   narrative: 'Authorized federal staff rotate, encrypt, and backup keys monthly. Privileged
     users can access the keys only with two-factor authentication and a decryption
     passphrase. In the rare case that both the keys and the decryption passphrase
@@ -25,7 +25,7 @@ satisfies:
 - control_key: SC-1
   covered_by:
   - verification_key: POLICY_DOC
-  implementation_status: null
+  implementation_status: none
   narrative: 18F Policy
   standard_key: NIST-800-53
 schema_version: 2.0

@@ -7,7 +7,7 @@ references:
 satisfies:
 - control_key: SC-7
   covered_by: []
-  implementation_status: null
+  implementation_status: none
   narrative:
     a: "The AWS network provides significant protection against traditional network\
       \ security issues, and 18F can implement further protection. The following are\

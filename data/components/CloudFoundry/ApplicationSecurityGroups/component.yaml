@@ -7,7 +7,7 @@ references:
 satisfies:
 - control_key: AC-4 (21)
   covered_by: []
-  implementation_status: null
+  implementation_status: none
   narrative: 'Cloud.Gov uses application security groups act as virtual firewalls
     to control outbound traffic from the applications in deployment. Cloud.Gov evaluates
     security groups and other network traffic rules in a strict priority order. Cloud
@@ -23,7 +23,7 @@ satisfies:
   standard_key: NIST-800-53
 - control_key: SC-7
   covered_by: []
-  implementation_status: null
+  implementation_status: none
   narrative:
     a: 'Cloud Foundry recommends that the use of Cloud Foundry ASGs to specify egress
       access rules for your applications. This functionality enables secure restricted
@@ -33,7 +33,7 @@ satisfies:
   standard_key: NIST-800-53
 - control_key: AC-4
   covered_by: []
-  implementation_status: null
+  implementation_status: none
   narrative: 'Cloud.Gov enforces security groups and other network traffic rules in
     a strict priority order. Cloud.Gov returns an allow, deny, or reject result for
     the first rule that matches the outbound traffic request parameters, and does
@@ -52,7 +52,7 @@ satisfies:
   standard_key: NIST-800-53
 - control_key: AC-3
   covered_by: []
-  implementation_status: null
+  implementation_status: none
   narrative: '18F has created specific Cloud.Gov security groups associated with VPCs
     to provide full control over inbound and outbound traffic. 18F has created a specific
     set of VPCs (Live production and staging) for its Cloud.Gov implementation.  All
@@ -64,4 +64,3 @@ satisfies:
     '
   standard_key: NIST-800-53
 schema_version: 2.0
-verifications: {}

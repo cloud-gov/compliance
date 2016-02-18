@@ -3,21 +3,21 @@ name: Access Control Policies for 18F
 satisfies:
 - control_key: AC-18 (1)
   covered_by: []
-  implementation_status: null
+  implementation_status: none
   narrative: 'Not Applicable for the Cloud Foundry Platform
 
     '
   standard_key: NIST-800-53
 - control_key: AC-18
   covered_by: []
-  implementation_status: null
+  implementation_status: none
   narrative: 'Not Applicable for the Cloud Foundry Platform
 
     '
   standard_key: NIST-800-53
 - control_key: AC-20 (1)
   covered_by: []
-  implementation_status: null
+  implementation_status: none
   narrative: 'Not Applicable for the Cloud Foundry Platform
 
     '
@@ -25,7 +25,7 @@ satisfies:
 - control_key: AC-5
   covered_by:
   - verification_key: POLICY_DOC
-  implementation_status: null
+  implementation_status: none
   narrative:
     a: '18F implements Identity and Access Management (IAM) Policies roles and individual
       user accounts for separation of duties.
@@ -41,7 +41,7 @@ satisfies:
 - control_key: AC-2 (7)
   covered_by:
   - verification_key: POLICY_DOC
-  implementation_status: null
+  implementation_status: none
   narrative:
     c: '18F removes users from privileged access rights when privileged role assignments
       are no longer appropriate or have been requested by the system owner and program
@@ -52,7 +52,7 @@ satisfies:
   standard_key: NIST-800-53
 - control_key: AC-19 (5)
   covered_by: []
-  implementation_status: null
+  implementation_status: none
   narrative: 'Not Applicable for the Cloud Foundry Platform
 
     '
@@ -60,7 +60,7 @@ satisfies:
 - control_key: AC-6 (5)
   covered_by:
   - verification_key: POLICY_DOC
-  implementation_status: null
+  implementation_status: none
   narrative: "18F restricts privileged accounts such as administrator and root access\
     \ accounts to designated members within the18F Devops and SecOps teams. Within\
     \ the virtual infrastructure the admin account is not used for privileged access.\
@@ -68,14 +68,14 @@ satisfies:
   standard_key: NIST-800-53
 - control_key: AC-20 (2)
   covered_by: []
-  implementation_status: null
+  implementation_status: none
   narrative: 'Not Applicable for the Cloud Foundry Platform
 
     '
   standard_key: NIST-800-53
 - control_key: AC-21
   covered_by: []
-  implementation_status: null
+  implementation_status: none
   narrative: 'Not applicable to the the Cloud.gov platform. The cloud.Gov platform
     is for use of development of and deployment of web applications. This control
     would be handeld at the application level and is the responsibility of the application
@@ -86,7 +86,7 @@ satisfies:
 - control_key: AC-2 (5)
   covered_by:
   - verification_key: POLICY_DOC
-  implementation_status: null
+  implementation_status: none
   narrative: 'The 18F Access Control Policy Section 3
 
     Session Lock states - 18F information systems prevents further access to the system
@@ -100,7 +100,7 @@ satisfies:
 - control_key: AC-2 (2)
   covered_by:
   - verification_key: POLICY_DOC
-  implementation_status: null
+  implementation_status: none
   narrative: 'This control is not applicable. Cloud.Gov does not contain any guest/anonymous,
     group, or temporary user accounts. Devops only creates individual user accounts
     and grants role based access to users within Cloud.Gov.
@@ -110,7 +110,7 @@ satisfies:
 - control_key: AC-6
   covered_by:
   - verification_key: POLICY_DOC
-  implementation_status: null
+  implementation_status: none
   narrative: 'IAM policies are attached to the users, enabling centralized control
     of permissions for users under 18F AWS Account to access services, buckets or
     objects. With IAM policies, 18F only grant users within its own AWS account permission
@@ -130,14 +130,14 @@ satisfies:
   standard_key: NIST-800-53
 - control_key: AC-20
   covered_by: []
-  implementation_status: null
+  implementation_status: none
   narrative: 'Not Applicable for the Cloud Foundry Platform
 
     '
   standard_key: NIST-800-53
 - control_key: AC-22
   covered_by: []
-  implementation_status: null
+  implementation_status: none
   narrative: 'Not applicable to the the Cloud.gov platform. The cloud.Gov platform
     is for use of development of and deployment of web applications. This control
     would be handeld at the application level and is the responsibility of the application
@@ -148,7 +148,7 @@ satisfies:
 - control_key: AC-6 (1)
   covered_by:
   - verification_key: POLICY_DOC
-  implementation_status: null
+  implementation_status: none
   narrative: 'Because Cloud.gov is a PaaS all accessible functions are privileged
     functions. Nevertheless, 18F team members use different accounts with increasing
     security requirements for accessing CloudFoundry as a user, CloudFoundry as a
@@ -159,7 +159,7 @@ satisfies:
 - control_key: AC-4
   covered_by:
   - verification_key: POLICY_DOC
-  implementation_status: null
+  implementation_status: none
   narrative: 'The information system enforces approved authorizations for controlling
     the flow of information within the system and between interconnected systems based
     on the 18F Access Control Policy
@@ -169,7 +169,7 @@ satisfies:
 - control_key: AC-1
   covered_by:
   - verification_key: POLICY_DOC
-  implementation_status: null
+  implementation_status: none
   narrative:
     a: "The 18F Program Office develops, documents, and disseminates to all 18F staff,\
       \ the 18F Access Control Policy which  addresses purpose, scope, roles, responsibilities,\
@@ -187,7 +187,7 @@ satisfies:
 - control_key: AC-3
   covered_by:
   - verification_key: POLICY_DOC
-  implementation_status: null
+  implementation_status: none
   narrative: "18F information systems enforces approved authorizations for logical\
     \ access to information and system resources in accordance with the 18F access\
     \ control policy Section 3 Access Enforcement which states:\n  * 18F must enforce\
@@ -203,7 +203,7 @@ satisfies:
 - control_key: AC-2
   covered_by:
   - verification_key: POLICY_DOC
-  implementation_status: null
+  implementation_status: none
   narrative:
     a: 'The 18F Program identifies and selects the following types of information
       system accounts to support organizational missions/business functions:
@@ -302,7 +302,7 @@ satisfies:
   standard_key: NIST-800-53
 - control_key: AC-19
   covered_by: []
-  implementation_status: null
+  implementation_status: none
   narrative: 'Not Applicable for the Cloud Foundry Platform
 
     '
@@ -310,7 +310,7 @@ satisfies:
 - control_key: AC-2 (3)
   covered_by:
   - verification_key: POLICY_DOC
-  implementation_status: null
+  implementation_status: none
   narrative: '18F manages information system identifiers for users and devices by:
     Disabling the user identifier after ninety (90) days of inactivity for general
     user accounts and thirty (30) days for administrator level accounts.
@@ -320,7 +320,7 @@ satisfies:
 - control_key: AC-17 (4)
   covered_by:
   - verification_key: POLICY_DOC
-  implementation_status: null
+  implementation_status: none
   narrative:
     a: '18F authorizes the execution of privileged commands and access to security-relevant
       information via remote access only for monitoring, managing, and troubleshooting  the
@@ -333,7 +333,7 @@ satisfies:
 - control_key: AC-6 (2)
   covered_by:
   - verification_key: POLICY_DOC
-  implementation_status: null
+  implementation_status: none
   narrative: 'This control is not applicable because all Cloud.gov accounts are privileged
     accounts.
 

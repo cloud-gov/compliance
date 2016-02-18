@@ -11,7 +11,7 @@ satisfies:
 - control_key: SA-11 (1)
   covered_by:
   - verification_key: STATIC_CODE_ANALYSIS
-  implementation_status: implemented
+  implementation_status: complete
   narrative: 'Bosh uses CodeClimate as it''s primary static code analysis tool. The
     results of the test are publicly avaiable.
 
@@ -19,7 +19,7 @@ satisfies:
   standard_key: NIST-800-53
 - control_key: CM-2
   covered_by: []
-  implementation_status: null
+  implementation_status: none
   narrative: "18F utilizes the Cloud Foundry Secure Deployment best practices which\
     \ include the following:\nConfigure UAA clients and users using a standard BOSH\
     \ manifest for cloud Foundry Deployment. Limit and manage these clients and users\
@@ -46,7 +46,7 @@ satisfies:
   standard_key: NIST-800-53
 - control_key: SI-10
   covered_by: []
-  implementation_status: implemented
+  implementation_status: complete
   narrative: 'All 18F DevOps user input happens at the BOSH command line interface
     (CLI) which requires specific syntax and parameters to be used in order to execute
     job functions. Rules for checking the valid syntax of information system inputs

@@ -3,13 +3,13 @@ name: Risk Assessment Policy for 18F
 satisfies:
 - control_key: RA-1
   covered_by: []
-  implementation_status: null
+  implementation_status: none
   narrative: 18F Policy
   standard_key: NIST-800-53
 - control_key: RA-5
   covered_by:
   - verification_key: POLICY_DOC
-  implementation_status: null
+  implementation_status: none
   narrative:
     a: '18F Conducts monthly Operating System (OS) and web application scanning; quarterly
       database scanning; and, OS and Web application scanning with every code release.

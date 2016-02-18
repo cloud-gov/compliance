@@ -4,13 +4,13 @@ satisfies:
 - control_key: AT-3
   covered_by:
   - verification_key: POLICY_DOC
-  implementation_status: null
+  implementation_status: none
   narrative: The 18F Program office reviews AT-2
   standard_key: NIST-800-53
 - control_key: AT-1
   covered_by:
   - verification_key: POLICY_DOC
-  implementation_status: null
+  implementation_status: none
   narrative:
     a: 'The 18F Program Office develops, documents, and disseminates to all 18F staff
 
@@ -31,19 +31,19 @@ satisfies:
 - control_key: AT-2
   covered_by:
   - verification_key: POLICY_DOC
-  implementation_status: null
+  implementation_status: none
   narrative: The 18F Program office reviews AT-2
   standard_key: NIST-800-53
 - control_key: AT-2 (2)
   covered_by:
   - verification_key: POLICY_DOC
-  implementation_status: null
+  implementation_status: none
   narrative: The 18F Program office reviews AT-2
   standard_key: NIST-800-53
 - control_key: AT-4
   covered_by:
   - verification_key: POLICY_DOC
-  implementation_status: null
+  implementation_status: none
   narrative: Completed the development of the Awareness training policy specifically
     for 18F program. ISSO support is looking into possible solutions for specific
     security awareness training for 18F staff. currently reviewing the SEI training

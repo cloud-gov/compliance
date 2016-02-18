@@ -3,7 +3,7 @@ name: JumpBox
 satisfies:
 - control_key: AC-17 (9)
   covered_by: []
-  implementation_status: null
+  implementation_status: none
   narrative: 'Access keys and user accounts can be revoked using IAM. Sessions terminate
     after 10 minutes.
 
@@ -11,7 +11,7 @@ satisfies:
   standard_key: NIST-800-53
 - control_key: AC-17 (4)
   covered_by: []
-  implementation_status: null
+  implementation_status: none
   narrative: '18F authorizes the execution of privileged commands and access to security-relevant
     information via remote access only for monitoring, managing, and troubleshooting  the
     18F virtual infrastructer and Cloud.Gov platform. This authorization is only given
@@ -30,7 +30,7 @@ satisfies:
   standard_key: NIST-800-53
 - control_key: IA-2 (8)
   covered_by: []
-  implementation_status: null
+  implementation_status: none
   narrative: 'Access keys and user accounts can be revoked using IAM. Sessions terminate
     after 10 minutes.
 
@@ -45,7 +45,7 @@ satisfies:
   standard_key: NIST-800-53
 - control_key: AC-17 (3)
   covered_by: []
-  implementation_status: implemented
+  implementation_status: complete
   narrative: 'Cloud.Gov remote access connections are manageed through jumpbox Virtual
     machines within the Cloud.Gov VPC. The remote connections are SSH sessions using
     the BOSH CLI API. There are no other remote connections to the platform as stated
@@ -63,7 +63,7 @@ satisfies:
   standard_key: NIST-800-53
 - control_key: AC-17 (2)
   covered_by: []
-  implementation_status: implemented
+  implementation_status: complete
   narrative: '18F DevOps teams remotely access the Cloud.Gov jumpbox using SSH version
     2. There are no other remote connections to the platform. Client end users login
     to the their Org environment through the CF-Deck within the Cloud.Gov portal.
@@ -74,7 +74,7 @@ satisfies:
   standard_key: NIST-800-53
 - control_key: AC-17
   covered_by: []
-  implementation_status: null
+  implementation_status: none
   narrative: 'Cloud.Gov remote access is not available outside of the 18F environment.
     18F DevOps personnel  are the only group who connects  to information system remotely
     using SSH (22) through the jump box (bastion Host) to execute BOSH CLI commands.

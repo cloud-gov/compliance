@@ -7,7 +7,7 @@ references:
 satisfies:
 - control_key: AC-4 (21)
   covered_by: []
-  implementation_status: null
+  implementation_status: none
   narrative: 'The virtual private cloud logically separates the Cloud.Gov PaaS from
     other information systens within its environment. Cloud.gov is hosted within its
     own VPC and has its own dedicated elastic load balancers for incoming traffic.
@@ -16,7 +16,7 @@ satisfies:
   standard_key: NIST-800-53
 - control_key: SC-7
   covered_by: []
-  implementation_status: null
+  implementation_status: none
   narrative:
     a: 'AWS Boundary Protection - Secure Network Architecture
 
@@ -53,7 +53,7 @@ satisfies:
   standard_key: NIST-800-53
 - control_key: AC-17 (4)
   covered_by: []
-  implementation_status: null
+  implementation_status: none
   narrative: "Since the Cloud.Gov platform resides within the 18F virtual infrastructure,\
     \ 18F Devops must use the SSH remote access method to troubleshoot issues and\
     \ update services that are only resolved by logging into the Cloud.Gov jumpboxes.\
@@ -64,7 +64,7 @@ satisfies:
   standard_key: NIST-800-53
 - control_key: AC-4
   covered_by: []
-  implementation_status: null
+  implementation_status: none
   narrative: "18F incorporates security features within its vpc such as IAM security\
     \ groups, network ACLs, routing tables, and external gateways. Each of these items\
     \ is complementary to providing a secure, isolated network.\nNetwork Access control\

@@ -4,7 +4,7 @@ satisfies:
 - control_key: IA-1
   covered_by:
   - verification_key: POLICY_DOC
-  implementation_status: null
+  implementation_status: none
   narrative:
     a: "The 18F Program Office develops, documents, and disseminates to all 18F staff,\n\
       The 18F Identification and Authentication Policy which addresses purpose, scope,\
@@ -22,7 +22,7 @@ satisfies:
   standard_key: NIST-800-53
 - control_key: IA-4
   covered_by: []
-  implementation_status: null
+  implementation_status: none
   narrative: 'The 18F Identification and Authentication Policy section 3 Identifier
     Management states:
 

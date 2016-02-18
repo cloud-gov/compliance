@@ -4,7 +4,7 @@ satisfies:
 - control_key: SI-2
   covered_by:
   - verification_key: CONCOURSE_PIPELINE
-  implementation_status: null
+  implementation_status: none
   narrative:
     b: 'Tests software and firmware updates related to flaw remediation for effectiveness
       and potential side effects before installation.
