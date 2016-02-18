@@ -7,14 +7,24 @@ Unique Identifier | Information System Name | Information System Abbreviation
 --- | --- | ---
 Cloud.gov | Cloud Foundry Platform as a Service | Cloud.gov
 
-# System Categorization
+# Information System Categorization
 The overall information system sensitivity categorization is noted in the table that follows.
 
 Low | Moderate | High
 --- | --- | ---
- | X |
+    |  X  |
 
-# Security Objectives Categorization
+# Information Types
+The following tables identify the information types that are input, stored, processed, and/or output from Cloud.Gov. The selection of information types is based on guidance provided by OMB Federal Enterprise Architecture Program Management Office Business Reference Model 2.0, and FIPS Pub 199, Standards for Security Categorization of Federal Information and Information Systems which is based on NIST SP 800-60, Guide for Mapping Types of Information and Information Systems to Security Categories.
+
+|Information Type | Confidentiality   | Integrity | Availability|
+|-----------------|-------------------|-----------|-------------|
+|C.3.5.1 System Development           |Low        | Moderate    | Low
+|C.3.5.2 life-cycle/Change Management |Low        | Moderate    | Low
+|C.3.5.3 System Maintenance           |Low        | Moderate    | Low      
+|C.3.5.4 Infrastructure Maintenance   |Low        | Moderate    | Low
+
+# Security Objectives Categorization (FIPS 199)
 Security Objective | Low, Moderate or High
 --- | --- | ---
 Confidentiality | Low
@@ -23,23 +33,23 @@ Availability | High
 
 Using this categorization, in conjunction with the risk assessment and any unique security requirements, we have established the security controls for this system, as detailed in this SSP.
 
-
 # E-Authentication Determination
 
 ### E-Authentication Question
-yes | No | E-Authentication Question
+Yes | No  | E-Authentication Question
 --- | --- | ---
- | x | Does the system require authentication via the Internet?
- | x | Is data being transmitted over the Internet via browsers?
+ x|  | Does the system require authentication via the Internet?
+ x|  | Is data being transmitted over the Internet via browsers?
  x |  | Do users connect to the system from over the Internet?
 
 Note: Refer to OMB Memo M-04-04 E-Authentication Guidance for Federal Agencies for more information on e-Authentication.
 
+The summary E-Authentication Level is recorded in the table that follows.
+
 ### E-Authentication Determination
-System Name: Cloud.Gov Platform as a Service
-System Owner: 18F/GSA
-Assurance Level:
-Date Approved:
+|System Name| System Owner| Assurance Level| Date Approved|
+|-----------|
+|Cloud.Gov Platform as a Service| 18F/GSA| Level 2| Feb 18, 2016|
 
 # Information System Owner
 Name | Title | Organization | Address | Phone Number | Email Address
