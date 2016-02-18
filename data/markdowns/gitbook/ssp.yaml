@@ -49,5 +49,5 @@ information_system:
   deployment_model: Public
   leveraged_authorizations:
     - system_name:
-      owner: Amazon
+      owner: Amazon Web Services (AWS)
       date_granted: 2013-13-05
