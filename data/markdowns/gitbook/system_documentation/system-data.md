@@ -7,12 +7,23 @@ Unique Identifier | Information System Name | Information System Abbreviation
 --- | --- | ---
 Cloud.gov | Cloud Foundry Platform as a Service | Cloud.gov
 
+
+# Security Objectives Categorization (FIPS 199)
+Security Objective | Low, Moderate or High
+--------------- |----------|-------
+Confidentiality | Low
+Integrity       | Moderate
+Availability    | Low
+
 # Information System Categorization
 The overall information system sensitivity categorization is noted in the table that follows.
 
 Low | Moderate | High
 --- | --- | ---
     |  X  |
+
+
+Using this categorization, in conjunction with the risk assessment and any unique security requirements, we have established the security controls for this system, as detailed in this SSP.
 
 # Information Types
 The following tables identify the information types that are input, stored, processed, and/or output from Cloud.Gov. The selection of information types is based on guidance provided by OMB Federal Enterprise Architecture Program Management Office Business Reference Model 2.0, and FIPS Pub 199, Standards for Security Categorization of Federal Information and Information Systems which is based on NIST SP 800-60, Guide for Mapping Types of Information and Information Systems to Security Categories.
@@ -22,16 +33,9 @@ The following tables identify the information types that are input, stored, proc
 |C.3.5.1 System Development           |Low        | Moderate    | Low
 |C.3.5.2 life-cycle/Change Management |Low        | Moderate    | Low
 |C.3.5.3 System Maintenance           |Low        | Moderate    | Low      
-|C.3.5.4 Infrastructure Maintenance   |Low        | Moderate    | Low
+|C.3.5.4 Infrastructure Maintenance   |Low        | Low         | Low
 
-# Security Objectives Categorization (FIPS 199)
-Security Objective | Low, Moderate or High
---- | --- | ---
-Confidentiality | Low
-Integrity | Moderate
-Availability | High
 
-Using this categorization, in conjunction with the risk assessment and any unique security requirements, we have established the security controls for this system, as detailed in this SSP.
 
 # E-Authentication Determination
 
