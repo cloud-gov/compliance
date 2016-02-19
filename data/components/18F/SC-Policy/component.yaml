@@ -1,30 +1,41 @@
 documentation_complete: false
 name: System and Communications Protection Policy for 18F
-verifications:
-  POLICY_DOC:
-    name: policy document
-    type: url
-    path: https://github.com/18f/compliance-docs/blob/master/SC-policy.md
-  KEY_ROTATION:
-    name: Key Rotation Policy
-    type: URL
-    path: https://github.com/18F/cg-docs/blob/master/content/ops/key-rotation.md
 satisfies:
-  NIST-800-53:
-    SC-1:
-      implementation_status: null
-      narrative: 18F Policy
-      references:
-        - verification: POLICY_DOC
-    SC-7:
-      implementation_status: null
-      narrative:
-        b: |
-          18F Implements subnetworks for publicly accessible system components that are logically separated from internal organizational networks
-    SC-12 (1):
-      implementation_status: true
-      narrative: |
-        Authorized federal staff rotate, encrypt, and backup keys monthly. Privileged users can access the keys only with two-factor authentication and a decryption passphrase. In the rare case that both the keys and the decryption passphrase for the backup are lost or compromised, new keys can be rotated in by authorized federal staff, while maintaining availability of information.
-      references:
-        - verification: KEY_ROTATION 
+- control_key: SC-7
+  covered_by: []
+  implementation_status: none
+  narrative:
+    b: '18F Implements subnetworks for publicly accessible system components that
+      are logically separated from internal organizational networks
+
+      '
+  standard_key: NIST-800-53
+- control_key: SC-12 (1)
+  covered_by:
+  - verification_key: KEY_ROTATION
+  implementation_status: complete
+  narrative: 'Authorized federal staff rotate, encrypt, and backup keys monthly. Privileged
+    users can access the keys only with two-factor authentication and a decryption
+    passphrase. In the rare case that both the keys and the decryption passphrase
+    for the backup are lost or compromised, new keys can be rotated in by authorized
+    federal staff, while maintaining availability of information.
+
+    '
+  standard_key: NIST-800-53
+- control_key: SC-1
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative: 18F Policy
+  standard_key: NIST-800-53
+schema_version: 2.0
 system: 18F
+verifications:
+- key: KEY_ROTATION
+  name: Key Rotation Policy
+  path: https://github.com/18F/cg-docs/blob/master/content/ops/key-rotation.md
+  type: URL
+- key: POLICY_DOC
+  name: policy document
+  path: https://github.com/18f/compliance-docs/blob/master/SC-policy.md
+  type: url

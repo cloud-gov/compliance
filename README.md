@@ -1,5 +1,7 @@
 # cloud.gov Compliance
 
+Data Validation Tests: [![Build Status](https://travis-ci.org/18F/cg-compliance.svg?branch=master)](https://travis-ci.org/18F/cg-compliance)  
+
 This repository contains the data for [cloud.gov](https://cloud.gov)'s compliance with [NIST](http://www.nist.gov/) controls. The documentation is generated from the data in this repository via [Compliance Masonry](https://github.com/opencontrol/compliance-masonry), then published to [compliance.cloud.gov](https://compliance.cloud.gov/).
 
 # Creating Gitbook

@@ -2,11 +2,13 @@ documentation_complete: false
 name: Contingency Planning Policy for 18F
 references:
 - name: Policy Document
+  path: https://github.com/18F/compliance-docs/blob/master/CP-Policy.md
   type: URL
-  path: https://github.com/18F/compliance-docs/blob/master/CP-Policy.md 
 satisfies:
-  NIST-800-53:
-    CP-1:
-      implementation_status: null
-      narrative: 18F Policy
+- control_key: CP-1
+  covered_by: []
+  implementation_status: none
+  narrative: 18F Policy
+  standard_key: NIST-800-53
+schema_version: 2.0
 system: 18F

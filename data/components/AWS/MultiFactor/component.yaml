@@ -5,14 +5,30 @@ references:
   path: https://aws.amazon.com/iam/details/mfa/
   type: URL
 satisfies:
-  NIST-800-53:
-    IA-2 (1):
-      narrative: |
-        AWS multifactor authentication (MFA) for privileged users of the AWS console is implemented. This service has been configured for 18F administrative accounts in IAM. Multifactor authentication adds an extra layer of security for login access to the AWS management console. 18F users are prompted for a username and password, as well as the authentication code from their MFA device.
-    IA-2 (2):
-      narrative: |
-        AWS multi-factor authentication (MFA) for non-privileged users of the AWS console is implemented. With MFA enabled, all users are prompted for a username and password, as well as the authentication code from their MFA device.
-    IA-3:
-      implementation_status: null
-      narrative: |
-        The underlying AWS infrastructure does not permit unauthenticated privileged user access for console or API access.
+- control_key: IA-2 (1)
+  covered_by: []
+  narrative: 'AWS multifactor authentication (MFA) for privileged users of the AWS
+    console is implemented. This service has been configured for 18F administrative
+    accounts in IAM. Multifactor authentication adds an extra layer of security for
+    login access to the AWS management console. 18F users are prompted for a username
+    and password, as well as the authentication code from their MFA device.
+
+    '
+  standard_key: NIST-800-53
+- control_key: IA-3
+  covered_by: []
+  implementation_status: none
+  narrative: 'The underlying AWS infrastructure does not permit unauthenticated privileged
+    user access for console or API access.
+
+    '
+  standard_key: NIST-800-53
+- control_key: IA-2 (2)
+  covered_by: []
+  narrative: 'AWS multi-factor authentication (MFA) for non-privileged users of the
+    AWS console is implemented. With MFA enabled, all users are prompted for a username
+    and password, as well as the authentication code from their MFA device.
+
+    '
+  standard_key: NIST-800-53
+schema_version: 2.0
