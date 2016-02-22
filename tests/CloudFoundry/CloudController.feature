@@ -7,7 +7,7 @@ Feature: Cloud Controller Features
 
    Examples: Action-Results for creating orgs
      | account          |  status         |
-     | a master         |  exists         |
+     | an admin         |  exists         |
      | an org manager   |  does not exist |
      | an org auditor   |  does not exist |
      | a space manager  |  does not exist |
@@ -22,7 +22,7 @@ Feature: Cloud Controller Features
 
    Examples: Action-Results for updating orgs
      | account          |  status         |
-     | a master         |  changes        |
+     | an admin         |  changes        |
      | an org manager   |  changes        |
      | an org auditor   |  stays the same |
      | a space manager  |  stays the same |
@@ -37,7 +37,7 @@ Feature: Cloud Controller Features
 
     Examples: Action-Results for deleting orgs
       | account          |  status	   |
-      | a master         |  does not exist |
+      | an admin         |  does not exist |
       | an org manager   |  exists         |
       | an org auditor   |  exists         |
       | a space manager  |  exists         |
@@ -52,7 +52,7 @@ Feature: Cloud Controller Features
 
    Examples: Action-Results for creating spaces
      | account          |  status	  |
-     | a master         |  exists         |
+     | an admin         |  exists         |
      | an org manager   |  exists         |
      | an org auditor   |  does not exist |
      | a space manager  |  does not exist |
@@ -67,7 +67,7 @@ Feature: Cloud Controller Features
 
     Examples: Action-Results for updating spaces
       | account          |  status         |
-      | a master         |  changes        |
+      | an admin         |  changes        |
       | an org manager   |  changes        |
       | an org auditor   |  stays the same |
       | a space manager  |  changes        |
@@ -82,7 +82,7 @@ Feature: Cloud Controller Features
 
     Examples: Action-Results for deleting spaces
       | account          |  status    	   |
-      | a master         |  does not exist |
+      | an admin         |  does not exist |
       | an org manager   |  does not exist |
       | an org auditor   |  exists         |
       | a space manager  |  exists         |
@@ -97,7 +97,7 @@ Feature: Cloud Controller Features
 
    Examples: Action-Results for creating apps
      | account          |  status         |
-     | a master         |  exists         |
+     | an admin         |  exists         |
      | an org manager   |  does not exist |
      | an org auditor   |  does not exist |
      | a space manager  |  does not exist |
@@ -112,7 +112,7 @@ Feature: Cloud Controller Features
 
     Examples: Action-Results for deleting apps
       | account          |  status 	   |
-      | a master         |  does not exist |
+      | an admin         |  does not exist |
       | an org manager   |  exists         |
       | an org auditor   |  exists         |
       | a space manager  |  exists         |
@@ -127,7 +127,7 @@ Feature: Cloud Controller Features
 
    Examples: Action-Results for creating users
      | account          |  status         |
-     | a master         |  exists         |
+     | an admin         |  exists         |
      | an org manager   |  does not exist |
      | an org auditor   |  does not exist |
      | a space manager  |  does not exist |
@@ -142,13 +142,13 @@ Feature: Cloud Controller Features
 
    Examples: Action-Results for updating users
      | account          | workspace |  status               |
-     | a master         | org       |  has access           |
+     | an admin         | org       |  has access           |
      | an org manager   | org       |  has access           |
      | an org auditor   | org       |  does not have access |
      | a space manager  | org       |  does not have access |
      | a space developer| org       |  does not have access |
      | a space auditor  | org       |  does not have access |
-     | a master         | space     |  has access           |
+     | an admin         | space     |  has access           |
      | an org manager   | space     |  has access           |
      | an org auditor   | space     |  does not have access |
      | a space manager  | space     |  does not have access |
@@ -163,7 +163,7 @@ Feature: Cloud Controller Features
 
    Examples: Action-Results for deleting apps
      | account          |  status 	      |
-     | a master         |  does not exist |
+     | an admin         |  does not exist |
      | an org manager   |  exists         |
      | an org auditor   |  exists         |
      | a space manager  |  exists         |
@@ -178,7 +178,7 @@ Feature: Cloud Controller Features
 
    Examples: Action-Results for auditing
      | account          |  number |
-     | a master         |  45     |
+     | an admin         |  45     |
      | an org manager   |  0      |
      | an org auditor   |  43     |
      | a space manager  |  0      |
