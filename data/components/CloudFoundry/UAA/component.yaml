@@ -331,3 +331,11 @@ verifications:
   name: Cloud.gov Login Page
   path: https://login.cloud.gov/login
   type: URL
+- filename: UAA.feature
+  last_run: 2016-02-22 17:40:07.136365
+  name: Account_Lockout_Tests
+  steps: "GIVEN I am a user that can login WHEN I attempt to login 3 times and fail\
+    \ THEN I am not locked out \nGIVEN I am a user that can login WHEN I attempt to\
+    \ login 6 times and fail THEN I am locked out \n"
+  test_passed: true
+  type: TEST
