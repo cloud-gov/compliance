@@ -64,7 +64,7 @@ def before_feature(context, feature):
         org.set_user_role('user', space_auditor.guid)
         space.set_user_role('auditor', space_auditor.guid)
 
-    if 'ASG' in feature.name:
+    if 'Application Security Groups' in feature.name:
         admin_client.create_security_group(
             name=config.CLOSED_SECURITY_GROUP,
             rules=[{
@@ -100,7 +100,7 @@ def after_feature(context, feature):
         admin_client.get_user(config.SPACE_DEVELOPER).delete()
         admin_client.get_user(config.SPACE_AUDITOR).delete()
 
-    if 'ASG' in feature.name:
+    if 'Application Security Groups' in feature.name:
         admin_client.get_security_group(
             name=config.OPEN_SECURITY_GROUP).delete()
         admin_client.get_security_group(
@@ -113,31 +113,60 @@ def after_feature(context, feature):
     org.delete()
 
 
+def get_steps(scenario):
+    text = ''
+    for step in scenario.steps:
+        text += step.step_type.upper() + ' ' + step.name + ' '
+    return text
+
+
+def get_scenarios(feature):
+    text = ''
+    for scenario in feature.scenarios:
+        text += get_steps(scenario) 
+        text += '\n'
+    return text
+
+
+def extract_data(context):
+    data = {
+        'type': 'TEST',
+        'test_passed': not context.failed,
+        'last_run': datetime.datetime.now()
+    }
+    if hasattr(context, 'scenario'):
+        # This is a scenario
+        data['description'] = context.scenario.name
+        data['filename'] = context.scenario.filename
+        data['steps'] = get_steps(context.scenario)
+    else:
+        # This is a feature
+        data['name'] = context.feature.name
+        data['filename'] = context.feature.filename
+        data['steps'] = get_scenarios(context.feature)    
+    return data
+
+
 def after_tag(context, tag):
     if 'Component' in tag:
         _, name, system, component = tag.split('-')
-        feature = context.feature.name
-        try:
-            scenario = context.scenario.name
-        except:
-            scenario = "all"
         component_file = os.path.join(
             '..', '..', 'data', 'components', system,
             component, 'component.yaml'
         )
+        test_data = extract_data(context)
+        test_data['name'] = name
         with open(component_file, 'r') as yaml_file:
+            # Get Component Data
             data = yaml.load(yaml_file)
             if 'verifications' not in data:
-                data['verifications'] = {}
-            data['verifications'][name] = {
-                'name': '{0} {1}'.format(feature, scenario),
-                'type': 'TEST',
-                'test_passed': not context.failed,
-                'test_path': 'Feature: {0} Scenario: {1}'.format(
-                    feature, scenario
-                ),
-                'last_run': datetime.datetime.now()
-            }
+                data['verifications'] = []
+            # Delete Old Data
+            for idx, verification in enumerate(data['verifications']):
+                if verification.get('name') == name:
+                    del data['verifications'][idx]
+            # Add New Data
+            data['verifications'].append(test_data)
         with open(component_file, 'w') as yaml_file:
             yaml_file.write(
                 yaml.dump(data, default_flow_style=False, indent=2)

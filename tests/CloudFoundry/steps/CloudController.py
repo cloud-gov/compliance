@@ -208,18 +208,6 @@ def step_impl(context):
     context.number_of_results = logs.get('total_results')
 
 
-@when('I attempt to login {times} times and fail')
-def step_impl(context, times):
-    for _ in range(int(times)):
-        user = Client(
-            api_url=config.API_URL,
-            username=config.TEST_USER,
-            password=config.TEST_USER_PASSWORD + 'wrong',
-            verify_ssl=False
-        )
-        assert not user.is_logged_in()
-
-
 # Thens
 @then('the org exists')
 def step_impl(context):

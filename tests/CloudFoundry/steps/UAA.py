@@ -5,7 +5,6 @@ from behave import given, when, then
 
 from cloudfoundry import Client
 
-
 ADMIN = Client(
     api_url=config.API_URL,
     username=config.MASTER_USERNAME,
@@ -13,6 +12,18 @@ ADMIN = Client(
     verify_ssl=False
 )
 
+
+@when('I attempt to login {times:d} times and fail')
+def step_impl(context, times):
+    for _ in range(times):
+        user = Client(
+            api_url=config.API_URL,
+            username=config.TEST_USER,
+            password=config.TEST_USER_PASSWORD + 'wrong',
+            verify_ssl=False
+        )
+        assert not user.is_logged_in()
+        
 
 @when('I look at the audit logs')
 def step_impl(context):
