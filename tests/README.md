@@ -61,12 +61,12 @@ behave
 These BDD tests have the ability to self document in the [components documentation](https://github.com/18F/cg-compliance/tree/master/data/components).
 
 In order to create a self documenting a tag in the format below should be placed above a test scenario.
-`@Component-"Name of the test"-"System Key"-"Component_Key"`
+`@Component/"Name of the test"/"System Key"/"Component_Key"`
 example:
 ```
 Feature: Audit and Accountability
 
-@Component-LOG_TESTS-CloudFoundry-CloudController
+@Component/LOG_TESTS/CloudFoundry/CloudController
 Scenario: Content of Audit Records
   Given I am using a master account
     when I look at the audit logs
