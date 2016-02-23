@@ -4,8 +4,9 @@ satisfies:
 - control_key: CA-7
   covered_by: []
   implementation_status: none
-  narrative: |
-    In progress
+  narrative: 'In progress
+
+    '
   standard_key: NIST-800-53
 - control_key: CA-8 (1)
   covered_by:
@@ -237,3 +238,10 @@ verifications:
   name: Policy Document
   path: https://github.com/18F/compliance-docs/blob/master/CA-Policy.md
   type: URL
+- filename: policies.feature
+  last_run: 2016-02-23 10:57:33.954288
+  name: Policy_Update_Test
+  steps: "GIVEN the github link - <policy> THEN the policy has been updated within\
+    \ the last 180 days \n"
+  test_passed: false
+  type: TEST

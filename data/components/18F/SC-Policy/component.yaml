@@ -39,3 +39,10 @@ verifications:
   name: policy document
   path: https://github.com/18f/compliance-docs/blob/master/SC-policy.md
   type: url
+- filename: policies.feature
+  last_run: 2016-02-23 10:57:34.184105
+  name: Policy_Update_Test
+  steps: "GIVEN the github link - <policy> THEN the policy has been updated within\
+    \ the last 180 days \n"
+  test_passed: false
+  type: TEST

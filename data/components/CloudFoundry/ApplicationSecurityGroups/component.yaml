@@ -66,7 +66,7 @@ satisfies:
 schema_version: 2.0
 verifications:
 - filename: ASG.feature
-  last_run: 2016-02-22 17:39:33.618805
+  last_run: 2016-02-23 10:56:56.505312
   name: Security_Group_Tests
   steps: "GIVEN I am using an admin account THEN I can view and print all the ASGs\
     \ \nGIVEN I am using an admin account WHEN I try to bind the application security\
