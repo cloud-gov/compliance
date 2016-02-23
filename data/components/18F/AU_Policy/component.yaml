@@ -233,9 +233,9 @@ verifications:
   type: URL
 - filename: policies.feature
   key: Policy_Update_Test
-  last_run: 2016-02-23 11:29:07.174703
+  last_run: 2016-02-23 15:10:30.495142
   name: Policy_Update_Test
   steps: "GIVEN the github link - <policy> THEN the policy has been updated within\
     \ the last 180 days \n"
-  test_passed: false
+  test_passed: true
   type: TEST
