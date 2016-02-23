@@ -186,3 +186,13 @@ Feature: Cloud Controller Features
      | a space manager  |  0      |
      | a space developer|  27     |
      | a space auditor  |  27     |
+
+
+  @Component-Log_Content_Test-CloudFoundry-CloudController
+  Scenario: Logs have timestamp, types of event, actor, and actee
+    Given I am using an admin account
+      when I look at the audit logs
+      then audit logs have timestamp
+      And audit logs have type of event
+      And audit logs have actor
+      And audit logs have actee
