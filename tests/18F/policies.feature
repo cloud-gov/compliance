@@ -1,20 +1,20 @@
-@Component/Policy_Update_Test/18F/AC-Policy
-@Component/Policy_Update_Test/18F/AT-Policy
-@Component/Policy_Update_Test/18F/AU-Policy
-@Component/Policy_Update_Test/18F/CA-Policy
-@Component/Policy_Update_Test/18F/CM-Policy
-@Component/Policy_Update_Test/18F/CP-Policy
-@Component/Policy_Update_Test/18F/IA-Policy
-@Component/Policy_Update_Test/18F/IR-Policy
-@Component/Policy_Update_Test/18F/MA-Policy
-@Component/Policy_Update_Test/18F/MP-Policy
-@Component/Policy_Update_Test/18F/PE-Policy
-@Component/Policy_Update_Test/18F/PL-Policy
-@Component/Policy_Update_Test/18F/PS-Policy
-@Component/Policy_Update_Test/18F/RA-Policy
-@Component/Policy_Update_Test/18F/SA-Policy
-@Component/Policy_Update_Test/18F/SC-Policy
-@Component/Policy_Update_Test/18F/SI-Policy
+@Component-Policy_Update_Test-18F-AC_Policy
+@Component-Policy_Update_Test-18F-AT_Policy
+@Component-Policy_Update_Test-18F-AU_Policy
+@Component-Policy_Update_Test-18F-CA_Policy
+@Component-Policy_Update_Test-18F-CM_Policy
+@Component-Policy_Update_Test-18F-CP_Policy
+@Component-Policy_Update_Test-18F-IA_Policy
+@Component-Policy_Update_Test-18F-IR_Policy
+@Component-Policy_Update_Test-18F-MA_Policy
+@Component-Policy_Update_Test-18F-MP_Policy
+@Component-Policy_Update_Test-18F-PE_Policy
+@Component-Policy_Update_Test-18F-PL_Policy
+@Component-Policy_Update_Test-18F-PS_Policy
+@Component-Policy_Update_Test-18F-RA_Policy
+@Component-Policy_Update_Test-18F-SA_Policy
+@Component-Policy_Update_Test-18F-SC_Policy
+@Component-Policy_Update_Test-18F-SI_Policy
 Feature: 18F Policies
 
   Scenario Outline: Check that policies are reviewed and updated.

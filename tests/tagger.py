@@ -26,7 +26,7 @@ def extract_data(context):
     }
     if hasattr(context, 'scenario'):
         # This is a scenario
-        data['description'] = context.scenario.name
+        data['name'] = context.scenario.name
         data['filename'] = context.scenario.filename
         data['steps'] = get_steps(context.scenario)
     else:
@@ -39,13 +39,14 @@ def extract_data(context):
 
 def tag_component(context, tag):
     if 'Component' in tag:
-        _, name, system, component = tag.split('/')
+        _, name, system, component = tag.split('-')
         component_file = os.path.join(
             '..', '..', 'data', 'components', system,
             component, 'component.yaml'
         )
         test_data = extract_data(context)
         test_data['name'] = name
+        test_data['key'] = name
         with open(component_file, 'r') as yaml_file:
             # Get Component Data
             data = yaml.load(yaml_file)
