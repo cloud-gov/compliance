@@ -1,3 +1,20 @@
+@Component/Policy_Update_Test/18F/AC-Policy
+@Component/Policy_Update_Test/18F/AT-Policy
+@Component/Policy_Update_Test/18F/AU-Policy
+@Component/Policy_Update_Test/18F/CA-Policy
+@Component/Policy_Update_Test/18F/CM-Policy
+@Component/Policy_Update_Test/18F/CP-Policy
+@Component/Policy_Update_Test/18F/IA-Policy
+@Component/Policy_Update_Test/18F/IR-Policy
+@Component/Policy_Update_Test/18F/MA-Policy
+@Component/Policy_Update_Test/18F/MP-Policy
+@Component/Policy_Update_Test/18F/PE-Policy
+@Component/Policy_Update_Test/18F/PL-Policy
+@Component/Policy_Update_Test/18F/PS-Policy
+@Component/Policy_Update_Test/18F/RA-Policy
+@Component/Policy_Update_Test/18F/SA-Policy
+@Component/Policy_Update_Test/18F/SC-Policy
+@Component/Policy_Update_Test/18F/SI-Policy
 Feature: 18F Policies
 
   Scenario Outline: Check that policies are reviewed and updated.
@@ -21,4 +38,3 @@ Feature: 18F Policies
     | https://api.github.com/repos/18f/compliance-docs/contents/SA-Policy.md  |
     | https://api.github.com/repos/18f/compliance-docs/contents/SC-Policy.md  |
     | https://api.github.com/repos/18f/compliance-docs/contents/SI-Policy.md  |
-
