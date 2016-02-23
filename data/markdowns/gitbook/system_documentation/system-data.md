@@ -20,7 +20,7 @@ The overall information system sensitivity categorization is noted in the table 
 
 Low | Moderate | High
 --- | --- | ---
-X   |     |
+    |  X  |
 
 
 Using this categorization, in conjunction with the risk assessment and any unique security requirements, we have established the security controls for this system, as detailed in this SSP.

@@ -1,4 +1,4 @@
-# FedRAMP Low System Security Plan
+# FedRAMP Moderate System Security Plan
 ### 18F - Cloud.Gov  
 
 * [About the SSP](system_documentation/about-the-ssp.md)
