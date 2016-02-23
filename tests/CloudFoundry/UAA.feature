@@ -1,4 +1,4 @@
-@Component-Account_Lockout_Tests-CloudFoundry-UAA
+@Component/Account_Lockout_Tests/CloudFoundry/UAA
 Feature: CloudFoundry User Account and Authentication (UAA) Server Features
 
   Scenario: Accounts are not logged out after 3 failed attempts to login
@@ -10,4 +10,3 @@ Feature: CloudFoundry User Account and Authentication (UAA) Server Features
     Given I am a user that can login
       when I attempt to login 6 times and fail
       then I am locked out
-

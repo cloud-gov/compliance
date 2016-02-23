@@ -1,4 +1,4 @@
-@Component-User_Role_Tests-CloudFoundry-CloudController
+@Component/User_Role_Tests/CloudFoundry/CloudController
 Feature: Cloud Controller Features
 
   Scenario Outline: Creating Organizations
@@ -172,7 +172,7 @@ Feature: Cloud Controller Features
      | a space auditor  |  exists         |
 
 
-
+  @Component/Audit_Log_Tests/CloudFoundry/CloudController
   Scenario Outline: Viewing Audits
      Given I am using <account> account
        when I view my audit logs
