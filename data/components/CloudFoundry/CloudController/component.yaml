@@ -145,7 +145,16 @@ verifications:
   path: https://ocs.cloudfoundry.org/concepts/roles.html
   type: URL
 - filename: CloudController.feature
-  last_run: 2016-02-23 10:37:46.144255
+  key: Audit_Log_Tests
+  last_run: 2016-02-23 11:39:02.513968
+  name: Audit_Log_Tests
+  steps: 'GIVEN I am using a space auditor account WHEN I view my audit logs THEN
+    I find "27" events '
+  test_passed: true
+  type: TEST
+- filename: CloudController.feature
+  key: User_Role_Tests
+  last_run: 2016-02-23 11:39:03.385721
   name: User_Role_Tests
   steps: "GIVEN I am using <account> account WHEN I try to create an org THEN the\
     \ org <status> \nGIVEN I am using <account> account WHEN I try to update an org\
