@@ -13,7 +13,7 @@ The overall information system sensitivity categorization is noted in the table 
 
 Low | Moderate | High
 --- | --- | ---
- | X |
+X | |
 
 # Security Objectives Categorization
 Security Objective | Open Data
@@ -34,17 +34,19 @@ Using this categorization, in conjunction with the risk assessment and any uniqu
 
 #### Administrator
 Internal, Low sensitivity
+
 Creates and uploads new surveys to the production server
 
 #### Survey User
 Public, Low survey
+
 Fills out surveys when provided with a link to the form
 
 ## Network Architecture
 
 The following diagram provides an overview of the survey application's network architecture
 
-![Survey System Architecture](/system_documentation/confidential-survey-system-architecture.png]
+![Survey System Architecture](/system_documentation/confidential-survey-system-architecture.png)
 
 ## Hardware Inventory
 Leveraged from AWS - None
@@ -53,6 +55,7 @@ Leveraged from AWS - None
 
 ### Survey Application
 Ruby on Rails
+
 Postgres SQL server
 
 ## Network Inventory
@@ -65,7 +68,7 @@ Ports (TCP/UDP) |	Protocols |	Services |	Purpose |	Used By
 
 ## User Data Flow
 
-![Survey System Architecture](/system_documentation/confidential-survey-data-flow.png]
+![Survey System Architecture](/system_documentation/confidential-survey-data-flow.png)
 
 ### Taking a Survey
 To take a survey, a user must first enter some basic HTTP Authentication credentials (these are shared across all users and would not identify a single user). The credentials are just there to limit access to 18F employees and/or potential hires. The user would also need to know the exact URL of the survey they are invited to take (there is no root-level directory of surveys).
