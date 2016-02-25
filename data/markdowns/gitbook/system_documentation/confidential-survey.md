@@ -44,7 +44,7 @@ Fills out surveys when provided with a link to the form
 
 The following diagram provides an overview of the survey application's network architecture
 
-![Survey System Architecture](/system_documentation/confidential-survey-system-architecture.png]
+![Survey System Architecture](confidential-survey-system-architecture.png]
 
 ## Hardware Inventory
 Leveraged from AWS - None
@@ -59,25 +59,22 @@ Postgres SQL server
 Leveraged from AWS - None
 
 ## Ports, Protocols and Services
-Ports (TCP/UDP) |	Protocols |	Services |	Purpose |	Used By
+
+Ports (TCP/UDP) |	Protocols |	Services |	Purpose
 --- | --- | --- | ---
 443/TCP |	HTTPS |	HTTPS Web Service |	Survey Application running on Cloud.gov	 |
 
-## User Data Flow
+## Data Flows
 
-![Survey System Architecture](/system_documentation/confidential-survey-data-flow.png]
+![Survey System Architecture](confidential-survey-data-flow.png]
 
 ### Taking a Survey
 To take a survey, a user must first enter some basic HTTP Authentication credentials (these are shared across all users and would not identify a single user). The credentials are just there to limit access to 18F employees and/or potential hires. The user would also need to know the exact URL of the survey they are invited to take (there is no root-level directory of surveys).
 
 Once the user submits a survey, the complete response is used only to increment counters for various fields and a full record of the survey is not retained. The user is redirected to a screen thanking them for their participation.
 
-### Survey Creation
-Surveys are implemented as YAML configuration files within the `config/surveys` directory of the application (here is [a sample survey included in the repo](https://github.com/18F/confidential-survey/blob/develop/config/surveys/sample-survey.yml)). Surveys do not need to be – and probably *should not* be – checked into the repo.
-
-1. To make a new survey live, the app (with survey file in its `config/surveys`) must be deployed to production. This limits the ability to create/edit surveys on the system only to the lead developer or anybody else with deploy access to the specific space. If the survey is named `SURVEY_NAME.yml`, the new survey form is accessible at `/surveys/SURVEY_NAME`
-2. To mark a live survey as `inactive` – meaning that it no longer accepts responses – the developer has to edit a field in the survey's YAML configuration to be `active: false` and redeploy the survey.
-3. To delete the survey form entirely, the developer can delete the survey's YAML file and redeploy. This will not remove the counts recorded for the survey from the database.
+### Deploying a Survey
+Survey questions are not formed in the database but are instead read as configuration files within the project. This means that surveys can only be launched by users who can deploy the application and could not be altered/created by someone who gained access to the database.
 
 ### JSON Data
 To allow admin users to retrieve the count, the system also supports a JSON endpoint for each survey at `/surveys/SURVEY_NAME.json`. This is secured with a different HTTP Authentication password than the one used by survey takers that should only be used by personnel and scripts authorized to download the JSON.
