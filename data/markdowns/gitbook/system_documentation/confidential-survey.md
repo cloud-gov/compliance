@@ -46,8 +46,7 @@ Fills out surveys when provided with a link to the form
 
 The following diagram provides an overview of the survey application's network architecture
 
-![Survey System Architecture](confidential-survey-system-architecture.png]
-
+![Survey System Architecture](confidential-survey-system-architecture.png)
 
 ## Hardware Inventory
 Leveraged from AWS - None
@@ -70,7 +69,7 @@ Ports (TCP/UDP) |	Protocols |	Services |	Purpose
 
 ## Data Flows
 
-![Survey System Architecture](confidential-survey-data-flow.png]
+![Survey System Architecture](confidential-survey-data-flow.png)
 
 ### Taking a Survey
 To take a survey, a user must first enter some basic HTTP Authentication credentials (these are shared across all users and would not identify a single user). The credentials are just there to limit access to 18F employees and/or potential hires. The user would also need to know the exact URL of the survey they are invited to take (there is no root-level directory of surveys).
