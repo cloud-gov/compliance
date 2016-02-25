@@ -13,7 +13,7 @@ The overall information system sensitivity categorization is noted in the table 
 
 Low | Moderate | High
 --- | --- | ---
- | X |
+X | |
 
 # Security Objectives Categorization
 Security Objective | Open Data
@@ -34,10 +34,12 @@ Using this categorization, in conjunction with the risk assessment and any uniqu
 
 #### Administrator
 Internal, Low sensitivity
+
 Creates and uploads new surveys to the production server
 
 #### Survey User
-Public, Low survey
+Public, Low sensitivity
+
 Fills out surveys when provided with a link to the form
 
 ## Network Architecture
@@ -46,6 +48,7 @@ The following diagram provides an overview of the survey application's network a
 
 ![Survey System Architecture](confidential-survey-system-architecture.png]
 
+
 ## Hardware Inventory
 Leveraged from AWS - None
 
@@ -53,6 +56,7 @@ Leveraged from AWS - None
 
 ### Survey Application
 Ruby on Rails
+
 Postgres SQL server
 
 ## Network Inventory
