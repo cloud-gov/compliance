@@ -1,0 +1,28 @@
+documentation_complete: false
+name: CI Cloud.Gov Concourse Pipeline
+satisfies:
+- control_key: SI-2
+  covered_by:
+  - verification_key: CONCOURSE_PIPELINE
+  implementation_status: none
+  narrative:
+    b: 'Tests software and firmware updates related to flaw remediation for effectiveness
+      and potential side effects before installation.
+
+      '
+    c: 'Installs security-relevant software and firmware updates within 30 daysrelease
+      of updates of the release of the updates.
+
+      '
+    d: '18F incorporates flaw remediation into the its configuration management process.
+      New versions of Cloud.gov can easily recreated and deployed in the event of
+      any system flaws.
+
+      '
+  standard_key: NIST-800-53
+schema_version: 2.0
+verifications:
+- key: CONCOURSE_PIPELINE
+  name: CI Cloud.Gov Concourse Pipeline
+  path: https://ci.cloud.gov/pipelines/deploy-cf
+  type: URL
