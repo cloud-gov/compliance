@@ -1,0 +1,12 @@
+name: Cloud.Gov # Name of system
+path: CloudGov # System documentation path
+markdown_docs: markdowns # Path to markdown docs
+type: system # system, certification, or standard
+dependencies:
+  certifications:
+    FedRAMP-moderate: 0
+  components:
+    AWS: 0
+    CloudFoundry: 0
+  standards:
+    NIST-800-53: 0
