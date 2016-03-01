@@ -1,5 +1,5 @@
 name: Cloud.Gov # Name of system
-path: CloudGov # System documentation path
+system_key: CloudGov
 markdown_docs: markdowns # Path to markdown docs
 type: system # system, certification, or standard
 dependencies:

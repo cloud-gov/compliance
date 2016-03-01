@@ -1,1 +1,3 @@
 name: AWS
+type: system
+dependencies: {}
