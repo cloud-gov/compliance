@@ -72,7 +72,10 @@ Ports (TCP/UDP) |	Protocols |	Services |	Purpose
 ![Survey System Architecture](confidential-survey-data-flow.png)
 
 ### Taking a Survey
-To take a survey, a user must first enter some basic HTTP Authentication credentials (these are shared across all users and would not identify a single user). The credentials are just there to limit access to 18F employees and/or potential hires. The user would also need to know the exact URL of the survey they are invited to take (there is no root-level directory of surveys).
+To take a survey, a user must first be granted access to the survey they wish to take. This access control is not there to identify individual users but to deter any unauthorized access to any particular survey. Access control can take one of two forms:
+
+1. A one-time-use token. These are generated in advance and distributed to potential survey takers. The token must be appended to the URL to see the survey and submit a response. Once the user has submitted a response, the token is revoked and can not be used again. Administrators can revoke all pending tokens when it is time to close the survey to responses.
+2. HTTP basic authentication secured with a single shared username/password specific to that survey.
 
 Once the user submits a survey, the complete response is used only to increment counters for various fields and a full record of the survey is not retained. The user is redirected to a screen thanking them for their participation.
 
