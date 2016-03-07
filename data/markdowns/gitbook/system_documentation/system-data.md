@@ -35,8 +35,6 @@ The following tables identify the information types that are input, stored, proc
 |C.3.5.3 System Maintenance           |Low        | Moderate    | Low      
 |C.3.5.4 Infrastructure Maintenance   |Low        | Low         | Low
 
-
-
 # E-Authentication Determination
 
 ### E-Authentication Question
@@ -90,16 +88,23 @@ X |  |  |
 The Cloud.Gov makes use of unique managed service provider architecture layer(s).
 
 # Cloud Service Models
-Information systems, particularly those based on cloud architecture models, are made up of different service layers.  The layers of the Cloud .Gov defined in this SSP are indicated in the table that follows.  
+Information systems, particularly those based on cloud architecture models, are made up of different service layers.  The layers of the Cloud .Gov defined in this SSP are indicated in the table that follows.
 
-**Platform as a Service (PaaS)** - Major Application |
--|-
+X |Platform as a Service (PaaS) | Application
+ -|-
+  |Software as a Service (SaaS) | Application
+  |Infrastructure as a service (IaaS)| General Support System
+  |Other| Explain:
+
 
 # Cloud Deployment Models
 Information systems, particularly those based on cloud services and infrastructures, are made up of different deployment models.  The deployment models of the Cloud.Gov that are defined in this SSP, and are not leveraged by any other Provisional Authorizations, are indicated in the table that follows.
 
-**Public** - Cloud services and infrastructure supporting multiple organizations and agency clients|
+X |**Public** | Cloud services and infrastructure supporting multiple organizations and agency clients|
 -|-
+|Private| Cloud services and infrastructure dedicated to a specific organization/agency and not other clients
+|Community| Cloud services and infrastructure shared by several organizations/agencies with the same policy and compliance considerations
+|Hybrid| Explain: (e.g., cloud services and infrastructure that provides private cloud for secured applications and data where required and public cloud for other applications and data)
 
 # Leveraged Authorizations
 The Cloud.Gov information system plans to leverage a pre-existing Provisional Authorization.  Provisional Authorizations leveraged by this IAWS FedRAMP ATO (issued by the HHS are noted in the table that follows.  
