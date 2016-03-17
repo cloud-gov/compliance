@@ -1,8 +1,9 @@
-# cloud.gov Compliance
+The data folder contains the information for building certifications.
 
-Data Validation Tests: [![Build Status](https://travis-ci.org/18F/cg-compliance.svg?branch=master)](https://travis-ci.org/18F/cg-compliance)  
+## Folders
 
-This repository contains the data for [cloud.gov](https://cloud.gov)'s compliance with [NIST](http://www.nist.gov/) controls. The documentation is generated from the data in this repository via [Compliance Masonry](https://github.com/opencontrol/compliance-masonry), then published to [compliance.cloud.gov](https://compliance.cloud.gov/).
+#### components
+Documentation for individual components for systems such as AWS. Each component contains information the describes it’s function and settings in addition to the controls it satisfies.
 
 # Creating Gitbook
 ### 1. Install Compliance Masonry CLI
@@ -44,6 +45,3 @@ gitbook pdf .
 masonry certs LATO # `LATO` or `FedRAMP-low` .. etc.
 masonry inventory LATO # `LATO` or `FedRAMP-low` .. etc.
 ```
-
-# Running BDD test
-Instruction for running BDD tests are located in the [`tests`](https://github.com/18F/cg-compliance/tree/master/tests) directory
