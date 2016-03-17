@@ -28,19 +28,16 @@ satisfies:
 - control_key: AC-5
   covered_by: []
   implementation_status: none
-  narrative:
-    a: "The Cloud Controller is used to create invidual user accounts and roles within\
-      \ the PaaS for separation of duty functions. The following is a list of roles\
-      \ a user can assume within the Cloud.Gov platform.\n* Org Manager  - Managers\
-      \ or other users who need to administer the account\n* Org Auditor - Can view\
-      \ but not edit user information and org quota usage information\n* Space Manager\
-      \ - managers or other users who need to administer a space\n* Space Developer\
-      \ - application developers or other users who need to manage applications and\
-      \ services in a space\n* Space Auditor\t- Can view but not edit the space\n"
-    b: 'The  Cloud Controller API has an enpoint for viewing extensive information
-      about user roles.
-
-      '
+  narrative: "#### a  \nThe Cloud Controller is used to create invidual user accounts\
+    \ and roles within the PaaS for separation of duty functions. The following is\
+    \ a list of roles a user can assume within the Cloud.Gov platform.\n* Org Manager\
+    \  - Managers or other users who need to administer the account\n* Org Auditor\
+    \ - Can view but not edit user information and org quota usage information\n*\
+    \ Space Manager - managers or other users who need to administer a space\n* Space\
+    \ Developer - application developers or other users who need to manage applications\
+    \ and services in a space\n* Space Auditor\t- Can view but not edit the space\n\
+    \  \n#### b  \nThe  Cloud Controller API has an enpoint for viewing extensive\
+    \ information about user roles.\n  \n"
   standard_key: NIST-800-53
 - control_key: AC-6 (10)
   covered_by: []
@@ -63,14 +60,11 @@ satisfies:
 - control_key: AC-14
   covered_by: []
   implementation_status: none
-  narrative:
-    a: 'There are no permitted actions without identification and authentication to
-      Cloud.Gov. The Cloud Controller rejects any broker registration that does not
-      contain a username and password. The Cloud Controller authenticates every request
-      with the Service Broker API using HTTP or HTTPS, depending on which protocol
-      you specify during broker registration.
-
-      '
+  narrative: "#### a  \nThere are no permitted actions without identification and\
+    \ authentication to Cloud.Gov. The Cloud Controller rejects any broker registration\
+    \ that does not contain a username and password. The Cloud Controller authenticates\
+    \ every request with the Service Broker API using HTTP or HTTPS, depending on\
+    \ which protocol you specify during broker registration.\n  \n"
   standard_key: NIST-800-53
 - control_key: SI-10
   covered_by: []
@@ -87,23 +81,11 @@ satisfies:
   - verification_key: CF_ROLES_CODE
   - verification_key: CF_ROLES_CODE_SPECS
   implementation_status: none
-  narrative:
-    a: 'Cloud Foundry user and role accounts are managed and maintained through the
-      Cloud Controller. Cloud Foundry uses role-based access control with each role
-      granting permissions in either an organization or an application space. The
-      Following types are used:
-
-      * Org Manager
-
-      * Org Auditor
-
-      * Space Manager
-
-      * Space Developer
-
-      * Space Auditor
-
-      '
+  narrative: "#### a  \nCloud Foundry user and role accounts are managed and maintained\
+    \ through the Cloud Controller. Cloud Foundry uses role-based access control with\
+    \ each role granting permissions in either an organization or an application space.\
+    \ The Following types are used:\n* Org Manager\n* Org Auditor\n* Space Manager\n\
+    * Space Developer\n* Space Auditor\n  \n"
   standard_key: NIST-800-53
 - control_key: AC-2 (9)
   covered_by: []
