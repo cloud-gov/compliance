@@ -8,12 +8,9 @@ satisfies:
 - control_key: AC-2 (7)
   covered_by: []
   implementation_status: none
-  narrative:
-    b: '18F monitors all privileged access API calls through the Cloud Foundry command
-      line interface and BOSH command line interface within Cloud.Gov. These API calls
-      are monitored through ELK.
-
-      '
+  narrative: "#### b  \n18F monitors all privileged access API calls through the Cloud\
+    \ Foundry command line interface and BOSH command line interface within Cloud.Gov.\
+    \ These API calls are monitored through ELK.\n  \n"
   standard_key: NIST-800-53
 - control_key: AC-6 (9)
   covered_by: []
@@ -42,14 +39,9 @@ satisfies:
 - control_key: AC-2 (12)
   covered_by: []
   implementation_status: none
-  narrative:
-    a: 'Information system account activites are monitors via ELK
-
-      '
-    b: 'ELK reports atypical usage of information system accounts to designated 18F
-      SecOps and Devops teams .
-
-      '
+  narrative: "#### a  \nInformation system account activites are monitors via ELK\n\
+    \  \n#### b  \nELK reports atypical usage of information system accounts to designated\
+    \ 18F SecOps and Devops teams .\n  \n"
   standard_key: NIST-800-53
 - control_key: AC-17 (1)
   covered_by: []
@@ -75,31 +67,23 @@ satisfies:
 - control_key: AC-2
   covered_by: []
   implementation_status: none
-  narrative:
-    g: 'The UAA API interface is used to monitor privileged/non privileged user accounts
-      within the Cloud.Gov It list Cloud Foundry instance users. By default it returns
-      information about each user account including GUID, name, permission groups,
-      activity status, and metadata.
-
-      18F uses the ELK stack to provide a visual way to monitor all user and system
-      accounts within Coud.Gov by interfacing with Cloud.Gov API calls to its internal
-      system components (i.e. Loggregator, Cloud Controller, DEA, Warden, Metrics
-      Collector)
-
-      '
+  narrative: "#### g  \nThe UAA API interface is used to monitor privileged/non privileged\
+    \ user accounts within the Cloud.Gov It list Cloud Foundry instance users. By\
+    \ default it returns information about each user account including GUID, name,\
+    \ permission groups, activity status, and metadata.\n18F uses the ELK stack to\
+    \ provide a visual way to monitor all user and system accounts within Coud.Gov\
+    \ by interfacing with Cloud.Gov API calls to its internal system components (i.e.\
+    \ Loggregator, Cloud Controller, DEA, Warden, Metrics Collector)\n  \n"
   standard_key: NIST-800-53
 - control_key: AU-2
   covered_by: []
   implementation_status: none
-  narrative:
-    a: 'Cloud.Gov provides an audit trail through the bosh tasks command. This command
-      shows all actions that an operator has taken with the platform. Additionally,
-      operators can redirect Cloud Foundry component logs to a Logstash syslog server
-      using the syslog_daemon_config property in the metron_agent job of cf-release.
-
-      For end users, Cloud.Gov records an audit trail of all relevant API invocations
-      of and app. The CLI command cf events returns this information.
-
-      '
+  narrative: "#### a  \nCloud.Gov provides an audit trail through the bosh tasks command.\
+    \ This command shows all actions that an operator has taken with the platform.\
+    \ Additionally, operators can redirect Cloud Foundry component logs to a Logstash\
+    \ syslog server using the syslog_daemon_config property in the metron_agent job\
+    \ of cf-release.\nFor end users, Cloud.Gov records an audit trail of all relevant\
+    \ API invocations of and app. The CLI command cf events returns this information.\n\
+    \  \n"
   standard_key: NIST-800-53
 schema_version: 2.0

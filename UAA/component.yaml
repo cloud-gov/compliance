@@ -83,20 +83,15 @@ satisfies:
 - control_key: AC-14
   covered_by: []
   implementation_status: none
-  narrative:
-    a: 'There are no permitted actions without identification and authentication to
-      Cloud.Gov. The Cloud Controller rejects any broker registration that does not
-      contain a username and password. The Cloud Controller authenticates every request
-      with the Service Broker API using HTTP or HTTPS, depending on which protocol
-      you specify during broker registration.
-
-      '
-    b: 'It is not possible for members of the 18F Devops and SecOps teams to aceess
-      the 18F virtual private cloud infrastructure without muitifactor authetication
-      and identification. All clinet users of Cloud.gov must login using authenticated
-      credentials in order to acess the system as stated in Part A above.
-
-      '
+  narrative: "#### a  \nThere are no permitted actions without identification and\
+    \ authentication to Cloud.Gov. The Cloud Controller rejects any broker registration\
+    \ that does not contain a username and password. The Cloud Controller authenticates\
+    \ every request with the Service Broker API using HTTP or HTTPS, depending on\
+    \ which protocol you specify during broker registration.\n  \n#### b  \nIt is\
+    \ not possible for members of the 18F Devops and SecOps teams to aceess the 18F\
+    \ virtual private cloud infrastructure without muitifactor authetication and identification.\
+    \ All clinet users of Cloud.gov must login using authenticated credentials in\
+    \ order to acess the system as stated in Part A above.\n  \n"
   standard_key: NIST-800-53
 - control_key: SC-28 (1)
   covered_by: []
@@ -161,16 +156,9 @@ satisfies:
   covered_by:
   - verification_key: CLOUDGOV_LOGIN_PAGE
   implementation_status: none
-  narrative:
-    a: 'Cloud.gov displays banner on the cloud.gov login page
-
-      '
-    b: 'The banner displays on the login page until the user is logged in
-
-      '
-    c: 'The banner displays all requirements
-
-      '
+  narrative: "#### a  \nCloud.gov displays banner on the cloud.gov login page\n  \n\
+    #### b  \nThe banner displays on the login page until the user is logged in\n\
+    \  \n#### c  \nThe banner displays all requirements\n  \n"
   standard_key: NIST-800-53
 - control_key: IA-2
   covered_by: []
@@ -280,20 +268,12 @@ satisfies:
 - control_key: AC-2
   covered_by: []
   implementation_status: none
-  narrative:
-    j: '# TODO
-
-      User accounts will be monitored monthly and accounts will be disabled after
-      90 days of inactivity; this will be a manual review process every 30 days, but
-      the disablement will be automatic.
-
-      A manual review of all user accounts will be conducted on an annual basis
-
-      '
-    k: 'Cloud.Gov utilizes role based access controls (RBAC) for group membership
-      within the platform and does not issue shared/group account credentials.
-
-      '
+  narrative: "#### j  \n# TODO\nUser accounts will be monitored monthly and accounts\
+    \ will be disabled after 90 days of inactivity; this will be a manual review process\
+    \ every 30 days, but the disablement will be automatic.\nA manual review of all\
+    \ user accounts will be conducted on an annual basis\n  \n#### k  \nCloud.Gov\
+    \ utilizes role based access controls (RBAC) for group membership within the platform\
+    \ and does not issue shared/group account credentials.\n  \n"
   standard_key: NIST-800-53
 - control_key: AC-11
   covered_by: []

@@ -11,71 +11,52 @@ satisfies:
   covered_by:
   - verification_key: POLICY_DOC
   implementation_status: none
-  narrative:
-    a: "The 18F DevOps and SecOps teams monitors the Cloud.Gov information system\
-      \ to detect potential attacks and intrusions from internal and external sources\
-      \ in accordance with the 18F System Information and Integrity Policy section\
-      \ 3 - Information System monitoring, the FedRAMP Incident communication procedures\
-      \ and GSA CIO-IT Security-08-39 section \u201CSystem Monitoring / Audit Record\
-      \ Review \u201C for GSA specifc infomation systems\n"
-    b: '18F identifies un-authorized access to the Cloud.Gov information system using   automated
-      monitoring tools within its virutal proviate cloud for monitoringing, log management
-      and event analysis. 18F monitors for attacks and indicators of potential attacks,  unauthorized
-      local, network, and remote connections.
-
-      '
-    c: 'The infrastructure that hosts Cloud.Gov provides monitoring and intrusion
-      detcetion of unsual activity at  the phyical and network layers. 18F is responsible
-      for monitoring everything related to its virtual infrastructure and has deployed
-      monitoring  and intrusion dectction tools within its virtual private cloud to
-      log and dectect malicious activities to its information systems including Cloud.Gov.
-
-      '
-    d: '18F ensures intrusion and monitoring tools are protected  from unauthorized
-      access by only granting access to certian members from the DevOps and SecOps
-      team. All monitoring and intrusion information data is protected by limiting
-      accounts to authorized privileged users only and is maintained in secured repositories
-      for review by those members.
-
-      '
-    e: 'Information system monitoring will be heightened based on advisories from
-      Pivitol, US-CERT Advisories, commercial security communities, and other sources.
-
-      '
-    f: 'Information system monitoring will be conducted in accordance and compliance
-      with 18F security policies and all applicable laws, Executive Orders, directives,
-      and regulations.
-
-      '
-    g: '18F provides monitoring of all information system components in the event
-      of an event or incident, information will be provided as it is available.  Scheduled
-      reports will be provided for events such as after-hours administrative logins,
-      users being added to privileged groups, persistent malware detections, etc.
-      to designated members of the DevOps teams and SecOps teams as needed
-
-      '
+  narrative: "#### a  \nThe 18F DevOps and SecOps teams monitors the Cloud.Gov information\
+    \ system to detect potential attacks and intrusions from internal and external\
+    \ sources in accordance with the 18F System Information and Integrity Policy section\
+    \ 3 - Information System monitoring, the FedRAMP Incident communication procedures\
+    \ and GSA CIO-IT Security-08-39 section \u201CSystem Monitoring / Audit Record\
+    \ Review \u201C for GSA specifc infomation systems\n  \n#### b  \n18F identifies\
+    \ un-authorized access to the Cloud.Gov information system using   automated monitoring\
+    \ tools within its virutal proviate cloud for monitoringing, log management and\
+    \ event analysis. 18F monitors for attacks and indicators of potential attacks,\
+    \  unauthorized local, network, and remote connections.\n  \n#### c  \nThe infrastructure\
+    \ that hosts Cloud.Gov provides monitoring and intrusion detcetion of unsual activity\
+    \ at  the phyical and network layers. 18F is responsible for monitoring everything\
+    \ related to its virtual infrastructure and has deployed monitoring  and intrusion\
+    \ dectction tools within its virtual private cloud to log and dectect malicious\
+    \ activities to its information systems including Cloud.Gov.\n  \n#### d  \n18F\
+    \ ensures intrusion and monitoring tools are protected  from unauthorized access\
+    \ by only granting access to certian members from the DevOps and SecOps team.\
+    \ All monitoring and intrusion information data is protected by limiting accounts\
+    \ to authorized privileged users only and is maintained in secured repositories\
+    \ for review by those members.\n  \n#### e  \nInformation system monitoring will\
+    \ be heightened based on advisories from Pivitol, US-CERT Advisories, commercial\
+    \ security communities, and other sources.\n  \n#### f  \nInformation system monitoring\
+    \ will be conducted in accordance and compliance with 18F security policies and\
+    \ all applicable laws, Executive Orders, directives, and regulations.\n  \n####\
+    \ g  \n18F provides monitoring of all information system components in the event\
+    \ of an event or incident, information will be provided as it is available.  Scheduled\
+    \ reports will be provided for events such as after-hours administrative logins,\
+    \ users being added to privileged groups, persistent malware detections, etc.\
+    \ to designated members of the DevOps teams and SecOps teams as needed\n  \n"
   standard_key: NIST-800-53
 - control_key: SI-2
   covered_by:
   - verification_key: POLICY_DOC
   implementation_status: none
-  narrative:
-    a: '18F identifies all system flaws related to Cloud.gov, reports system flaws
-      to information system owners, Authorizing officials, DevOps and SecOp  and corrects
-      information system flaws that affect Cloud.Gov
-
-      Cloud Foundry manages software vulnerability using releases and BOSH stemcells.
-      New Cloud Foundry releases are created with updates to address code issues,
-      while new stemcells are created with patches for the latest security fixes to
-      address any underlying operating system issues. New Cloud Foundry releases are
-      located at https://github.com/Cloud Foundry/cf-release.
-
-      18F implemenets the release of Cloud Foundy he what (or the software developer/vendor
-      in the case of software developed and maintained by a vendor/contractor) promptly
-      installs newly released security relevant patches and tests patches, for effectiveness
-      and potential side effects on information systems before installation.
-
-      '
+  narrative: "#### a  \n18F identifies all system flaws related to Cloud.gov, reports\
+    \ system flaws to information system owners, Authorizing officials, DevOps and\
+    \ SecOp  and corrects information system flaws that affect Cloud.Gov\nCloud Foundry\
+    \ manages software vulnerability using releases and BOSH stemcells. New Cloud\
+    \ Foundry releases are created with updates to address code issues, while new\
+    \ stemcells are created with patches for the latest security fixes to address\
+    \ any underlying operating system issues. New Cloud Foundry releases are located\
+    \ at https://github.com/Cloud Foundry/cf-release.\n18F implemenets the release\
+    \ of Cloud Foundy he what (or the software developer/vendor in the case of software\
+    \ developed and maintained by a vendor/contractor) promptly installs newly released\
+    \ security relevant patches and tests patches, for effectiveness and potential\
+    \ side effects on information systems before installation.\n  \n"
   standard_key: NIST-800-53
 schema_version: 2.0
 system: 18F
