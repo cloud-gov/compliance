@@ -17,39 +17,26 @@ satisfies:
 - control_key: SC-7
   covered_by: []
   implementation_status: none
-  narrative:
-    a: 'AWS Boundary Protection - Secure Network Architecture
-
-      18F utilizes the AWS provided virtual network devices, including firewall and
-      other boundary devices, in place to monitor and control communications at the
-      external boundary of the network and at key internal boundaries within the network.
-      These boundary devices employ rule sets, access control lists (ACL), and configurations
-      to enforce the flow of information to specific information system services.
-
-      ACLs, or traffic flow policies, are established on each managed interface, which
-      manage and enforce the flow of traffic.
-
-      18F connects to an AWS access point via HTTP or HTTPS using Secure Sockets Layer
-      (SSL), a cryptographic protocol that is designed to protect against eavesdropping,
-      tampering, and message forgery.
-
-      18F utilizes the AWS Virtual Private Cloud (VPC), which provides a private subnet
-      within the AWS cloud. Each VPC is configured to utilize Routing Rules, Subnet
-      Rules, and Security Group Rules.  Each of these controls must have appropriate
-      rules and routes in-place before any external service is able to reach a host
-      within AWS.
-
-      '
-    b: 'Each VPC is configured to utilize Routing Tables, and Security Groups.  Each
-      of these controls must have appropriate rules and routes in-place before any
-      external service is able to reach a host within Cloud Foundry.
-
-      '
-    c: 'The Cloud.gov system is internal to the 18F Virtual Private Cloud (VPC) and
-      does not connect to external networks or information systems outside the 18F
-      Virtual Private Cloud (VPC).
-
-      '
+  narrative: "#### a  \nAWS Boundary Protection - Secure Network Architecture\n18F\
+    \ utilizes the AWS provided virtual network devices, including firewall and other\
+    \ boundary devices, in place to monitor and control communications at the external\
+    \ boundary of the network and at key internal boundaries within the network. These\
+    \ boundary devices employ rule sets, access control lists (ACL), and configurations\
+    \ to enforce the flow of information to specific information system services.\n\
+    ACLs, or traffic flow policies, are established on each managed interface, which\
+    \ manage and enforce the flow of traffic.\n18F connects to an AWS access point\
+    \ via HTTP or HTTPS using Secure Sockets Layer (SSL), a cryptographic protocol\
+    \ that is designed to protect against eavesdropping, tampering, and message forgery.\n\
+    18F utilizes the AWS Virtual Private Cloud (VPC), which provides a private subnet\
+    \ within the AWS cloud. Each VPC is configured to utilize Routing Rules, Subnet\
+    \ Rules, and Security Group Rules.  Each of these controls must have appropriate\
+    \ rules and routes in-place before any external service is able to reach a host\
+    \ within AWS.\n  \n#### b  \nEach VPC is configured to utilize Routing Tables,\
+    \ and Security Groups.  Each of these controls must have appropriate rules and\
+    \ routes in-place before any external service is able to reach a host within Cloud\
+    \ Foundry.\n  \n#### c  \nThe Cloud.gov system is internal to the 18F Virtual\
+    \ Private Cloud (VPC) and does not connect to external networks or information\
+    \ systems outside the 18F Virtual Private Cloud (VPC).\n  \n"
   standard_key: NIST-800-53
 - control_key: AC-17 (4)
   covered_by: []

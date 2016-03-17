@@ -5,30 +5,20 @@ satisfies:
   covered_by:
   - verification_key: POLICY_DOC
   implementation_status: complete
-  narrative:
-    b: 'Audit logs will be made available to organizations for mutual support in response
-      to security breaches, system and user access, incident reporting and continuous
-      monitoring.
-
-      18F will generate and distribute audit reports, provide customized dashoard
-      access for audited events, and send audit log data to SIEM and log analysis
-      systems from its  audit logging and metrics tools for the Cloud.Gov platform
-      and virtual infrastructure as needed.
-
-      '
-    c: '18F retains audit logs according to NARA retention standards to provide support
-      for after-the-fact investigations of security incidents and to meet regulatory
-      and organizational information retention requirements.
-
-      The log management framework will provide the capability to retain logs for
-      90 days online and one-year offline, with sufficient capacity as to mitigate
-      the risk of exceeding storage space.
-
-      Specific Policies, Procedures, Points of Contact, and Guidance will be established
-      between 18F and other agencies to support after-the-fact investigations, by
-      the 18F Project Lead.
-
-      '
+  narrative: "#### b  \nAudit logs will be made available to organizations for mutual\
+    \ support in response to security breaches, system and user access, incident reporting\
+    \ and continuous monitoring.\n18F will generate and distribute audit reports,\
+    \ provide customized dashoard access for audited events, and send audit log data\
+    \ to SIEM and log analysis systems from its  audit logging and metrics tools for\
+    \ the Cloud.Gov platform and virtual infrastructure as needed.\n  \n#### c  \n\
+    18F retains audit logs according to NARA retention standards to provide support\
+    \ for after-the-fact investigations of security incidents and to meet regulatory\
+    \ and organizational information retention requirements.\nThe log management framework\
+    \ will provide the capability to retain logs for 90 days online and one-year offline,\
+    \ with sufficient capacity as to mitigate the risk of exceeding storage space.\n\
+    Specific Policies, Procedures, Points of Contact, and Guidance will be established\
+    \ between 18F and other agencies to support after-the-fact investigations, by\
+    \ the 18F Project Lead.\n  \n"
   standard_key: NIST-800-53
 - control_key: AU-2 (3)
   covered_by:
@@ -137,18 +127,16 @@ satisfies:
   covered_by:
   - verification_key: POLICY_DOC
   implementation_status: complete
-  narrative:
-    a: "The 18F Program Office develops, documents, and disseminates to all 18F staff,\n\
-      The 18F Audit and Accountability Policy which  addresses purpose, scope, roles,\
-      \ responsibilities, management commitment, coordination among organizational\
-      \ entities, ompliance and procedures to facilitate the implementation of the\
-      \ audit and aaccountability policy and associated audit controls. The 18F Audit\
-      \ and Accountability policy is listed within 18F\u2019s  private Github repository\
-      \ and the docs.cloud.gov site that is accessible to all 18F staff.\n"
-    b: 'The 18F Program Office will review and update the current 18F Audit control
-      policy at least every 3 years and any documented audit procedures at least annually.
-
-      '
+  narrative: "#### a  \nThe 18F Program Office develops, documents, and disseminates\
+    \ to all 18F staff,\nThe 18F Audit and Accountability Policy which  addresses\
+    \ purpose, scope, roles, responsibilities, management commitment, coordination\
+    \ among organizational entities, ompliance and procedures to facilitate the implementation\
+    \ of the audit and aaccountability policy and associated audit controls. The 18F\
+    \ Audit and Accountability policy is listed within 18F\u2019s  private Github\
+    \ repository and the docs.cloud.gov site that is accessible to all 18F staff.\n\
+    \  \n#### b  \nThe 18F Program Office will review and update the current 18F Audit\
+    \ control policy at least every 3 years and any documented audit procedures at\
+    \ least annually.\n  \n"
   standard_key: NIST-800-53
 - control_key: AU-11
   covered_by: []
@@ -172,51 +160,27 @@ satisfies:
   covered_by:
   - verification_key: POLICY_DOC
   implementation_status: none
-  narrative:
-    a: 'AWS Auditable Events:
-
-      DevOps and SecOps teams will conduct weekly manual and automated continuous
-      audits of authorized accounts and configurations. These audits will include
-      but are not limited to:
-
-      Administrative Accounts
-
-      * Virtual Private Cloud (VPC)
-
-      * Elastic Compute Cloud (EC2)
-
-      * Simple Storage Service (S3)
-
-      * Identity and Access Management (IAM)
-
-      * Elastic Block Store (EBS)
-
-
-
-      Cloud Foundry Auditable Events:
-
-      By default, Loggregator streams logs to a terminal. 18F will drain logs to a
-      third-party log management service such as ELK and AWS CloudTrail
-
-      Cloud Foundry logs are captured in multiple tables and log files. These will
-      be reviewed weekly and if discovery of anomalous audit log content which appears
-      to indicate a breach are handled according to the GSA Security Incident Handling
-      Guide: CIO IT Security 01-02 Revision 7 (August 18, 2009) requirements.
-
-      '
-    b: 'When a credible source to the GSA Agency provides information that causes
-      reason to enhance audit activities, develop and implement an enhanced auditing
-      use-case that will adequately enhance auditing practices in a fashion necessary
-      per the identified threat and following the Incident Reporting Procedures in
-      GSA IT Security Procedural Guide 01-02 (04/07/2015), Incident Response. The
-      GSA Agency may also, through analysis pertaining to the GSA Agency environment
-      provide additional audit measures that will require an increase in review, analysis,
-      and reporting for a necessary.
-
-      Upon implementation, 18F will monitor information security news and alerts for
-      indications of a need to heighten information system security monitoring.
-
-      '
+  narrative: "#### a  \nAWS Auditable Events:\nDevOps and SecOps teams will conduct\
+    \ weekly manual and automated continuous audits of authorized accounts and configurations.\
+    \ These audits will include but are not limited to:\nAdministrative Accounts\n\
+    * Virtual Private Cloud (VPC)\n* Elastic Compute Cloud (EC2)\n* Simple Storage\
+    \ Service (S3)\n* Identity and Access Management (IAM)\n* Elastic Block Store\
+    \ (EBS)\n\n\nCloud Foundry Auditable Events:\nBy default, Loggregator streams\
+    \ logs to a terminal. 18F will drain logs to a third-party log management service\
+    \ such as ELK and AWS CloudTrail\nCloud Foundry logs are captured in multiple\
+    \ tables and log files. These will be reviewed weekly and if discovery of anomalous\
+    \ audit log content which appears to indicate a breach are handled according to\
+    \ the GSA Security Incident Handling Guide: CIO IT Security 01-02 Revision 7 (August\
+    \ 18, 2009) requirements.\n  \n#### b  \nWhen a credible source to the GSA Agency\
+    \ provides information that causes reason to enhance audit activities, develop\
+    \ and implement an enhanced auditing use-case that will adequately enhance auditing\
+    \ practices in a fashion necessary per the identified threat and following the\
+    \ Incident Reporting Procedures in GSA IT Security Procedural Guide 01-02 (04/07/2015),\
+    \ Incident Response. The GSA Agency may also, through analysis pertaining to the\
+    \ GSA Agency environment provide additional audit measures that will require an\
+    \ increase in review, analysis, and reporting for a necessary.\nUpon implementation,\
+    \ 18F will monitor information security news and alerts for indications of a need\
+    \ to heighten information system security monitoring.\n  \n"
   standard_key: NIST-800-53
 - control_key: AU-5
   covered_by: []

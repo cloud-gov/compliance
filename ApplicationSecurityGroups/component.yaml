@@ -24,12 +24,9 @@ satisfies:
 - control_key: SC-7
   covered_by: []
   implementation_status: none
-  narrative:
-    a: 'Cloud Foundry recommends that the use of Cloud Foundry ASGs to specify egress
-      access rules for your applications. This functionality enables secure restricted
-      application outbound traffic to predefined routes.
-
-      '
+  narrative: "#### a  \nCloud Foundry recommends that the use of Cloud Foundry ASGs\
+    \ to specify egress access rules for your applications. This functionality enables\
+    \ secure restricted application outbound traffic to predefined routes.\n  \n"
   standard_key: NIST-800-53
 - control_key: AC-4
   covered_by: []

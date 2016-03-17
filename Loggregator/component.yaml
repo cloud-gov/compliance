@@ -20,26 +20,19 @@ satisfies:
 - control_key: AU-2
   covered_by: []
   implementation_status: none
-  narrative:
-    a: 'Cloud.Gov provides an audit trail through the bosh tasks command. This command
-      shows all actions that an operator has taken with the platform. Additionally,
-      operators can redirect Cloud Foundry component logs to a Logstash syslog server
-      using the syslog_daemon_config property in the metron_agent job of cf-release.
-
-      For end users, Cloud.Gov records an audit trail of all relevant API invocations
-      of and app. The CLI command cf events returns this information.
-
-      '
-    b: 'Cloud.Gov provides an audit trail through the bosh tasks command. This command
-      shows all actions that an operator has taken with the platform. For users, Cloud
-      Foundry records an audit trail of all relevant API invocations of and app. The
-      CLI command cf events returns this information.
-
-      Loggregator, the component responsible for logging, provides a stream of log
-      output from 18F applications and system components that interact with a hosted
-      app during updates and execution.
-
-      '
+  narrative: "#### a  \nCloud.Gov provides an audit trail through the bosh tasks command.\
+    \ This command shows all actions that an operator has taken with the platform.\
+    \ Additionally, operators can redirect Cloud Foundry component logs to a Logstash\
+    \ syslog server using the syslog_daemon_config property in the metron_agent job\
+    \ of cf-release.\nFor end users, Cloud.Gov records an audit trail of all relevant\
+    \ API invocations of and app. The CLI command cf events returns this information.\n\
+    \  \n#### b  \nCloud.Gov provides an audit trail through the bosh tasks command.\
+    \ This command shows all actions that an operator has taken with the platform.\
+    \ For users, Cloud Foundry records an audit trail of all relevant API invocations\
+    \ of and app. The CLI command cf events returns this information.\nLoggregator,\
+    \ the component responsible for logging, provides a stream of log output from\
+    \ 18F applications and system components that interact with a hosted app during\
+    \ updates and execution.\n  \n"
   standard_key: NIST-800-53
 - control_key: AU-7
   covered_by: []
