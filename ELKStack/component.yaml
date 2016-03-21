@@ -1,0 +1,89 @@
+documentation_complete: false
+name: ELKStack
+references:
+- name: Reference Name
+  path: https://www.elastic.co/webinars/introduction-elk-stack
+  type: URL
+satisfies:
+- control_key: AC-2 (7)
+  covered_by: []
+  implementation_status: none
+  narrative: "#### b  \n18F monitors all privileged access API calls through the Cloud\
+    \ Foundry command line interface and BOSH command line interface within Cloud.Gov.\
+    \ These API calls are monitored through ELK.\n  \n"
+  standard_key: NIST-800-53
+- control_key: AC-6 (9)
+  covered_by: []
+  implementation_status: none
+  narrative: 'The ELK (Logstash elasticsearch Kibana ) is used to collect, manage
+    and display all  auditing of privileged functions within the Cloud.Gov platform
+
+    '
+  standard_key: NIST-800-53
+- control_key: AC-2 (4)
+  covered_by: []
+  implementation_status: none
+  narrative: 'Cloud.Gov provides an audit trail through the bosh tasks command which
+    shows all actions that an operator has taken with the platform. It also records
+    an audit trail of all relevant API invocations of an app. The CLI command cf events
+    returns this information.
+
+    ELK ( Logstash, Elasticsearch, Kibana) a front end component for loggregator is
+    used to automatically audit all actions within the Cloud.Gov platform. By binding
+    an instance of the service to, Cloud.Gov applications logs will be drained to
+    a Logstash syslog receiver and stored in Elasticsearch to perform realtime data
+    analytics with Kibana as the interface for search and visualization.
+
+    '
+  standard_key: NIST-800-53
+- control_key: AC-2 (12)
+  covered_by: []
+  implementation_status: none
+  narrative: "#### a  \nInformation system account activites are monitors via ELK\n\
+    \  \n#### b  \nELK reports atypical usage of information system accounts to designated\
+    \ 18F SecOps and Devops teams .\n  \n"
+  standard_key: NIST-800-53
+- control_key: AC-17 (1)
+  covered_by: []
+  implementation_status: none
+  narrative: 'The Cloud Controller authenticates every request with the Service Broker
+    API using HTTP or HTTPS. The 18F DevOp team only uses the BOSH Command Line Interface
+    (CLI) to log into the Cloud.Gov jumpbox using SSH as a remote connectionton. These
+    remote connections are monitored by the Cloud.Gov Cloud Controller which send
+    this data to the ELK logging and monitoring visualization tool stack.
+
+    '
+  standard_key: NIST-800-53
+- control_key: AU-3
+  covered_by: []
+  implementation_status: none
+  narrative: "The Cloud.Gov platform as a service generates audit logs from its Loggregator\
+    \ componement and is passed through the ELK stack to produce audit records which\
+    \ contain sufficient information to establish at a minumum:\n  what type of event\
+    \ occured,\n  when (date and time the event occurance)\n  the source of the event\n\
+    \  the outcome (success or failure) of the event\n  the identity of any user/subject\
+    \ associated with the event\n"
+  standard_key: NIST-800-53
+- control_key: AC-2
+  covered_by: []
+  implementation_status: none
+  narrative: "#### g  \nThe UAA API interface is used to monitor privileged/non privileged\
+    \ user accounts within the Cloud.Gov It list Cloud Foundry instance users. By\
+    \ default it returns information about each user account including GUID, name,\
+    \ permission groups, activity status, and metadata.\n18F uses the ELK stack to\
+    \ provide a visual way to monitor all user and system accounts within Coud.Gov\
+    \ by interfacing with Cloud.Gov API calls to its internal system components (i.e.\
+    \ Loggregator, Cloud Controller, DEA, Warden, Metrics Collector)\n  \n"
+  standard_key: NIST-800-53
+- control_key: AU-2
+  covered_by: []
+  implementation_status: none
+  narrative: "#### a  \nCloud.Gov provides an audit trail through the bosh tasks command.\
+    \ This command shows all actions that an operator has taken with the platform.\
+    \ Additionally, operators can redirect Cloud Foundry component logs to a Logstash\
+    \ syslog server using the syslog_daemon_config property in the metron_agent job\
+    \ of cf-release.\nFor end users, Cloud.Gov records an audit trail of all relevant\
+    \ API invocations of and app. The CLI command cf events returns this information.\n\
+    \  \n"
+  standard_key: NIST-800-53
+schema_version: 2.0
