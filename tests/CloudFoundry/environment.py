@@ -1,10 +1,9 @@
-import os
-import datetime
-import yaml
-
 import config
+import sys
+sys.path.append('../')
 
 from cloudfoundry import Client
+from tagger import tag_component
 
 
 def before_feature(context, feature):
@@ -64,7 +63,7 @@ def before_feature(context, feature):
         org.set_user_role('user', space_auditor.guid)
         space.set_user_role('auditor', space_auditor.guid)
 
-    if 'ASG' in feature.name:
+    if 'Application Security Groups' in feature.name:
         admin_client.create_security_group(
             name=config.CLOSED_SECURITY_GROUP,
             rules=[{
@@ -100,7 +99,7 @@ def after_feature(context, feature):
         admin_client.get_user(config.SPACE_DEVELOPER).delete()
         admin_client.get_user(config.SPACE_AUDITOR).delete()
 
-    if 'ASG' in feature.name:
+    if 'Application Security Groups' in feature.name:
         admin_client.get_security_group(
             name=config.OPEN_SECURITY_GROUP).delete()
         admin_client.get_security_group(
@@ -114,31 +113,4 @@ def after_feature(context, feature):
 
 
 def after_tag(context, tag):
-    if 'Component' in tag:
-        _, name, system, component = tag.split('-')
-        feature = context.feature.name
-        try:
-            scenario = context.scenario.name
-        except:
-            scenario = "all"
-        component_file = os.path.join(
-            '..', '..', 'data', 'components', system,
-            component, 'component.yaml'
-        )
-        with open(component_file, 'r') as yaml_file:
-            data = yaml.load(yaml_file)
-            if 'verifications' not in data:
-                data['verifications'] = {}
-            data['verifications'][name] = {
-                'name': '{0} {1}'.format(feature, scenario),
-                'type': 'TEST',
-                'test_passed': not context.failed,
-                'test_path': 'Feature: {0} Scenario: {1}'.format(
-                    feature, scenario
-                ),
-                'last_run': datetime.datetime.now()
-            }
-        with open(component_file, 'w') as yaml_file:
-            yaml_file.write(
-                yaml.dump(data, default_flow_style=False, indent=2)
-            )
+    tag_component(context, tag)

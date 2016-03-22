@@ -64,3 +64,15 @@ satisfies:
     '
   standard_key: NIST-800-53
 schema_version: 2.0
+verifications:
+- filename: ASG.feature
+  key: Security_Group_Tests
+  last_run: 2016-02-23 15:13:03.927773
+  name: Security_Group_Tests
+  steps: "GIVEN I am using an admin account THEN I can view and print all the ASGs\
+    \ \nGIVEN I am using an admin account WHEN I try to bind the application security\
+    \ group with closed settings to the space THEN the security group is bound \n\
+    GIVEN I am using an admin account WHEN I try to bind the application security\
+    \ group with open settings to the space THEN the security group is bound \n"
+  test_passed: true
+  type: TEST
