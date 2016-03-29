@@ -27,6 +27,10 @@ components:
   - ./SC-Policy
   - ./SI-Policy
   - ./SecureProxy
+certifications:
+  - ./certifications/FedRAMP-med.yaml
+standards:
+  - ./standards/NIST-800-53.yaml
 dependencies:
   systems:
     - url: https://github.com/opencontrol/cf-compliance
