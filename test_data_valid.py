@@ -11,7 +11,8 @@ def get_schema():
 def test_component_data_valid():
     """ Check that the content of data fits with masonry schema v2 """
     validator = Core(source_data={}, schema_data=get_schema())
-    for component_file in iglob('data/components/*/*/component.yaml'):
+    for component_file in iglob('*/component.yaml'):
+        print(component_file)
         source_data = yaml.load(open(component_file))
         validator.source = source_data
         try:

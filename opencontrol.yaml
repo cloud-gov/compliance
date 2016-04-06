@@ -1,0 +1,39 @@
+schema_version: "1.0.0"
+name: CloudGov
+metadata:
+  description: "A platform by government developers, for government developers."
+  maintainers:
+    - gabriel.ramirez@gsa.gov
+components:
+  - ./AC_Policy
+  - ./AT-Policy
+  - ./AU-Policy
+  - ./CA-Policy
+  - ./CICloudGov
+  - ./CM-Policy
+  - ./CP-Policy
+  - ./CloudCheckr
+  - ./ELKStack
+  - ./IA-Policy
+  - ./IR-Policy
+  - ./JumpBox
+  - ./MA-Policy
+  - ./MP-Policy
+  - ./PE-Policy
+  - ./PL-Policy
+  - ./PS-Policy
+  - ./RA-Policy
+  - ./SA-Policy
+  - ./SC-Policy
+  - ./SI-Policy
+  - ./SecureProxy
+certifications:
+  - ./certifications/FedRAMP-med.yaml
+standards:
+  - ./standards/NIST-800-53.yaml
+dependencies:
+  systems:
+    - url: https://github.com/opencontrol/cf-compliance
+      revision: master
+    - url: https://github.com/opencontrol/aws-compliance
+      revision: master
