@@ -134,3 +134,11 @@ verifications:
   name: Policy Document
   path: https://github.com/18F/compliance-docs/blob/master/CM-Policy.md
   type: URL
+- description: "GIVEN the github link - <policy> THEN the policy has been updated\
+    \ within the last 180 days \n"
+  key: Policy_Update_Test
+  last_run: 2016-04-07 13:25:17.581078
+  name: 18F Policies Update
+  path: BDD/policies.feature
+  test_passed: false
+  type: TEST
