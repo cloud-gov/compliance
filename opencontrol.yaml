@@ -6,26 +6,26 @@ metadata:
     - gabriel.ramirez@gsa.gov
 components:
   - ./AC_Policy
-  - ./AT-Policy
-  - ./AU-Policy
-  - ./CA-Policy
+  - ./AT_Policy
+  - ./AU_Policy
+  - ./CA_Policy
   - ./CICloudGov
-  - ./CM-Policy
-  - ./CP-Policy
+  - ./CM_Policy
+  - ./CP_Policy
   - ./CloudCheckr
   - ./ELKStack
-  - ./IA-Policy
-  - ./IR-Policy
+  - ./IA_Policy
+  - ./IR_Policy
   - ./JumpBox
-  - ./MA-Policy
-  - ./MP-Policy
-  - ./PE-Policy
-  - ./PL-Policy
-  - ./PS-Policy
-  - ./RA-Policy
-  - ./SA-Policy
-  - ./SC-Policy
-  - ./SI-Policy
+  - ./MA_Policy
+  - ./MP_Policy
+  - ./PE_Policy
+  - ./PL_Policy
+  - ./PS_Policy
+  - ./RA_Policy
+  - ./SA_Policy
+  - ./SC_Policy
+  - ./SI_Policy
   - ./SecureProxy
 certifications:
   - ./certifications/FedRAMP-med.yaml
