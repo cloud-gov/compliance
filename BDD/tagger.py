@@ -27,26 +27,23 @@ def extract_data(context):
     if hasattr(context, 'scenario'):
         # This is a scenario
         data['name'] = context.scenario.name
-        data['filename'] = context.scenario.filename
-        data['steps'] = get_steps(context.scenario)
+        data['path'] = os.path.join('BDD', context.scenario.filename)
+        data['description'] = get_steps(context.scenario)
     else:
         # This is a feature
         data['name'] = context.feature.name
-        data['filename'] = context.feature.filename
-        data['steps'] = get_scenarios(context.feature)
+        data['path'] = os.path.join('BDD', context.feature.filename)
+        data['description'] = get_scenarios(context.feature)
     return data
 
 
 def tag_component(context, tag):
-    if 'Component' in tag:
-        _, name, system, component = tag.split('-')
-        component_file = os.path.join(
-            '..', '..', 'data', 'components', system,
-            component, 'component.yaml'
-        )
+    if 'Verify' in tag:
+        _, key, component = tag.split('-')
+        component_file = os.path.join('..', component, 'component.yaml')
         test_data = extract_data(context)
-        test_data['name'] = name
-        test_data['key'] = name
+        test_data['key'] = key
+
         with open(component_file, 'r') as yaml_file:
             # Get Component Data
             data = yaml.load(yaml_file)
@@ -54,7 +51,7 @@ def tag_component(context, tag):
                 data['verifications'] = []
             # Delete Old Data
             for idx, verification in enumerate(data['verifications']):
-                if verification.get('name') == name:
+                if verification.get('key') == key:
                     del data['verifications'][idx]
             # Add New Data
             data['verifications'].append(test_data)

@@ -1,5 +1,3 @@
-import sys
-sys.path.append('../')
 from tagger import tag_component
 
 
