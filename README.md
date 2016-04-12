@@ -1,47 +1,85 @@
-The data folder contains the information for building certifications.
+# Cloud Foundry Compliance
+This repository contains shared compliance data for Cloud.gov
 
-## Folders
+# Starting ATO Documentation for Cloud.gov applications.
+0. Install [Compliance Masonry CLI](https://github.com/opencontrol/compliance-masonry)
+0. [Create an opencontrol.yaml](https://github.com/opencontrol/compliance-masonry#creating-an-opencontrol-project) based on the data below.
+  ```yaml
+  schema_version: "1.0.0"
+  name: Your_Application_Name # Name of the project
+  metadata:
+    description: "A description of the application"
+    maintainers:
+      - maintainer_email@email.com
+  components: # A list of paths to components written in the opencontrol format for more information view: https://github.com/opencontrol/schemas
+    - ./your_app_component
+  dependencies:
+    systems:
+      - url: github.com/18F/cg-complinace
+        revision: master
+  ```
 
-#### components
-Documentation for individual components for systems such as AWS. Each component contains information the describes it’s function and settings in addition to the controls it satisfies.
+0. Create component documentation. Using the [opencontrol schema](https://github.com/opencontrol/schemas).
+
+0. Import the Cloud.gov dependencies.
+
+  The get command will import all the data from the cg-complinace repository and serve as a baseline for your SSP
+  ```bash
+  compliance-masonry get
+  ```
+
 
 # Creating Gitbook
-### 1. Install Compliance Masonry CLI
-```bash
-pip install git+https://github.com/opencontrol/compliance-masonry.git
-```
-### 2. Download Compliance Documentation and Navigate to Repository
-```bash
-git clone https://github.com/18F/cg-compliance
-cd cg-compliance
-```
-### 3. Create certifications
-```bash
-masonry certs LATO # `LATO` or `FedRAMP-low` .. etc.
-```
-### 4. Create Gitbook Documentation
-```bash
-masonry docs gitbook LATO # `LATO` or `FedRAMP-low` .. etc.
-```
-### 5. Serve the Gitbook locally
-```bash
-npm install gitbook-cli -g # Install Gitbook CLI
-cd exports/gitbook # Navigate to exports dir
-gitbook serve
-```
+0. Install [Compliance Masonry CLI](https://github.com/opencontrol/compliance-masonry)
+
+0. Download Compliance Documentation and Navigate to Repository
+
+  ```bash
+  git clone https://github.com/18F/cg-compliance
+  cd cg-compliance
+  ```
+
+0. Install dependencies
+
+  ```
+  compliance-masonry get
+  ```
+
+0. Create Gitbook Documentation
+
+  ```bash
+  compliance-masonry docs gitbook LATO # `LATO` or `FedRAMP-low` .. etc.
+  ```
+
+0. Serve the Gitbook locally
+
+  ```bash
+  npm install gitbook-cli -g # Install Gitbook CLI
+  cd exports # Navigate to exports dir
+  gitbook serve
+  ```
 
 ### Create PDF
 Req: Install ebook-convert from Calibre
 [May need to install ebook-convert from Calibre installed](https://github.com/GitbookIO/gitbook/issues/333)
-```bash
-npm install gitbook-pdf -g # Install git gitbook pdf extension
-cd exports/gitbook # Navigate to exports dir
-gitbook pdf .
-```
+0. Install gitbook pdf extension
 
-# Create Inventory of components and controls
-### Create certifications
-```bash
-masonry certs LATO # `LATO` or `FedRAMP-low` .. etc.
-masonry inventory LATO # `LATO` or `FedRAMP-low` .. etc.
-```
+  ```bash
+  npm install gitbook-pdf -g #
+  ```
+
+0. Navigate to exports dir
+
+  ```bash
+  cd exports
+  ```
+
+0. Create PDF
+
+  ```bash
+  gitbook pdf .
+  ```
+
+
+  # BDD Tests
+  This repository also contains [setup and run instructions for a set of BDD test](https://github.com/18F/cg-compliance/tree/master/BDD) that help verify Cloud Foundry control implementations.
