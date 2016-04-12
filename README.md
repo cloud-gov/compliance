@@ -22,10 +22,12 @@ This repository contains shared compliance data for Cloud.gov
 0. Create component documentation using the [opencontrol schema](https://github.com/opencontrol/schemas) and update the `components` object in the opencontrol.yaml with the documentation path.
 0. "Import" the Cloud.gov dependencies.
 
-  The get command will import all the data from the cg-compliance repository and drop them into the `opencontrol` directory to serve as a baseline for your SSP
+
   ```bash
   compliance-masonry get
   ```
+
+The get command will import all the data from the cg-compliance repository and drop them into the `opencontrol` directory to serve as a baseline for your SSP
 
 # Creating Gitbook
 0. Update dependencies
@@ -48,9 +50,10 @@ This repository contains shared compliance data for Cloud.gov
   gitbook serve
   ```
 
-### Create PDF
+## Create PDF
 Req: Install ebook-convert from Calibre
 [May need to install ebook-convert from Calibre installed](https://github.com/GitbookIO/gitbook/issues/333)
+
 0. Install gitbook pdf extension
 
   ```bash
@@ -69,6 +72,5 @@ Req: Install ebook-convert from Calibre
   gitbook pdf .
   ```
 
-
-  # BDD Tests
-  This repository also contains [setup and run instructions for a set of BDD test](https://github.com/18F/cg-compliance/tree/master/BDD) that help verify Cloud Foundry control implementations.
+# BDD Tests
+This repository also contains [setup and run instructions for a set of BDD test](https://github.com/18F/cg-compliance/tree/master/BDD) that help verify Cloud Foundry control implementations.
