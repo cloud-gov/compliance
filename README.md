@@ -19,19 +19,16 @@ This repository contains shared compliance data for Cloud.gov
         revision: master
   ```
 
-0. Create component documentation. Using the [opencontrol schema](https://github.com/opencontrol/schemas).
-
-0. Import the Cloud.gov dependencies.
+0. Create component documentation using the [opencontrol schema](https://github.com/opencontrol/schemas) and update the `components` object in the opencontrol.yaml with the documentation path.
+0. "Import" the Cloud.gov dependencies.
 
   The get command will import all the data from the cg-complinace repository and serve as a baseline for your SSP
   ```bash
   compliance-masonry get
   ```
 
-
 # Creating Gitbook
 0. Install [Compliance Masonry CLI](https://github.com/opencontrol/compliance-masonry)
-
 0. Download Compliance Documentation and Navigate to Repository
 
   ```bash
@@ -65,10 +62,10 @@ Req: Install ebook-convert from Calibre
 0. Install gitbook pdf extension
 
   ```bash
-  npm install gitbook-pdf -g #
+  npm install gitbook-pdf -g
   ```
 
-0. Navigate to exports dir
+0. Navigate to the exports dir
 
   ```bash
   cd exports
