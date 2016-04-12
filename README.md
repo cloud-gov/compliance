@@ -15,28 +15,20 @@ This repository contains shared compliance data for Cloud.gov
     - ./your_app_component
   dependencies:
     systems:
-      - url: github.com/18F/cg-complinace
+      - url: github.com/18F/cg-compliance
         revision: master
   ```
 
 0. Create component documentation using the [opencontrol schema](https://github.com/opencontrol/schemas) and update the `components` object in the opencontrol.yaml with the documentation path.
 0. "Import" the Cloud.gov dependencies.
 
-  The get command will import all the data from the cg-complinace repository and serve as a baseline for your SSP
+  The get command will import all the data from the cg-compliance repository and drop them into the `opencontrol` directory to serve as a baseline for your SSP
   ```bash
   compliance-masonry get
   ```
 
 # Creating Gitbook
-0. Install [Compliance Masonry CLI](https://github.com/opencontrol/compliance-masonry)
-0. Download Compliance Documentation and Navigate to Repository
-
-  ```bash
-  git clone https://github.com/18F/cg-compliance
-  cd cg-compliance
-  ```
-
-0. Install dependencies
+0. Update dependencies
 
   ```
   compliance-masonry get
