@@ -27,13 +27,15 @@ components:
   - ./SC_Policy
   - ./SI_Policy
   - ./SecureProxy
-certifications:
-  - ./certifications/FedRAMP-med.yaml
-standards:
-  - ./standards/NIST-800-53.yaml
 dependencies:
   systems:
     - url: https://github.com/opencontrol/cf-compliance
       revision: master
     - url: https://github.com/opencontrol/aws-compliance
+      revision: master
+  standards:
+    - url: https://github.com/opencontrol/NIST-800-53-Standards
+      revision: master
+  certifications:
+    - url: https://github.com/opencontrol/FedRAMP-Certifications
       revision: master
