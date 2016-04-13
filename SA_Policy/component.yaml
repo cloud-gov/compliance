@@ -46,7 +46,7 @@ verifications:
   type: URL
 - key: POLICY_DOC
   name: policy document
-  path: https://github.com/18f/compliance-docs/blob/master/SA-policy.md
+  path: https://github.com/18f/compliance-docs/blob/master/SA-Policy.md
   type: url
 - description: "GIVEN the github link - <policy> THEN the policy has been updated\
     \ within the last 180 days \n"
