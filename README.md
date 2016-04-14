@@ -1,76 +1,59 @@
-# Cloud Foundry Compliance
-This repository contains shared compliance data for Cloud.gov
+# cloud.gov Compliance
 
-# Starting ATO Documentation for Cloud.gov applications.
+This repository contains shared compliance data for [cloud.gov](https://cloud.gov).
+
+## Starting ATO documentation for cloud.gov applications
+
 0. Install [Compliance Masonry CLI](https://github.com/opencontrol/compliance-masonry)
 0. [Create an opencontrol.yaml](https://github.com/opencontrol/compliance-masonry#creating-an-opencontrol-project) based on the data below.
-  ```yaml
-  schema_version: "1.0.0"
-  name: Your_Application_Name # Name of the project
-  metadata:
-    description: "A description of the application"
-    maintainers:
-      - maintainer_email@email.com
-  components: # A list of paths to components written in the opencontrol format for more information view: https://github.com/opencontrol/schemas
-    - ./your_app_component
-  dependencies:
-    systems:
-      - url: github.com/18F/cg-compliance
-        revision: master
-  ```
 
-0. Create component documentation using the [opencontrol schema](https://github.com/opencontrol/schemas) and update the `components` object in the opencontrol.yaml with the documentation path.
-0. "Import" the Cloud.gov dependencies.
+    ```yaml
+    schema_version: "1.0.0"
+    name: Your_Application_Name # Name of the project
+    metadata:
+      description: "A description of the application"
+      maintainers:
+        - maintainer_email@email.com
+    components: # A list of paths to components written in the opencontrol format for more information view: https://github.com/opencontrol/schemas
+      - ./your_app_component
+    dependencies:
+      systems:
+        - url: github.com/18F/cg-compliance
+          revision: master
+    ```
 
+0. Create component documentation using the [opencontrol schema](https://github.com/opencontrol/schemas) and update the `components` object in the `opencontrol.yaml` with the documentation path.
+0. "Import" the cloud.gov dependencies.
 
-  ```bash
-  compliance-masonry get
-  ```
+    ```bash
+    compliance-masonry get
+    ```
 
-The get command will import all the data from the cg-compliance repository and drop them into the `opencontrol` directory to serve as a baseline for your SSP
+The `get` command will import all the data from the cg-compliance repository and drop them into the `opencontrols/` directory to serve as a baseline for your SSP.
 
-# Creating Gitbook
-0. Update dependencies
+## Creating Gitbook
 
-  ```
-  compliance-masonry get
-  ```
+Run
 
-0. Create Gitbook Documentation
+```bash
+compliance-masonry get
+compliance-masonry docs gitbook LATO # `LATO` or `FedRAMP-low` .. etc.
+npm install gitbook-cli -g
+cd exports
+gitbook serve
+```
 
-  ```bash
-  compliance-masonry docs gitbook LATO # `LATO` or `FedRAMP-low` .. etc.
-  ```
+### Create PDF
 
-0. Serve the Gitbook locally
+0. [Install `ebook-convert`](https://github.com/GitbookIO/gitbook/issues/333) from [Calibre](http://calibre-ebook.com/download)
+0. Run
 
-  ```bash
-  npm install gitbook-cli -g # Install Gitbook CLI
-  cd exports # Navigate to exports dir
-  gitbook serve
-  ```
+    ```bash
+    npm install gitbook-pdf -g
+    cd exports
+    gitbook pdf .
+    ```
 
-## Create PDF
-Req: Install ebook-convert from Calibre
-[May need to install ebook-convert from Calibre installed](https://github.com/GitbookIO/gitbook/issues/333)
+## BDD tests
 
-0. Install gitbook pdf extension
-
-  ```bash
-  npm install gitbook-pdf -g
-  ```
-
-0. Navigate to the exports dir
-
-  ```bash
-  cd exports
-  ```
-
-0. Create PDF
-
-  ```bash
-  gitbook pdf .
-  ```
-
-# BDD Tests
-This repository also contains [setup and run instructions for a set of BDD test](https://github.com/18F/cg-compliance/tree/master/BDD) that help verify Cloud Foundry control implementations.
+This repository also contains [setup and run instructions for a set of BDD test](https://github.com/18F/cg-compliance/tree/master/BDD) that help verify [Cloud Foundry](https://www.cloudfoundry.org/) control implementations.
