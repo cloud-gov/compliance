@@ -1,0 +1,59 @@
+documentation_complete: false
+name: Identification and Authentication Policy for 18F
+satisfies:
+- control_key: IA-1
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative: "#### a  \nThe 18F Program Office develops, documents, and disseminates\
+    \ to all 18F staff,\nThe 18F Identification and Authentication Policy which addresses\
+    \ purpose, scope, roles, responsibilities, management commitment, coordination\
+    \ among organizational entities, ompliance and procedures to facilitate the implementation\
+    \ of the identification and authentication policy and associated identification\
+    \ controls. The 18F Identification and Authentication Policy is listed within\
+    \ 18F\u2019s  private Github repository and the docs.cloud.gov site that is accessible\
+    \ to all 18F staff.\n  \n#### b  \nThe 18F Program Office will review and update\
+    \ the current 18F Identification and Authentication Policy at least every 3 years\
+    \ and any documented identification and authentication procedures at least annually.\n\
+    \  \n"
+  standard_key: NIST-800-53
+- control_key: IA-4
+  covered_by: []
+  implementation_status: none
+  narrative: 'The 18F Identification and Authentication Policy section 3 Identifier
+    Management states:
+
+    Identifier Management
+
+    18F manages information system identifiers for users and devices by:
+
+    * Receiving authorization from a designated organizational official to assign
+    a user or device identifier.
+
+    * Selecting an identifier that uniquely identifies an individual or device.
+
+    * Assigning the user identifier to the intended party or the device identifier
+    to the intended device.
+
+    * Preventing reuse of user or device identifiers for one (1).
+
+    * Disabling the user identifier after ninety (90) days of inactivity for general
+    user accounts and thirty (30) days for administrator level accounts.
+
+    '
+  standard_key: NIST-800-53
+schema_version: 2.0
+system: 18F
+verifications:
+- key: POLICY_DOC
+  name: Policy Document
+  path: https://github.com/18F/compliance-docs/blob/master/IA-Policy.md
+  type: URL
+- description: "GIVEN the github link - <policy> THEN the policy has been updated\
+    \ within the last 180 days \n"
+  key: Policy_Update_Test
+  last_run: 2016-04-07 13:25:17.630024
+  name: 18F Policies Update
+  path: BDD/policies.feature
+  test_passed: false
+  type: TEST
