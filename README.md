@@ -39,7 +39,7 @@ The get command will import all the data from the cg-compliance repository and d
 0. Create Gitbook Documentation
 
   ```bash
-  compliance-masonry docs gitbook LATO # `LATO` or `FedRAMP-low` .. etc.
+  compliance-masonry docs gitbook FedRAMP-moderate # or `FedRAMP-low`
   ```
 
 0. Serve the Gitbook locally
