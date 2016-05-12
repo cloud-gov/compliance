@@ -71,7 +71,7 @@ Bret Mogilefsky| Program Manager |18F/GSA| 1800 F Street, NW Washington DC 20405
 
 # Assignment of Security Responsibility
 Name | Title | Organization | Address | Phone Number | Email Address
----|----|----|----|
+----|----|----|----|----|----
 Curtis Lovett| Information System Security Officer| 18F/GSA |1800 F Street DC 20405 | 202-412-0337 | curtis.lovett [at] gsa.gov
 Rajat Varuni  | Information System Security Officer| 18F/GSA |1800 F Street DC 20405 | 202-746-3201 | rajat.ravindervaruni [at] gsa.gov  
 Noah Kunin| 18F Infrastructure Director|18F/GSA| 1800 F Street DC 20405| 202-577-7167| noah.kunin [at] gsa.gov
@@ -91,7 +91,7 @@ The Cloud.Gov makes use of unique managed service provider architecture layer(s)
 Information systems, particularly those based on cloud architecture models, are made up of different service layers.  The layers of the Cloud .Gov defined in this SSP are indicated in the table that follows.
 
 X |Platform as a Service (PaaS) | Application
- -|-
+ -|-|-
   |Software as a Service (SaaS) | Application
   |Infrastructure as a service (IaaS)| General Support System
   |Other| Explain:
@@ -101,7 +101,7 @@ X |Platform as a Service (PaaS) | Application
 Information systems, particularly those based on cloud services and infrastructures, are made up of different deployment models.  The deployment models of the Cloud.Gov that are defined in this SSP, and are not leveraged by any other Provisional Authorizations, are indicated in the table that follows.
 
 X |**Public** | Cloud services and infrastructure supporting multiple organizations and agency clients|
--|-
+-|-|-
 |Private| Cloud services and infrastructure dedicated to a specific organization/agency and not other clients
 |Community| Cloud services and infrastructure shared by several organizations/agencies with the same policy and compliance considerations
 |Hybrid| Explain: (e.g., cloud services and infrastructure that provides private cloud for secured applications and data where required and public cloud for other applications and data)
