@@ -71,9 +71,9 @@ Bret Mogilefsky| Program Manager |18F/GSA| 1800 F Street, NW Washington DC 20405
 
 # Assignment of Security Responsibility
 Name | Title | Organization | Address | Phone Number | Email Address
----|----|----|----|
+----|----|----|----|----|----
 Curtis Lovett| Information System Security Officer| 18F/GSA |1800 F Street DC 20405 | 202-412-0337 | curtis.lovett [at] gsa.gov
-Rajat Varuni  | Information System Security Officer| 18F/GSA |1800 F Street DC 20405 | 202-746-3201 | rajat.ravindervaruni [at] gsa.gov  
+Rajat Varuni | Information System Security Officer| 18F/GSA |1800 F Street DC 20405 | 202-746-3201 | rajat.ravindervaruni [at] gsa.gov  
 Noah Kunin| 18F Infrastructure Director|18F/GSA| 1800 F Street DC 20405| 202-577-7167| noah.kunin [at] gsa.gov
 
 # Information System Operational Status
