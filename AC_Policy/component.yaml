@@ -132,8 +132,8 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |
-    Cloud.gov integrates it's user management application with enterprise single sign on systems.
-    User management is automated by delegating user verification to a centralized system.
+      Cloud.gov integrates it's user management application with enterprise single sign on systems.
+      User management is automated by delegating user verification to a centralized system.
   standard_key: NIST-800-53
 - control_key: AC-2 (2)
   covered_by:
@@ -370,8 +370,8 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |
-    Every user interaction with the cloud.gov APIs requires a valid token. If a user session is locked
-    no cloud.gov actions are allowed.
+      Every user interaction with the cloud.gov APIs requires a valid token. If a user session is locked
+      no cloud.gov actions are allowed.
   standard_key: NIST-800-53
 - control_key: AC-12
   covered_by:
@@ -379,7 +379,7 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |
-    Session termination is managed by UAA and set to expire within 15 minutes.
+      Session termination is managed by UAA and set to expire within 15 minutes.
   standard_key: NIST-800-53
 - control_key: AC-14
   covered_by:
