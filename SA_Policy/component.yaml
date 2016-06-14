@@ -143,7 +143,7 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |-
-      TODO
+    **DEFAUT_CONTROL** The organization applies information system security engineering principles in the specification, design, development, implementation, and modification of the information system.
   standard_key: NIST-800-53
 - control_key: SA-9
   covered_by:
