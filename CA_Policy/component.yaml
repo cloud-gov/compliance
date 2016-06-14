@@ -58,6 +58,7 @@ satisfies:
   implementation_status: none
   narrative:
   - text: 18F has engaged an accredited 3PAO to conduct the independent assessment of security controls for the Cloud.Gov information system.
+  standard_key: NIST-800-53
 - control_key: CA-2 (2)
   covered_by:
   - verification_key: POLICY_DOC
