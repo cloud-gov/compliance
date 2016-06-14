@@ -14,7 +14,14 @@ satisfies:
   - verification_key: POLICY_DOC
   implementation_status: none
   narrative:
-  - text: |-
+  - key: a
+    text: |-
+      The cloud.gov team does two-week sprints. Before each sprint, we look at open tasks and prioritize, including security needs. The team also hires for security expertise specifically.
+  - key: b
+    text: |-
+      TODO
+  - key: c
+    text: |-
       TODO
   standard_key: NIST-800-53
 - control_key: SA-3
