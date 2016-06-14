@@ -56,6 +56,65 @@ satisfies:
       **DEFAULT_CONTROL** The 18F DevOps and SecOps teams establishes [Assignment:
       organization-defined benchmarks] for taking corrective actions.
   standard_key: NIST-800-53
+- control_key: SI-3
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+    - key: a
+      text: |
+        **DEFAULT_CONTROL** Employs malicious code protection mechanisms at information
+        system entry and exit points to detect and eradicate malicious code;
+    - key: b
+      text: |
+        **DEFAULT_CONTROL** Updates malicious code protection mechanisms whenever
+        new releases are available in accordance with organizational configuration management policy and procedures;
+    - key: c
+      text: |
+        **DEFAULT_CONTROL** Configures malicious code protection mechanisms to:
+
+          1. Perform periodic scans of the information system [Assignment: organization-
+          defined frequency] and real-time scans of files from external sources at
+          [Selection (one or more); endpoint; network entry/exit points] as the files
+          are downloaded, opened, or executed in accordance with organizational
+          security policy; and
+
+          2. [Selection (one or more): block malicious code; quarantine malicious
+          code; send alert to administrator; [Assignment: organization-defined action]]
+          in response to malicious code detection; and
+    - key: d
+      text: |
+        **DEFAULT_CONTROL** Addresses the receipt of false positives during malicious
+        code detection and eradication and the resulting potential impact on the
+        availability of the information system.
+  standard_key: NIST-800-53
+- control_key: SI-3 (1)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      **DEFAULT_CONTROL** 18F centrally manages malicious code protection
+      mechanisms.
+  standard_key: NIST-800-53
+- control_key: SI-3 (2)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      **DEFAULT_CONTROL** cloud.gov automatically updates malicious code
+      protection mechanisms.
+  standard_key: NIST-800-53
+- control_key: SI-3 (7)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      **DEFAULT_CONTROL** cloud.gov implements nonsignature-based
+      malicious code detection mechanisms.
+  standard_key: NIST-800-53
 - control_key: SI-4
   covered_by:
   - verification_key: POLICY_DOC
