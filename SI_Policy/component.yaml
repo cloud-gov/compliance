@@ -256,6 +256,42 @@ satisfies:
     - key: d
       text: |
         **DEFAULT_CONTROL** [Selection (one or more): shuts the information system down; restarts the information system; [Assignment: organization-defined alternative action(s)]] when anomalies are discovered.standard_key: NIST-800-53
+- control_key: SI-7
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      **DEFAULT_CONTROL** The organization employs integrity verification tools to detect unauthorized changes to [Assignment: organization-defined software, firmware, and information].
+  standard_key: NIST-800-53
+- control_key: SI-7 (1)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      **DEFAULT_CONTROL** The information system performs an integrity check of [Assignment: organization-defined software, firmware, and information] [Selection (one or more): at startup; at [Assignment: organization-defined transitional states or security-relevant events]; [Assignment: organization-defined frequency]].
+  standard_key: NIST-800-53
+- control_key: SI-7 (7)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      **DEFAULT_CONTROL** The organization incorporates the detection of unauthorized [Assignment: organization-defined security-relevant changes to the information system] into the organizational incident response capability.
+  standard_key: NIST-800-53
+- control_key: SI-8
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - key: a
+    text: |
+      **DEFAULT_CONTROL** Employs spam protection mechanisms at information system entry and exit points to detect and take action on unsolicited messages; and
+  - key: b
+    text: |
+      **DEFAULT_CONTROL** Updates spam protection mechanisms when new releases are available in accordance with organizational configuration management policy and procedures.
+  standard_key: NIST-800-53
 system: 18F
 verifications:
 - key: POLICY_DOC
