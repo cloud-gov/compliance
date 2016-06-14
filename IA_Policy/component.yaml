@@ -70,7 +70,7 @@ satisfies:
   - text: |
       NA - cloud.gov delegates authentication to multiple separate single sign on (SSO) system which implement multifactor in multiple ways.
   standard_key: NIST-800-53
-- control_key: IA-2 (11)
+- control_key: IA-2 (12)
   covered_by:
   - verification_key: POLICY_DOC
   implementation_status: none
