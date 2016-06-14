@@ -157,12 +157,14 @@ satisfies:
     text: |-
       BOSH stemcell images and BOSH deployment artifacts are updated regularly, so that
       upstream security updates are applied.
+  standard_key: NIST-800-53
+- control_key: SA-10 (1)
   covered_by:
-  - verification_key: POLICY_DOC
-  implementation_status: none
+  - verification_key: DEPLOYMENT_TESTING
   narrative:
   - text: |-
-      TODO
+      Deployment artifacts are stored and distributed by BOSH along with SHA-1 hashes
+      to allow verification of file integrity.
   standard_key: NIST-800-53
 - control_key: SA-11 (1)
   covered_by:
