@@ -34,8 +34,20 @@ satisfies:
   - verification_key: POLICY_DOC
   implementation_status: none
   narrative:
-  - text: |-
-      TODO
+  - key: a
+    text: |
+      The 18F DevOps team practices the Scrumban process when developing new features or fixing existing issues - including security fixes and enhancements, for cloud.gov.  Each feature / issue is assigned to a card in the system where it goes thru a process of being identified, prioritized, explored, delivered, and finally demonstrated. Each card is reviewed by the team as a whole throughout its lifecycle to identify any security risks or concerns - these are recorded on the card as acceptance criteria when development is complete.
+
+      Once development is complete, the code submitted to our version control system as a “pull request" where it is further reviewed before being merged into the code base.  New features will then be deployed into our staging area where they will be undergo further security review / stakeholder acceptance, as well as automated acceptance tests.
+  - key: b
+    text: |
+      The 18F DevOps team for cloud.gov is broken into several sub-teams with differing areas of responsibility and expertise.   Security is a foremost concern for members of all teams.  The cloud.gov Atlas sub-team is primarily focused on implementing security policies at the platform level.
+  - key: c
+    text: |
+      Each member of the DevOps team has the necessary security background to properly handle sensitive data, such as security keys and certificates, and to evaluate the security implications associated with configuration changes.  Access to cloud.gov and its components is controlled thru various means, including AWS security groups, Cloud Foundry roles, and GitHub team membership.
+  - key: d
+    text: |
+      The cloud.gov Atlas team continually monitors the configurations of the various components of cloud.gov to ensure they meet the requirements for protecting sensitive data.
   standard_key: NIST-800-53
 - control_key: SA-4
   covered_by:
