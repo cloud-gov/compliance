@@ -109,8 +109,33 @@ satisfies:
   - verification_key: POLICY_DOC
   implementation_status: none
   narrative:
-  - text: |-
-      TODO
+  - key: a
+    text: |-
+      # TODO: Address "Known vulnerabilities regarding configuration and use of administrative (i.e., privileged) functions"
+      Documentation for cloud.gov is maintained within the GitHub repositories for
+      the various components that comprise the system and at https://docs.cloud.gov.
+      Administrator documentation describe secure deployment and operation of cloud.gov.
+  - key: b
+    text: |-
+      Best practices for secure usage of cloud.gov are available and continuously
+      updated at https://docs.cloud.gov.
+  - key: c
+    text: |-
+      Reports of uncomplete or unavailable documentation are filed using GitHub
+      issues attached to https://github.com/18F/cg-docs or to the repositories that
+      store various cloud.gov components.
+  - key: d
+    text: |-
+      Because cloud.gov documentation does not contain sensitive information,
+      documentation is publically accessible in GitHub and at https://docs.cloud.gov.
+      Changes to that documentation can only be accepted by authorized individuals on
+      the cloud.gov team through GitHub team membership.
+  - key: e
+    text: |-
+      Documentation for cloud.gov is maintained within the GitHub repositories for
+      the various components that comprise the system and at https://docs.cloud.gov.
+      New members of the team are directed to this documentation, and team members
+      are expected to be aware of its contents.
   standard_key: NIST-800-53
 - control_key: SA-8
   covered_by:
