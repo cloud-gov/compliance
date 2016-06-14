@@ -1,3 +1,5 @@
+---
+schema_version: 3.0.0
 documentation_complete: false
 name: System and Information Integrity Policy for 18F
 satisfies:
@@ -5,60 +7,346 @@ satisfies:
   covered_by:
   - verification_key: POLICY_DOC
   implementation_status: none
-  narrative: 18F Policy
-  standard_key: NIST-800-53
-- control_key: SI-4
-  covered_by:
-  - verification_key: POLICY_DOC
-  implementation_status: none
-  narrative: "#### a  \nThe 18F DevOps and SecOps teams monitors the Cloud.Gov information\
-    \ system to detect potential attacks and intrusions from internal and external\
-    \ sources in accordance with the 18F System Information and Integrity Policy section\
-    \ 3 - Information System monitoring, the FedRAMP Incident communication procedures\
-    \ and GSA CIO-IT Security-08-39 section \u201CSystem Monitoring / Audit Record\
-    \ Review \u201C for GSA specifc infomation systems\n  \n#### b  \n18F identifies\
-    \ un-authorized access to the Cloud.Gov information system using   automated monitoring\
-    \ tools within its virutal proviate cloud for monitoringing, log management and\
-    \ event analysis. 18F monitors for attacks and indicators of potential attacks,\
-    \  unauthorized local, network, and remote connections.\n  \n#### c  \nThe infrastructure\
-    \ that hosts Cloud.Gov provides monitoring and intrusion detcetion of unsual activity\
-    \ at  the phyical and network layers. 18F is responsible for monitoring everything\
-    \ related to its virtual infrastructure and has deployed monitoring  and intrusion\
-    \ dectction tools within its virtual private cloud to log and dectect malicious\
-    \ activities to its information systems including Cloud.Gov.\n  \n#### d  \n18F\
-    \ ensures intrusion and monitoring tools are protected  from unauthorized access\
-    \ by only granting access to certian members from the DevOps and SecOps team.\
-    \ All monitoring and intrusion information data is protected by limiting accounts\
-    \ to authorized privileged users only and is maintained in secured repositories\
-    \ for review by those members.\n  \n#### e  \nInformation system monitoring will\
-    \ be heightened based on advisories from Pivitol, US-CERT Advisories, commercial\
-    \ security communities, and other sources.\n  \n#### f  \nInformation system monitoring\
-    \ will be conducted in accordance and compliance with 18F security policies and\
-    \ all applicable laws, Executive Orders, directives, and regulations.\n  \n####\
-    \ g  \n18F provides monitoring of all information system components in the event\
-    \ of an event or incident, information will be provided as it is available.  Scheduled\
-    \ reports will be provided for events such as after-hours administrative logins,\
-    \ users being added to privileged groups, persistent malware detections, etc.\
-    \ to designated members of the DevOps teams and SecOps teams as needed\n  \n"
+  narrative:
+  - text: 18F Policy
   standard_key: NIST-800-53
 - control_key: SI-2
   covered_by:
   - verification_key: POLICY_DOC
   implementation_status: none
-  narrative: "#### a  \n18F identifies all system flaws related to Cloud.gov, reports\
-    \ system flaws to information system owners, Authorizing officials, DevOps and\
-    \ SecOp  and corrects information system flaws that affect Cloud.Gov\nCloud Foundry\
-    \ manages software vulnerability using releases and BOSH stemcells. New Cloud\
-    \ Foundry releases are created with updates to address code issues, while new\
-    \ stemcells are created with patches for the latest security fixes to address\
-    \ any underlying operating system issues. New Cloud Foundry releases are located\
-    \ at https://github.com/Cloud Foundry/cf-release.\n18F implemenets the release\
-    \ of Cloud Foundy he what (or the software developer/vendor in the case of software\
-    \ developed and maintained by a vendor/contractor) promptly installs newly released\
-    \ security relevant patches and tests patches, for effectiveness and potential\
-    \ side effects on information systems before installation.\n  \n"
+  narrative:
+  - key: a
+    text: |
+      18F identifies all system flaws related to Cloud.gov, reports
+      system flaws to information system owners, Authorizing officials, DevOps and
+      SecOp  and corrects information system flaws that affect cloud.gov
+
+      Cloud Foundry
+      manages software vulnerability using releases and BOSH stemcells. New Cloud
+      Foundry releases are created with updates to address code issues, while new
+      stemcells are created with patches for the latest security fixes to address
+      any underlying operating system issues. New Cloud Foundry releases are located
+      at https://github.com/cloudfoundry/cf-release.
+
+      18F implements the release
+      of Cloud Foundry he what (or the software developer/vendor in the case of software
+      developed and maintained by a vendor/contractor) promptly installs newly released
+      security relevant patches and tests patches, for effectiveness and potential
+      side effects on information systems before installation.
   standard_key: NIST-800-53
-schema_version: 2.0
+- control_key: SI-2 (2)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      **DEFAULT_CONTROL** The 18F DevOps and SecOps teams employs automated
+      mechanisms [Assignment: organization-defined frequency] to determine the
+      state of information system components with regard to flaw remediation.
+  standard_key: NIST-800-53
+- control_key: SI-2 (3)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - key: a
+    text: |
+      **DEFAULT_CONTROL** The 18F DevOps and SecOps teams measure the time between
+      flaw identification and flaw remediation; and
+  - key: b
+    text: |
+      **DEFAULT_CONTROL** The 18F DevOps and SecOps teams establishes [Assignment:
+      organization-defined benchmarks] for taking corrective actions.
+  standard_key: NIST-800-53
+- control_key: SI-3
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+    - key: a
+      text: |
+        **DEFAULT_CONTROL** Employs malicious code protection mechanisms at information
+        system entry and exit points to detect and eradicate malicious code;
+    - key: b
+      text: |
+        **DEFAULT_CONTROL** Updates malicious code protection mechanisms whenever
+        new releases are available in accordance with organizational configuration management policy and procedures;
+    - key: c
+      text: |
+        **DEFAULT_CONTROL** Configures malicious code protection mechanisms to:
+
+          1. Perform periodic scans of the information system [Assignment: organization-
+          defined frequency] and real-time scans of files from external sources at
+          [Selection (one or more); endpoint; network entry/exit points] as the files
+          are downloaded, opened, or executed in accordance with organizational
+          security policy; and
+
+          2. [Selection (one or more): block malicious code; quarantine malicious
+          code; send alert to administrator; [Assignment: organization-defined action]]
+          in response to malicious code detection; and
+    - key: d
+      text: |
+        **DEFAULT_CONTROL** Addresses the receipt of false positives during malicious
+        code detection and eradication and the resulting potential impact on the
+        availability of the information system.
+  standard_key: NIST-800-53
+- control_key: SI-3 (1)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      **DEFAULT_CONTROL** 18F centrally manages malicious code protection
+      mechanisms.
+  standard_key: NIST-800-53
+- control_key: SI-3 (2)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      **DEFAULT_CONTROL** cloud.gov automatically updates malicious code
+      protection mechanisms.
+  standard_key: NIST-800-53
+- control_key: SI-3 (7)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      **DEFAULT_CONTROL** cloud.gov implements nonsignature-based
+      malicious code detection mechanisms.
+  standard_key: NIST-800-53
+- control_key: SI-4
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - key: a
+    text: |
+      The 18F DevOps and SecOps teams monitors the Cloud.Gov information
+      system to detect potential attacks and intrusions from internal and external
+      sources in accordance with the 18F System Information and Integrity Policy section
+      3 - Information System monitoring, the FedRAMP Incident communication procedures
+      and GSA CIO-IT Security-08-39 section "System Monitoring / Audit Record
+      Review" for GSA specifc infomation systems.
+  - key: b
+    text: |
+      18F identifies un-authorized access to the Cloud.Gov information system using automated monitoring
+      tools within its virutal proviate cloud for monitoringing, log management and
+      event analysis. 18F monitors for attacks and indicators of potential attacks,
+      unauthorized local, network, and remote connections.
+  - key: c
+    text: |
+      The infrastructure
+      that hosts Cloud.Gov provides monitoring and intrusion detcetion of unsual activity
+      at the phyical and network layers. 18F is responsible for monitoring everything
+      related to its virtual infrastructure and has deployed monitoring  and intrusion
+      dectction tools within its virtual private cloud to log and dectect malicious
+      activities to its information systems including Cloud.Gov.
+  - key: d
+    text: |
+      18F ensures intrusion and monitoring tools are protected  from unauthorized access
+      by only granting access to certian members from the DevOps and SecOps team.
+      All monitoring and intrusion information data is protected by limiting accounts
+      to authorized privileged users only and is maintained in secured repositories
+      for review by those members.
+  - key: e
+    text: |
+      Information system monitoring will
+      be heightened based on advisories from Pivotal, US-CERT Advisories, commercial
+      security communities, and other sources.
+  - key: f
+    text: |
+      Information system monitoring will be conducted in accordance and compliance with 18F security policies and
+      all applicable laws, Executive Orders, directives, and regulations.
+  - key: g
+    text: |
+      18F provides monitoring of all information system components in the event
+      of an event or incident, information will be provided as it is available.  Scheduled
+      reports will be provided for events such as after-hours administrative logins,
+      users being added to privileged groups, persistent malware detections, etc.
+      to designated members of the DevOps teams and SecOps teams as needed.
+  standard_key: NIST-800-53
+- control_key: SI-4 (2)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      **DEFAULT_CONTROL** The organization employs automated tools to support near
+      real-time analysis of events.
+  standard_key: NIST-800-53
+- control_key: SI-4 (4)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      **DEFAULT_CONTROL** The information system monitors inbound and outbound
+      communications traffic [Assignment: organization-defined frequency] for
+      unusual or unauthorized activities or conditions.
+  standard_key: NIST-800-53
+- control_key: SI-4 (5)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      **DEFAULT_CONTROL** The information system alerts [Assignment:
+      organization-defined personnel or roles] when the following indications of
+      compromise or potential compromise occur: [Assignment: organization-defined
+      compromise indicators].
+  standard_key: NIST-800-53
+- control_key: SI-4 (14)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      **DEFAULT_CONTROL** 18F employs a wireless intrusion detection system to identify rogue wireless devices and to detect attack attempts and potential compromises/breaches to the information system.
+  standard_key: NIST-800-53
+- control_key: SI-4 (16)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      **DEFAULT_CONTROL** 18F correlates information from monitoring tools employed throughout the information system.
+  standard_key: NIST-800-53
+- control_key: SI-4 (23)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - key: a
+    text: |
+      **DEFAULT_CONTROL** 18F implements [Assignment: organization-defined host-based monitoring mechanisms (Grafana)] at [Assignment: organization-defined information system components(cloud.gov)].
+  standard_key: NIST-800-53
+- control_key: SI-5
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+    - key: a
+      text: |
+        **DEFAULT_CONTROL** Receives information system security alerts, advisories, and directives from [Assignment: organization-defined external organizations] on an ongoing basis;
+    - key: b
+      text: |
+        **DEFAULT_CONTROL** Generates internal security alerts, advisories, and directives as deemed necessary;
+    - key: c
+      text: |
+        **DEFAULT_CONTROL** Disseminates security alerts, advisories, and directives to: [Selection (one or more): [Assignment: organization-defined personnel or roles]; [Assignment: organization-defined elements within the organization]; [Assignment: organization-defined external organizations]]; and
+    - key: d
+      text: |
+        **DEFAULT_CONTROL** Implements security directives in accordance with established time frames, or notifies the issuing organization of the degree of noncompliance.
+  standard_key: NIST-800-53
+- control_key: SI-6
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+    - key: a
+      text: |
+        **DEFAULT_CONTROL** Verifies the correct operation of [Assignment: organization-defined security functions];
+    - key: b
+      text: |
+        **DEFAULT_CONTROL** Performs this verification [Selection (one or more): [Assignment: organization-defined system transitional states]; upon command by user with appropriate privilege; [Assignment: organization-defined frequency]];
+    - key: c
+      text: |
+        **DEFAULT_CONTROL** Notifies [Assignment: organization-defined personnel or roles] of failed security verification tests; and
+    - key: d
+      text: |
+        **DEFAULT_CONTROL** [Selection (one or more): shuts the information system down; restarts the information system; [Assignment: organization-defined alternative action(s)]] when anomalies are discovered.standard_key: NIST-800-53
+  standard_key: NIST-800-53
+- control_key: SI-7
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      **DEFAULT_CONTROL** The organization employs integrity verification tools to detect unauthorized changes to [Assignment: organization-defined software, firmware, and information].
+  standard_key: NIST-800-53
+- control_key: SI-7 (1)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      **DEFAULT_CONTROL** The information system performs an integrity check of [Assignment: organization-defined software, firmware, and information] [Selection (one or more): at startup; at [Assignment: organization-defined transitional states or security-relevant events]; [Assignment: organization-defined frequency]].
+  standard_key: NIST-800-53
+- control_key: SI-7 (7)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      **DEFAULT_CONTROL** The organization incorporates the detection of unauthorized [Assignment: organization-defined security-relevant changes to the information system] into the organizational incident response capability.
+  standard_key: NIST-800-53
+- control_key: SI-8
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - key: a
+    text: |
+      **DEFAULT_CONTROL** Employs spam protection mechanisms at information system entry and exit points to detect and take action on unsolicited messages; and
+  - key: b
+    text: |
+      **DEFAULT_CONTROL** Updates spam protection mechanisms when new releases are available in accordance with organizational configuration management policy and procedures.
+  standard_key: NIST-800-53
+- control_key: SI-8 (1)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      **DEFAULT_CONTROL** The organization centrally manages spam protection mechanisms.
+  standard_key: NIST-800-53
+- control_key: SI-8 (2)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      **DEFAULT_CONTROL** The information system automatically updates spam protection mechanisms.
+  standard_key: NIST-800-53
+- control_key: SI-10
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      **DEFAULT_CONTROL** The information system checks the validity of [Assignment: organization-defined information inputs].
+  standard_key: NIST-800-53
+- control_key: SI-11
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - key: a
+    text: |
+      **DEFAULT_CONTROL** Generates error messages that provide information necessary for corrective actions without revealing information that could be exploited by adversaries; and
+  - key: b
+    text: |
+      **DEFAULT_CONTROL** Reveals error messages only to [Assignment: organization-defined personnel or roles].
+  standard_key: NIST-800-53
+- control_key: SI-12
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      **DEFAULT_CONTROL** The organization handles and retains information within the information system and information output from the system in accordance with applicable federal laws, Executive Orders, directives, policies, regulations, standards, and operational requirements.
+  standard_key: NIST-800-53
+- control_key: SI-16
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      **DEFAULT_CONTROL** The information system implements [Assignment: organization-defined security safeguards] to protect its memory from unauthorized code execution.
+  standard_key: NIST-800-53
 system: 18F
 verifications:
 - key: POLICY_DOC
