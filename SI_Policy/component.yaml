@@ -166,6 +166,61 @@ satisfies:
       users being added to privileged groups, persistent malware detections, etc.
       to designated members of the DevOps teams and SecOps teams as needed.
   standard_key: NIST-800-53
+- control_key: SI-4 (2)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      **DEFAULT_CONTROL** The organization employs automated tools to support near
+      real-time analysis of events.
+  standard_key: NIST-800-53
+- control_key: SI-4 (4)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      **DEFAULT_CONTROL** The information system monitors inbound and outbound
+      communications traffic [Assignment: organization-defined frequency] for
+      unusual or unauthorized activities or conditions.
+  standard_key: NIST-800-53
+- control_key: SI-4 (5)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      **DEFAULT_CONTROL** The information system alerts [Assignment:
+      organization-defined personnel or roles] when the following indications of
+      compromise or potential compromise occur: [Assignment: organization-defined
+      compromise indicators].
+  standard_key: NIST-800-53
+- control_key: SI-4 (14)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      **DEFAULT_CONTROL** 18F employs a wireless intrusion detection system to identify rogue wireless devices and to detect attack attempts and potential compromises/breaches to the information system.
+  standard_key: NIST-800-53
+- control_key: SI-4 (16)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      **DEFAULT_CONTROL** 18F correlates information from monitoring tools employed throughout the information system.
+  standard_key: NIST-800-53
+- control_key: SI-4 (23)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - key: a
+    text: |
+      **DEFAULT_CONTROL** 18F implements [Assignment: organization-defined host-based monitoring mechanisms (Grafana)] at [Assignment: organization-defined information system components(cloud.gov)].
+  standard_key: NIST-800-53
 system: 18F
 verifications:
 - key: POLICY_DOC
