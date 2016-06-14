@@ -129,15 +129,34 @@ satisfies:
   - text: |-
       TODO
   standard_key: NIST-800-53
-- control_key: SA-10 (1)
+- control_key: SA-10
   covered_by:
   - verification_key: POLICY_DOC
   implementation_status: none
   narrative:
-  - text: |-
-      TODO
-  standard_key: NIST-800-53
-- control_key: SA-11
+  - key: a
+    text: |-
+      Configuration and deployment of the cloud.gov platform is managed using the
+      BOSH project. BOSH releases and deployment manifests are stored in GitHub;
+      sensitive credentials are stored in Amazon S3.
+  - key: b
+    text: |-
+      Changes to BOSH configuration are tracked in GitHub. Documentation is stored
+      alongside deployment manifests and updated as configuration is changed; high-level
+      documentation is also available at https://docs.cloud.gov.
+  - key: c
+    text: |-
+      All proposed configuration changes are reviewed by members of the cloud.gov team.
+      Proposed changes must pass unit, integration, and acceptance tests before being
+      deployed.
+  - key: d
+    text: |-
+      Configuration changes are tracked using GitHub and communicated to users of
+      cloud.gov using Slack.
+  - key: e
+    text: |-
+      BOSH stemcell images and BOSH deployment artifacts are updated regularly, so that
+      upstream security updates are applied.
   covered_by:
   - verification_key: POLICY_DOC
   implementation_status: none
