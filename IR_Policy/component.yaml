@@ -1,10 +1,11 @@
 ---
+schema_version: 3.0.0
 documentation_complete: false
 name: Incident Response for cloud.gov
 satisfies:
 - control_key: IR-1
   covered_by: []
-  implementation_status: Implemented
+  implementation_status: complete
   narrative:
   - key: a
     text: |
@@ -14,9 +15,10 @@ satisfies:
   - key: b
     text: |
       18F reviews and iterates on the Incident Response Guide at least every three years. cloud.gov reviews and iterates on the Incident Response Guide at least annually.
+  standard_key: NIST-800-53
 - control_key: IR-2
   covered_by: []
-  implementation_status: Planned
+  implementation_status: planned
   narrative:
   - key: a
     text: |
@@ -30,7 +32,7 @@ satisfies:
   standard_key: NIST-800-53
 - control_key: IR-3
   covered_by: []
-  implementation_status: Planned
+  implementation_status: planned
   narrative:
   - text: |
       cloud.gov will create test plans and exercises in accordance to NIST 800-62, and it will present these to the cloud.gov Authorizing Official for their approval.
@@ -39,14 +41,14 @@ satisfies:
   standard_key: NIST-800-53
 - control_key: IR-3 (2)
   covered_by: []
-  implementation_status: Implemented
+  implementation_status: complete
   narrative:
   - text: |
       cloud.gov will coordinate with 18F Infrastructure and GSA IT to conduct these exercises in the most effective manner.
   standard_key: NIST-800-53
 - control_key: IR-4
   covered_by: []
-  implementation_status: Partially Implemented
+  implementation_status: partial
   narrative:
   - key: a
     text: |
@@ -65,7 +67,7 @@ satisfies:
   standard_key: NIST-800-53
 - control_key: IR-4 (1)
   covered_by: []
-  implementation_status: Partially Implemented
+  implementation_status: partial
   narrative:
   - text: |
       cloud.gov implements automated processes such as ClamAV and Tripwire to detect anomalies. When these processes detect an anomaly, they escalate an alert using PagerDuty.
@@ -73,14 +75,14 @@ satisfies:
   standard_key: NIST-800-53
 - control_key: IR-5
   covered_by: []
-  implementation_status: Implemented
+  implementation_status: complete
   narrative:
   - text: |
       The cloud.gov team tracks all incidents, not just security incidents, using the cloud.gov postmortem wiki: https://github.com/18F/cg-postmortems/wiki. The team also reports security incidents to GSA IT, which also tracks them.
   standard_key: NIST-800-53
 - control_key: IR-6
   covered_by: []
-  implementation_status: Partially Implemented
+  implementation_status: partial
   narrative:
   - key: a
     text: |
@@ -91,28 +93,28 @@ satisfies:
   standard_key: NIST-800-53
 - control_key: IR-6 (1)
   covered_by: []
-  implementation_status: Partially Implemented
+  implementation_status: partial
   narrative:
   - text: |
       cloud.gov uses automated tools to capture logs and audit trails that allow the communication of security incidents easy and effective.
   standard_key: NIST-800-53
 - control_key: IR-7
   covered_by: []
-  implementation_status: Implemented
+  implementation_status: complete
   narrative:
   - text: |
       18F provides assistance with security response resources to teams requiring incident response support.
   standard_key: NIST-800-53
 - control_key: IR-7 (1)
   covered_by: []
-  implementation_status: Implemented
+  implementation_status: complete
   narrative:
   - text: |
       18F uses internal documentation and Slack to best communicate and automate incident response.
   standard_key: NIST-800-53
 - control_key: IR-7 (2)
   covered_by: []
-  implementation_status: Partially Implemented
+  implementation_status: partial
   narrative:
   - key: a
     text: |
@@ -123,7 +125,7 @@ satisfies:
   standard_key: NIST-800-53
 - control_key: IR-8
   covered_by: []
-  implementation_status: Partially Implemented
+  implementation_status: partial
   narrative:
   - key: a
     text: |
@@ -150,7 +152,7 @@ satisfies:
   standard_key: NIST-800-53
 - control_key: IR-9
   covered_by: []
-  implementation_status: Partially Implemented
+  implementation_status: partial
   narrative:
   - key: a
     text: |
@@ -174,33 +176,32 @@ satisfies:
   standard_key: NIST-800-53
 - control_key: IR-9 (1)
   covered_by: []
-  implementation_status: Planned
+  implementation_status: planned
   narrative:
   - text: |
       According to the cloud.gov Incident Response Guide, the first responder to an incident will have the responsibility to respond to the information spill.
   standard_key: NIST-800-53
 - control_key: IR-9 (2)
   covered_by: []
-  implementation_status: Implemented
+  implementation_status: complete
   narrative:
   - text: |
       Because of the cloud.gov architecture, information spillage is not possible without being in a situation of a security breach. cloud.gov team members are instructed to follow the Incident Response Guide in this case.
   standard_key: NIST-800-53
 - control_key: IR-9 (3)
   covered_by: []
-  implementation_status: Implemented
+  implementation_status: complete
   narrative:
   - text: |
       Because of the cloud.gov architecture, information spillage is not possible without being in a situation of a security breach. cloud.gov team members are instructed to follow the Incident Response Guide in this case.
   standard_key: NIST-800-53
 - control_key: IR-9 (4)
   covered_by: []
-  implementation_status: Implemented
+  implementation_status: complete
   narrative:
   - text: |
       All cloud.gov team members have been cleared according to at least tier 1 non-sensitive federal security or an equivalent for contractors.
   standard_key: NIST-800-53
-schema_version: v3.0.0
 system: 18F
 verifications:
 - key: POLICY_DOC
