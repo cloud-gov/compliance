@@ -7,7 +7,12 @@ satisfies:
   - verification_key: POLICY_DOC
   implementation_status: none
   narrative:
-  - text: 18F Policy
+  - key: a
+    text: |-
+      18F documents responsibilities of various teams and individuals in our Handbook, which is sent to all new employees on their first day. The Equipment section lays out the procedure for purchasing new software. The system that we use for these requests, C2 (https://cap.18f.gov) is responsible for routing to the correct individuals for approval and purchasing.
+  - key: b
+    text: |-
+      The Handbook page and the code for C2 are both in GitHub, so any change in policy/procedure is done by making a change in those places. Their existence in GitHub mean all changes are reviewed and version-controlled.
   standard_key: NIST-800-53
 - control_key: SA-2
   covered_by:
