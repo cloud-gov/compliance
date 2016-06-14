@@ -2,6 +2,28 @@ schema_version: 3.0.0
 documentation_complete: false
 name: System and Services Acquisition Policy for 18F
 satisfies:
+- control_key: SA-1
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: 18F Policy
+  standard_key: NIST-800-53
+- control_key: SA-2
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |-
+      TODO
+  standard_key: NIST-800-53
+- control_key: SA-11 (1)
+  covered_by:
+  - verification_key: DEPLOYMENT_TESTING
+  narrative:
+  - text: |-
+      The Cloud Foundry community uses Code Climate on platform components such as Bosh and Cloud Controller. The results of the scans are publicly available and can be run by 18F at any time.
+  standard_key: NIST-800-53
 - control_key: SA-22 (1)
   covered_by:
   - verification_key: POLICY_DOC
@@ -19,20 +41,6 @@ satisfies:
       * Refer to the vendor's support website to verify that support does not have an \u201CEnd of Life\u201D date of less than six months.
 
       Since 18F is using the open source version of Cloud Foundry, an additional task will be issued to upgrade Cloud Foundry suite to the latest versions. DevOps will review the GitHub cloudfoundry/cf-release repository for implementation of the updated version.
-  standard_key: NIST-800-53
-- control_key: SA-1
-  covered_by:
-  - verification_key: POLICY_DOC
-  implementation_status: none
-  narrative:
-  - text: 18F Policy
-  standard_key: NIST-800-53
-- control_key: SA-11 (1)
-  covered_by:
-  - verification_key: DEPLOYMENT_TESTING
-  narrative:
-  - text: |-
-      The Cloud Foundry community uses Code Climate on platform components such as Bosh and Cloud Controller. The results of the scans are publicly available and can be run by 18F at any time.
   standard_key: NIST-800-53
 system: 18F
 verifications:
