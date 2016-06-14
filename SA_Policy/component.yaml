@@ -17,12 +17,154 @@ satisfies:
   - text: |-
       TODO
   standard_key: NIST-800-53
+- control_key: SA-3
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |-
+      TODO
+  standard_key: NIST-800-53
+- control_key: SA-4
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |-
+      TODO
+  standard_key: NIST-800-53
+- control_key: SA-4 (1)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |-
+      TODO
+  standard_key: NIST-800-53
+- control_key: SA-4 (2)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |-
+      TODO
+  standard_key: NIST-800-53
+- control_key: SA-4 (8)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |-
+      TODO
+  standard_key: NIST-800-53
+- control_key: SA-4 (9)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |-
+      TODO
+  standard_key: NIST-800-53
+- control_key: SA-4 (10)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |-
+      TODO
+  standard_key: NIST-800-53
+- control_key: SA-5
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |-
+      TODO
+  standard_key: NIST-800-53
+- control_key: SA-8
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |-
+      TODO
+  standard_key: NIST-800-53
+- control_key: SA-9
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |-
+      TODO
+  standard_key: NIST-800-53
+- control_key: SA-9 (1)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |-
+      TODO
+  standard_key: NIST-800-53
+- control_key: SA-9 (2)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |-
+      TODO
+  standard_key: NIST-800-53
+- control_key: SA-9 (4)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |-
+      TODO
+  standard_key: NIST-800-53
+- control_key: SA-9 (5)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |-
+      TODO
+  standard_key: NIST-800-53
+- control_key: SA-10 (1)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |-
+      TODO
+  standard_key: NIST-800-53
+- control_key: SA-11
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |-
+      TODO
+  standard_key: NIST-800-53
 - control_key: SA-11 (1)
   covered_by:
   - verification_key: DEPLOYMENT_TESTING
   narrative:
   - text: |-
       The Cloud Foundry community uses Code Climate on platform components such as Bosh and Cloud Controller. The results of the scans are publicly available and can be run by 18F at any time.
+  standard_key: NIST-800-53
+- control_key: SA-11 (2)
+  covered_by:
+  - verification_key: DEPLOYMENT_TESTING
+  narrative:
+  - text: |-
+      TODO
+  standard_key: NIST-800-53
+- control_key: SA-11 (8)
+  covered_by:
+  - verification_key: DEPLOYMENT_TESTING
+  narrative:
+  - text: |-
+      TODO
   standard_key: NIST-800-53
 - control_key: SA-22 (1)
   covered_by:
