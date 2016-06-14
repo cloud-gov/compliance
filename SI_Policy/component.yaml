@@ -239,6 +239,23 @@ satisfies:
       text: |
         **DEFAULT_CONTROL** Implements security directives in accordance with established time frames, or notifies the issuing organization of the degree of noncompliance.
   standard_key: NIST-800-53
+- control_key: SI-6
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+    - key: a
+      text: |
+        **DEFAULT_CONTROL** Verifies the correct operation of [Assignment: organization-defined security functions];
+    - key: b
+      text: |
+        **DEFAULT_CONTROL** Performs this verification [Selection (one or more): [Assignment: organization-defined system transitional states]; upon command by user with appropriate privilege; [Assignment: organization-defined frequency]];
+    - key: c
+      text: |
+        **DEFAULT_CONTROL** Notifies [Assignment: organization-defined personnel or roles] of failed security verification tests; and
+    - key: d
+      text: |
+        **DEFAULT_CONTROL** [Selection (one or more): shuts the information system down; restarts the information system; [Assignment: organization-defined alternative action(s)]] when anomalies are discovered.standard_key: NIST-800-53
 system: 18F
 verifications:
 - key: POLICY_DOC
