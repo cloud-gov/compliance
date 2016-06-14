@@ -41,7 +41,7 @@ satisfies:
       Once development is complete, the code submitted to our version control system as a “pull request" where it is further reviewed before being merged into the code base.  New features will then be deployed into our staging area where they will be undergo further security review / stakeholder acceptance, as well as automated acceptance tests.
   - key: b
     text: |
-      The 18F DevOps team for cloud.gov is broken into several sub-teams with differing areas of responsibility and expertise.   Security is a foremost concern for members of all teams.  The cloud.gov Atlas sub-team is primarily focused on implementing security policies at the platform level.
+      The cloud.gov team is broken into several sub-teams with differing areas of responsibility and expertise.   Security is a foremost concern for members of all teams.  The cloud.gov Atlas sub-team is primarily focused on implementing security policies at the platform level.
   - key: c
     text: |
       Each member of the DevOps team has the necessary security background to properly handle sensitive data, such as security keys and certificates, and to evaluate the security implications associated with configuration changes.  Access to cloud.gov and its components is controlled thru various means, including AWS security groups, Cloud Foundry roles, and GitHub team membership.
