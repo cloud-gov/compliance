@@ -308,6 +308,14 @@ satisfies:
   - text: |
       **DEFAULT_CONTROL** The information system automatically updates spam protection mechanisms.
   standard_key: NIST-800-53
+- control_key: SI-10
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      **DEFAULT_CONTROL** The information system checks the validity of [Assignment: organization-defined information inputs].
+  standard_key: NIST-800-53
 system: 18F
 verifications:
 - key: POLICY_DOC
