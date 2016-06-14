@@ -258,6 +258,7 @@ satisfies:
     - key: d
       text: |
         **DEFAULT_CONTROL** [Selection (one or more): shuts the information system down; restarts the information system; [Assignment: organization-defined alternative action(s)]] when anomalies are discovered.standard_key: NIST-800-53
+  standard_key: NIST-800-53
 - control_key: SI-7
   covered_by:
   - verification_key: POLICY_DOC
