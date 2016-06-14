@@ -30,7 +30,26 @@ satisfies:
   - verification_key: POLICY_DOC
   implementation_status: none
   narrative:
-  - text: |-
+  - key: a
+    text: |-
+      TODO
+  - key: b
+    text: |-
+      TODO
+  - key: c
+    text: |-
+      TODO
+  - key: d
+    text: |-
+      TODO
+  - key: e
+    text: |-
+      TODO
+  - key: f
+    text: |-
+      TODO
+  - key: g
+    text: |-
       TODO
   standard_key: NIST-800-53
 - control_key: SA-4 (1)
