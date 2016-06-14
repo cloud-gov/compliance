@@ -336,6 +336,14 @@ satisfies:
   - text: |
       **DEFAULT_CONTROL** The organization handles and retains information within the information system and information output from the system in accordance with applicable federal laws, Executive Orders, directives, policies, regulations, standards, and operational requirements.
   standard_key: NIST-800-53
+- control_key: SI-16
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      **DEFAULT_CONTROL** The information system implements [Assignment: organization-defined security safeguards] to protect its memory from unauthorized code execution.
+  standard_key: NIST-800-53
 system: 18F
 verifications:
 - key: POLICY_DOC
