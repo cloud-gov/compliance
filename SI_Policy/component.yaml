@@ -168,6 +168,14 @@ satisfies:
       users being added to privileged groups, persistent malware detections, etc.
       to designated members of the DevOps teams and SecOps teams as needed.
   standard_key: NIST-800-53
+- control_key: SI-4 (1)
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative:
+  - text: |
+      **DEFAULT_CONTROL** 18F connects and configures individual intrusion detection tools into an information system-wide intrusion detection system.
+  standard_key: NIST-800-53
 - control_key: SI-4 (2)
   covered_by:
   - verification_key: POLICY_DOC
