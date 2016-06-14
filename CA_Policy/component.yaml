@@ -31,9 +31,11 @@ satisfies:
   - key: a
     text: |
       The 18F Program develops a security assessment plan that describes the scope of the assessment including:
+
       * Security controls and control enhancements under assessment
       * Assessment procedures to be used to determine security control effectiveness
       * Assessment environment, assessment team, and assessment roles and responsibilities
+
       Cloud.Gov is designed for compliance with the Federal Risk and Authroization Management Plan and has adopted the FedRAMP Assessment and Authorization program as the basis for its Security and Priavacy compliance activities. Cloud.Gov engages a FedRAMP Accredited Third Pary Assessemt Organzation (3PAO) to develop a compliant security assessment plan.
   - key: b
     text: |
@@ -102,6 +104,7 @@ satisfies:
   - key: a
     text: |
       18F has developed a plan of action and milestones (POA&M) for the information system which documents the remediation actions to correct weaknesses found or deficiencies noted during the assessment of the security controls and to reduce or eliminate known vulnerabilities.
+
       The majority of vulnerabilities are found during continuous monitoring activities including monthly vulnerability scanning, updates to Cloud.Gov systems components, static code analysis on applications and infrastucture and system monitoring tools. The 18F ISSOs are tasked with developing plans of actions and milestones for valid findings and vulnerabilities. The devops administrators are tasked to mitigate high findings within 30 days, moderate findings within 60 days and low findings within 120 days.
   - key: b
     text: The 18F ISSOs updates the Cloud.Gov plan of action and milestones at least monthly based on the findings from security controls assessments, security impacy analysis, and continuous monitoring activites.
