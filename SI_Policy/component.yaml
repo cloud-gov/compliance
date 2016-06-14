@@ -20,12 +20,14 @@ satisfies:
       18F identifies all system flaws related to Cloud.gov, reports
       system flaws to information system owners, Authorizing officials, DevOps and
       SecOp  and corrects information system flaws that affect cloud.gov
+
       Cloud Foundry
       manages software vulnerability using releases and BOSH stemcells. New Cloud
       Foundry releases are created with updates to address code issues, while new
       stemcells are created with patches for the latest security fixes to address
       any underlying operating system issues. New Cloud Foundry releases are located
       at https://github.com/cloudfoundry/cf-release.
+
       18F implements the release
       of Cloud Foundry he what (or the software developer/vendor in the case of software
       developed and maintained by a vendor/contractor) promptly installs newly released
