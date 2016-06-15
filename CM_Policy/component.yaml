@@ -92,7 +92,7 @@ satisfies:
         18F follows industry best practices and guidance provided in NIST Special Publication
         800-70, Security Configuration Checklist Program for IT Products
 
-        nfrastructure documented configuration settings:
+        Infrastructure documented configuration settings:
         DevOps and Security Engineers maintain the
         baseline configuration for VPC, EBS and AMIs.  Best practices, FISMA compliant
         AMIs, and hardened cloud formation templates are utilized as there are no benchmarks
@@ -117,10 +117,10 @@ satisfies:
     - key: c
       text: |
         DevOps documents any exceptions to established baseline
-     configurations for all of 18F's virtual infrastructure and information systems.
-     18F maintains exception documents which detail specific items from the established
-     configuration settings which cannot be applied to instances due to operational
-     requirements.
+        configurations for all of 18F's virtual infrastructure and information systems.
+        18F maintains exception documents which detail specific items from the established
+        configuration settings which cannot be applied to instances due to operational
+        requirements.
     - key: d
       text: |
         18F Monitors and controls changes to the configuration
