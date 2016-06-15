@@ -224,31 +224,11 @@ satisfies:
   narrative:
     - text: In Progress
   standard_key: NIST-800-53
-- control_key: AU-6
-  covered_by:
-  - verification_key: POLICY_DOC
+- control_key: AU-11
+  covered_by: []
   implementation_status: none
-  narrative: "#### a  \nAWS Auditable Events:\nDevOps and SecOps teams will conduct\
-    \ weekly manual and automated continuous audits of authorized accounts and configurations.\
-    \ These audits will include but are not limited to:\nAdministrative Accounts\n\
-    * Virtual Private Cloud (VPC)\n* Elastic Compute Cloud (EC2)\n* Simple Storage\
-    \ Service (S3)\n* Identity and Access Management (IAM)\n* Elastic Block Store\
-    \ (EBS)\n\n\nCloud Foundry Auditable Events:\nBy default, Loggregator streams\
-    \ logs to a terminal. 18F will drain logs to a third-party log management service\
-    \ such as ELK and AWS CloudTrail\nCloud Foundry logs are captured in multiple\
-    \ tables and log files. These will be reviewed weekly and if discovery of anomalous\
-    \ audit log content which appears to indicate a breach are handled according to\
-    \ the GSA Security Incident Handling Guide: CIO IT Security 01-02 Revision 7 (August\
-    \ 18, 2009) requirements.\n  \n#### b  \nWhen a credible source to the GSA Agency\
-    \ provides information that causes reason to enhance audit activities, develop\
-    \ and implement an enhanced auditing use-case that will adequately enhance auditing\
-    \ practices in a fashion necessary per the identified threat and following the\
-    \ Incident Reporting Procedures in GSA IT Security Procedural Guide 01-02 (04/07/2015),\
-    \ Incident Response. The GSA Agency may also, through analysis pertaining to the\
-    \ GSA Agency environment provide additional audit measures that will require an\
-    \ increase in review, analysis, and reporting for a necessary.\nUpon implementation,\
-    \ 18F will monitor information security news and alerts for indications of a need\
-    \ to heighten information system security monitoring.\n  \n"
+  narrative:
+    - text: In Progress
   standard_key: NIST-800-53
 - control_key: AU-5
   covered_by: []
