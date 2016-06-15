@@ -120,7 +120,7 @@ satisfies:
   narrative:
   - key: a
     text: |
-      The 18F DevOps and SecOps teams monitors the Cloud.Gov information
+      The 18F DevOps and SecOps teams monitors the cloud.gov information
       system to detect potential attacks and intrusions from internal and external
       sources in accordance with the 18F System Information and Integrity Policy section
       3 - Information System monitoring, the FedRAMP Incident communication procedures
@@ -128,18 +128,18 @@ satisfies:
       Review" for GSA specifc infomation systems.
   - key: b
     text: |
-      18F identifies un-authorized access to the Cloud.Gov information system using automated monitoring
+      18F identifies un-authorized access to the cloud.gov information system using automated monitoring
       tools within its virutal proviate cloud for monitoringing, log management and
       event analysis. 18F monitors for attacks and indicators of potential attacks,
       unauthorized local, network, and remote connections.
   - key: c
     text: |
       The infrastructure
-      that hosts Cloud.Gov provides monitoring and intrusion detcetion of unsual activity
+      that hosts cloud.gov provides monitoring and intrusion detcetion of unsual activity
       at the phyical and network layers. 18F is responsible for monitoring everything
       related to its virtual infrastructure and has deployed monitoring  and intrusion
       dectction tools within its virtual private cloud to log and dectect malicious
-      activities to its information systems including Cloud.Gov.
+      activities to its information systems including cloud.gov.
   - key: d
     text: |
       18F ensures intrusion and monitoring tools are protected  from unauthorized access
@@ -154,8 +154,9 @@ satisfies:
       security communities, and other sources.
   - key: f
     text: |
-      Information system monitoring will be conducted in accordance and compliance with 18F security policies and
-      all applicable laws, Executive Orders, directives, and regulations.
+      Information system monitoring will be conducted in accordance and compliance
+      with 18F security policies and all applicable laws, Executive Orders, directives,
+      and regulations.
   - key: g
     text: |
       18F provides monitoring of all information system components in the event
@@ -170,7 +171,7 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |
-      **DEFAULT_CONTROL** 18F connects and configures individual intrusion detection tools into an information system-wide intrusion detection system.
+      The 18F DevOps and SecOps team uses BOSH to configure and deploy Tripwire.
   standard_key: NIST-800-53
 - control_key: SI-4 (2)
   covered_by:
@@ -178,8 +179,8 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |
-      **DEFAULT_CONTROL** The organization employs automated tools to support near
-      real-time analysis of events.
+      18F uses BOSH to configure and deploy Riemann to support near real-time
+      analysis of events.
   standard_key: NIST-800-53
 - control_key: SI-4 (4)
   covered_by:
@@ -187,9 +188,8 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |
-      **DEFAULT_CONTROL** The information system monitors inbound and outbound
-      communications traffic [Assignment: organization-defined frequency] for
-      unusual or unauthorized activities or conditions.
+      cloud.gov monitors inbound and outbound communications traffic [FedRAMP
+      Assignment: continually] for unusual or unauthorized activities or conditions.
   standard_key: NIST-800-53
 - control_key: SI-4 (5)
   covered_by:
@@ -197,10 +197,9 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |
-      **DEFAULT_CONTROL** The information system alerts [Assignment:
-      organization-defined personnel or roles] when the following indications of
-      compromise or potential compromise occur: [Assignment: organization-defined
-      compromise indicators].
+      cloud.gov alerts [Assignment: organization-defined personnel or roles] when
+      the following indications of compromise or potential compromise occur:
+      [Assignment: organization-defined compromise indicators].
   standard_key: NIST-800-53
 - control_key: SI-4 (14)
   covered_by:
@@ -208,7 +207,7 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |
-      **DEFAULT_CONTROL** 18F employs a wireless intrusion detection system to identify rogue wireless devices and to detect attack attempts and potential compromises/breaches to the information system.
+      This control is not applicable. cloud.gov does not contain any wireless system.
   standard_key: NIST-800-53
 - control_key: SI-4 (16)
   covered_by:
@@ -216,7 +215,7 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |
-      **DEFAULT_CONTROL** 18F correlates information from monitoring tools employed throughout the information system.
+      18F correlates information from Grafana employed throughout cloud.gov.
   standard_key: NIST-800-53
 - control_key: SI-4 (23)
   covered_by:
@@ -225,7 +224,8 @@ satisfies:
   narrative:
   - key: a
     text: |
-      **DEFAULT_CONTROL** 18F implements [Assignment: organization-defined host-based monitoring mechanisms (Grafana)] at [Assignment: organization-defined information system components(cloud.gov)].
+      18F implements Grafana [Assignment: organization-defined host-based monitoring mechanisms] on
+      cloud.gov [Assignment: organization-defined information system components].
   standard_key: NIST-800-53
 - control_key: SI-5
   covered_by:
