@@ -256,16 +256,20 @@ satisfies:
   narrative:
     - key: a
       text: |
-        **DEFAULT_CONTROL** Verifies the correct operation of [Assignment: organization-defined security functions];
+        Verifies the correct operation of [Assignment: organization-defined security
+        functions];
     - key: b
       text: |
-        **DEFAULT_CONTROL** Performs this verification [Selection (one or more): [Assignment: organization-defined system transitional states]; upon command by user with appropriate privilege; [Assignment: organization-defined frequency]];
+        Performs this verification [FedRAMP Assignment: to include upon system startup
+        and/or restart at least monthly
     - key: c
       text: |
-        **DEFAULT_CONTROL** Notifies [Assignment: organization-defined personnel or roles] of failed security verification tests; and
+        Notifies [FedRAMP Assignment: to include system administrators and security
+        personnel] of failed security verification tests; and
     - key: d
       text: |
-        **DEFAULT_CONTROL** [Selection (one or more): shuts the information system down; restarts the information system; [Assignment: organization-defined alternative action(s)]] when anomalies are discovered.standard_key: NIST-800-53
+        Shuts the information system down; [FedRAMP Assignment: to include notification
+        of system administrators and security personnel] when anomalies are discovered.
   standard_key: NIST-800-53
 - control_key: SI-7
   covered_by:
