@@ -192,12 +192,14 @@ satisfies:
 - control_key: AU-8
   covered_by: []
   implementation_status: none
-  narrative: In Progress
+  narrative:
+    - text: In Progress
   standard_key: NIST-800-53
 - control_key: AU-8 (1)
   covered_by: []
   implementation_status: none
-  narrative: In Progress
+  narrative:
+    - text: In Progress
   standard_key: NIST-800-53
 - control_key: AU-4
   covered_by: []
