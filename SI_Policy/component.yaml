@@ -332,7 +332,7 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |
-      **DEFAULT_CONTROL** The information system checks the validity of [Assignment: organization-defined information inputs].
+      The information system checks the validity of [Assignment: organization-defined information inputs].
   standard_key: NIST-800-53
 - control_key: SI-11
   covered_by:
