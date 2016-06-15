@@ -201,54 +201,28 @@ satisfies:
   narrative:
     - text: In Progress
   standard_key: NIST-800-53
-- control_key: AU-4
+- control_key: AU-9
   covered_by: []
   implementation_status: none
-  narrative: 'Cloud.Gov audit logs are stored within the elasticsearch component of
-    the ELK stack which is clusterd for redundancy and failover functions. This solutions
-    provide the capability to extend the audit storage capacity without the likelihood
-    of the capacity being exceeded. 18F plans to incorporate the use of the S3 cloud
-    service for greater storage capacity if needed.
-
-    '
+  narrative:
+    - text: |
+        Audit logs are stored and protected in specified S3 buckets and elasticsearch
+        clusters for Cloud.Gov. Access to logs are limited to designated 18F DevOps and
+        Security staff and logs cannot be modified without proper authorization to the
+        platform. Client agencies are restricted to access and view only their specified
+        audit logs pertaining to the corresponding Org and space accounts.
   standard_key: NIST-800-53
-- control_key: AU-12
+- control_key: AU-9 (2)
   covered_by: []
   implementation_status: none
-  narrative: In Progress
+  narrative:
+    - text: In Progress
   standard_key: NIST-800-53
-- control_key: AU-1
-  covered_by:
-  - verification_key: POLICY_DOC
-  implementation_status: complete
-  narrative: "#### a  \nThe 18F Program Office develops, documents, and disseminates\
-    \ to all 18F staff,\nThe 18F Audit and Accountability Policy which  addresses\
-    \ purpose, scope, roles, responsibilities, management commitment, coordination\
-    \ among organizational entities, ompliance and procedures to facilitate the implementation\
-    \ of the audit and aaccountability policy and associated audit controls. The 18F\
-    \ Audit and Accountability policy is listed within 18F\u2019s  private Github\
-    \ repository and the docs.cloud.gov site that is accessible to all 18F staff.\n\
-    \  \n#### b  \nThe 18F Program Office will review and update the current 18F Audit\
-    \ control policy at least every 3 years and any documented audit procedures at\
-    \ least annually.\n  \n"
-  standard_key: NIST-800-53
-- control_key: AU-11
+- control_key: AU-9 (4)
   covered_by: []
   implementation_status: none
-  narrative: In Progress
-  standard_key: NIST-800-53
-- control_key: AU-6 (3)
-  covered_by:
-  - verification_key: POLICY_DOC
-  narrative: "Audit Monitoring, Analysis and Reporting\n * 18F establishes processes\
-    \ for regularly reviewing audit log information, and reporting security issues\
-    \ if discovered. Reviews will occur at a minimum of weekly. These processes should\
-    \ be integrated with processes for incident response, in order to ensure standardization\
-    \ and cross-functional collaboration\n * 18F employs automated mechanisms to integrate\
-    \ audit monitoring, analysis and reporting into an overall process for investigation\
-    \ and response to suspicious activities.\n * 18F employs automated mechanisms\
-    \ to immediately alert security personnel of inappropriate or unusual activities\
-    \ that have security implications.\n"
+  narrative:
+    - text: In Progress
   standard_key: NIST-800-53
 - control_key: AU-6
   covered_by:
