@@ -234,16 +234,20 @@ satisfies:
   narrative:
     - key: a
       text: |
-        **DEFAULT_CONTROL** Receives information system security alerts, advisories, and directives from [Assignment: organization-defined external organizations] on an ongoing basis;
+        18F receives information system security alerts, advisories, and directives from [Assignment: organization-defined external organizations] on an ongoing basis;
     - key: b
       text: |
-        **DEFAULT_CONTROL** Generates internal security alerts, advisories, and directives as deemed necessary;
+        18F generates internal security alerts, advisories, and directives as deemed necessary;
     - key: c
       text: |
-        **DEFAULT_CONTROL** Disseminates security alerts, advisories, and directives to: [Selection (one or more): [Assignment: organization-defined personnel or roles]; [Assignment: organization-defined elements within the organization]; [Assignment: organization-defined external organizations]]; and
+        18F disseminates security alerts, advisories, and directives to: [Selection
+        (one or more): [Assignment: organization-defined personnel or roles];
+        [Assignment: organization-defined elements within the organization];
+        [Assignment: organization-defined external organizations]]; and
     - key: d
       text: |
-        **DEFAULT_CONTROL** Implements security directives in accordance with established time frames, or notifies the issuing organization of the degree of noncompliance.
+        18F implements security directives in accordance with established time
+        frames, or notifies the issuing organization of the degree of noncompliance.
   standard_key: NIST-800-53
 - control_key: SI-6
   covered_by:
