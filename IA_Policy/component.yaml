@@ -9,10 +9,10 @@ satisfies:
   narrative:
   - key: a
     text: |
-      The 18F Program Office develops, documents, and disseminates to all 18F staff. The 18F Identification and Authentication Policy which addresses purpose, scope, roles, responsibilities, management commitment, coordination among organizational entities, compliance and procedures to facilitate the implementation of the identification and authentication policy and associated identification controls. The 18F Identification and Authentication Policy is listed within 18F's  private Github repository and the docs.cloud.gov site that is accessible to all 18F staff.
+      The 18F Program Office develops, documents, and disseminates to all 18F staff the 18F Identification and Authentication Policy which addresses purpose, scope, roles, responsibilities, management commitment, coordination among organizational entities, compliance, and procedures to facilitate the implementation of the identification and authentication policy and associated identification controls. The 18F Identification and Authentication Policy is listed within 18F's private GitHub repository and the docs.cloud.gov site that is accessible to all 18F staff.
   - key: b
     text: |
-      The 18F Program Office will review and update the current 18F Identification and Authentication Policy at least every 3 years and any documented identification and authentication procedures at least annually.
+      The 18F Program Office will review and update the current 18F Identification and Authentication Policy at least every three years and any documented identification and authentication procedures at least annually.
   standard_key: NIST-800-53
 - control_key: IA-2
   covered_by:
@@ -20,7 +20,7 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |
-      Authentication to the cloud.gov platform has been delegated to either the GSA enterprise system or GitHub for any administrator access.
+      The cloud.gov platform delegates authentication to either the GSA enterprise system or GitHub for any administrator access.
   standard_key: NIST-800-53
 - control_key: IA-2 (1)
   covered_by:
@@ -68,7 +68,7 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |
-      NA - cloud.gov delegates authentication to multiple separate single sign on (SSO) system which implement multifactor in multiple ways.
+      NA - cloud.gov delegates authentication to multiple separate single sign on (SSO) systems which implement multifactor in multiple ways.
   standard_key: NIST-800-53
 - control_key: IA-2 (12)
   covered_by:
@@ -84,7 +84,7 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |
-      All network connections are monitored and tracked using AWS VPC flow logs, Router access logs and Application access logs. Each connection is assigned a unique identifier and tracked across queries.
+      cloud.gov monitors and tracks all network connections using AWS VPC flow logs, router access logs, and application access logs. cloud.gov assigns each connection a unique identifier and tracks it across queries.
   standard_key: NIST-800-53
 - control_key: IA-4
   covered_by: []
@@ -105,7 +105,7 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |
-      18F manages individual identifiers uniquely identifying individuals as employees, contractors or foreign nationals.
+      18F manages individual identifiers that uniquely identify individuals as employees, contractors, or foreign nationals.
   standard_key: NIST-800-53
 - control_key: IA-5
   covered_by: []
@@ -189,14 +189,14 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |
-      NA - cloud.gov does not accept third party credentials.
+      NA - cloud.gov does not accept third-party credentials.
   standard_key: NIST-800-53
 - control_key: IA-8 (3)
   covered_by: []
   implementation_status: none
   narrative:
   - text: |
-      NA - cloud.gov does not accept third party credentials.
+      NA - cloud.gov does not accept third-party credentials.
   standard_key: NIST-800-53
 - control_key: IA-8 (4)
   covered_by: []
