@@ -277,7 +277,8 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |
-      **DEFAULT_CONTROL** The organization employs integrity verification tools to detect unauthorized changes to [Assignment: organization-defined software, firmware, and information].
+      18F employs Tripwire to detect unauthorized changes to [Assignment:
+      organization-defined software, firmware, and information].
   standard_key: NIST-800-53
 - control_key: SI-7 (1)
   covered_by:
@@ -285,7 +286,7 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |
-      **DEFAULT_CONTROL** The information system performs an integrity check of [Assignment: organization-defined software, firmware, and information] [Selection (one or more): at startup; at [Assignment: organization-defined transitional states or security-relevant events]; [Assignment: organization-defined frequency]].
+      cloud.gov performs an integrity check using Tripwire at startup; and every hour.
   standard_key: NIST-800-53
 - control_key: SI-7 (7)
   covered_by:
@@ -293,7 +294,9 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |
-      **DEFAULT_CONTROL** The organization incorporates the detection of unauthorized [Assignment: organization-defined security-relevant changes to the information system] into the organizational incident response capability.
+      18F incorporates the detection of unauthorized [Assignment: organization-
+      defined security-relevant changes to the information system] into the
+      organizational incident response capability.
   standard_key: NIST-800-53
 - control_key: SI-8
   covered_by:
