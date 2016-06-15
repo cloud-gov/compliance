@@ -6,8 +6,8 @@ satisfies:
   - verification_key: POLICY_DOC
   implementation_status: none
   narrative:
-  -text: |
-     18F Policy
+  - text: |
+      18F Policy
   standard_key: NIST-800-53
 - control_key: SC-7
   covered_by: []
@@ -23,12 +23,12 @@ satisfies:
   - verification_key: KEY_ROTATION
   implementation_status: complete
   narrative:
-  -text: |
-    Authorized federal staff rotate, encrypt, and backup keys monthly. Privileged
-    users can access the keys only with two-factor authentication and a decryption
-    passphrase. In the rare case that both the keys and the decryption passphrase
-    for the backup are lost or compromised, new keys can be rotated in by authorized
-    federal staff, while maintaining availability of information.
+  - text: |
+      Authorized federal staff rotate, encrypt, and backup keys monthly. Privileged
+      users can access the keys only with two-factor authentication and a decryption
+      passphrase. In the rare case that both the keys and the decryption passphrase
+      for the backup are lost or compromised, new keys can be rotated in by authorized
+      federal staff, while maintaining availability of information.
   standard_key: NIST-800-53
 schema_version: 3.0.0
 system: 18F
