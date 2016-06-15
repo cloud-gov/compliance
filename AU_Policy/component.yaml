@@ -78,18 +78,16 @@ satisfies:
          ELK Stack which has even more versitility in producing additional audit capabilities
          for the 18FDevOps and SecOps team for reivew.
   standard_key: NIST-800-53
-- control_key: AU-7
+- control_key: AU-4
   covered_by: []
   implementation_status: none
-  narrative: 'The ELK Stack logging and monitoring system provides additional audit
-    reduction and report generation capabilites for 18F Devops and end users of the
-    Cloud.Gov platform. With the elasticsearch capabiltiy 18F DevOps and SecOps teams
-    can structure and customize audit logs queries to specific app instances, API
-    calls, system metrics, user access, system components, network traffic flow and
-    other functions. Kibana is used to generate customized dashboards and Logstash
-    to generate reports for analysis and review.
-
-    '
+  narrative:
+    - text: |
+        cloud.gov audit logs are stored within the elasticsearch component of
+        the ELK stack which is clusterd for redundancy and failover functions. This solutions
+        provide the capability to extend the audit storage capacity without the likelihood
+        of the capacity being exceeded. 18F plans to incorporate the use of the S3 cloud
+        service for greater storage capacity if needed.
   standard_key: NIST-800-53
 - control_key: AU-7 (1)
   covered_by: []
