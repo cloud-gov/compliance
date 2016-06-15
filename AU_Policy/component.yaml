@@ -230,12 +230,11 @@ satisfies:
   narrative:
     - text: In Progress
   standard_key: NIST-800-53
-- control_key: AU-5
+- control_key: AU-12
   covered_by: []
   implementation_status: none
-  narrative: 'In progress
-
-    '
+  narrative:
+    - text: In Progress
   standard_key: NIST-800-53
 schema_version: 2.0
 verifications:
