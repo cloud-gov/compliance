@@ -161,7 +161,25 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |-
-      TODO
+      18F applys security engineering principles primarily to new development 
+      information systems. 18F utilizes the Cloud Foundry Secure Deployment best 
+      practices which include the following: Confgure UAA clients and users using a 
+      standard BOSH manifest for cloud Foundry Development.  18F develops and maintains
+      documentation on the baseline configuration of the information system that include
+      network topology, system architecture, application, web, and server components 
+      along with software standards.  Cloud Foundry protects the information system 
+      from security threats by minimizing network surface area , applying security 
+      controls, isolating applications and data in containers, and encrypting 
+      connections.  It also implements role-based access controls, applying and 
+      enforcing permissions to isolate user to their space.  Baseline configurations 
+      settings are reviewed on a continual basis to to comply with federal mandates 
+      and compliance standards.  18F documents changes to the baseline configiration 
+      in GitHub for review.  Part of this process includes a through security analysis 
+      of the proposed change prior to the configuration change being implemented on 
+      the operational system.  18F deploys with every application a standard set of 
+      tools for security and moniotiring of each application to identity security 
+      issues. For more details please refer to 18F Configuration Management Policy 
+      and security controls CM-2, CM-3, and CM-6.   
   standard_key: NIST-800-53
 - control_key: SA-9
   covered_by:
