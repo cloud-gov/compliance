@@ -96,18 +96,81 @@ satisfies:
     - text: |
         In progress
   standard_key: NIST-800-53
-- control_key: AU-9
-  covered_by: []
+- control_key: AU-6
+  covered_by:
+  - verification_key: POLICY_DOC
   implementation_status: none
-  narrative: 'Audit logs are stored and protected in specified S3 buckets and elasticsearch
-    clusters for Cloud.Gov. Access to logs are limited to designated 18F Devops and
-    Security staff and logs cannot be modified without proper authorization to the
-    platform. Client agencies are restircted to access and view only their specified
-    audit logs pertaining to the corresponding Org and space accounts.
+  narrative:
+    - key: a
+      text: |
+        AWS Auditable Events:
+        DevOps and SecOps teams will conduct weekly manual and automated continuous
+        audits of authorized accounts and configurations. These audits will include
+        but are not limited to:
 
-    '
+        Administrative Accounts
+
+        * Virtual Private Cloud (VPC)
+        * Elastic Compute Cloud (EC2)
+        * Simple Storage Service (S3)
+        * Identity and Access Management (IAM)
+        * Elastic Block Store (EBS)
+
+        Cloud Foundry Auditable Events:
+        By default, Loggregator streams logs to a terminal. 18F will drain logs to
+        a third-party log management service such as ELK and AWS CloudTrail Cloud
+        Foundry logs are captured in multiple tables and log files. These will be
+        reviewed weekly and if discovery of anomalous audit log content which appears
+        to indicate a breach are handled according to the GSA Security Incident
+        Handling Guide: CIO IT Security 01-02 Revision 7 (August 18, 2009) requirements.
+    - key: b
+      text: |
+        When a credible source to the GSA Agency provides information that causes
+        reason to enhance audit activities, develop and implement an enhanced auditing
+        use-case that will adequately enhance auditing practices in a fashion necessary
+        per the identified threat and following the Incident Reporting Procedures in
+        GSA IT Security Procedural Guide 01-02 (04/07/2015), Incident Response. The GSA
+        Agency may also, through analysis pertaining to the GSA Agency environment
+        provide additional audit measures that will require an increase in review,
+        analysis, and reporting for a necessary.
+
+        Upon implementation, 18F will monitor information security news and alerts for
+        indications of a need to heighten information system security monitoring.
   standard_key: NIST-800-53
-- control_key: AU-3 (1)
+- control_key: AU-6 (1)
+  covered_by:
+  - verification_key: POLICY_DOC
+  narrative:
+    - text: |
+        Audit Monitoring, Analysis and Reporting
+
+        * 18F establishes processes for regularly reviewing audit log information, and
+        reporting security issues if discovered. Reviews will occur at a minimum of
+        weekly. These processes should be integrated with processes for incident
+        response, in order to ensure standardization and cross-functional collaboration
+        * 18F employs automated mechanisms to integrate audit monitoring, analysis and
+        reporting into an overall process for investigation and response to suspicious
+        activities.
+        * 18F employs automated mechanisms to immediately alert security personnel of
+        inappropriate or unusual activities that have security implications.
+  standard_key: NIST-800-53
+- control_key: AU-6 (3)
+  covered_by:
+  - verification_key: POLICY_DOC
+  narrative:
+    - text: |
+        Audit Monitoring, Analysis and Reporting
+         * 18F establishes processes for regularly reviewing audit log information, and
+         reporting security issues if discovered. Reviews will occur at a minimum of
+         weekly. These processes should be integrated with processes for incident response,
+         in order to ensure standardization and cross-functional collaboration
+         * 18F employs automated mechanisms to integrate audit monitoring, analysis and
+         reporting into an overall process for investigation and response to suspicious
+         activities.
+         * 18F employs automated mechanisms to immediately alert security personnel of
+         inappropriate or unusual activities that have security implications.
+  standard_key: NIST-800-53
+- control_key: AU-7
   covered_by: []
   implementation_status: none
   narrative: "The Cloud.Gov system includes more detailed information in the audit\
