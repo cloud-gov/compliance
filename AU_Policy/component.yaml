@@ -56,23 +56,27 @@ satisfies:
         basis using its event and monitoring solution for cloud.gov and through captured
         user and event API calls within its virtual infrastructure.
   standard_key: NIST-800-53
-- control_key: AU-6 (1)
-  covered_by:
-  - verification_key: POLICY_DOC
-  narrative: "Audit Monitoring, Analysis and Reporting\n * 18F establishes processes\
-    \ for regularly reviewing audit log information, and reporting security issues\
-    \ if discovered. Reviews will occur at a minimum of weekly. These processes should\
-    \ be integrated with processes for incident response, in order to ensure standardization\
-    \ and cross-functional collaboration\n * 18F employs automated mechanisms to integrate\
-    \ audit monitoring, analysis and reporting into an overall process for investigation\
-    \ and response to suspicious activities.\n * 18F employs automated mechanisms\
-    \ to immediately alert security personnel of inappropriate or unusual activities\
-    \ that have security implications.\n"
-  standard_key: NIST-800-53
-- control_key: AU-9(4)
+- control_key: AU-3 (1)
   covered_by: []
   implementation_status: none
-  narrative: In Progress
+  narrative:
+    - text: |
+        The cloud.gov system includes more detailed information in the audit events
+        identified by type, location or subject. The Loggregator component of cloud.gov
+        produces additional information based on the log type and origin of the logs.
+
+        There are six log types within cloud.gov:
+
+        - API - logs all API calls from a user
+        - STG - logs when staging or restaging an app
+        - DEA - logs when the Droplet excution agent starts and stops an app
+        - RTR - logs when it routes HTTP requests to the application
+        - LGR - logs when there are problems with the logging process itself
+        - APP - logs all application data based on choices by the developer
+
+         All of the audit logs from cloud.gov are drained to the
+         ELK Stack which has even more versitility in producing additional audit capabilities
+         for the 18FDevOps and SecOps team for reivew.
   standard_key: NIST-800-53
 - control_key: AU-7
   covered_by: []
