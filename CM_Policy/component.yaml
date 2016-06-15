@@ -92,21 +92,49 @@ satisfies:
         18F follows industry best practices and guidance provided in NIST Special Publication
         800-70, Security Configuration Checklist Program for IT Products
 
-    The 18F GitHub respository also is used to show a current lists of components
-    that make up the Cloud.Gov inventory. It is located at https://docs.cloud.gov/ops/repos/
+        nfrastructure documented configuration settings:
+        DevOps and Security Engineers maintain the
+        baseline configuration for VPC, EBS and AMIs.  Best practices, FISMA compliant
+        AMIs, and hardened cloud formation templates are utilized as there are no benchmarks
+        available. 18F uses the following approved FISMA ready baselines located at
+        https://github.com/fisma-ready
 
-    Nexpose maintains an inventory of all assests scanned within the 18F virtual Private
-    Cloud. This includes all information system within the VPCs and compleoents within
-    the Cloud.Gov platform as a service.
+        Cloud Foundry documented configuration settings:
+        18F follows Cloud Foundry best practices for configuring and implementing the
+        platform as a service. Configuration settings are documented within the deployment
+        manifest on the GitHub and Cloud Foundry websites. The following are approved
+        baseline configuration settings related to the Cloud Foundry platform as a service.
+        All documented configuration settings  related to Cloud Foundry are located
+        at https://docs.18f.gov/ops/repos/.
+    - key: b
+      text: |
+        18F Implements the configuration
+        settings based on its documented process and practices. DevOps implements the
+        configuration benchmarks identified in Part a, maintains the baseline configuration
+        for all cloud infrastructure and Cloud Foundry components and is responsible
+        for ensuring all systems are configured in accordance with applicable hardening
+        guides.
+    - key: c
+      text: |
+        DevOps documents any exceptions to established baseline
+     configurations for all of 18F's virtual infrastructure and information systems.
+     18F maintains exception documents which detail specific items from the established
+     configuration settings which cannot be applied to instances due to operational
+     requirements.
+    - key: d
+      text: |
+        18F Monitors and controls changes to the configuration
+        settings in accordance with its documented configuration management policy and
+        procedures.
 
-    SecOps and DevOps reviews and updates the information system component inventory
-    on a monthly basis and updates the inventory of information system whenever installations,
-    removals, and other changes are made. 18F will verify that all components within
-    the authorized boundary of the information system are either inventoried as part
-    of the system or recognized by another system as a component within that systems
-    inventory.
+        All Configuration Change Control:
+        DevOps and 18F system owners maintain the baseline configurations within
+        18F Virtual Private Cloud. Configuration will be reviewed in real-time using
+        automated methods and at least quarterly to ensure no unauthorized changes
+        were made to the baseline configuration.
 
-    '
+        Internal vulnerability scans are performed at least on a quarterly basis in the
+        event that no enhancements or upgrades are performed.
   standard_key: NIST-800-53
 - control_key: CM-3
   covered_by:
