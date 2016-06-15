@@ -5,30 +5,37 @@ satisfies:
   covered_by:
   - verification_key: POLICY_DOC
   implementation_status: complete
-  narrative: "#### b  \nAudit logs will be made available to organizations for mutual\
-    \ support in response to security breaches, system and user access, incident reporting\
-    \ and continuous monitoring.\n18F will generate and distribute audit reports,\
-    \ provide customized dashoard access for audited events, and send audit log data\
-    \ to SIEM and log analysis systems from its  audit logging and metrics tools for\
-    \ the Cloud.Gov platform and virtual infrastructure as needed.\n  \n#### c  \n\
-    18F retains audit logs according to NARA retention standards to provide support\
-    \ for after-the-fact investigations of security incidents and to meet regulatory\
-    \ and organizational information retention requirements.\nThe log management framework\
-    \ will provide the capability to retain logs for 90 days online and one-year offline,\
-    \ with sufficient capacity as to mitigate the risk of exceeding storage space.\n\
-    Specific Policies, Procedures, Points of Contact, and Guidance will be established\
-    \ between 18F and other agencies to support after-the-fact investigations, by\
-    \ the 18F Project Lead.\n  \n"
+  narrative:
+    - key: b
+      text: |
+        Audit logs will be made available to organizations for mutual support in
+        response to security breaches, system and user access, incident reporting and
+        continuous monitoring. 18F will generate and distribute audit reports, provide
+        customized dashboard access for audited events, and send audit log data to SIEM
+        and log analysis systems from its audit logging and metrics tools for the
+        cloud.gov platform and virtual infrastructure as needed.
+    - key: c
+      text: |
+        18F retains audit logs according to NARA retention standards to provide support
+        for after-the-fact investigations of security incidents and to meet regulatory
+        and organizational information retention requirements. The log management
+        framework will provide the capability to retain logs for 90 days online and
+        one-year offline, with sufficient capacity as to mitigate the risk of exceeding
+        storage space.
+
+        Specific Policies, Procedures, Points of Contact, and Guidance will be established
+        between 18F and other agencies to support after-the-fact investigations, by the
+        18F Project Lead.
   standard_key: NIST-800-53
 - control_key: AU-2 (3)
   covered_by:
   - verification_key: POLICY_DOC
   implementation_status: none
-  narrative: 'The Devops and SecOps teams review all events that can be audited on
-    a real time basis using its event and monitoring solution for Cloud.Gov and through
-    captured user and event api calls within its virtual infrastructure.
-
-    '
+  narrative:
+    - text: |
+        The Devops and SecOps teams review all events that can be audited on a real time
+        basis using its event and monitoring solution for cloud.gov and through captured
+        user and event API calls within its virtual infrastructure.
   standard_key: NIST-800-53
 - control_key: AU-6 (1)
   covered_by:
