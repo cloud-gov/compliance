@@ -173,22 +173,21 @@ satisfies:
 - control_key: AU-7
   covered_by: []
   implementation_status: none
-  narrative: "The Cloud.Gov system includes more detailed information in the audit\
-    \ events identified by tpye, location or subject. The Loggregator componett of\
-    \ Cloud.Gov produces additionl information based on the log type and orgin of\
-    \ the logs. There are six log types within Cloud.Gov\n  API - logs all API calls\
-    \ from a user\n  STG - logs when staging or restaging an app\n  DEA - logs when\
-    \ the Droplet excution agent starts and stops an app\n  RTR - logs when it routes\
-    \ HTTP requests to the application\n  LGR - logs when there are problems with\
-    \ the logging process itself\n  APP - logs all application data based on choices\
-    \ by the developer\n\nAll of the audit logs from Cloud.Gov are drained to the\
-    \ ELK Stack which has even more versitility in producing additional audit capabilities\
-    \ for the 18FDevOps and SecOps team for reivew.\n"
+  narrative:
+    - text: |
+        The ELK Stack logging and monitoring system provides additional audit
+        reduction and report generation capabilities for 18F DevOps and end users of the
+        Cloud.Gov platform. With the elasticsearch capability 18F DevOps and SecOps teams
+        can structure and customize audit logs queries to specific app instances, API
+        calls, system metrics, user access, system components, network traffic flow and
+        other functions. Kibana is used to generate customized dashboards and Logstash
+        to generate reports for analysis and review.
   standard_key: NIST-800-53
-- control_key: AU-9(2)
+- control_key: AU-7 (1)
   covered_by: []
   implementation_status: none
-  narrative: In Progress
+  narrative:
+    - text: In Progress
   standard_key: NIST-800-53
 - control_key: AU-8
   covered_by: []
