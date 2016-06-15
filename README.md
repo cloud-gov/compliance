@@ -29,48 +29,7 @@ This repository contains shared compliance data for Cloud.gov
 
 The get command will import all the data from the cg-compliance repository and drop them into the `opencontrol` directory to serve as a baseline for your SSP
 
-# Creating Gitbook
-0. Update dependencies
-
-  ```
-  compliance-masonry get
-  ```
-
-0. Create Gitbook Documentation
-
-  ```bash
-  compliance-masonry docs gitbook FedRAMP-moderate # or `FedRAMP-low`
-  ```
-
-0. Serve the Gitbook locally
-
-  ```bash
-  npm install gitbook-cli -g # Install Gitbook CLI
-  cd exports # Navigate to exports dir
-  gitbook serve
-  ```
-
-## Create PDF
-Req: Install ebook-convert from Calibre
-[May need to install ebook-convert from Calibre installed](https://github.com/GitbookIO/gitbook/issues/333)
-
-0. Install gitbook pdf extension
-
-  ```bash
-  npm install gitbook-pdf -g
-  ```
-
-0. Navigate to the exports dir
-
-  ```bash
-  cd exports
-  ```
-
-0. Create PDF
-
-  ```bash
-  gitbook pdf .
-  ```
+For viewing the documentation in various formats (e.g. gitbook, docx), use the instructions in the [compliance-masonry](https://github.com/opencontrol/compliance-masonry) repository.
 
 # BDD Tests
 This repository also contains [setup and run instructions for a set of BDD test](https://github.com/18F/cg-compliance/tree/master/BDD) that help verify Cloud Foundry control implementations.
