@@ -13,16 +13,20 @@ satisfies:
   - verification_key: POLICY_DOC
   implementation_status: none
   narrative:
-    - text: "#### a  \nThe 18F Program Office develops, documents, and disseminates\
-    \ to all 18F staff\nThe 18F Security Awareness policy which  addresses purpose,\
-    \ scope, roles, responsibilities, management commitment, coordination among organizational\
-    \ entities, and compliance and procedures to facilitate the implementation of\
-    \ the security awareness access and training policy and associated security awareness\
-    \ controls. The 18F accecss control policy is listed within its private Github\
-    \ repository that is accessible to all 18F staff.\n  \n#### b  \nThe 18F Program\
-    \ Office will review and update the current 18F Security Awareness and training\
-    \ control policy at least every 3 years and any documented access  procedures\
-    \ at least annually.\n  \n"
+    - key: a
+      text: |
+        The 18F Program Office develops, documents, and disseminates to all 18F staff
+        The 18F Security Awareness policy which addresses purpose, scope, roles,
+        responsibilities, management commitment, coordination among organizational
+        entities, and compliance and procedures to facilitate the implementation of the
+        security awareness access and training policy and associated security awareness
+        controls. The 18F accecss control policy is listed within its private Github
+        repository that is accessible to all 18F staff.
+    - key: b
+      text: |
+        The 18F Program Office will review and update the current 18F Security Awareness
+        and training control policy at least every 3 years and any documented access
+        procedures at least annually.
   standard_key: NIST-800-53
 - control_key: AT-2
   covered_by:
