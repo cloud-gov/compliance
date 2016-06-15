@@ -57,5 +57,5 @@ def tag_component(context, tag):
             data['verifications'].append(test_data)
         with open(component_file, 'w') as yaml_file:
             yaml_file.write(
-                yaml.dump(data, default_flow_style=False, indent=2)
+                yaml.safe_dump(data, default_flow_style=False, indent=2)
             )
