@@ -87,15 +87,12 @@ satisfies:
         as the AWS root account user or an IAM user, or whether it was with temporary
         security credentials for a role or federated user.
   standard_key: NIST-800-53
-- control_key: AU-3
+- control_key: AC-17 (1)
   covered_by: []
   implementation_status: none
-  narrative: 'CloudTrail Log File Name Format CloudTrail uses the following file name
-    format for the log file objects it uploads to your S3 bucket: AccountID_CloudTrail_RegionName_YYYYMMDDTHHmmZ_UniqueString.FileNameFormat
-    YYYY, MM, DD, HH, and mm are the digits of the year, month, day, hour, and minute
-    (respectively) when the log file was delivered. Hours are in 24-hour format. The
-    Z indicates that the time is in UTC.
-    '
+  narrative:
+    - text: |
+        Cloud Checkr provides a unified view of all infrastructure monitoring which captures all remote activities within 18F virtual infrastructure. The log files are organized by AWS Account ID, region, service name, date, and time. CloudTrail can be configured to aggregate log files from multiple regions into a single Amazon S3 bucket. From there, 18F Devops and SecOps teams view the logs files within Cloud Checkr to perform security analysis and detect user behavior patterns.
   standard_key: NIST-800-53
 - control_key: AC-2
   covered_by: []
