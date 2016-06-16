@@ -161,11 +161,11 @@ satisfies:
         all regions and services can be seen in one place.
 
         The 18F GitHub repository also is used to show a current lists of components
-        that make up the Cloud.Gov inventory. It is located at https://docs.cloud.gov/ops/repos/
+        that make up the cloud.gov inventory. It is located at https://docs.cloud.gov/ops/repos/
 
         Nexpose maintains an inventory of all assets scanned within the 18F virtual Private
         Cloud. This includes all information system within the VPCs and components within
-        the Cloud.Gov platform as a service.
+        the cloud.gov platform as a service.
 
         SecOps and DevOps reviews and updates the information system component inventory
         on a monthly basis and updates the inventory of information system whenever installations,

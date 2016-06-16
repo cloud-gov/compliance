@@ -23,7 +23,7 @@ satisfies:
 - control_key: AC-6 (9)
   covered_by: []
   implementation_status: none
-  narrative: 'All privileged user account activity and API calls to Cloud.Gov are
+  narrative: 'All privileged user account activity and API calls to cloud.gov are
     audited by CloudTrail and monitored by CloudWatch. CloudTrail provides a log of
     all requests for AWS resources within the 18F AWS account. For each event recorded,
     18F can see what service was accessed, what action was performed, any parameters

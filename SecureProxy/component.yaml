@@ -10,7 +10,7 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |
-      Cloud.gov forces https using SecureProxy:
+      cloud.gov forces https using SecureProxy:
 
       Applications running on Cloud Foundry receive requests through the URLs configured
       for the application. HTTP requests arrive on ports 80 and 443. Additionally, Cloud

@@ -1,7 +1,7 @@
 # Cloud Foundry Compliance
-This repository contains shared compliance data for Cloud.gov
+This repository contains shared compliance data for cloud.gov
 
-# Starting ATO Documentation for Cloud.gov applications.
+# Starting ATO Documentation for cloud.gov applications.
 0. Install [Compliance Masonry CLI](https://github.com/opencontrol/compliance-masonry)
 0. [Create an opencontrol.yaml](https://github.com/opencontrol/compliance-masonry#creating-an-opencontrol-project) based on the data below.
   ```yaml
@@ -20,7 +20,7 @@ This repository contains shared compliance data for Cloud.gov
   ```
 
 0. Create component documentation using the [opencontrol schema](https://github.com/opencontrol/schemas) and update the `components` object in the opencontrol.yaml with the documentation path.
-0. "Import" the Cloud.gov dependencies.
+0. "Import" the cloud.gov dependencies.
 
 
   ```bash
