@@ -99,16 +99,16 @@ satisfies:
   - text: |-
       18F requires the developer of the information system, system component, or information system service to provide design and implementation information for the security controls to be employed that includes: [Selection (one or more): security-relevant external system interfaces; high-level design; low-level design; source code or hardware schematics; [Assignment: organization-defined design/implementation information]] at [Assignment: organization-defined level of detail].
   parameters:
-  # This parameter can be a reference to the fact that we are complying with the FedRAMP controls.  
+  # This parameter can be a reference to the fact that we are complying with the FedRAMP controls.
   # [Selection (one or more): security-relevant external system interfaces; high-level design; low-level design; source code or hardware schematics;]
   - key: SA-4 (2)
     text: |
        [Selection (one or more): security-relevant external system interfaces; high-level design; low-level design; source code or hardware schematics; [Assignment: organization-defined design/implementation information]
-  # Parameter for  [Assignment: organization-defined design/implementation information]. Need value for this text. 
+  # Parameter for  [Assignment: organization-defined design/implementation information]. Need value for this text.
   - key: SA-4 (2)
     text: |
        [Assignment: organization-defined design/implementation information]
-  # This parameter can be a reference to the Configuration Management/GitHub process.    
+  # This parameter can be a reference to the Configuration Management/GitHub process.
   - key: SA-4 (2)
     text: |
       [Assignment: organization-defined design/implementation information]
@@ -125,11 +125,11 @@ satisfies:
   - text: |-
       18F requires the developer of the information system, system component, or information system service to produce a plan for the continuous monitoring of security control effectiveness that contains [Assignment: organization-defined level of detail].
   parameters:
-  # This parameter can be a reference to Configuration Management plan.   
-  # [Assignment: organization-defined level of detail] 
+  # This parameter can be a reference to Configuration Management plan.
+  # [Assignment: organization-defined level of detail]
   - key: SA-4 (8)
     text: |
-      clould.gov continous monitoring plan 
+      clould.gov continous monitoring plan
   standard_key: NIST-800-53
 - control_key: SA-4 (9)
   covered_by:
@@ -144,7 +144,7 @@ satisfies:
   covered_by:
   - verification_key: POLICY_DOC
   implementation_status: none
-  # Possibly covered by GSA identification policies 
+  # Possibly covered by GSA identification policies
   narrative:
   - text: |-
       GSA employs only information technology products on the FIPS 201-approved products list for Personal Identity Verification (PIV) capability implemented within organizational information systems.
@@ -214,17 +214,20 @@ satisfies:
   implementation_status: none
   narrative:
     - key: a
-      text: Requires that providers of external information system services comply with organizational information security requirements and employ [Assignment: organization-defined security controls] in accordance with applicable federal laws, Executive Orders, directives, policies, regulations, standards, and guidance. 18F utilizes AWS GovCloud, which is FedRAMP accredited for Federal Agencies.  
+      text: |
+        Requires that providers of external information system services comply with organizational information security requirements and employ [Assignment: organization-defined security controls] in accordance with applicable federal laws, Executive Orders, directives, policies, regulations, standards, and guidance. 18F utilizes AWS GovCloud, which is FedRAMP accredited for Federal Agencies.
     - key: b
-      text: Defines and documents government oversight and user roles and responsibilities with regard to external information system services; and
+      text: |
+        Defines and documents government oversight and user roles and responsibilities with regard to external information system services; and
     - key: c
-      text: Employs [Assignment: organization-defined processes, methods, and techniques] to monitor security control compliance by external service providers on an ongoing basis.
+      text: |
+        Employs [Assignment: organization-defined processes, methods, and techniques] to monitor security control compliance by external service providers on an ongoing basis.
   parameters:
-  # This parameter can be a reference to the fact that we are complying with the FedRAMP controls.    
+  # This parameter can be a reference to the fact that we are complying with the FedRAMP controls.
   - key: SA-9
     text: |
       [Assignment: organization-defined security controls]
-  # This parameter can be a reference to the Configuration Management plan/process.    
+  # This parameter can be a reference to the Configuration Management plan/process.
   - key: SA-9
     text: |
       [Assignment: organization-defined processes, methods, and techniques]
@@ -253,14 +256,14 @@ satisfies:
   - text: |-
         18F employs [Assignment: organization-defined security safeguards] to ensure that the interests of [Assignment: organization-defined external service providers] are consistent with and reflect organizational interests. 18F uses AWS GovCloud, which is FedRAMP certified and reviewed and approved by the FedRAMP JAB.
   parameters:
-  # This can be a reference to the FedRAMP process again since AWS Govcloud is also FedRamp certified.  
+  # This can be a reference to the FedRAMP process again since AWS Govcloud is also FedRamp certified.
   # [Assignment: organization-defined security safeguards]
-- key: SA-9 (4) 
+  - key: SA-9 (4)
     text: |
       Tripwire
   # This is a reference to AWS or another CSP we are using for an external service
   #[Assignment: organization-defined external service providers]
-  - key: SA-9 (4) 
+  - key: SA-9 (4)
     text: |
       AWS
   standard_key: NIST-800-53
@@ -271,19 +274,19 @@ satisfies:
   narrative:
   - text: |-
       18F restricts the location of [Selection (one or more): information processing; information/data; information system services] to [Assignment: organization-defined locations] based on [Assignment: organization-defined requirements or conditions]. 18F uses AWS GovCloud to deploy the Cloud Foundry platform.  AWS GovCloud is FedRAMP certified and is located in one Availability Zone.  All Cloud Foundry applications are restricted to this location.
-  parameters: 
+  parameters:
   # This is a reference to AWS GovCloud
-  - key: SA-9 (5) 
+  - key: SA-9 (5)
     text: |
-      [Selection (one or more): information processing; information/data; information system services]  
+      [Selection (one or more): information processing; information/data; information system services]
   # This is a reference to AWS GovCloud Avaliability Zone
-  - key: SA-9 (5) 
+  - key: SA-9 (5)
     text: |
-      [Assignment: organization-defined locations]    
-  # This is a reference to FedRAMP 
-  - key: SA-9 (5) 
+      [Assignment: organization-defined locations]
+  # This is a reference to FedRAMP
+  - key: SA-9 (5)
     text: |
-      [Assignment: organization-defined requirements or conditions]    
+      [Assignment: organization-defined requirements or conditions]
   standard_key: NIST-800-53
 - control_key: SA-10
   covered_by:
@@ -329,18 +332,18 @@ satisfies:
   - key: a
     text: |-
       Create and implement a security assessment plan
-  # [Selection (one or more): unit; integration; system; regression] 
+  # [Selection (one or more): unit; integration; system; regression]
   # [Assignment: organization-defined depth and coverage]
   - key: b
     text: |-
       Perform [Selection (one or more): unit; integration; system; regression] testing/evaluation at [Assignment: organization-defined depth and coverage];
-    parameters: 
+    parameters:
       - key: SA-11
         text: |
-            regession
-       - key: SA-11
+          regression
+      - key: SA-11
         text: |
-            cloud.gov
+          cloud.gov
   - key: c
     text: |-
       Produce evidence of the execution of the security assessment plan and the results of the security testing/evaluation
