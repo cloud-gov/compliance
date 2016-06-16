@@ -42,15 +42,12 @@ references:
     text: |
       ELK reports atypical usage of information system accounts to designated Infrastructure and cloud.gov operators teams.
   standard_key: NIST-800-53
-- control_key: AU-3
+- control_key: AC-6 (9)
   covered_by: []
   implementation_status: none
-  narrative: "The cloud.gov platform as a service generates audit logs from its Loggregator\
-    \ componement and is passed through the ELK stack to produce audit records which\
-    \ contain sufficient information to establish at a minumum:\n  what type of event\
-    \ occured,\n  when (date and time the event occurance)\n  the source of the event\n\
-    \  the outcome (success or failure) of the event\n  the identity of any user/subject\
-    \ associated with the event\n"
+  narrative:
+    - text: |
+        The ELK (elasticsearch, Logstash, Kibana) is used to collect, manage and display all auditing of privileged functions within the cloud.gov platform.
   standard_key: NIST-800-53
 - control_key: AC-2
   covered_by: []
