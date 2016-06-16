@@ -42,15 +42,15 @@ satisfies:
   narrative:
   - key: a
     text: |
-      The 18F DevOps team practices the Scrumban process when developing new features or fixing existing issues - including security fixes and enhancements, for cloud.gov.  Each feature / issue is assigned to a card in the system where it goes thru a process of being identified, prioritized, explored, delivered, and finally demonstrated. Each card is reviewed by the team as a whole throughout its lifecycle to identify any security risks or concerns - these are recorded on the card as acceptance criteria when development is complete.
+      The 18F DevOps team practices the Scrumban process when developing new features or fixing existing issues, including security fixes and enhancements for cloud.gov.  Each feature or issue is assigned to a card in the system, where it goes through a process of being identified, prioritized, explored, delivered, and finally demonstrated. Each card is reviewed by the team as a whole throughout its lifecycle to identify any security risks or concerns, which are recorded on the card as "acceptance criteria" that must be addressed before development is complete.
 
-      Once development is complete, the code submitted to our version control system as a “pull request" where it is further reviewed before being merged into the code base.  New features will then be deployed into our staging area where they will be undergo further security review / stakeholder acceptance, as well as automated acceptance tests.
+      Once development is complete, a team member submits the code to our version control system as a "pull request", where at least one other team member further reviews it before merging it into the code base.  The team then deploys new features into our staging area where they undergo further security review and stakeholder acceptance testing, as well as automated acceptance tests.
   - key: b
     text: |
-      The cloud.gov team is broken into several sub-teams with differing areas of responsibility and expertise.   Security is a foremost concern for members of all teams.  The cloud.gov Atlas sub-team is primarily focused on implementing security policies at the platform level.
+      The cloud.gov team is broken into several sub-teams with different areas of responsibility and expertise.   Security is a foremost concern for members of all teams.  The cloud.gov Atlas sub-team is primarily focused on implementing security policies at the platform level.
   - key: c
     text: |
-      Each member of the DevOps team has the necessary security background to properly handle sensitive data, such as security keys and certificates, and to evaluate the security implications associated with configuration changes.  Access to cloud.gov and its components is controlled thru various means, including AWS security groups, Cloud Foundry roles, and GitHub team membership.
+      Each member of the 18F DevOps team has the necessary security background to properly handle sensitive data, such as security keys and certificates, and to evaluate the security implications associated with configuration changes. The cloud.gov team controls access to cloud.gov and its components through the access control tools appropriate for its components, including AWS security groups, Cloud Foundry roles, and GitHub team membership.
   - key: d
     text: |
       The cloud.gov Atlas team continually monitors the configurations of the various components of cloud.gov to ensure they meet the requirements for protecting sensitive data.
@@ -130,30 +130,30 @@ satisfies:
   - key: a
     text: |-
       # TODO: Address "Known vulnerabilities regarding configuration and use of administrative (i.e., privileged) functions"
-      Documentation for cloud.gov is maintained within the GitHub repositories for
-      the various components that comprise the system and at https://docs.cloud.gov.
-      Administrator documentation describe secure deployment and operation of cloud.gov.
+      The cloud.gov team maintains documentation for cloud.gov in the GitHub repositories for
+      the components of the system and at https://docs.cloud.gov.
+      Administrator documentation describes secure deployment and operation of cloud.gov.
   - key: b
     text: |-
       Best practices for secure usage of cloud.gov are available and continuously
       updated at https://docs.cloud.gov.
   - key: c
     text: |-
-      Reports of uncomplete or unavailable documentation are filed using GitHub
+      Anyone can file a report of incomplete or unavailable documentation using GitHub
       issues attached to https://github.com/18F/cg-docs or to the repositories that
       store various cloud.gov components.
   - key: d
     text: |-
       Because cloud.gov documentation does not contain sensitive information,
-      documentation is publically accessible in GitHub and at https://docs.cloud.gov.
+      documentation is publicly accessible in GitHub and at https://docs.cloud.gov.
       Changes to that documentation can only be accepted by authorized individuals on
       the cloud.gov team through GitHub team membership.
   - key: e
     text: |-
-      Documentation for cloud.gov is maintained within the GitHub repositories for
-      the various components that comprise the system and at https://docs.cloud.gov.
-      New members of the team are directed to this documentation, and team members
-      are expected to be aware of its contents.
+      The cloud.gov team maintains documentation for cloud.gov in the GitHub repositories for
+      the components of the system and at https://docs.cloud.gov.
+      The team directs new members to this documentation, and expects team members
+      to be aware of its contents.
   standard_key: NIST-800-53
 - control_key: SA-8
   covered_by:
@@ -161,23 +161,23 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |-
-      18F applys security engineering principles primarily to new development 
-      information systems. 18F utilizes the Cloud Foundry Secure Deployment best 
-      practices which include the following: Confgure UAA clients and users using a 
-      standard BOSH manifest for cloud Foundry Development.  18F develops and maintains
+      18F applies security engineering principles primarily to new development of 
+      information systems. 18F uses the Cloud Foundry Secure Deployment best 
+      practices, which include the following: Configure UAA clients and users using a 
+      standard BOSH manifest for Cloud Foundry Development.  18F develops and maintains
       documentation on the baseline configuration of the information system that include
       network topology, system architecture, application, web, and server components 
       along with software standards.  Cloud Foundry protects the information system 
-      from security threats by minimizing network surface area , applying security 
+      from security threats by minimizing network surface area, applying security 
       controls, isolating applications and data in containers, and encrypting 
       connections.  It also implements role-based access controls, applying and 
       enforcing permissions to isolate user to their space.  Baseline configurations 
       settings are reviewed on a continual basis to to comply with federal mandates 
-      and compliance standards.  18F documents changes to the baseline configiration 
-      in GitHub for review.  Part of this process includes a through security analysis 
+      and compliance standards.  18F documents changes to the baseline configuration 
+      in GitHub for review.  Part of this process includes a thorough security analysis 
       of the proposed change prior to the configuration change being implemented on 
       the operational system.  18F deploys with every application a standard set of 
-      tools for security and moniotiring of each application to identity security 
+      tools for security and monitoring of each application to identify security 
       issues. For more details please refer to 18F Configuration Management Policy 
       and security controls CM-2, CM-3, and CM-6.   
   standard_key: NIST-800-53
@@ -203,7 +203,7 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |-
-     18F documents configuration settings for its information technology productions within the Cloud Foundry platform to reflect the most restrictive mode consisten with operational requirements.  18F follows industry security best practices and guidance provided in NIST special publication 800-70. All ports, protocols, and services are restricted to least privilege.  18F uses the following approved FISMA ready baselines located at https://github.com/fishma-ready.   
+     18F documents configuration settings for its information technology products within the Cloud Foundry platform to reflect the most restrictive mode consistent with operational requirements.  18F follows industry security best practices and guidance provided in NIST Special Publication 800-70. All ports, protocols, and services are restricted to least privilege.  18F uses the approved FISMA ready baselines located at https://github.com/fisma-ready.   
   standard_key: NIST-800-53
 - control_key: SA-9 (4)
   covered_by:
@@ -211,7 +211,7 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |-
-        The organization employs [Assignment: organization-defined security safeguards] to ensure that the interests of [Assignment: organization-defined external service providers] are consistent with and reflect organizational interests. 18F uses AWS GovCloud which is FedRamp certified which has reviewed and approved by the FedRamp JAB.  
+        The organization employs [Assignment: organization-defined security safeguards] to ensure that the interests of [Assignment: organization-defined external service providers] are consistent with and reflect organizational interests. 18F uses AWS GovCloud, which is FedRAMP certified and reviewed and approved by the FedRAMP JAB.  
   standard_key: NIST-800-53
 - control_key: SA-9 (5)
   covered_by:
@@ -219,7 +219,7 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |-
-      The organization restricts the location of [Selection (one or more): information processing; information/data; information system services] to [Assignment: organization-defined locations] based on [Assignment: organization-defined requirements or conditions]. 18F utilizes AWS GovCloud to deploy Cloud Foundry platform.  AWS GovCloud is FedRamp certified and is located in one Avaliablity Zone.  All Cloud Foundry applications are restricted to this location. 
+      The organization restricts the location of [Selection (one or more): information processing; information/data; information system services] to [Assignment: organization-defined locations] based on [Assignment: organization-defined requirements or conditions]. 18F uses AWS GovCloud to deploy the Cloud Foundry platform.  AWS GovCloud is FedRAMP certified and is located in one Availability Zone.  All Cloud Foundry applications are restricted to this location. 
   standard_key: NIST-800-53
 - control_key: SA-10
   covered_by:
@@ -271,7 +271,7 @@ satisfies:
   - verification_key: DEPLOYMENT_TESTING
   narrative:
   - text: |-
-      The Cloud Foundry community uses Code Climate on platform components such as Bosh and Cloud Controller. The results of the scans are publicly available and can be run by 18F at any time.
+      The Cloud Foundry community uses Code Climate on platform components such as BOSH and Cloud Controller. The results of the scans are publicly available and can be run by 18F at any time.
   standard_key: NIST-800-53
 - control_key: SA-11 (2)
   covered_by:
@@ -293,17 +293,17 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |-
-      18F will replace information system components when support for the components is no longer available from the developer, vendor, or manufacturer; and will provide justification and documents approval for the continued use of unsupported system components required to satisfy mission/business needs.
+      18F will replace information system components when support for the components is no longer available from the developer, vendor, or manufacturer; and will provide justification and documented approval for the continued use of unsupported system components required to satisfy mission/business needs.
 
       Cloud Foundry Platform as a Service system replacement:
 
-      A system & software inventory is run nightly, and the DevOps team reviews the inventory weekly to ensure that all software inventoried is accurate and currently supported. This process includes:
+      A system and software inventory is run nightly, and the DevOps team reviews the inventory weekly to ensure that all software inventoried is accurate and currently supported. This process includes:
 
       * Verify that the software license support expiration date is not within six months. 18F uses the open source version of Cloud Foundry which uses the open source Apache 2.0 license.
       * Ensure that the software version is still supported.
       * Refer to the vendor's support website to verify that support does not have an \u201CEnd of Life\u201D date of less than six months.
 
-      Since 18F is using the open source version of Cloud Foundry, an additional task will be issued to upgrade Cloud Foundry suite to the latest versions. DevOps will review the GitHub cloudfoundry/cf-release repository for implementation of the updated version.
+      Since 18F is using the open source version of Cloud Foundry, an additional task will be issued to upgrade the Cloud Foundry suite to the latest versions. DevOps will review the GitHub cloudfoundry/cf-release repository for implementation of the updated version.
   standard_key: NIST-800-53
 system: 18F
 verifications:
