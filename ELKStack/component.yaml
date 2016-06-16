@@ -49,16 +49,12 @@ references:
     - text: |
         The ELK (elasticsearch, Logstash, Kibana) is used to collect, manage and display all auditing of privileged functions within the cloud.gov platform.
   standard_key: NIST-800-53
-- control_key: AC-2
+- control_key: AC-17 (1)
   covered_by: []
   implementation_status: none
-  narrative: "#### g  \nThe UAA API interface is used to monitor privileged/non privileged\
-    \ user accounts within the cloud.gov It list Cloud Foundry instance users. By\
-    \ default it returns information about each user account including GUID, name,\
-    \ permission groups, activity status, and metadata.\n18F uses the ELK stack to\
-    \ provide a visual way to monitor all user and system accounts within Coud.Gov\
-    \ by interfacing with cloud.gov API calls to its internal system components (i.e.\
-    \ Loggregator, Cloud Controller, DEA, Warden, Metrics Collector)\n  \n"
+  narrative:
+    - text: |
+        The Cloud Controller authenticates every request with the Service Broker API using HTTP or HTTPS. The cloud.gov operators only uses the BOSH Command Line Interface (CLI) to log into the cloud.gov jumpbox using SSH as a remote connection. These remote connections are monitored by the cloud.gov Cloud Controller which send this data to the ELK logging and monitoring visualization tool stack.
   standard_key: NIST-800-53
 - control_key: AU-2
   covered_by: []
