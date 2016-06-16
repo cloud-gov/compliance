@@ -255,17 +255,6 @@ satisfies:
   narrative:
   - text: |-
         18F employs [Assignment: organization-defined security safeguards] to ensure that the interests of [Assignment: organization-defined external service providers] are consistent with and reflect organizational interests. 18F uses AWS GovCloud, which is FedRAMP certified and reviewed and approved by the FedRAMP JAB.
-  parameters:
-  # This can be a reference to the FedRAMP process again since AWS Govcloud is also FedRamp certified.
-  # [Assignment: organization-defined security safeguards]
-  - key: SA-9 (4)
-    text: |
-      Tripwire
-  # This is a reference to AWS or another CSP we are using for an external service
-  #[Assignment: organization-defined external service providers]
-  - key: SA-9 (4)
-    text: |
-      AWS
   standard_key: NIST-800-53
 - control_key: SA-9 (5)
   covered_by:
@@ -354,6 +343,11 @@ satisfies:
     text: |-
       Correct flaws identified during security testing/evaluation
   standard_key: NIST-800-53
+  parameters:
+  - key: b-1
+    text: TODO
+  - key: b-2
+    text: TODO
 - control_key: SA-11 (1)
   covered_by:
   - verification_key: DEPLOYMENT_TESTING
