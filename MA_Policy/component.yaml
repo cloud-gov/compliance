@@ -4,9 +4,11 @@ satisfies:
 - control_key: MA-1
   covered_by: []
   implementation_status: none
-  narrative: 18F Policy
+  narrative:
+    - text: |
+        18F Policy
   standard_key: NIST-800-53
-schema_version: 2.0
+schema_version: 3.0.0
 system: 18F
 verifications:
 - key: POLICY_DOC
