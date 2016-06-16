@@ -1,11 +1,11 @@
-# Cloud Foundry Platform as a Service (Cloud.Gov)
-This System Security Plan provides an overview of the security requirements for the Cloud Foundry Platform as a Service (Cloud.Gov) and describes the controls in place or planned for implementation to provide a level of security appropriate for the information to be transmitted, processed or stored by the system.  Information security is vital to our critical infrastructure and its effective performance and protection is a key component of our national security program.  Proper management of information technology systems is essential to ensure the confidentiality, integrity and availability of the data transmitted, processed or stored by the Cloud.Gov information system.  
+# Cloud Foundry Platform as a Service (cloud.gov)
+This System Security Plan provides an overview of the security requirements for the Cloud Foundry Platform as a Service (cloud.gov) and describes the controls in place or planned for implementation to provide a level of security appropriate for the information to be transmitted, processed or stored by the system.  Information security is vital to our critical infrastructure and its effective performance and protection is a key component of our national security program.  Proper management of information technology systems is essential to ensure the confidentiality, integrity and availability of the data transmitted, processed or stored by the cloud.gov information system.  
 
-The security safeguards implemented for the Cloud.Gov system meet the policy and control requirements set forth in this System Security Plan.  All systems are subject to monitoring consistent with applicable laws, regulations, agency policies, procedures and practices.  
+The security safeguards implemented for the cloud.gov system meet the policy and control requirements set forth in this System Security Plan.  All systems are subject to monitoring consistent with applicable laws, regulations, agency policies, procedures and practices.  
 
 Unique Identifier | Information System Name | Information System Abbreviation
 --- | --- | ---
-Cloud.gov | Cloud Foundry Platform as a Service | Cloud.gov
+cloud.gov | Cloud Foundry Platform as a Service | cloud.gov
 
 
 # Security Objectives Categorization (FIPS 199)
@@ -26,7 +26,7 @@ Low | Moderate | High
 Using this categorization, in conjunction with the risk assessment and any unique security requirements, we have established the security controls for this system, as detailed in this SSP.
 
 # Information Types
-The following tables identify the information types that are input, stored, processed, and/or output from Cloud.Gov. The selection of information types is based on guidance provided by OMB Federal Enterprise Architecture Program Management Office Business Reference Model 2.0, and FIPS Pub 199, Standards for Security Categorization of Federal Information and Information Systems which is based on NIST SP 800-60, Guide for Mapping Types of Information and Information Systems to Security Categories.
+The following tables identify the information types that are input, stored, processed, and/or output from cloud.gov. The selection of information types is based on guidance provided by OMB Federal Enterprise Architecture Program Management Office Business Reference Model 2.0, and FIPS Pub 199, Standards for Security Categorization of Federal Information and Information Systems which is based on NIST SP 800-60, Guide for Mapping Types of Information and Information Systems to Security Categories.
 
 |Information Type | Confidentiality   | Integrity | Availability|
 |-----------------|-------------------|-----------|-------------|
@@ -51,7 +51,7 @@ The summary E-Authentication Level is recorded in the table that follows.
 ### E-Authentication Determination
 |System Name| System Owner| Assurance Level| Date Approved|
 |-----------|
-|Cloud.Gov Platform as a Service| 18F/GSA| Level 2| Feb 18, 2016|
+|cloud.gov Platform as a Service| 18F/GSA| Level 2| Feb 18, 2016|
 
 # Information System Owner
 Name | Title | Organization | Address | Phone Number | Email Address
@@ -85,7 +85,7 @@ Operational | Under Development | Major Modification | Other
 X |  |  |
 
 # Information System Type
-The Cloud.Gov makes use of unique managed service provider architecture layer(s).
+The cloud.gov makes use of unique managed service provider architecture layer(s).
 
 # Cloud Service Models
 Information systems, particularly those based on cloud architecture models, are made up of different service layers.  The layers of the Cloud .Gov defined in this SSP are indicated in the table that follows.
@@ -98,7 +98,7 @@ X |Platform as a Service (PaaS) | Application
 
 
 # Cloud Deployment Models
-Information systems, particularly those based on cloud services and infrastructures, are made up of different deployment models.  The deployment models of the Cloud.Gov that are defined in this SSP, and are not leveraged by any other Provisional Authorizations, are indicated in the table that follows.
+Information systems, particularly those based on cloud services and infrastructures, are made up of different deployment models.  The deployment models of the cloud.gov that are defined in this SSP, and are not leveraged by any other Provisional Authorizations, are indicated in the table that follows.
 
 X |**Public** | Cloud services and infrastructure supporting multiple organizations and agency clients|
 -|-|-
@@ -107,7 +107,7 @@ X |**Public** | Cloud services and infrastructure supporting multiple organizati
 |Hybrid| Explain: (e.g., cloud services and infrastructure that provides private cloud for secured applications and data where required and public cloud for other applications and data)
 
 # Leveraged Authorizations
-The Cloud.Gov information system plans to leverage a pre-existing Provisional Authorization.  Provisional Authorizations leveraged by this IAWS FedRAMP ATO (issued by the HHS are noted in the table that follows.  
+The cloud.gov information system plans to leverage a pre-existing Provisional Authorization.  Provisional Authorizations leveraged by this IAWS FedRAMP ATO (issued by the HHS are noted in the table that follows.  
 
 Information System Name | Service Provider Owner | Date Granted
 --- | --- | ---

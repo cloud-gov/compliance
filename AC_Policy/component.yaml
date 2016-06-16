@@ -35,17 +35,17 @@ satisfies:
     text: |
       18F has established designated Devops personnel as the assigned
       account managers for all information system accounts relating to the infrastructure
-      and the Cloud.Gov platform.
+      and the cloud.gov platform.
       System Owners, whose web applications and/or websites
-      reside on the Cloud.Gov platform have the responsibility to assign an account
+      reside on the cloud.gov platform have the responsibility to assign an account
       manager for their information systems.
   - key: c
     text: |
       18F establishes conditions
-      for group and role membership within the Cloud.Gov Platform and its virtual
+      for group and role membership within the cloud.gov Platform and its virtual
       environment.
       Conditions for groups and roles membership are based on an established
-      need to manage and access the virtual infrastructure and Cloud.Gov environments.
+      need to manage and access the virtual infrastructure and cloud.gov environments.
       The user must meet the following conditions in order for the System Owner/ Project
       Manager to approve a group membership request:
         * The user’s assigned role is required to access a particular group
@@ -55,7 +55,7 @@ satisfies:
       Once conditions have been met, the system owner /Project manager will request access within
       GitHub, 18F’s tracking and ticketing system. Once approved, the 18F Devops group
       completes the request for group and role membership within its infrastructure
-      and Cloud.Gov platform.
+      and cloud.gov platform.
   - key: d
     text: |
       The 18F Program Office specifies authorized
@@ -66,7 +66,7 @@ satisfies:
       respective information systems, detailing their group and role membership, and
       access authorizations. This documentation will be exported by Devops and archived
       for up to a year from the date of account creation by the managing 18F project
-      lead and Cloud.Gov Technical Point of Contact (Operating Environment) in accordance
+      lead and cloud.gov Technical Point of Contact (Operating Environment) in accordance
       with best business and security practices.
   - key: e
     text: |
@@ -78,7 +78,7 @@ satisfies:
     text: |
       User account establishment,
       activation, modification, disablement or removal requires approval by the managing
-      \ project lead and Cloud.Gov Information System Technical Point of Contact.
+      \ project lead and cloud.gov Information System Technical Point of Contact.
       Accounts will be created, enabled, modified, disabled, and removed from AWS in accordance
       with 18F policies, guidelines and established by the project lead and Devops.
   - key: g
@@ -88,7 +88,7 @@ satisfies:
   - key: h
     text: |
       18F notifies its Devops account managers, when accounts are no longer required, users are terminated or transferred, and when
-      individual’s information system usage or need-to-know changes within the Cloud.Gov
+      individual’s information system usage or need-to-know changes within the cloud.gov
       platform and virtual private cloud infrastructure.\nThe project manager or information
       system owner will be notified when accounts have been terminated, disabled or
       transferred based on the access request submitted via Github.  Notification
@@ -102,7 +102,7 @@ satisfies:
       attributes as required by the organization or associated missions/business functions.
       This is documented within section 3 of  the 18F access control policy Access
       Management.\nUser and system access is provided only to those with an established
-      need to access and manage the virtual private cloud and Cloud.Gov environments.
+      need to access and manage the virtual private cloud and cloud.gov environments.
       * User group membership is restricted to the least privilege necessary for the user to accomplish their assigned duties.
       * All user accounts are issued only to those who have gained approval by 18F Devops.
       Once approved, the Devops team creates the user account and adds it to the appropriate role and organization
@@ -132,7 +132,7 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |
-      Cloud.gov integrates it's user management application with enterprise single sign on systems.
+      cloud.gov integrates it's user management application with enterprise single sign on systems.
       User management is automated by delegating user verification to a centralized system.
   standard_key: NIST-800-53
 - control_key: AC-2 (2)
@@ -140,9 +140,9 @@ satisfies:
   - verification_key: POLICY_DOC
   implementation_status: none
   narrative:
-  - text: This control is not applicable. Cloud.Gov does not contain any guest/anonymous,
+  - text: This control is not applicable. cloud.gov does not contain any guest/anonymous,
       group, or temporary user accounts. Devops only creates individual user accounts
-      and grants role based access to users within Cloud.Gov.
+      and grants role based access to users within cloud.gov.
   standard_key: NIST-800-53
 - control_key: AC-2 (3)
   covered_by:
@@ -186,7 +186,7 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |
-      Cloud.gov does not permit shared accounts. Every user requires their own account.
+      cloud.gov does not permit shared accounts. Every user requires their own account.
   standard_key: NIST-800-53
 - control_key: AC-2 (10)
   covered_by:
@@ -194,7 +194,7 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |
-      Cloud.gov does not permit shared accounts. Every user requires their own account.
+      cloud.gov does not permit shared accounts. Every user requires their own account.
   standard_key: NIST-800-53
 - control_key: AC-3
   covered_by:
@@ -275,7 +275,7 @@ satisfies:
   - verification_key: POLICY_DOC
   implementation_status: none
   narrative:
-  - text: Because Cloud.gov is a PaaS all accessible functions are privileged functions.
+  - text: Because cloud.gov is a PaaS all accessible functions are privileged functions.
       Nevertheless, 18F team members use different accounts with increasing security
       requirements for accessing CloudFoundry as a user, CloudFoundry as a administrator,
       and AWS as an administrator.
@@ -319,16 +319,16 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |
-      The Cloud.Gov platform has built-in Role based access controls (RBAC). This
+      The cloud.gov platform has built-in Role based access controls (RBAC). This
       ensures that users can only view and affect the spaces for which they have been
       granted access to. It also prevents non-privileged users from executing privileged
       functions to include disabling, circumventing, or altering implemented security
       safeguards/countermeasures.
       Only designated Org Managers from the DevOps team can execute privileged functions
-      to the Cloud.Gov platform. All other accounts are non-privileged accounts.
-      Client agencies using Cloud.Gov are only permitted to change settings within their
+      to the cloud.gov platform. All other accounts are non-privileged accounts.
+      Client agencies using cloud.gov are only permitted to change settings within their
       associated Org account, spaces and roles. These accounts do not have access to the
-      underlying Cloud.Gov Platform.
+      underlying cloud.gov Platform.
   standard_key: NIST-800-53
 - control_key: AC-7
   covered_by:
@@ -390,7 +390,7 @@ satisfies:
     text: |
       It is not possible for members of the 18F Devops and SecOps teams to access the 18F virtual
       private cloud infrastructure without multifactor authentication and identification. All client
-      users of Cloud.gov must login using authenticated credentials in order to access the system.
+      users of cloud.gov must login using authenticated credentials in order to access the system.
   standard_key: NIST-800-53
 - control_key: AC-17
   covered_by:
@@ -399,7 +399,7 @@ satisfies:
   narrative:
   - key: a
     text: |
-      Cloud.gov has a distributed administrator, operator and management team. All remote actions are
+      cloud.gov has a distributed administrator, operator and management team. All remote actions are
       allowed.
   - key: b
     text: |
@@ -414,7 +414,7 @@ satisfies:
   - key: a
     text: 18F authorizes the execution of privileged commands and access
       to security-relevant information via remote access only for monitoring, managing,
-      and troubleshooting  the 18F virtual infrastructer and Cloud.Gov platform. This
+      and troubleshooting  the 18F virtual infrastructer and cloud.gov platform. This
       authorization is only given to specific members of the Devops and SecOps teams.
       All other members are excluded from this type of access.
   standard_key: NIST-800-53
@@ -464,7 +464,7 @@ satisfies:
   covered_by: []
   implementation_status: none
   narrative:
-  - text: Not applicable to the the Cloud.gov platform. The cloud.Gov platform is
+  - text: Not applicable to the the cloud.gov platform. The cloud.Gov platform is
       for use of development of and deployment of web applications. This control would
       be handeld at the application level and is the responsibility of the application
       system owner.
@@ -473,7 +473,7 @@ satisfies:
   covered_by: []
   implementation_status: none
   narrative:
-  - text: Not applicable to the the Cloud.gov platform. The cloud.Gov platform is
+  - text: Not applicable to the the cloud.gov platform. The cloud.Gov platform is
       for use of development of and deployment of web applications. This control would
       be handeld at the application level and is the responsibility of the application
       system owner.

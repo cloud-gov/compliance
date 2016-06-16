@@ -177,7 +177,7 @@ satisfies:
     - text: |
         The ELK Stack logging and monitoring system provides additional audit
         reduction and report generation capabilities for 18F DevOps and end users of the
-        Cloud.Gov platform. With the elasticsearch capability 18F DevOps and SecOps teams
+        cloud.gov platform. With the elasticsearch capability 18F DevOps and SecOps teams
         can structure and customize audit logs queries to specific app instances, API
         calls, system metrics, user access, system components, network traffic flow and
         other functions. Kibana is used to generate customized dashboards and Logstash
@@ -207,7 +207,7 @@ satisfies:
   narrative:
     - text: |
         Audit logs are stored and protected in specified S3 buckets and elasticsearch
-        clusters for Cloud.Gov. Access to logs are limited to designated 18F DevOps and
+        clusters for cloud.gov. Access to logs are limited to designated 18F DevOps and
         Security staff and logs cannot be modified without proper authorization to the
         platform. Client agencies are restricted to access and view only their specified
         audit logs pertaining to the corresponding Org and space accounts.

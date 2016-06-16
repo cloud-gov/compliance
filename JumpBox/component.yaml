@@ -14,14 +14,14 @@ satisfies:
   implementation_status: none
   narrative: '18F authorizes the execution of privileged commands and access to security-relevant
     information via remote access only for monitoring, managing, and troubleshooting  the
-    18F virtual infrastructer and Cloud.Gov platform. This authorization is only given
+    18F virtual infrastructer and cloud.gov platform. This authorization is only given
     to specifc members of the DevOps and SecOps teams. All other members are excluded
     from this type of access.
 
-    Since the Cloud.Gov platform resides within the 18F virtual infrastructure, 18F
+    Since the cloud.gov platform resides within the 18F virtual infrastructure, 18F
     DevOps must use the SSH remote access method to troubleshoot issues and update
-    services that are only resolved by logging into the Cloud.Gov jumpboxes. The jumpbox  itself
-    a virtual machine deployed within the Cloud.Gov virtual private cloud. It is the
+    services that are only resolved by logging into the cloud.gov jumpboxes. The jumpbox  itself
+    a virtual machine deployed within the cloud.gov virtual private cloud. It is the
     only access point for designated DevOps members to run priviledged commnds that
     affect the entire platform. No other privileged remote access is available to
     the information system.
@@ -46,8 +46,8 @@ satisfies:
 - control_key: AC-17 (3)
   covered_by: []
   implementation_status: complete
-  narrative: 'Cloud.Gov remote access connections are manageed through jumpbox Virtual
-    machines within the Cloud.Gov VPC. The remote connections are SSH sessions using
+  narrative: 'cloud.gov remote access connections are manageed through jumpbox Virtual
+    machines within the cloud.gov VPC. The remote connections are SSH sessions using
     the BOSH CLI API. There are no other remote connections to the platform as stated
     in AC-17(2)
 
@@ -55,7 +55,7 @@ satisfies:
   standard_key: NIST-800-53
 - control_key: IA-2 (1)
   covered_by: []
-  narrative: 'Cloud.Gov currently does not have MFA capabilities implemented for users;
+  narrative: 'cloud.gov currently does not have MFA capabilities implemented for users;
     however, any administrative actions taken on the platform requires authentication
     via encrypted ssh keys which are limited to specific users on the jumpbox.
 
@@ -64,10 +64,10 @@ satisfies:
 - control_key: AC-17 (2)
   covered_by: []
   implementation_status: complete
-  narrative: '18F DevOps teams remotely access the Cloud.Gov jumpbox using SSH version
+  narrative: '18F DevOps teams remotely access the cloud.gov jumpbox using SSH version
     2. There are no other remote connections to the platform. Client end users login
-    to the their Org environment through the CF-Deck within the Cloud.Gov portal.
-    The Cloud.Gov Portal uses TLS v1.2 connections and AES 128 bit encrption for all
+    to the their Org environment through the CF-Deck within the cloud.gov portal.
+    The cloud.gov Portal uses TLS v1.2 connections and AES 128 bit encrption for all
     access.
 
     '
@@ -75,7 +75,7 @@ satisfies:
 - control_key: AC-17
   covered_by: []
   implementation_status: none
-  narrative: 'Cloud.Gov remote access is not available outside of the 18F environment.
+  narrative: 'cloud.gov remote access is not available outside of the 18F environment.
     18F DevOps personnel  are the only group who connects  to information system remotely
     using SSH (22) through the jump box (bastion Host) to execute BOSH CLI commands.
     The JumpBox is a virtual machine (VM) that acts as a single access point for the

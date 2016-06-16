@@ -9,28 +9,28 @@ satisfies:
   covered_by: []
   implementation_status: none
   narrative: "#### b  \n18F monitors all privileged access API calls through the Cloud\
-    \ Foundry command line interface and BOSH command line interface within Cloud.Gov.\
+    \ Foundry command line interface and BOSH command line interface within cloud.gov.\
     \ These API calls are monitored through ELK.\n  \n"
   standard_key: NIST-800-53
 - control_key: AC-6 (9)
   covered_by: []
   implementation_status: none
   narrative: 'The ELK (Logstash elasticsearch Kibana ) is used to collect, manage
-    and display all  auditing of privileged functions within the Cloud.Gov platform
+    and display all  auditing of privileged functions within the cloud.gov platform
 
     '
   standard_key: NIST-800-53
 - control_key: AC-2 (4)
   covered_by: []
   implementation_status: none
-  narrative: 'Cloud.Gov provides an audit trail through the bosh tasks command which
+  narrative: 'cloud.gov provides an audit trail through the bosh tasks command which
     shows all actions that an operator has taken with the platform. It also records
     an audit trail of all relevant API invocations of an app. The CLI command cf events
     returns this information.
 
     ELK ( Logstash, Elasticsearch, Kibana) a front end component for loggregator is
-    used to automatically audit all actions within the Cloud.Gov platform. By binding
-    an instance of the service to, Cloud.Gov applications logs will be drained to
+    used to automatically audit all actions within the cloud.gov platform. By binding
+    an instance of the service to, cloud.gov applications logs will be drained to
     a Logstash syslog receiver and stored in Elasticsearch to perform realtime data
     analytics with Kibana as the interface for search and visualization.
 
@@ -48,8 +48,8 @@ satisfies:
   implementation_status: none
   narrative: 'The Cloud Controller authenticates every request with the Service Broker
     API using HTTP or HTTPS. The 18F DevOp team only uses the BOSH Command Line Interface
-    (CLI) to log into the Cloud.Gov jumpbox using SSH as a remote connectionton. These
-    remote connections are monitored by the Cloud.Gov Cloud Controller which send
+    (CLI) to log into the cloud.gov jumpbox using SSH as a remote connectionton. These
+    remote connections are monitored by the cloud.gov Cloud Controller which send
     this data to the ELK logging and monitoring visualization tool stack.
 
     '
@@ -57,7 +57,7 @@ satisfies:
 - control_key: AU-3
   covered_by: []
   implementation_status: none
-  narrative: "The Cloud.Gov platform as a service generates audit logs from its Loggregator\
+  narrative: "The cloud.gov platform as a service generates audit logs from its Loggregator\
     \ componement and is passed through the ELK stack to produce audit records which\
     \ contain sufficient information to establish at a minumum:\n  what type of event\
     \ occured,\n  when (date and time the event occurance)\n  the source of the event\n\
@@ -68,21 +68,21 @@ satisfies:
   covered_by: []
   implementation_status: none
   narrative: "#### g  \nThe UAA API interface is used to monitor privileged/non privileged\
-    \ user accounts within the Cloud.Gov It list Cloud Foundry instance users. By\
+    \ user accounts within the cloud.gov It list Cloud Foundry instance users. By\
     \ default it returns information about each user account including GUID, name,\
     \ permission groups, activity status, and metadata.\n18F uses the ELK stack to\
     \ provide a visual way to monitor all user and system accounts within Coud.Gov\
-    \ by interfacing with Cloud.Gov API calls to its internal system components (i.e.\
+    \ by interfacing with cloud.gov API calls to its internal system components (i.e.\
     \ Loggregator, Cloud Controller, DEA, Warden, Metrics Collector)\n  \n"
   standard_key: NIST-800-53
 - control_key: AU-2
   covered_by: []
   implementation_status: none
-  narrative: "#### a  \nCloud.Gov provides an audit trail through the bosh tasks command.\
+  narrative: "#### a  \ncloud.gov provides an audit trail through the bosh tasks command.\
     \ This command shows all actions that an operator has taken with the platform.\
     \ Additionally, operators can redirect Cloud Foundry component logs to a Logstash\
     \ syslog server using the syslog_daemon_config property in the metron_agent job\
-    \ of cf-release.\nFor end users, Cloud.Gov records an audit trail of all relevant\
+    \ of cf-release.\nFor end users, cloud.gov records an audit trail of all relevant\
     \ API invocations of and app. The CLI command cf events returns this information.\n\
     \  \n"
   standard_key: NIST-800-53
