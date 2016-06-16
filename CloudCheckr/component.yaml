@@ -94,14 +94,20 @@ satisfies:
     - text: |
         Cloud Checkr provides a unified view of all infrastructure monitoring which captures all remote activities within 18F virtual infrastructure. The log files are organized by AWS Account ID, region, service name, date, and time. CloudTrail can be configured to aggregate log files from multiple regions into a single Amazon S3 bucket. From there, 18F Devops and SecOps teams view the logs files within Cloud Checkr to perform security analysis and detect user behavior patterns.
   standard_key: NIST-800-53
-- control_key: AC-2
+- control_key: AU-2
   covered_by: []
   implementation_status: none
-  narrative: "#### j  \nUser accounts will be monitored monthly and accounts will\
-    \ be disabled after 90 days of inactivity; this will be a manual review process\
-    \ every 30 days. 18F is in the process of automating this account management process\
-    \ through the use of implementing AWS OSQuery to trigger alerts when user accounts\
-    \ are inactive of a 90-day period.  \n"
+  narrative:
+    - key: d
+      text: |
+        18F has implemented Cloudtrail and Cloudwatch for its account and system  monitoring. It provides visibility into user activity by recording API calls made on an AWS account. CloudTrail captures and records important information about each API call for the list of auditable events:
+        * User - the IAM user name of the person who was interacting with your AWS account.
+        * IP Address - the IP Address where the interactions originated from.
+        * Event Name - the type of interaction that occurred.
+        * Service - the AWS Service that was interacted with.
+        * Time - the date and time that the event occurred.
+        * Region - the AWS Region(s) where the interactions occurred.
+        * Resource ID - the resource ID from the event.
   standard_key: NIST-800-53
 - control_key: AC-2 (3)
   covered_by: []
