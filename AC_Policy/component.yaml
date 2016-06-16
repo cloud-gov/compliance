@@ -62,7 +62,8 @@ satisfies:
       users of the information system, group and role membership, and access authorizations
       (i.e., privileges) and other attributes (as required) for each account. System
       Owners / Project Managers provide the details of what type of access is needed
-      for an authorized authorized user.\nAll accounts will be documented within their
+      for an authorized authorized user.
+      All accounts will be documented within their
       respective information systems, detailing their group and role membership, and
       access authorizations. This documentation will be exported by DevOps and archived
       for up to a year from the date of account creation by the managing 18F project
@@ -89,7 +90,8 @@ satisfies:
     text: |
       18F notifies its DevOps account managers when accounts are no longer required, users are terminated or transferred, and when
       individual’s information system usage or need-to-know changes within the cloud.gov
-      platform and virtual private cloud infrastructure.\nThe Project Manager or Information
+      platform and virtual private cloud infrastructure.
+      The Project Manager or Information
       System Owner will be notified when accounts have been terminated, disabled or
       transferred based on the access request submitted via GitHub.  Notification
       will be sent via email or the GitHub ticketing and tracking system when changes
@@ -101,7 +103,8 @@ satisfies:
       and DevOps, intended system usage within the network environment, and other
       attributes as required by the organization or associated missions/business functions.
       This is documented within section 3 of the 18F Access Control Policy: Access
-      Management.\nUser and system access is provided only to those with an established
+      Management.
+      User and system access is provided only to those with an established
       need to access and manage the virtual private cloud and cloud.gov environments.
       * User group membership is restricted to the least privilege necessary for the user to accomplish their assigned duties.
       * All user accounts are issued only to those who have gained approval by 18F DevOps.
@@ -112,7 +115,7 @@ satisfies:
         * A valid need-to-know/need-to-share that is determined by assigned official duties and satisfying all personnel security criteria.
         * Intended system usage.
       18F requires proper identification for requests to establish information
-      system accounts and approves all such requests Organizational or mission/business
+      system accounts, and it approves all such requests based on organizational or mission/business
       function attributes.
   - key: j
     text: |
@@ -236,7 +239,7 @@ satisfies:
   narrative:
   - key: a
     text: |
-      18F implements Identity and Access Management (IAM) Policies
+      18F implements Identity and Access Management (IAM) 
       roles and individual user accounts for separation of duties at the AWS layer.
       For Cloud Foundry access, cloud.gov uses UAA role based access controls (RBAC) to
       maintain separation of duties.
