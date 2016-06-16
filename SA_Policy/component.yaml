@@ -30,10 +30,10 @@ satisfies:
       The cloud.gov team does two-week sprints. Before each sprint, we look at open tasks and prioritize, including security needs. The team also hires for security expertise specifically.
   - key: b
     text: |-
-      TODO
+      Determines, documents, and allocates the resources required to protect the information system or information system service as part of its capital planning and investment control process
   - key: c
     text: |-
-      TODO
+      Establishes a discrete line item for information security in organizational programming and budgeting documentation.
   standard_key: NIST-800-53
 - control_key: SA-3
   covered_by:
@@ -62,25 +62,25 @@ satisfies:
   narrative:
   - key: a
     text: |-
-      TODO
+      Security functional requirements
   - key: b
     text: |-
-      TODO
+      Security strength requirements
   - key: c
     text: |-
-      TODO
+      Security assurance requirements
   - key: d
     text: |-
-      TODO
+      Security-related documentation requirements
   - key: e
     text: |-
-      TODO
+      Requirements for protecting security-related documentation
   - key: f
     text: |-
-      TODO
+      Description of the information system development environment and environment in which the system is intended to operate
   - key: g
     text: |-
-      TODO
+      Acceptance criteria
   standard_key: NIST-800-53
 - control_key: SA-4 (1)
   covered_by:
@@ -187,15 +187,17 @@ satisfies:
   implementation_status: none
   narrative:
     - key: a
-      text: Requires that providers of external information system services comply with organizational information security requirements and employ [Assignment: organization-defined security controls] in accordance with applicable federal laws, Executive Orders, directives, policies, regulations, standards, and guidance;
+      text: Requires that providers of external information system services comply with organizational information security requirements and employ [Assignment: organization-defined security controls] in accordance with applicable federal laws, Executive Orders, directives, policies, regulations, standards, and guidance. 18F utilizes AWS GovCloud, which is FedRAMP accredited for Federal Agencies.  
     - key: b
       text: Defines and documents government oversight and user roles and responsibilities with regard to external information system services; and
     - key: c
       text: Employs [Assignment: organization-defined processes, methods, and techniques] to monitor security control compliance by external service providers on an ongoing basis.
   parameters:
+  # This parameter can be a reference to the fact that we are complying with the FedRAMP controls.    
   - key: SA-9
     text: |
       [Assignment: organization-defined security controls]
+  # This parameter can be a reference to the Configuration Management plan/process.    
   - key: SA-9
     text: |
       [Assignment: organization-defined processes, methods, and techniques]
@@ -223,6 +225,15 @@ satisfies:
   narrative:
   - text: |-
         The organization employs [Assignment: organization-defined security safeguards] to ensure that the interests of [Assignment: organization-defined external service providers] are consistent with and reflect organizational interests. 18F uses AWS GovCloud, which is FedRAMP certified and reviewed and approved by the FedRAMP JAB.
+  parameters:
+  # This can be a reference to the FedRAMP process again since AWS Govcloud is also FedRamp certified.  
+- key: SA-9 (4) 
+    text: |
+      [Assignment: organization-defined security safeguards]
+  # This is a reference to AWS or another CSP we are using for an external service
+  - key: SA-9 (4) 
+    text: |
+      [Assignment: organization-defined external service providers]
   standard_key: NIST-800-53
 - control_key: SA-9 (5)
   covered_by:
@@ -231,6 +242,19 @@ satisfies:
   narrative:
   - text: |-
       The organization restricts the location of [Selection (one or more): information processing; information/data; information system services] to [Assignment: organization-defined locations] based on [Assignment: organization-defined requirements or conditions]. 18F uses AWS GovCloud to deploy the Cloud Foundry platform.  AWS GovCloud is FedRAMP certified and is located in one Availability Zone.  All Cloud Foundry applications are restricted to this location.
+  parameters: 
+  # This is a reference to AWS GovCloud
+  - key: SA-9 (5) 
+    text: |
+      [Selection (one or more): information processing; information/data; information system services]  
+  # This is a reference to AWS GovCloud Avaliability Zone
+  - key: SA-9 (5) 
+    text: |
+      [Assignment: organization-defined locations]    
+  # This is a reference to FedRAMP 
+  - key: SA-9 (5) 
+    text: |
+      [Assignment: organization-defined requirements or conditions]    
   standard_key: NIST-800-53
 - control_key: SA-10
   covered_by:
