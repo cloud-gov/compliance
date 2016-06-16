@@ -90,7 +90,7 @@ satisfies:
   - key: a
     text: |
       Review of ongoing operational need for current logical and physical access by individuals are initiated and facilitated by supervisor/CO/COR.  Retrieval of all information system-related property which includes HDPS-12 cards, authentication tokens (USB for privileged access), laptops, etc. is a common control provided by IO.
-      cloud.gov revokes privileged access if an indivdiual is reassigned or transferred outside of the team.
+      cloud.gov revokes privileged access if an individual is reassigned or transferred outside of the team.
   - key: b
     text: |
       cloud.gov initiates the revoking process within the same day of an individual being transferred outside of the team.
@@ -141,12 +141,18 @@ satisfies:
   narrative:
   - key: a
     text: |
-      TODO
+      GSA employs a formal sanctions process for personnel failing to comply with established information security policies and procedures
   - key: b
     text: |
-      TODO
+      18F notifies 18F Security Office (SSO) within the amount of time that it takes to verify that a security breach as occurred when a formal employee sanctions process is initiated, identifying the individual sanctioned and the reason for the sanction.
+  parameters:
+    - key: PS-8 # [Assignment: organization-defined personnel or roles]
+      text: |
+        18F Security Office (SSO)
+    - key: PS-8 # [Assignment: organization-defined time period]
+      text: |
+        the amount of time that it takes to verify that a security breach as occurred
   standard_key: NIST-800-53
-
 schema_version: 3.0.0
 system: 18F
 verifications:
