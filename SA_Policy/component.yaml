@@ -18,7 +18,7 @@ satisfies:
       18F follows the GSA System Maintenance policy for its information systems hosted within GSA facilities. The cloud.gov information system is hosted with the AWS GovCloud and will be in purview of the hosting site’s Maintenance policy and procedures.
   - key: b
     text: |-
-      The GSA Office of the CISO is responsible for reviewing and updating the above documents annually, and notifying System Program Managers and Information System Security Officers and Managers (ISSO/Ms). The GSA OCISO has determined SA-1 to be an Enterprise-Wide Common Control and is provided by the OCISO ISP. For specific details, please refer to the GSA IT FY-15 Information Security Program Plan Version 1.0.
+      The GSA Office of the CISO is responsible for reviewing and updating the above documents annually, and notifying System Program Managers and Information System Security Officers and Managers (ISSO/Ms). The GSA it statuOCISO has determined SA-1 to be an Enterprise-Wide Common Control and is provided by the OCISO ISP. For specific details, please refer to the GSA IT FY-15 Information Security Program Plan Version 1.0.
   standard_key: NIST-800-53
 - control_key: SA-2
   covered_by:
@@ -42,19 +42,20 @@ satisfies:
   narrative:
   - key: a
     text: |
-      The 18F DevOps team practices the Scrumban process when developing new features or fixing existing issues, including security fixes and enhancements for cloud.gov.  Each feature or issue is assigned to a card in the system, where it goes through a process of being identified, prioritized, explored, delivered, and finally demonstrated. Each card is reviewed by the team as a whole throughout its lifecycle to identify any security risks or concerns, which are recorded on the card as "acceptance criteria" that must be addressed before development is complete.
+      18F practices the Scrumban process when developing new features or fixing existing issues, including security fixes and enhancements for cloud.gov.  Each feature or issue is assigned to a card in the system, where it goes through a process of being identified, prioritized, explored, delivered, and finally demonstrated. Each card is reviewed by the team as a whole throughout its lifecycle to identify any security risks or concerns, which are recorded on the card as "acceptance criteria" that must be addressed before development is complete.
 
       Once development is complete, a team member submits the code to our version control system as a "pull request", where at least one other team member further reviews it before merging it into the code base.  The team then deploys new features into our staging area where they undergo further security review and stakeholder acceptance testing, as well as automated acceptance tests.
   - key: b
     text: |
-      The cloud.gov team is broken into several sub-teams with different areas of responsibility and expertise.   Security is a foremost concern for members of all teams.  The cloud.gov Atlas sub-team is primarily focused on implementing security policies at the platform level.
+      The cloud.gov operation team is broken into several sub-teams with different areas of responsibility and expertise.   Security is a foremost concern for members of all teams.  The cloud.gov operators is primarily focused on implementing security policies at the platform level.
   - key: c
     text: |
-      Each member of the 18F DevOps team has the necessary security background to properly handle sensitive data, such as security keys and certificates, and to evaluate the security implications associated with configuration changes. The cloud.gov team controls access to cloud.gov and its components through the access control tools appropriate for its components, including AWS security groups, Cloud Foundry roles, and GitHub team membership.
+      Each member of the cloud.gov operators have the necessary security background to properly handle sensitive data, such as security keys and certificates, and to evaluate the security implications associated with configuration changes. The cloud.gov operators controls access to cloud.gov and its components through the access control tools appropriate for its components, including AWS security groups, Cloud Foundry roles, and GitHub team membership.
   - key: d
     text: |
-      The cloud.gov Atlas team continually monitors the configurations of the various components of cloud.gov to ensure they meet the requirements for protecting sensitive data.
+      The cloud.gov operators team continually monitors the configurations of the various components of cloud.gov to ensure they meet the requirements for protecting sensitive data.
   standard_key: NIST-800-53
+  # parameters TODO
 - control_key: SA-4
   covered_by:
   - verification_key: POLICY_DOC
@@ -88,7 +89,7 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |-
-      TODO
+      18F requires the developer of the information system, system component, or information system service to provide a description of the functional properties of the security controls to be employed.
   standard_key: NIST-800-53
 - control_key: SA-4 (2)
   covered_by:
@@ -96,7 +97,19 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |-
-      TODO
+      18F requires the developer of the information system, system component, or information system service to provide design and implementation information for the security controls to be employed that includes: [Selection (one or more): security-relevant external system interfaces; high-level design; low-level design; source code or hardware schematics; [Assignment: organization-defined design/implementation information]] at [Assignment: organization-defined level of detail].
+  parameters:
+  # This parameter can be a reference to the fact that we are complying with the FedRAMP controls.    
+  - key: SA-4 (2)
+    text: |
+      [Selection (one or more): security-relevant external system interfaces; high-level design; low-level design; source code or hardware schematics;]
+  # This parameter can be a reference to the Configuration Management/GitHub process.    
+  - key: SA-4 (2)
+    text: |
+      [Assignment: organization-defined design/implementation information]
+- key: SA-4 (2)
+    text: |
+      [Assignment: organization-defined level of detail]
   standard_key: NIST-800-53
 - control_key: SA-4 (8)
   covered_by:
@@ -104,7 +117,12 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |-
-      TODO
+      18F requires the developer of the information system, system component, or information system service to produce a plan for the continuous monitoring of security control effectiveness that contains [Assignment: organization-defined level of detail].
+  parameters:
+  # This parameter can be a reference to Configuration Management plan.    
+  - key: SA-4 (8)
+    text: |
+      [Assignment: organization-defined level of detail]
   standard_key: NIST-800-53
 - control_key: SA-4 (9)
   covered_by:
@@ -224,16 +242,18 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |-
-        The organization employs [Assignment: organization-defined security safeguards] to ensure that the interests of [Assignment: organization-defined external service providers] are consistent with and reflect organizational interests. 18F uses AWS GovCloud, which is FedRAMP certified and reviewed and approved by the FedRAMP JAB.
+        18F employs [Assignment: organization-defined security safeguards] to ensure that the interests of [Assignment: organization-defined external service providers] are consistent with and reflect organizational interests. 18F uses AWS GovCloud, which is FedRAMP certified and reviewed and approved by the FedRAMP JAB.
   parameters:
   # This can be a reference to the FedRAMP process again since AWS Govcloud is also FedRamp certified.  
+  # [Assignment: organization-defined security safeguards]
 - key: SA-9 (4) 
     text: |
-      [Assignment: organization-defined security safeguards]
+      Tripwire
   # This is a reference to AWS or another CSP we are using for an external service
+  #[Assignment: organization-defined external service providers]
   - key: SA-9 (4) 
     text: |
-      [Assignment: organization-defined external service providers]
+      AWS
   standard_key: NIST-800-53
 - control_key: SA-9 (5)
   covered_by:
@@ -241,7 +261,7 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |-
-      The organization restricts the location of [Selection (one or more): information processing; information/data; information system services] to [Assignment: organization-defined locations] based on [Assignment: organization-defined requirements or conditions]. 18F uses AWS GovCloud to deploy the Cloud Foundry platform.  AWS GovCloud is FedRAMP certified and is located in one Availability Zone.  All Cloud Foundry applications are restricted to this location.
+      18F restricts the location of [Selection (one or more): information processing; information/data; information system services] to [Assignment: organization-defined locations] based on [Assignment: organization-defined requirements or conditions]. 18F uses AWS GovCloud to deploy the Cloud Foundry platform.  AWS GovCloud is FedRAMP certified and is located in one Availability Zone.  All Cloud Foundry applications are restricted to this location.
   parameters: 
   # This is a reference to AWS GovCloud
   - key: SA-9 (5) 
