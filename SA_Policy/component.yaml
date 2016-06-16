@@ -18,7 +18,7 @@ satisfies:
       18F follows the GSA System Maintenance policy for its information systems hosted within GSA facilities. The cloud.gov information system is hosted with the AWS GovCloud and will be in purview of the hosting site’s Maintenance policy and procedures.
   - key: b
     text: |-
-      The GSA Office of the CISO is responsible for reviewing and updating the above documents annually, and notifying System Program Managers and Information System Security Officers and Managers (ISSO/Ms). The GSA it statuOCISO has determined SA-1 to be an Enterprise-Wide Common Control and is provided by the OCISO ISP. For specific details, please refer to the GSA IT FY-15 Information Security Program Plan Version 1.0.
+      The GSA Office of the CISO is responsible for reviewing and updating the above documents annually, and notifying System Program Managers and Information System Security Officers and Managers (ISSO/Ms). The GSA OCISO has determined SA-1 to be an Enterprise-Wide Common Control and is provided by the OCISO ISP. For specific details, please refer to the GSA IT FY-15 Information Security Program Plan Version 1.0.
   standard_key: NIST-800-53
 - control_key: SA-2
   covered_by:
@@ -99,17 +99,23 @@ satisfies:
   - text: |-
       18F requires the developer of the information system, system component, or information system service to provide design and implementation information for the security controls to be employed that includes: [Selection (one or more): security-relevant external system interfaces; high-level design; low-level design; source code or hardware schematics; [Assignment: organization-defined design/implementation information]] at [Assignment: organization-defined level of detail].
   parameters:
-  # This parameter can be a reference to the fact that we are complying with the FedRAMP controls.    
+  # This parameter can be a reference to the fact that we are complying with the FedRAMP controls.  
+  # [Selection (one or more): security-relevant external system interfaces; high-level design; low-level design; source code or hardware schematics;]
   - key: SA-4 (2)
     text: |
-      [Selection (one or more): security-relevant external system interfaces; high-level design; low-level design; source code or hardware schematics;]
+       [Selection (one or more): security-relevant external system interfaces; high-level design; low-level design; source code or hardware schematics; [Assignment: organization-defined design/implementation information]
+  # Parameter for  [Assignment: organization-defined design/implementation information]. Need value for this text. 
+  - key: SA-4 (2)
+    text: |
+       [Assignment: organization-defined design/implementation information]
   # This parameter can be a reference to the Configuration Management/GitHub process.    
   - key: SA-4 (2)
     text: |
       [Assignment: organization-defined design/implementation information]
-- key: SA-4 (2)
+  # Parameter for [Assignment: organization-defined level of detail]
+  - key: SA-4 (2)
     text: |
-      [Assignment: organization-defined level of detail]
+      18F
   standard_key: NIST-800-53
 - control_key: SA-4 (8)
   covered_by:
@@ -119,26 +125,29 @@ satisfies:
   - text: |-
       18F requires the developer of the information system, system component, or information system service to produce a plan for the continuous monitoring of security control effectiveness that contains [Assignment: organization-defined level of detail].
   parameters:
-  # This parameter can be a reference to Configuration Management plan.    
+  # This parameter can be a reference to Configuration Management plan.   
+  # [Assignment: organization-defined level of detail] 
   - key: SA-4 (8)
     text: |
-      [Assignment: organization-defined level of detail]
+      clould.gov continous monitoring plan 
   standard_key: NIST-800-53
 - control_key: SA-4 (9)
   covered_by:
   - verification_key: POLICY_DOC
   implementation_status: none
+  # Do we require application design documents
   narrative:
   - text: |-
-      TODO
+      18F requires the developer of the information system, system component, or information system service to identify early in the system development life cycle, the functions, ports, protocols, and services intended for organizational use.
   standard_key: NIST-800-53
 - control_key: SA-4 (10)
   covered_by:
   - verification_key: POLICY_DOC
   implementation_status: none
+  # Possibly covered by GSA identification policies 
   narrative:
   - text: |-
-      TODO
+      GSA employs only information technology products on the FIPS 201-approved products list for Personal Identity Verification (PIV) capability implemented within organizational information systems.
   standard_key: NIST-800-53
 - control_key: SA-5
   covered_by:
@@ -317,8 +326,30 @@ satisfies:
   covered_by:
   - verification_key: DEPLOYMENT_TESTING
   narrative:
-  - text: |-
-      TODO
+  - key: a
+    text: |-
+      Create and implement a security assessment plan
+  # [Selection (one or more): unit; integration; system; regression] 
+  # [Assignment: organization-defined depth and coverage]
+  - key: b
+    text: |-
+      Perform [Selection (one or more): unit; integration; system; regression] testing/evaluation at [Assignment: organization-defined depth and coverage];
+    parameters: 
+      - key: SA-11
+        text: |
+            regession
+       - key: SA-11
+        text: |
+            cloud.gov
+  - key: c
+    text: |-
+      Produce evidence of the execution of the security assessment plan and the results of the security testing/evaluation
+  - key: d
+    text: |-
+      Implement a verifiable flaw remediation process
+  - key: e
+    text: |-
+      Correct flaws identified during security testing/evaluation
   standard_key: NIST-800-53
 - control_key: SA-11 (1)
   covered_by:
@@ -332,14 +363,14 @@ satisfies:
   - verification_key: DEPLOYMENT_TESTING
   narrative:
   - text: |-
-      TODO
+      cloud.gov requires the developer of the information system, system component, or information system service to perform threat and vulnerability analyses and subsequent testing/evaluation of the as-built system, component, or service.
   standard_key: NIST-800-53
 - control_key: SA-11 (8)
   covered_by:
   - verification_key: DEPLOYMENT_TESTING
   narrative:
   - text: |-
-      TODO
+      cloud.gov requires the developer of the information system, system component, or information system service to employ dynamic code analysis tools to identify common flaws and document the results of the analysis.
   standard_key: NIST-800-53
 - control_key: SA-22 (1)
   covered_by:
