@@ -74,16 +74,18 @@ satisfies:
       text: |
         Cloud Checkr reports atypical usage of information system accounts to designated 18F SecOps and Devops teams. Monitoring and intrusion information contained within Cloud Checkr and Cloudtrail logs are  sent to 18F security personnel. The  logs are protected from unauthorized access by limiting access to authorized privileged users only.
   standard_key: NIST-800-53
-- control_key: AC-17 (1)
+- control_key: AC-6 (9)
   covered_by: []
   implementation_status: none
-  narrative: 'Cloud Checkr provides a unified view of all infrastructure monitoring
-    which captures all remote activities within 18F virtual infrastructure. The log
-    files are organized by AWS Account ID, region, service name, date, and time. CloudTrail
-    can be configured to aggregate log files from multiple regions into a single Amazon
-    S3 bucket. From there, 18F Devops and SecOps teams view the logs files within
-    Cloud Checkr to perform security analysis and detect user behavior patterns.
-    '
+  narrative:
+    - text: |
+        All privileged user account activity and API calls to cloud.gov are
+        audited by CloudTrail and monitored by CloudWatch. CloudTrail provides a log of
+        all requests for AWS resources within the 18F AWS account. For each event recorded,
+        18F can see what service was accessed, what action was performed, any parameters
+        for the action, and who made the request. Cloudtrail also shows whether it was
+        as the AWS root account user or an IAM user, or whether it was with temporary
+        security credentials for a role or federated user.
   standard_key: NIST-800-53
 - control_key: AU-3
   covered_by: []
