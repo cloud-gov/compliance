@@ -132,7 +132,7 @@ satisfies:
       # TODO: Address "Known vulnerabilities regarding configuration and use of administrative (i.e., privileged) functions"
       The cloud.gov team maintains documentation for cloud.gov in the GitHub repositories for
       the components of the system and at https://docs.cloud.gov.
-      Administrator documentation describes secure deployment and operation of cloud.gov.
+      The Contributing section describes secure deployment and operation of cloud.gov.
   - key: b
     text: |-
       Best practices for secure usage of cloud.gov are available and continuously
@@ -161,25 +161,25 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |-
-      18F applies security engineering principles primarily to new development of 
-      information systems. 18F uses the Cloud Foundry Secure Deployment best 
-      practices, which include the following: Configure UAA clients and users using a 
+      18F applies security engineering principles primarily to new development of
+      information systems. 18F uses the Cloud Foundry Secure Deployment best
+      practices, which include the following: Configure UAA clients and users using a
       standard BOSH manifest for Cloud Foundry Development.  18F develops and maintains
       documentation on the baseline configuration of the information system that include
-      network topology, system architecture, application, web, and server components 
-      along with software standards.  Cloud Foundry protects the information system 
-      from security threats by minimizing network surface area, applying security 
-      controls, isolating applications and data in containers, and encrypting 
-      connections.  It also implements role-based access controls, applying and 
-      enforcing permissions to isolate user to their space.  Baseline configurations 
-      settings are reviewed on a continual basis to to comply with federal mandates 
-      and compliance standards.  18F documents changes to the baseline configuration 
-      in GitHub for review.  Part of this process includes a thorough security analysis 
-      of the proposed change prior to the configuration change being implemented on 
-      the operational system.  18F deploys with every application a standard set of 
-      tools for security and monitoring of each application to identify security 
-      issues. For more details please refer to 18F Configuration Management Policy 
-      and security controls CM-2, CM-3, and CM-6.   
+      network topology, system architecture, application, web, and server components
+      along with software standards.  Cloud Foundry protects the information system
+      from security threats by minimizing network surface area, applying security
+      controls, isolating applications and data in containers, and encrypting
+      connections.  It also implements role-based access controls, applying and
+      enforcing permissions to isolate user to their space.  Baseline configurations
+      settings are reviewed on a continual basis to to comply with federal mandates
+      and compliance standards.  18F documents changes to the baseline configuration
+      in GitHub for review.  Part of this process includes a thorough security analysis
+      of the proposed change prior to the configuration change being implemented on
+      the operational system.  18F deploys with every application a standard set of
+      tools for security and monitoring of each application to identify security
+      issues. For more details please refer to 18F Configuration Management Policy
+      and security controls CM-2, CM-3, and CM-6.
   standard_key: NIST-800-53
 - control_key: SA-9
   covered_by:
@@ -195,7 +195,7 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |-
-        18F has implemented an incident response process in the event of a security incident. This process outlines the procedure to execute in the event an investigator or a security component of the system identifies a security threat. This process is documented at https://docs.cloud.gov/ops/security-ir/   
+        18F has implemented an incident response process in the event of a security incident. This process outlines the procedure to execute in the event an investigator or a security component of the system identifies a security threat. This process is documented at https://docs.cloud.gov/ops/security-ir/
   standard_key: NIST-801-53
 - control_key: SA-9 (2)
   covered_by:
@@ -203,7 +203,7 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |-
-     18F documents configuration settings for its information technology products within the Cloud Foundry platform to reflect the most restrictive mode consistent with operational requirements.  18F follows industry security best practices and guidance provided in NIST Special Publication 800-70. All ports, protocols, and services are restricted to least privilege.  18F uses the approved FISMA ready baselines located at https://github.com/fisma-ready.   
+     18F documents configuration settings for its information technology products within the Cloud Foundry platform to reflect the most restrictive mode consistent with operational requirements.  18F follows industry security best practices and guidance provided in NIST Special Publication 800-70. All ports, protocols, and services are restricted to least privilege.  18F uses the approved FISMA ready baselines located at https://github.com/fisma-ready.
   standard_key: NIST-800-53
 - control_key: SA-9 (4)
   covered_by:
@@ -211,7 +211,7 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |-
-        The organization employs [Assignment: organization-defined security safeguards] to ensure that the interests of [Assignment: organization-defined external service providers] are consistent with and reflect organizational interests. 18F uses AWS GovCloud, which is FedRAMP certified and reviewed and approved by the FedRAMP JAB.  
+        The organization employs [Assignment: organization-defined security safeguards] to ensure that the interests of [Assignment: organization-defined external service providers] are consistent with and reflect organizational interests. 18F uses AWS GovCloud, which is FedRAMP certified and reviewed and approved by the FedRAMP JAB.
   standard_key: NIST-800-53
 - control_key: SA-9 (5)
   covered_by:
@@ -219,7 +219,7 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |-
-      The organization restricts the location of [Selection (one or more): information processing; information/data; information system services] to [Assignment: organization-defined locations] based on [Assignment: organization-defined requirements or conditions]. 18F uses AWS GovCloud to deploy the Cloud Foundry platform.  AWS GovCloud is FedRAMP certified and is located in one Availability Zone.  All Cloud Foundry applications are restricted to this location. 
+      The organization restricts the location of [Selection (one or more): information processing; information/data; information system services] to [Assignment: organization-defined locations] based on [Assignment: organization-defined requirements or conditions]. 18F uses AWS GovCloud to deploy the Cloud Foundry platform.  AWS GovCloud is FedRAMP certified and is located in one Availability Zone.  All Cloud Foundry applications are restricted to this location.
   standard_key: NIST-800-53
 - control_key: SA-10
   covered_by:
@@ -244,8 +244,7 @@ satisfies:
       deployed.
   - key: d
     text: |-
-      Configuration changes are tracked using GitHub and communicated to users of
-      cloud.gov using Slack.
+      Configuration changes are made through pull requests in GitHub, which need to include documentation of all of the relevant context, as specified in 18F-wide policy here: https://github.com/18F/development-guide/tree/master/git_protocol#write-a-feature
   - key: e
     text: |-
       BOSH stemcell images and BOSH deployment artifacts are updated regularly, so that
