@@ -4,6 +4,7 @@ references:
 - name: Reference Name
   path: https://www.elastic.co/webinars/introduction-elk-stack
   type: URL
+satisfies:
 - control_key: AC-2
   covered_by: []
   implementation_status: none
