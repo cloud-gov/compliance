@@ -262,9 +262,28 @@ satisfies:
   covered_by:
   - verification_key: DEPLOYMENT_TESTING
   narrative:
-  - text: |-
+  - key: a
+    # https://18f.slack.com/archives/cloud-gov/p1465929760000146
+    text: |-
+      The security assessment plan is created by the FedRAMP Accredited Third Pary Assessment Organzation (3PAO). It will It will be used for annual assessments conducted by the 3PAO for continuous monitoring of cloud.gov.
+  - key: b
+    text: |-
+      TODO
+  - key: c
+    text: |-
+      TODO
+  - key: d
+    text: |-
+      TODO
+  - key: e
+    text: |-
       TODO
   standard_key: NIST-800-53
+  parameters:
+  - key: b-1
+    text: TODO
+  - key: b-2
+    text: TODO
 - control_key: SA-11 (1)
   covered_by:
   - verification_key: DEPLOYMENT_TESTING
