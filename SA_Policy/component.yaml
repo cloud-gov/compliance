@@ -50,7 +50,7 @@ satisfies:
       The cloud.gov team is broken into several sub-teams with different areas of responsibility and expertise.   Security is a foremost concern for members of all teams.  The cloud.gov Atlas sub-team is primarily focused on implementing security policies at the platform level.
   - key: c
     text: |
-      Each member of the cloud.gov DevOps team has the necessary security background to properly handle sensitive data, such as security keys and certificates, and to evaluate the security implications associated with configuration changes. The cloud.gov team controls access to cloud.gov and its components through the access control tools appropriate for its components, including AWS security groups, Cloud Foundry roles, and GitHub team membership.
+      Each member of the 18F DevOps team has the necessary security background to properly handle sensitive data, such as security keys and certificates, and to evaluate the security implications associated with configuration changes. The cloud.gov team controls access to cloud.gov and its components through the access control tools appropriate for its components, including AWS security groups, Cloud Foundry roles, and GitHub team membership.
   - key: d
     text: |
       The cloud.gov Atlas team continually monitors the configurations of the various components of cloud.gov to ensure they meet the requirements for protecting sensitive data.
