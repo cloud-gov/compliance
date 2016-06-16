@@ -109,13 +109,11 @@ satisfies:
         * Region - the AWS Region(s) where the interactions occurred.
         * Resource ID - the resource ID from the event.
   standard_key: NIST-800-53
-- control_key: AC-2 (3)
+- control_key: AU-3
   covered_by: []
   implementation_status: none
-  narrative: 'User accounts will be monitored monthly and accounts will be disabled
-    after 90 days of inactivity; this will be a manual review process every 30 days.
-    18F generates a credential report that lists all IAM users and the status of their
-    credentials, including passwords, access keys, and MFA devices.
-    '
+  narrative:
+    - text: |
+        CloudTrail Log File Name Format CloudTrail uses the following file name format for the log file objects it uploads to your S3 bucket: AccountID_CloudTrail_RegionName_YYYYMMDDTHHmmZ_UniqueString.FileNameFormat YYYY, MM, DD, HH, and mm are the digits of the year, month, day, hour, and minute (respectively) when the log file was delivered. Hours are in 24-hour format. The Z indicates that the time is in UTC.
   standard_key: NIST-800-53
 schema_version: 2.0
