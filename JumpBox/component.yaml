@@ -52,29 +52,23 @@ satisfies:
     - text: |
         Access keys and user accounts can be revoked using IAM. Sessions terminate after 10 minutes.
   standard_key: NIST-800-53
-- control_key: IA-2 (8)
+- control_key: IA-2 (1)
   covered_by: []
-  implementation_status: none
-  narrative: 'Access keys and user accounts can be revoked using IAM. Sessions terminate
-    after 10 minutes.
-
-    '
+  narrative:
+    - text: |
+        cloud.gov currently does not have MFA capabilities implemented for users; however, any administrative actions taken on the platform requires authentication via encrypted ssh keys which are limited to specific users on the jumpbox.
   standard_key: NIST-800-53
 - control_key: IA-2 (3)
   covered_by: []
-  narrative: 'Any administrative actions taken on the platform requires authentication
-    via encrypted ssh keys which are limited to specific users on the jumpbox.
-
-    '
+  narrative:
+    - text: |
+        Any administrative actions taken on the platform requires authentication via encrypted ssh keys which are limited to specific users on the jumpbox.
   standard_key: NIST-800-53
-- control_key: AC-17 (3)
+- control_key: IA-2 (8)
   covered_by: []
-  implementation_status: complete
-  narrative: 'cloud.gov remote access connections are manageed through jumpbox Virtual
-    machines within the cloud.gov VPC. The remote connections are SSH sessions using
-    the BOSH CLI API. There are no other remote connections to the platform as stated
-    in AC-17(2)
-
-    '
+  implementation_status: none
+  narrative:
+    - text: |
+        Access keys and user accounts can be revoked using IAM. Sessions terminate after 10 minutes.
   standard_key: NIST-800-53
 schema_version: 3.0.0
