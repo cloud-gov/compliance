@@ -319,10 +319,9 @@ satisfies:
   - verification_key: DEPLOYMENT_TESTING
   narrative:
   - key: a
+    # https://18f.slack.com/archives/cloud-gov/p1465929760000146
     text: |-
-      Create and implement a security assessment plan
-  # [Selection (one or more): unit; integration; system; regression]
-  # [Assignment: organization-defined depth and coverage]
+      The security assessment plan is created by the FedRAMP Accredited Third Pary Assessment Organzation (3PAO). It will It will be used for annual assessments conducted by the 3PAO for continuous monitoring of cloud.gov.
   - key: b
     text: |-
       Perform [Selection (one or more): unit; integration; system; regression] testing/evaluation at [Assignment: organization-defined depth and coverage];

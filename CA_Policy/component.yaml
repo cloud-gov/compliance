@@ -36,7 +36,7 @@ satisfies:
       * Assessment procedures to be used to determine security control effectiveness
       * Assessment environment, assessment team, and assessment roles and responsibilities
 
-      cloud.gov is designed for compliance with the Federal Risk and Authroization Management Plan and has adopted the FedRAMP Assessment and Authorization program as the basis for its Security and Priavacy compliance activities. cloud.gov engages a FedRAMP Accredited Third Pary Assessemt Organzation (3PAO) to develop a compliant security assessment plan.
+      cloud.gov is designed for compliance with the Federal Risk and Authroization Management Plan and has adopted the FedRAMP Assessment and Authorization program as the basis for its Security and Priavacy compliance activities. cloud.gov engages a FedRAMP Accredited Third Pary Assessment Organzation (3PAO) to develop a compliant security assessment plan.
   - key: b
     text: |
       cloud.gov has engaged the 3PAO to assess the security controls in the information system at least annually to determine the extent to which the controls are implemented correctly, operation as intended, and producing the desired outcome with respoect to meeting the security requirements for the system.
