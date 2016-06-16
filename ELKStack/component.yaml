@@ -78,12 +78,11 @@ satisfies:
 - control_key: AU-2
   covered_by: []
   implementation_status: none
-  narrative: "#### a  \ncloud.gov provides an audit trail through the bosh tasks command.\
-    \ This command shows all actions that an operator has taken with the platform.\
-    \ Additionally, operators can redirect Cloud Foundry component logs to a Logstash\
-    \ syslog server using the syslog_daemon_config property in the metron_agent job\
-    \ of cf-release.\nFor end users, cloud.gov records an audit trail of all relevant\
-    \ API invocations of and app. The CLI command cf events returns this information.\n\
-    \  \n"
+  narrative:
+  - key: a
+    text: |
+      cloud.gov provides an audit trail through the bosh tasks command. This command shows all actions that an operator has taken with the platform. Additionally, operators can redirect Cloud Foundry component logs to a Logstash syslog server using the `syslog_daemon_config` property in the `metron_agent` job of cf-release.
+
+      For end users, cloud.gov records an audit trail of all relevant API invocations of and app. The CLI command cf events returns this information.
   standard_key: NIST-800-53
 schema_version: 3.0.0
