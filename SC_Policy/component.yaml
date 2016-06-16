@@ -1,36 +1,32 @@
 documentation_complete: false
 name: System and Communications Protection Policy for 18F
 satisfies:
-- control_key: SC-1
-  covered_by:
-  - verification_key: POLICY_DOC
-  implementation_status: none
-  narrative:
-  - text: |
-      18F Policy
-  standard_key: NIST-800-53
 - control_key: SC-7
   covered_by: []
   implementation_status: none
-  narrative:
-  - key: b
-    text: |
-      18F Implements subnetworks for publicly accessible system components that
-      are logically separated from internal organizational networks
+  narrative: "#### b  \n18F Implements subnetworks for publicly accessible system\
+    \ components that are logically separated from internal organizational networks\n\
+    \  \n"
   standard_key: NIST-800-53
 - control_key: SC-12 (1)
   covered_by:
   - verification_key: KEY_ROTATION
   implementation_status: complete
-  narrative:
-  - text: |
-      Authorized federal staff rotate, encrypt, and backup keys monthly. Privileged
-      users can access the keys only with two-factor authentication and a decryption
-      passphrase. In the rare case that both the keys and the decryption passphrase
-      for the backup are lost or compromised, new keys can be rotated in by authorized
-      federal staff, while maintaining availability of information.
+  narrative: 'Authorized federal staff rotate, encrypt, and backup keys monthly. Privileged
+    users can access the keys only with two-factor authentication and a decryption
+    passphrase. In the rare case that both the keys and the decryption passphrase
+    for the backup are lost or compromised, new keys can be rotated in by authorized
+    federal staff, while maintaining availability of information.
+
+    '
   standard_key: NIST-800-53
-schema_version: 3.0.0
+- control_key: SC-1
+  covered_by:
+  - verification_key: POLICY_DOC
+  implementation_status: none
+  narrative: 18F Policy
+  standard_key: NIST-800-53
+schema_version: 2.0
 system: 18F
 verifications:
 - key: KEY_ROTATION
@@ -40,9 +36,9 @@ verifications:
 - key: POLICY_DOC
   name: policy document
   path: https://github.com/18f/compliance-docs/blob/master/SC-Policy.md
-  type: URL
-- description: |
-    GIVEN the github link - <policy> THEN the policy has been updated within the last 180 days
+  type: url
+- description: "GIVEN the github link - <policy> THEN the policy has been updated\
+    \ within the last 180 days \n"
   key: Policy_Update_Test
   last_run: 2016-04-07 13:25:17.749496
   name: 18F Policies Update
