@@ -81,21 +81,15 @@ satisfies:
   narrative:
     - key: a
       text: |
-        cloud.gov employs ClamAV at information system entry and exit points to
-        detect and eradicate malicious code;
+        cloud.gov employs ClamAV at information system entry and exit points to detect and eradicate malicious code
     - key: b
       text: |
-        18F updates ClamAV whenever new releases are available in accordance
-        with organizational configuration management policy and procedures;
+        18F updates ClamAV whenever new releases are available in accordance with organizational configuration management policy and procedures
     - key: c
       text: |
-        The 18F DevOps and SecOps teams configure ClamAV to:
+        cloud.gov operators and SecOps teams configure ClamAV to:
 
-          1. Perform on-access scans of cloud.gov [Assignment: organization-
-          defined frequency] and real-time scans of files from external sources at
-          [Selection (one or more); endpoint; network entry/exit points] as the files
-          are downloaded, opened, or executed in accordance with organizational
-          security policy; and
+          1. Perform on-access scans of cloud.gov [Assignment: organization- defined frequency] and real-time scans of files from external sources at [Selection (one or more); endpoint; network entry/exit points] as the files are downloaded, opened, or executed in accordance with organizational security policy
 
           2. [Selection (one or more): block malicious code; quarantine malicious
           code; send alert to administrator; [Assignment: organization-defined action]]
@@ -120,7 +114,7 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |
-      cloud.gov automatically updates ClamAV malicious code protection mechanisms.
+      cloud.gov automatically updates ClamAV
   standard_key: NIST-800-53
 - control_key: SI-3 (7)
   covered_by:
