@@ -307,8 +307,7 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |
-      18F incorporates the detection of unauthorized [Assignment: organization-
-      defined security-relevant changes to the information system] into the
+      18F incorporates the detection of unauthorized access to the cloud.gov infrastructure, leveraged services, and other components used to deliver cloud.gov products and services as documented in
       organizational incident response capability.
   standard_key: NIST-800-53
 - control_key: SI-8
@@ -318,10 +317,10 @@ satisfies:
   narrative:
   - key: a
     text: |
-      Employs spam protection mechanisms at information system entry and exit points to detect and take action on unsolicited messages; and
+      cloud.gov relays email message for monitoring using AWS's simple notification service and does not accept incoming messages.  
   - key: b
     text: |
-      Updates spam protection mechanisms when new releases are available in accordance with organizational configuration management policy and procedures.
+      This control is not applicalbe since clould.gov does not accept messages. 
   standard_key: NIST-800-53
 - control_key: SI-8 (1)
   covered_by:
@@ -329,7 +328,7 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |
-      cloud.gov centrally manages spam protection mechanisms.
+      This control is not applicalbe since clould.gov does not accept messages. 
   standard_key: NIST-800-53
 - control_key: SI-8 (2)
   covered_by:
@@ -337,7 +336,7 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |
-      The information system automatically updates spam protection mechanisms.
+      This control is not applicalbe since clould.gov does not accept messages. 
   standard_key: NIST-800-53
 - control_key: SI-10
   covered_by:
@@ -345,7 +344,7 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |
-      The information system checks the validity of [Assignment: organization-defined information inputs].
+      cloud.gov system monitors the integrity of system inputs using Tripwire.
   standard_key: NIST-800-53
 - control_key: SI-11
   covered_by:
@@ -354,10 +353,10 @@ satisfies:
   narrative:
   - key: a
     text: |
-      Generates error messages that provide information necessary for corrective actions without revealing information that could be exploited by adversaries; and
+      cloud.gov generates errors through Riemann which then sends an alert to Pager Duty for action.  
   - key: b
     text: |
-      Reveals error messages only to [Assignment: organization-defined personnel or roles].
+      Reveals error messages only to cloud.gov operators.
   standard_key: NIST-800-53
 - control_key: SI-12
   covered_by:
@@ -365,7 +364,7 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |
-      The organization handles and retains information within the information system and information output from the system in accordance with applicable federal laws, Executive Orders, directives, policies, regulations, standards, and operational requirements.
+      cloud.gov handles and retains information within cloud.gov system and information output from the system in accordance with applicable federal laws, Executive Orders, directives, policies, regulations, standards, and operational requirements.
   standard_key: NIST-800-53
 - control_key: SI-16
   covered_by:
@@ -373,7 +372,7 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |
-      The information system implements [Assignment: organization-defined security safeguards] to protect its memory from unauthorized code execution.
+      cloud.gov system implements ClamAV and Tripwire to protect its memory from unauthorized code execution.
   standard_key: NIST-800-53
 system: 18F
 verifications:
