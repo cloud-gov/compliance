@@ -131,7 +131,7 @@ satisfies:
   narrative:
   - key: a
     text: |
-      The 18F DevOps and SecOps teams monitor the cloud.gov information
+      cloud.gov operators and SecOps teams monitor the cloud.gov information
       system to detect potential attacks and intrusions from internal and external
       sources in accordance with the 18F System Information and Integrity Policy section
       3 - Information System monitoring, the FedRAMP Incident communication procedures,
@@ -182,7 +182,7 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |
-      The 18F DevOps and SecOps teams use BOSH to configure and deploy Tripwire.
+      cloud.gov operators and SecOps teams use BOSH to configure and deploy Tripwire.
   standard_key: NIST-800-53
 - control_key: SI-4 (2)
   covered_by:
@@ -190,8 +190,7 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |
-      18F uses BOSH to configure and deploy Riemann to support near real-time
-      analysis of events.
+      18F uses BOSH to configure and deploy Riemann to support near real-time analysis of events.
   standard_key: NIST-800-53
 - control_key: SI-4 (4)
   covered_by:
@@ -199,8 +198,7 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |
-      cloud.gov monitors inbound and outbound communications traffic [FedRAMP
-      Assignment: continually] for unusual or unauthorized activities or conditions.
+      cloud.gov monitors inbound and outbound communications traffic [FedRAMP Assignment: continually] for unusual or unauthorized activities or conditions.
   standard_key: NIST-800-53
 - control_key: SI-4 (5)
   covered_by:
@@ -235,9 +233,7 @@ satisfies:
   narrative:
   - key: a
     text: |
-      18F implements Grafana [Assignment: organization-defined host-based monitoring mechanisms] on
-      cloud.gov [Assignment: organization-defined information system components].
-  standard_key: NIST-800-53
+      18F implements Grafana [Assignment: organization-defined host-based monitoring mechanisms] on cloud.gov [Assignment: organization-defined information system components].  standard_key: NIST-800-53
 - control_key: SI-5
   covered_by:
   - verification_key: POLICY_DOC
