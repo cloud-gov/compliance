@@ -46,7 +46,7 @@ satisfies:
   standard_key: NIST-800-53
 - control_key: SC-5
   covered_by: []
-  implementation_status: implemented
+  implementation_status: complete
   narrative:
   - text: |
       Refer to the 18F policy statement for the types of denial of service (DoS) to protect our systems against. Policy https://github.com/18f/compliance-docs/blob/master/SC-Policy.md
