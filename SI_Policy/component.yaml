@@ -8,7 +8,8 @@ satisfies:
   - verification_key: POLICY_DOC
   implementation_status: none
   narrative:
-  - text: 18F Policy
+  - text: |
+      18F Policy
   standard_key: NIST-800-53
 - control_key: SI-2
   covered_by:
@@ -72,7 +73,8 @@ satisfies:
   parameters:
     # [Assignment: organization-defined benchmarks]
     - key: SI-2 (3)
-      text: [Assignment: organization-defined benchmarks]
+      text: |  
+        [Assignment: organization-defined benchmarks]
   standard_key: NIST-800-53
 - control_key: SI-3
   covered_by:
@@ -100,11 +102,13 @@ satisfies:
     # from external sources at [Selection (one or more); endpoint; network
     # entry/exit points]
     - key: SI-3
-      text: [Assignment: organization- defined frequency] and real-time scans of files from external sources at [Selection (one or more); endpoint; network entry/exit points]]
+      text: |
+        [Assignment: organization- defined frequency] and real-time scans of files from external sources at [Selection (one or more); endpoint; network entry/exit points]]
     # [Selection (one or more): block malicious code; quarantine malicious code;
     # send alert to administrator; [Assignment: organization-defined action]]
     - key: SI-3
-      text: [Selection (one or more): block malicious code; quarantine malicious code; send alert to administrator; [Assignment: organization-defined action]]
+      text: |
+        [Selection (one or more): block malicious code; quarantine malicious code; send alert to administrator; [Assignment: organization-defined action]]
   standard_key: NIST-800-53
 - control_key: SI-3 (1)
   covered_by:
