@@ -91,14 +91,20 @@ satisfies:
 
           1. Perform on-access scans of cloud.gov [Assignment: organization- defined frequency] and real-time scans of files from external sources at [Selection (one or more); endpoint; network entry/exit points] as the files are downloaded, opened, or executed in accordance with organizational security policy
 
-          2. [Selection (one or more): block malicious code; quarantine malicious
-          code; send alert to administrator; [Assignment: organization-defined action]]
-          in response to malicious code detection; and
+          2. [Selection (one or more): block malicious code; quarantine malicious code; send alert to administrator; [Assignment: organization-defined action]] in response to malicious code detection
     - key: d
       text: |
-        cloud.gov addresses the receipt of false positives during malicious
-        code detection and eradication and the resulting potential impact on the
-        availability of the information system.
+        cloud.gov addresses the receipt of false positives during malicious code detection and eradication and the resulting potential impact on the availability of the information system.
+  parameters:
+    # [Assignment: organization- defined frequency] and real-time scans of files
+    # from external sources at [Selection (one or more); endpoint; network
+    # entry/exit points]
+    - key: SI-3
+      text: [Assignment: organization- defined frequency] and real-time scans of files from external sources at [Selection (one or more); endpoint; network entry/exit points]]
+    # [Selection (one or more): block malicious code; quarantine malicious code;
+    # send alert to administrator; [Assignment: organization-defined action]]
+    - key: SI-3
+      text: [Selection (one or more): block malicious code; quarantine malicious code; send alert to administrator; [Assignment: organization-defined action]]
   standard_key: NIST-800-53
 - control_key: SI-3 (1)
   covered_by:
