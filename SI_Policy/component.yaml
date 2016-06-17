@@ -17,21 +17,32 @@ satisfies:
   narrative:
   - key: a
     text: |
-      18F identifies all system flaws related to cloud.gov, reports
-      system flaws to information system owners, Authorizing officials, DevOps and
-      SecOps, and corrects information system flaws that affect cloud.gov.
-
+      18F identifies all system flaws related to cloud.gov, reports system flaws to information system owners, Authorizing officials, cloud.gov operators and SecOps, and corrects information system flaws that affect cloud.gov.
+  - key: b
+    text: |
+      18F tests software updates against a staging environment for any updates, including those related to flaw remediation, for effectiveness and potential side effects before deploying the updates to production environment.
       Cloud Foundry manages software vulnerability using releases and BOSH stemcells.
       New Cloud Foundry releases are created with updates to address code issues, while new
       stemcells are created with patches for the latest security fixes to address
       any underlying operating system issues. New Cloud Foundry releases are located
       at https://github.com/cloudfoundry/cf-release.
+  - key: c
+    text: |
+      Installs security-relevant software and firmware updates within [FedRAMP Assignment: Within 30 days of release of updates] of the release of the updates
+  - key: d
+    text: |
+      18F incorporates flaw remediation into the organizational configuration management process.
 
-      18F implements the release of Cloud Foundry he what (or the software
+      18F implements the release of Cloud Foundry and (or the software
       developer/vendor in the case of software developed and maintained by a
       vendor/contractor) promptly installs newly released security relevant
       patches and tests patches, for effectiveness and potential
       side effects on information systems before installation.
+  parameters:
+    # [FedRAMP Assignment: Within 30 days of release of updates]
+    - key: SI-2
+      text: |
+        promptly installs newly released
   standard_key: NIST-800-53
 - control_key: SI-2 (2)
   covered_by:
@@ -39,9 +50,12 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |
-      The 18F DevOps and SecOps teams employs automated mechanisms [Assignment:
-      organization-defined frequency] to determine the state of information system
-      components with regard to flaw remediation.
+      cloud.gov operators and SecOps teams employ automated mechanisms [Assignment: organization-defined frequency] to determine the state of information system components with regard to flaw remediation.
+  parameters:
+    # [Assignment: organization-defined frequency]
+    - key: SI-2 (2)
+      text: |
+        [Assignment: organization-defined frequency]
   standard_key: NIST-800-53
 - control_key: SI-2 (3)
   covered_by:
@@ -50,12 +64,15 @@ satisfies:
   narrative:
   - key: a
     text: |
-      The 18F DevOps and SecOps teams measure the time between flaw identification
-      and flaw remediation; and
+      cloud.gov operators and SecOps teams measure the time between flaw identification
+      and flaw remediation
   - key: b
     text: |
-     The 18F DevOps and SecOps teams establish [Assignment: organization-defined
-     benchmarks] for taking corrective actions.
+     cloud.gov operators and SecOps teams establish [Assignment: organization-defined benchmarks] for taking corrective actions.
+  parameters:
+    # [Assignment: organization-defined benchmarks]
+    - key: SI-2 (3)
+      text: [Assignment: organization-defined benchmarks]
   standard_key: NIST-800-53
 - control_key: SI-3
   covered_by:
