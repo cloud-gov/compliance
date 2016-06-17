@@ -63,25 +63,39 @@ satisfies:
   narrative:
   - key: a
     text: |-
-      Security functional requirements
+      System and Services Acquisition Policy is included in CIO P 2100.1 - GSA IT Security Policy, Chapter 5. Policy on Technical Controls.  It states, "GSA system program managers and contracting officers shall ensure that the appropriate security requirements of this order are included in task orders and contracts for all IT systems designed, developed, implemented, and operated by a contractor on behalf of the government, including systems operating in a Cloud Computing environment including but not limited to Software as a Service (SaaS)."
+
+      GSA OCISO ISP also defined agency-wide system and services acquisition procedures in IT Security Procedural Guide: Security Language for IT Acquisition Efforts (CIO-IT Security-09-48)
   - key: b
     text: |-
-      Security strength requirements
+      System and Services Acquisition Policy is included in CIO P 2100.1 - GSA IT Security Policy, Chapter 5. Policy on Technical Controls.  It states, "GSA system program managers and contracting officers shall ensure that the appropriate security requirements of this order are included in task orders and contracts for all IT systems designed, developed, implemented, and operated by a contractor on behalf of the government, including systems operating in a Cloud Computing environment including but not limited to Software as a Service (SaaS)."
+
+      GSA OCISO ISP also defined agency-wide system and services acquisition procedures in IT Security Procedural Guide: Security Language for IT Acquisition Efforts (CIO-IT Security-09-48)
   - key: c
     text: |-
-      Security assurance requirements
+      System and Services Acquisition Policy is included in CIO P 2100.1 - GSA IT Security Policy, Chapter 5. Policy on Technical Controls.  It states, "GSA system program managers and contracting officers shall ensure that the appropriate security requirements of this order are included in task orders and contracts for all IT systems designed, developed, implemented, and operated by a contractor on behalf of the government, including systems operating in a Cloud Computing environment including but not limited to Software as a Service (SaaS)."
+
+      GSA OCISO ISP also defined agency-wide system and services acquisition procedures in IT Security Procedural Guide: Security Language for IT Acquisition Efforts (CIO-IT Security-09-48)
   - key: d
     text: |-
-      Security-related documentation requirements
+      System and Services Acquisition Policy is included in CIO P 2100.1 - GSA IT Security Policy, Chapter 5. Policy on Technical Controls.  It states, "GSA system program managers and contracting officers shall ensure that the appropriate security requirements of this order are included in task orders and contracts for all IT systems designed, developed, implemented, and operated by a contractor on behalf of the government, including systems operating in a Cloud Computing environment including but not limited to Software as a Service (SaaS)."
+
+      GSA OCISO ISP also defined agency-wide system and services acquisition procedures in IT Security Procedural Guide: Security Language for IT Acquisition Efforts (CIO-IT Security-09-48)
   - key: e
     text: |-
-      Requirements for protecting security-related documentation
+      System and Services Acquisition Policy is included in CIO P 2100.1 - GSA IT Security Policy, Chapter 5. Policy on Technical Controls.  It states, "GSA system program managers and contracting officers shall ensure that the appropriate security requirements of this order are included in task orders and contracts for all IT systems designed, developed, implemented, and operated by a contractor on behalf of the government, including systems operating in a Cloud Computing environment including but not limited to Software as a Service (SaaS)."
+
+      GSA OCISO ISP also defined agency-wide system and services acquisition procedures in IT Security Procedural Guide: Security Language for IT Acquisition Efforts (CIO-IT Security-09-48)
   - key: f
     text: |-
-      Description of the information system development environment and environment in which the system is intended to operate
+      System and Services Acquisition Policy is included in CIO P 2100.1 - GSA IT Security Policy, Chapter 5. Policy on Technical Controls.  It states, "GSA system program managers and contracting officers shall ensure that the appropriate security requirements of this order are included in task orders and contracts for all IT systems designed, developed, implemented, and operated by a contractor on behalf of the government, including systems operating in a Cloud Computing environment including but not limited to Software as a Service (SaaS)."
+
+      GSA OCISO ISP also defined agency-wide system and services acquisition procedures in IT Security Procedural Guide: Security Language for IT Acquisition Efforts (CIO-IT Security-09-48)
   - key: g
     text: |-
-      Acceptance criteria
+      System and Services Acquisition Policy is included in CIO P 2100.1 - GSA IT Security Policy, Chapter 5. Policy on Technical Controls.  It states, "GSA system program managers and contracting officers shall ensure that the appropriate security requirements of this order are included in task orders and contracts for all IT systems designed, developed, implemented, and operated by a contractor on behalf of the government, including systems operating in a Cloud Computing environment including but not limited to Software as a Service (SaaS)."
+
+      GSA OCISO ISP also defined agency-wide system and services acquisition procedures in IT Security Procedural Guide: Security Language for IT Acquisition Efforts (CIO-IT Security-09-48)
   standard_key: NIST-800-53
 - control_key: SA-4 (1)
   covered_by:
@@ -89,7 +103,7 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |-
-      18F requires the developer of the information system, system component, or information system service to provide a description of the functional properties of the security controls to be employed.
+      GSA OCISO ISP also defined agency-wide system and services acquisition procedures in IT Security Procedural Guide: Security Language for IT Acquisition Efforts (CIO-IT Security-09-48)
   standard_key: NIST-800-53
 - control_key: SA-4 (2)
   covered_by:
@@ -97,7 +111,7 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |-
-      18F requires the developer of the information system, system component, or information system service to provide design and implementation information for the security controls to be employed that includes: [Selection (one or more): security-relevant external system interfaces; high-level design; low-level design; source code or hardware schematics; [Assignment: organization-defined design/implementation information]] at [Assignment: organization-defined level of detail].
+      GSA OCISO ISP also defined agency-wide system and services acquisition procedures in IT Security Procedural Guide: Security Language for IT Acquisition Efforts (CIO-IT Security-09-48)
   parameters:
   # This parameter can be a reference to the fact that we are complying with the FedRAMP controls.
   # [Selection (one or more): security-relevant external system interfaces; high-level design; low-level design; source code or hardware schematics;]
@@ -123,13 +137,13 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |-
-      18F requires the developer of the information system, system component, or information system service to produce a plan for the continuous monitoring of security control effectiveness that contains [Assignment: organization-defined level of detail].
+      clould.gov developed a continous monitoring plan and requires all system components to adhere to it.
   parameters:
   # This parameter can be a reference to Configuration Management plan.
   # [Assignment: organization-defined level of detail]
   - key: SA-4 (8)
     text: |
-      clould.gov continous monitoring plan
+      continous monitoring plan
   standard_key: NIST-800-53
 - control_key: SA-4 (9)
   covered_by:
@@ -138,7 +152,8 @@ satisfies:
   # Do we require application design documents
   narrative:
   - text: |-
-      18F requires the developer of the information system, system component, or information system service to identify early in the system development life cycle, the functions, ports, protocols, and services intended for organizational use.
+      18F utilizes an agile development process which means that changes are made early and often. Functions, ports and protocols are part of this process.
+      cloud.gov enables developers to be flexible on what functions are used but customers can only open one port per application.
   standard_key: NIST-800-53
 - control_key: SA-4 (10)
   covered_by:
@@ -147,7 +162,7 @@ satisfies:
   # Possibly covered by GSA identification policies
   narrative:
   - text: |-
-      GSA employs only information technology products on the FIPS 201-approved products list for Personal Identity Verification (PIV) capability implemented within organizational information systems.
+      cloud.gov delegates identity verification to customer's single sign on services.
   standard_key: NIST-800-53
 - control_key: SA-5
   covered_by:
@@ -156,31 +171,24 @@ satisfies:
   narrative:
   - key: a
     text: |-
-      # TODO: Address "Known vulnerabilities regarding configuration and use of administrative (i.e., privileged) functions"
-      The cloud.gov team maintains documentation for cloud.gov in the GitHub repositories for
-      the components of the system and at https://docs.cloud.gov.
-      The Contributing section describes secure deployment and operation of cloud.gov.
+      The cloud.gov team maintains documentation for cloud.gov in the GitHub repositories for the components of the system and at https://docs.cloud.gov.
+      The "Contributing" section describes secure deployment and operation of cloud.gov.
+      All known vulnerabilities are patched and documented in the GitHub repositories.
   - key: b
     text: |-
-      Best practices for secure usage of cloud.gov are available and continuously
-      updated at https://docs.cloud.gov.
+      Best practices for secure usage of cloud.gov are available and continuously updated at https://docs.cloud.gov.
   - key: c
     text: |-
-      Anyone can file a report of incomplete or unavailable documentation using GitHub
-      issues attached to https://github.com/18F/cg-docs or to the repositories that
-      store various cloud.gov components.
+      Anyone can file a report of incomplete or unavailable documentation using GitHub issues attached to https://github.com/18F/cg-docs or to the repositories that store various cloud.gov components.
+      The cloud.gov team responds to those issues and the creates documentation required.
   - key: d
     text: |-
-      Because cloud.gov documentation does not contain sensitive information,
-      documentation is publicly accessible in GitHub and at https://docs.cloud.gov.
-      Changes to that documentation can only be accepted by authorized individuals on
-      the cloud.gov team through GitHub team membership.
+      Because cloud.gov documentation does not contain sensitive information, documentation is publicly accessible in GitHub and at https://docs.cloud.gov.
+      Changes to that documentation can only be accepted by authorized individuals on the cloud.gov team through GitHub team membership.
   - key: e
     text: |-
-      The cloud.gov team maintains documentation for cloud.gov in the GitHub repositories for
-      the components of the system and at https://docs.cloud.gov.
-      The team directs new members to this documentation, and expects team members
-      to be aware of its contents.
+      The cloud.gov team maintains documentation for cloud.gov in the GitHub repositories for the components of the system and at https://docs.cloud.gov.
+      The team directs new members to this documentation, and expects team members to be aware of its contents.
   standard_key: NIST-800-53
 - control_key: SA-8
   covered_by:
@@ -188,25 +196,14 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |-
-      18F applies security engineering principles primarily to new development of
-      information systems. 18F uses the Cloud Foundry Secure Deployment best
-      practices, which include the following: Configure UAA clients and users using a
-      standard BOSH manifest for Cloud Foundry Development.  18F develops and maintains
-      documentation on the baseline configuration of the information system that include
-      network topology, system architecture, application, web, and server components
-      along with software standards.  Cloud Foundry protects the information system
-      from security threats by minimizing network surface area, applying security
-      controls, isolating applications and data in containers, and encrypting
-      connections.  It also implements role-based access controls, applying and
-      enforcing permissions to isolate user to their space.  Baseline configurations
-      settings are reviewed on a continual basis to to comply with federal mandates
-      and compliance standards.  18F documents changes to the baseline configuration
-      in GitHub for review.  Part of this process includes a thorough security analysis
-      of the proposed change prior to the configuration change being implemented on
-      the operational system.  18F deploys with every application a standard set of
-      tools for security and monitoring of each application to identify security
-      issues. For more details please refer to 18F Configuration Management Policy
-      and security controls CM-2, CM-3, and CM-6.
+      cloud.gov uses the Cloud Foundry secure deployment best practices, which include the following:
+        - Configure UAA clients and users using a standard BOSH manifest for Cloud Foundry Development.
+        - cloud.gov develops and maintains documentation on the baseline configuration of the information system that include network topology, system architecture, application, web, and server components along with software standards.
+        - Cloud Foundry protects the information system from security threats by minimizing network surface area, applying security controls, isolating applications and data in containers, and encrypting connections.
+        - It also implements role-based access controls, applying and enforcing permissions to isolate user to their space.  Baseline configurations settings are reviewed on a continual basis to to comply with federal mandates and compliance standards.
+        - cloud.gov documents changes to the baseline configuration in GitHub for review. Part of this process includes a thorough security analysis of the proposed change prior to the configuration change being implemented on the operational system.
+        - cloud.gov deploys with every application a standard set of tools for security and monitoring of each application to identify security issues.
+      For more details please refer to 18F Configuration Management Policy and security controls CM-2, CM-3, and CM-6.
   standard_key: NIST-800-53
 - control_key: SA-9
   covered_by:
@@ -215,30 +212,35 @@ satisfies:
   narrative:
     - key: a
       text: |
-        Requires that providers of external information system services comply with organizational information security requirements and employ [Assignment: organization-defined security controls] in accordance with applicable federal laws, Executive Orders, directives, policies, regulations, standards, and guidance. 18F utilizes AWS GovCloud, which is FedRAMP accredited for Federal Agencies.
+        As a government system, cloud.gov requires that all external services comply with all applicable federal software requirements.
+        The infrastructure utilized by cloud.gov is AWS GovCloud, which is FedRAMP certified.
     - key: b
       text: |
-        Defines and documents government oversight and user roles and responsibilities with regard to external information system services; and
+        GSA procurement practices defines all monitoring requirements for external information systems.
     - key: c
       text: |
-        Employs [Assignment: organization-defined processes, methods, and techniques] to monitor security control compliance by external service providers on an ongoing basis.
+        cloud.gov employs continuous monitoring for both internal and external information systems.
   parameters:
   # This parameter can be a reference to the fact that we are complying with the FedRAMP controls.
   - key: SA-9
     text: |
-      [Assignment: organization-defined security controls]
+      FedRAMP Security Controls Baseline
   # This parameter can be a reference to the Configuration Management plan/process.
   - key: SA-9
     text: |
-      [Assignment: organization-defined processes, methods, and techniques]
+      Federal/FedRAMP Continuous Monitoring requirements
   standard_key: NIST-800-53
 - control_key: SA-9 (1)
   covered_by:
   - verification_key: POLICY_DOC
   implementation_status: none
   narrative:
-  - text: |-
-        18F has implemented an incident response process in the event of a security incident. This process outlines the procedure to execute in the event an investigator or a security component of the system identifies a security threat. This process is documented at https://docs.cloud.gov/ops/security-ir/
+  - key: a
+    text: |
+      GSA complies with federal regulations requiring agencies to evaluate risk prior to acquiring any tool or service.
+  - key: b
+    text: |
+      The GSA Office of the CIO approves any information security services. The FedRAMP JAB will take over that responsibility once cloud.gov receives its approval.
   standard_key: NIST-801-53
 - control_key: SA-9 (2)
   covered_by:
@@ -246,7 +248,7 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |-
-     18F documents configuration settings for its information technology products within the Cloud Foundry platform to reflect the most restrictive mode consistent with operational requirements.  18F follows industry security best practices and guidance provided in NIST Special Publication 800-70. All ports, protocols, and services are restricted to least privilege.  18F uses the approved FISMA ready baselines located at https://github.com/fisma-ready.
+      GSA requires that any external service receives an Authority to Operate which includes identification of all functions, protocols, etc.
   standard_key: NIST-800-53
 - control_key: SA-9 (4)
   covered_by:
@@ -254,18 +256,13 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |-
-        18F employs [Assignment: organization-defined security safeguards] to ensure that the interests of [Assignment: organization-defined external service providers] are consistent with and reflect organizational interests. 18F uses AWS GovCloud, which is FedRAMP certified and reviewed and approved by the FedRAMP JAB.
+      GSA requires that any external service receives an Authority to Operate which includes alignment of organizational interests.
   parameters:
   # This can be a reference to the FedRAMP process again since AWS Govcloud is also FedRamp certified.
   # [Assignment: organization-defined security safeguards]
   - key: SA-9 (4)
     text: |
-      Tripwire
-  # This is a reference to AWS or another CSP we are using for an external service
-  #[Assignment: organization-defined external service providers]
-  - key: SA-9 (4)
-    text: |
-      AWS
+      All external systems where Federal information is processed or stored
   standard_key: NIST-800-53
 - control_key: SA-9 (5)
   covered_by:
@@ -273,20 +270,20 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |-
-      18F restricts the location of [Selection (one or more): information processing; information/data; information system services] to [Assignment: organization-defined locations] based on [Assignment: organization-defined requirements or conditions]. 18F uses AWS GovCloud to deploy the Cloud Foundry platform.  AWS GovCloud is FedRAMP certified and is located in one Availability Zone.  All Cloud Foundry applications are restricted to this location.
+      cloud.gov restricts the location of all user data to AWS GovCloud and related services.
   parameters:
   # This is a reference to AWS GovCloud
   - key: SA-9 (5)
     text: |
-      [Selection (one or more): information processing; information/data; information system services]
+      all user data and information
   # This is a reference to AWS GovCloud Avaliability Zone
   - key: SA-9 (5)
     text: |
-      [Assignment: organization-defined locations]
+      AWS GovCloud
   # This is a reference to FedRAMP
   - key: SA-9 (5)
     text: |
-      [Assignment: organization-defined requirements or conditions]
+      FedRAMP approval
   standard_key: NIST-800-53
 - control_key: SA-10
   covered_by:
@@ -295,64 +292,54 @@ satisfies:
   narrative:
   - key: a
     text: |-
-      Configuration and deployment of the cloud.gov platform is managed using the
-      BOSH project. BOSH releases and deployment manifests are stored in GitHub;
-      sensitive credentials are stored in Amazon S3 and are protected using both
-      client- and server-side encryption.
+      Configuration and deployment of the cloud.gov platform is managed using the BOSH project. BOSH releases and deployment manifests are stored in GitHub; sensitive credentials are stored in Amazon S3 and are protected using both client- and server-side encryption.
   - key: b
     text: |-
-      Changes to BOSH configuration are tracked in GitHub. Documentation is stored
-      alongside deployment manifests and updated as configuration is changed; high-level
-      documentation is also available at https://docs.cloud.gov.
+      Changes to BOSH configuration are tracked in GitHub. Documentation is stored alongside deployment manifests and updated as configuration is changed; high-level documentation is also available at https://docs.cloud.gov.
   - key: c
     text: |-
-      All proposed configuration changes are reviewed by members of the cloud.gov team.
-      Proposed changes must pass unit, integration, and acceptance tests before being
-      deployed.
+      All proposed configuration changes are reviewed by members of the cloud.gov team. Proposed changes must pass unit, integration, and acceptance tests before being deployed.
   - key: d
     text: |-
       Configuration changes are made through pull requests in GitHub, which need to include documentation of all of the relevant context, as specified in 18F-wide policy here: https://github.com/18F/development-guide/tree/master/git_protocol#write-a-feature
   - key: e
     text: |-
-      BOSH stemcell images and BOSH deployment artifacts are updated regularly, so that
-      upstream security updates are applied.
+      BOSH stemcell images and BOSH deployment artifacts are updated regularly, so that upstream security updates are applied.
   standard_key: NIST-800-53
 - control_key: SA-10 (1)
   covered_by:
   - verification_key: DEPLOYMENT_TESTING
   narrative:
   - text: |-
-      Deployment artifacts are stored and distributed by BOSH along with SHA-1 hashes
-      to allow verification of file integrity.
+      Deployment artifacts are stored and distributed by BOSH along with SHA-1 hashes to allow verification of file integrity.
   standard_key: NIST-800-53
 - control_key: SA-11
   covered_by:
   - verification_key: DEPLOYMENT_TESTING
   narrative:
   - key: a
+    # https://18f.slack.com/archives/cloud-gov/p1465929760000146
     text: |-
-      Create and implement a security assessment plan
-  # [Selection (one or more): unit; integration; system; regression]
-  # [Assignment: organization-defined depth and coverage]
+      The security assessment plan is created by the FedRAMP Accredited Third Pary Assessment Organzation (3PAO). It will It will be used for annual assessments conducted by the 3PAO for continuous monitoring of cloud.gov.
   - key: b
     text: |-
-      Perform [Selection (one or more): unit; integration; system; regression] testing/evaluation at [Assignment: organization-defined depth and coverage];
+      cloud.gov performs unit and integration testing on the sytem on each deployment.
     parameters:
       - key: SA-11
         text: |
-          regression
+          unit and integration
       - key: SA-11
         text: |
           cloud.gov
   - key: c
     text: |-
-      Produce evidence of the execution of the security assessment plan and the results of the security testing/evaluation
+      Testing is done automatically and tracked using tools like Nessus, OWASP and Concourse.
   - key: d
     text: |-
-      Implement a verifiable flaw remediation process
+      The process of remediation is by implementing changes to the configuration on configuration management, redeploying and testing.
   - key: e
     text: |-
-      Correct flaws identified during security testing/evaluation
+      Flaws are identified by automated tools and false positives are marked as such.
   standard_key: NIST-800-53
 - control_key: SA-11 (1)
   covered_by:
