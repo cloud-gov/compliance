@@ -5,7 +5,121 @@ satisfies:
   covered_by: []
   implementation_status: none
   narrative:
-    - text: 18F Policy
+    - key: a
+      text: |
+        Agency Configuration Management Policy
+
+        The GSA CM policy is defined in the GSA IT Security Policy (CIO P 2100.1), which addresses purpose, scope, roles,
+        responsibilities, and compliance for CM activities.
+
+        The GSA Office of the CISO is responsible for publishing the above documents to System Program Managers and Information
+        System Security Officers and Managers (ISSO/Ms) on a centralized, agency-accessible website.
+
+        CM procedures are documented in the GSA IT Security Procedural Guide: Managing Enterprise Risks (CIO IT Security-06-30).
+
+        The 18F Program Office develops, documents, and disseminates to all 18F staff
+
+        The 18F configuration management policy which addresses purpose, scope, roles, responsibilities, management commitment,
+        coordination among organizational entities, and compliance and procedures to facilitate the implementation of the
+        configuration management policy and associated configuration controls. The 18F security assessment and authorization
+        policy is listed within its private GitHub repository https://github.com/18F/compliance-docs/blob/master/CM-Policy.md
+        that is accessible to all 18F staff.
+    - key: b
+      text: |
+        The GSA Office of the CISO is responsible for reviewing and updating the above documents annually, and notifying
+        System Program Managers and Information System Security Officers and Managers (ISSO/Ms).
+
+        The 18F Program Office will review and update the current 18F configuration management policy at least every 3 years
+        and any documented configuration procedures at least annually.
+  standard_key: NIST-800-53
+- control_key: CM-2
+  covered_by: []
+  implementation_status: none
+  narrative:
+    - text: |
+        For AWS Baseline Configurations:
+
+        AWS Cloud Formation templates, CIS Level 1 benchmarks and any GSA/18F benchmarks such as hardening guidelines
+        and baselines are the approved baseline for all changes to the infrastructure and simplify provisioning and management
+        on AWS. They provide an automated method to assess the status of an operational infrastructure against an approved
+        baseline.
+
+        Windows and Linux instances are based on the standard AWS AMI images in accordance with GSA configuration requirements.
+
+        For cloud.gov Baseline Configurations:
+
+        cloud.gov utilizes customized Ubuntu stemcells and deployment manifest yaml files for its baseline configurations.
+        The list of the configuration settings can be found at the following site https://docs.cloud.gov/ops/repos/
+
+        A stemcell is a versioned Operating System image wrapped with IaaS specific packaging. A typical stemcell contains
+        a bare minimum OS skeleton with a few common utilities pre-installed, a BOSH Agent, and a few configuration files
+        to securely configure the OS by default. With AWS, official stemcells are published as AMIs that can be used in the
+        18F AWS account. Stemcells do not contain any specific information about any software that will be installed once
+        that stemcell becomes a specialized machine in the cluster; nor do they contain any sensitive information which
+        would make them unable to be shared with other BOSH users.  The deployment manifest is a YAML file that defines
+        the components and properties of the deployment.
+
+        Note: Additional OS/Device-specific industry standards and guidance may also be used whenever appropriate. It is
+        understood that when industry standards are adopted they may need to be adapted for the specific implementation
+        and if/where this has occurred it should be mentioned/referenced. 18F ensures that the most current, relevant
+        OS/Device-specific industry standards and guidance is maintained where appropriate to support cloud.gov configurations.
+        These best practice updates are captured during the annual review of the CM Policy which also incorporates 18 procedures.
+  standard_key: NIST-800-53
+- control_key: CM-2 (1)
+  covered_by: []
+  implementation_status: none
+  narrative:
+    - key: a
+      text: |
+        The 18F PMO must review baseline configuration changes at a minimum on an annual basis and on an as needed basis as
+        a result of any significant change that impacts risk to the system, security audits or industry guidance.
+    - key: b
+      text: |
+        The 18F PMO reviews and updates the baseline configuration of the information system when required by the FedRAMP JAB
+        board. Significant change may result from, but are not limited to, multiple required changes occurring simultaneously,
+        changes that impact/modify security settings, and/or major component additions and/or upgrades. Such changes will go
+        through the 18F CM Process, presented to the FedRAMP assigned ISSO and if applicable, be submitted to the JAB for
+        review, vetting acceptability and to ensure ongoing acceptance of security control implementation(s).
+    - key: c
+      text: |
+        18F reviews all baseline configurations when there is a significant change to the cloud.gov system architecture or
+        when its components undergo installation or upgrades.
+  standard_key: NIST-800-53
+- control_key: CM-2 (2)
+  covered_by: []
+  implementation_status: none
+  narrative:
+    - text: |
+        Configuration management at the AWS level is managed through CloudFormation automation templates, AWS Config and
+        VisualOps. 18F maintains baseline configurations for VPC, EBS, EC2 instances and AMIs. AWS Cloud Formation templates
+        help maintains a strict configuration management scheme of the cloud.gov. Because these templates are text files, 18F
+        can simply track differences in these templates to track changes to its infrastructure.
+
+        For cloud.gov, an operator initiates a new deployment using the BOSH CLI, the BOSH Director receives a version of the
+        deployment manifest and creates a new deployment using this manifest. Automated Configuration of cloud.gov platform
+        components is handled by the Concourse.ci, a continuous integration and deployment tool which utilizes the cloud.gov
+        customized Ubuntu stemcells and deployment manifest yaml files for its baseline configurations.
+  standard_key: NIST-800-53
+- control_key: CM-2 (3)
+  covered_by: []
+  implementation_status: none
+  narrative:
+    - text: |
+        If there is any manual change on any part of the infrastructure Bosh and Terraform will correct the settings and
+        revert back to the known state.
+  standard_key: NIST-800-53
+- control_key: CM-2 (7)
+  covered_by: []
+  implementation_status: none
+  narrative:
+    - key: a
+      text: |
+        This control is Not Applicable (NA) for the cloud.gov information system. Per Federal policy 18F employees are not
+        allowed to take equipment outside of the United States without explicit permission.
+    - key: b
+      text: |
+        This control is Not Applicable (NA) for the cloud.gov information system. Per Federal policy 18F employees are not
+        allowed to take equipment outside of the United States without explicit permission.
   standard_key: NIST-800-53
 - control_key: CM-3
   covered_by:
@@ -46,12 +160,12 @@ satisfies:
         All Cloud Foundry configuration changes are documented, approved and tracked
         within 18F's GitHub site.  All configuration changes related to applications
         and websites hosted within the 18F AWS and Cloud Foundry environment are
-        requested by the systems owner and approved by DevOps within the 18F GitHub
+        requested by the systems owner and approved by cloud.gov operators within the 18F GitHub
         tracking systems.
     - key: d
       text: |
         When configuration changes have been approved through 18F's GitHub
-        ticketing and tracking system, the DevOps team implements approved configuration-controlled
+        ticketing and tracking system, the cloud.gov operators team implements approved configuration-controlled
         changes to the information system and then provides a status of the changes
         completed and closes out the ticket.
     - key: e
@@ -63,7 +177,7 @@ satisfies:
     - key: f
       text: |
         Audits for the virtual infrastructure and Cloud Foundry platform as a
-        service and applications are conducted by DevOps, ISSOs and Cloud Foundry
+        service and applications are conducted by cloud.gov operators, ISSOs and Cloud Foundry
         project manager of all configuration-controlled changes to the information
         system.  These audits take place no less than once a month and are documented
         in the GitHub ticketing and tracking system, per the 18F Configuration
@@ -93,7 +207,7 @@ satisfies:
         800-70, Security Configuration Checklist Program for IT Products
 
         Infrastructure documented configuration settings:
-        DevOps and Security Engineers maintain the
+        cloud.gov operators maintain the
         baseline configuration for VPC, EBS and AMIs.  Best practices, FISMA compliant
         AMIs, and hardened cloud formation templates are utilized as there are no benchmarks
         available. 18F uses the following approved FISMA ready baselines located at
@@ -109,14 +223,14 @@ satisfies:
     - key: b
       text: |
         18F Implements the configuration
-        settings based on its documented process and practices. DevOps implements the
+        settings based on its documented process and practices. cloud.gov operators implement the
         configuration benchmarks identified in Part a, maintains the baseline configuration
         for all cloud infrastructure and Cloud Foundry components and is responsible
         for ensuring all systems are configured in accordance with applicable hardening
         guides.
     - key: c
       text: |
-        DevOps documents any exceptions to established baseline
+        cloud.gov operators document any exceptions to established baseline
         configurations for all of 18F's virtual infrastructure and information systems.
         18F maintains exception documents which detail specific items from the established
         configuration settings which cannot be applied to instances due to operational
@@ -128,7 +242,7 @@ satisfies:
         procedures.
 
         All Configuration Change Control:
-        DevOps and 18F system owners maintain the baseline configurations within
+        cloud.gov operators and 18F system owners maintain the baseline configurations within
         18F Virtual Private Cloud. Configuration will be reviewed in real-time using
         automated methods and at least quarterly to ensure no unauthorized changes
         were made to the baseline configuration.
@@ -167,7 +281,9 @@ satisfies:
         Cloud. This includes all information system within the VPCs and components within
         the cloud.gov platform as a service.
 
-        SecOps and DevOps reviews and updates the information system component inventory
+        Bosh continuously maintains inventory of all instances and configuration
+
+        cloud.gov operators review and update the information system component inventory
         on a monthly basis and updates the inventory of information system whenever installations,
         removals, and other changes are made. 18F will verify that all components within
         the authorized boundary of the information system are either inventoried as part
