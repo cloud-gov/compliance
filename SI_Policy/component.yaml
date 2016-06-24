@@ -69,7 +69,7 @@ satisfies:
       and flaw remediation
   - key: b
     text: |
-     cloud.gov operators and SecOps teams establish [Assignment: organization-defined benchmarks] for taking corrective actions.
+     cloud.gov operators and SecOps teams establish incident response plan for taking corrective actions. The cloud.gov incident response plan is documented at https://docs.cloud.gov/ops/security-ir/
   parameters:
     # [Assignment: organization-defined benchmarks]
     - key: SI-2 (3)
@@ -89,11 +89,12 @@ satisfies:
         18F updates ClamAV whenever new releases are available in accordance with organizational configuration management policy and procedures
     - key: c
       text: |
-        cloud.gov operators and SecOps teams configure ClamAV to:
+        18f configures ClamAV in cloud.gov to provide the following :
 
-          1. Perform on-access scans of cloud.gov [Assignment: organization- defined frequency] and real-time scans of files from external sources at [Selection (one or more); endpoint; network entry/exit points] as the files are downloaded, opened, or executed in accordance with organizational security policy
+          1. Real-time scans of cloud.gov applied on either a daily or weekly schedule for file reads and writes
 
-          2. [Selection (one or more): block malicious code; quarantine malicious code; send alert to administrator; [Assignment: organization-defined action]] in response to malicious code detection
+          2. Upon malicious code detection ClamAV identifies the virus in the file and quarantines it.  Once the virus is quarantined, ClamAV sends a notification to cloud.gov operators and SecOps through Riemann  
+
     - key: d
       text: |
         cloud.gov addresses the receipt of false positives during malicious code detection and eradication and the resulting potential impact on the availability of the information system.
@@ -244,7 +245,8 @@ satisfies:
   narrative:
   - key: a
     text: |
-      18F implements Riemann for host based monitoring for all server metrics on cloud.gov.  
+      18F implements Riemann for host based monitoring and alerting. Riemann is utilized on cloud.gov to collect events from all the servers and applications.  
+      Riemann sends an alert to cloud.gov operators if a system metric exceeds a defined threshold. 
   standard_key: NIST-800-53
 - control_key: SI-5
   covered_by:
@@ -275,19 +277,17 @@ satisfies:
   narrative:
     - key: a
       text: |
-        cloud.gov verifies the correct operation of services that detect malicious code, viruses, file integrity, network traffic, and security compliance of the OS using a contious integration tool called concourse.   
+        cloud.gov verifies the correct operation of services that detect malicious code, viruses, file integrity, network traffic, and security compliance of the OS using a contious integration tool called concourse.  
+        concourse is a contious integration tool that auotmates the build of security services in cloud.gov.   
     - key: b
       text: |
-        Performs this verification [FedRAMP Assignment: to include upon system startup
-        and/or restart at least monthly;
+        Performs this verification on daily basis using concourse pipelines
     - key: c
       text: |
-        Notifies [FedRAMP Assignment: to include system administrators and security
-        personnel] of failed security verification tests; and
+        concourse notifies cloud.gov operators and SecOPs of failed security verification tests
     - key: d
       text: |
-        Shuts the information system down; [FedRAMP Assignment: to include notification
-        of system administrators and security personnel] when anomalies are discovered.
+        In the event the a service does not operate correctly, monit will attempt to restart the service upon failure.  If the system is unresponsive then Bosh will restart the server in order to correct the operation of the service.  
   standard_key: NIST-800-53
 - control_key: SI-7
   covered_by:
@@ -321,7 +321,7 @@ satisfies:
   narrative:
   - key: a
     text: |
-      cloud.gov relays email message for monitoring using AWS's simple notification service and does not accept incoming messages.  
+      This control is not applicalbe since clould.gov does not accept messages.  
   - key: b
     text: |
       This control is not applicalbe since clould.gov does not accept messages. 
