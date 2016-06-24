@@ -18,7 +18,7 @@ satisfies:
   narrative:
   - key: a
     text: |
-      18F identifies all system flaws related to cloud.gov, reports system flaws to information system owners, Authorizing officials, cloud.gov operators and SecOps, and corrects information system flaws that affect cloud.gov.
+      18F identifies all system flaws related to cloud.gov, reports system flaws to information system owners, Authorizing officials, cloud.gov operators, and corrects information system flaws that affect cloud.gov.
   - key: b
     text: |
       18F tests software updates against a staging environment for any updates, including those related to flaw remediation, for effectiveness and potential side effects before deploying the updates to production environment.
@@ -51,7 +51,7 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |
-      cloud.gov operators and SecOps teams employ automated mechanisms daily to determine the state of information system components with regard to flaw remediation.
+      cloud.gov operators employ automated mechanisms daily to determine the state of information system components with regard to flaw remediation.
   parameters:
     # [Assignment: organization-defined frequency]
     - key: SI-2 (2)
@@ -65,11 +65,11 @@ satisfies:
   narrative:
   - key: a
     text: |
-      cloud.gov operators and SecOps teams measure the time between flaw identification
+      cloud.gov operators measure the time between flaw identification
       and flaw remediation
   - key: b
     text: |
-     cloud.gov operators and SecOps teams establish incident response plan for taking corrective actions. The cloud.gov incident response plan is documented at https://docs.cloud.gov/ops/security-ir/
+     cloud.gov operators teams establish an incident response plan for taking corrective actions. The cloud.gov incident response plan is documented at https://docs.cloud.gov/ops/security-ir/
   parameters:
     # [Assignment: organization-defined benchmarks]
     - key: SI-2 (3)
@@ -89,11 +89,11 @@ satisfies:
         18F updates ClamAV whenever new releases are available in accordance with organizational configuration management policy and procedures
     - key: c
       text: |
-        18f configures ClamAV in cloud.gov to provide the following :
+        18F configures ClamAV in cloud.gov to provide the following :
 
           1. Real-time scans of cloud.gov applied on either a daily or weekly schedule for file reads and writes
 
-          2. Upon malicious code detection ClamAV identifies the virus in the file and quarantines it.  Once the virus is quarantined, ClamAV sends a notification to cloud.gov operators and SecOps through Riemann  
+          2. Upon malicious code detection ClamAV identifies the virus in the file and quarantines it.  Once the virus is quarantined, ClamAV sends a notification to cloud.gov operators through Riemann  
 
     - key: d
       text: |
@@ -142,7 +142,7 @@ satisfies:
   narrative:
   - key: a
     text: |
-      cloud.gov operators and SecOps teams monitor the cloud.gov information
+      cloud.gov operators monitor the cloud.gov information
       system to detect potential attacks and intrusions from internal and external
       sources in accordance with the 18F System Information and Integrity Policy section
       3 - Information System monitoring, the FedRAMP Incident communication procedures,
@@ -165,7 +165,7 @@ satisfies:
   - key: d
     text: |
       18F ensures intrusion and monitoring tools are protected from unauthorized access
-      by only granting access to certain members from the DevOps and SecOps teams.
+      by only granting access to certain members from the cloud.gov operators.
       All monitoring and intrusion information data is protected by limiting accounts
       to authorized privileged users only and is maintained in secured repositories
       for review by those members.
@@ -185,7 +185,7 @@ satisfies:
       of an event or incident, information will be provided as it is available.  Scheduled
       reports will be provided for events such as after-hours administrative logins,
       users being added to privileged groups, persistent malware detections, etc.,
-      to designated members of the DevOps teams and SecOps teams as needed.
+      to designated members of the cloud.gov operators as needed.
   standard_key: NIST-800-53
 - control_key: SI-4 (1)
   covered_by:
@@ -193,7 +193,7 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |
-      cloud.gov operators and SecOps teams use BOSH to configure and deploy Tripwire.
+      cloud.gov operators use BOSH to configure and deploy Tripwire.
   standard_key: NIST-800-53
 - control_key: SI-4 (2)
   covered_by:
@@ -218,7 +218,7 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |
-      cloud.gov alerts SecOps when
+      cloud.gov alerts the cloud.gov operatorswhen
       the following indications of compromise or potential compromise occur:
       malicious code, file integrity, and network traffic.
   standard_key: NIST-800-53
@@ -284,7 +284,7 @@ satisfies:
         Performs this verification on daily basis using concourse pipelines
     - key: c
       text: |
-        concourse notifies cloud.gov operators and SecOPs of failed security verification tests
+        concourse notifies cloud.gov operators of failed security verification tests
     - key: d
       text: |
         In the event the a service does not operate correctly, monit will attempt to restart the service upon failure.  If the system is unresponsive then Bosh will restart the server in order to correct the operation of the service.  
