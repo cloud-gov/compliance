@@ -321,10 +321,10 @@ satisfies:
   narrative:
   - key: a
     text: |
-      This control is not applicalbe since clould.gov does not accept messages.  
+      This control is not applicable since clould.gov does not accept or process any messages for other information systems or external sources. Therefore spam protection is not necessary.  
   - key: b
     text: |
-      This control is not applicalbe since clould.gov does not accept messages. 
+      This control is not applicable since clould.gov does not accept or process any messages for other information systems or external sources. Therefore spam protection is not necessary.
   standard_key: NIST-800-53
 - control_key: SI-8 (1)
   covered_by:
@@ -332,7 +332,7 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |
-      This control is not applicalbe since clould.gov does not accept messages. 
+      This control is not applicable since clould.gov does not accept or process any messages for other information systems or external sources. Therefore spam protection is not necessary.
   standard_key: NIST-800-53
 - control_key: SI-8 (2)
   covered_by:
@@ -340,7 +340,7 @@ satisfies:
   implementation_status: none
   narrative:
   - text: |
-      This control is not applicalbe since clould.gov does not accept messages. 
+      This control is not applicable since clould.gov does not accept or process any messages for other information systems or external sources. Therefore spam protection is not necessary.
   standard_key: NIST-800-53
 - control_key: SI-10
   covered_by:
