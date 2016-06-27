@@ -1,8 +1,12 @@
-schema_version: 3.0.0
 documentation_complete: false
 name: Media Protection Policy for 18F
+references:
+- name: Policy Document
+  path: https://github.com/18F/compliance-docs/blob/master/MP-Policy.md
+  type: URL
 satisfies:
 - control_key: MP-1
+  covered_by: []
   implementation_status: complete
   narrative:
     - key: a
@@ -94,12 +98,12 @@ satisfies:
   narrative:
     - text: |
         This control is not Applicable to the Cloud.Gov Platform. There are no physical media devices used and Cloud.Gov information system components are virtualized. All network hardware and server components are the responsibility of the underlying Infrastructure as a service provider
-  system: 18F
+  standard_key: NIST-800-53
+schema_version: 3.0.0
+system: 18F
 verifications:
 - key: POLICY_DOC
-  name: Policy Document
-  path: https://github.com/18F/compliance-docs/blob/master/MP-Policy.md
-  type: URL
+
 - description: "GIVEN the github link - <policy> THEN the policy has been updated\
     \ within the last 180 days \n"
   key: Policy_Update_Test
