@@ -102,8 +102,6 @@ satisfies:
 schema_version: 3.0.0
 system: 18F
 verifications:
-- key: POLICY_DOC
-
 - description: "GIVEN the github link - <policy> THEN the policy has been updated\
     \ within the last 180 days \n"
   key: Policy_Update_Test
