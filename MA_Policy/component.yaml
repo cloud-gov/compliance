@@ -3,7 +3,7 @@ name: System Maintenance Policy for 18F
 satisfies:
 - control_key: MA-1
   covered_by: []
-  implementation_status: implemented
+  implementation_status: complete
   narrative:
     - key: a
       text: |
@@ -25,7 +25,7 @@ satisfies:
   standard_key: NIST-800-53
 - control_key: MA-2
   covered_by: []
-  implementation_status: implemented
+  implementation_status: complete
   narrative:
     - key: a
       text: |
@@ -48,28 +48,28 @@ satisfies:
   standard_key: NIST-800-53
 - control_key: MA-3
   covered_by: []
-  implementation_status: implemented
+  implementation_status: complete
   narrative:
       text: |
         This control is inherited from the AWS GovCloud FedRAMP implementation.
   standard_key: NIST-800-53
 - control_key: MA-3 (1)
   covered_by: []
-  implementation_status: implemented
+  implementation_status: complete
   narrative:
       text: |
         This control is inherited from the AWS GovCloud FedRAMP implementation.
   standard_key: NIST-800-53
 - control_key: MA-3 (2)
   covered_by: []
-  implementation_status: implemented
+  implementation_status: complete
   narrative:
       text: |
         This control is inherited from the AWS GovCloud FedRAMP implementation.
   standard_key: NIST-800-53
 - control_key: MA-3 (3)
   covered_by: []
-  implementation_status: implemented
+  implementation_status: complete
   narrative:
     - key: a
       text: |
@@ -86,7 +86,7 @@ satisfies:
   standard_key: NIST-800-53
 - control_key: MA-4
   covered_by: []
-  implementation_status: implemented
+  implementation_status: complete
   narrative:
     - key: a
       text: |
@@ -106,14 +106,14 @@ satisfies:
   standard_key: NIST-800-53
 - control_key: MA-4 (2)
   covered_by: []
-  implementation_status: implemented
+  implementation_status: complete
   narrative:
       text: |
         This control is inherited from the AWS GovCloud FedRAMP implementation.
   standard_key: NIST-800-53
 - control_key: MA-5
   covered_by: []
-  implementation_status: implemented
+  implementation_status: complete
   narrative:
     - key: a
       text: |
@@ -127,7 +127,7 @@ satisfies:
   standard_key: NIST-800-53
 - control_key: MA-5 (1)
   covered_by: []
-  implementation_status: implemented
+  implementation_status: complete
   narrative:
     - key: a
       text: |
@@ -138,7 +138,7 @@ satisfies:
   standard_key: NIST-800-53
 - control_key: MA-6
   covered_by: []
-  implementation_status: implemented
+  implementation_status: complete
   narrative:
     - text: |
         This control is inherited from the AWS GovCloud FedRAMP implementation.
