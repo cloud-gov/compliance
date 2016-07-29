@@ -1,7 +1,11 @@
-# Cloud Foundry Compliance
-This repository contains shared compliance data for cloud.gov
+# cloud.gov Compliance
+This repository contains shared compliance data for cloud.gov.
 
-# Starting ATO Documentation for cloud.gov applications.
+This is a public repository following [18F's Open Source Policy](https://github.com/18F/open-source-policy/blob/master/policy.md). See our [LICENSE.md](LICENSE.md) and [CONTRIBUTING.md](CONTRIBUTING.md) files.
+
+See also: https://github.com/18F/compliance-docs
+
+# Starting ATO Documentation for cloud.gov applications
 0. Install [Compliance Masonry CLI](https://github.com/opencontrol/compliance-masonry)
 0. [Create an opencontrol.yaml](https://github.com/opencontrol/compliance-masonry#creating-an-opencontrol-project) based on the data below.
   ```yaml
@@ -32,4 +36,4 @@ The get command will import all the data from the cg-compliance repository and d
 For viewing the documentation in various formats (e.g. gitbook, docx), use the instructions in the [compliance-masonry](https://github.com/opencontrol/compliance-masonry) repository.
 
 # BDD Tests
-This repository also contains [setup and run instructions for a set of BDD test](https://github.com/18F/cg-compliance/tree/master/BDD) that help verify Cloud Foundry control implementations.
+This repository also contains [setup and run instructions for a set of BDD tests](https://github.com/18F/cg-compliance/tree/master/BDD) that help verify Cloud Foundry control implementations.
