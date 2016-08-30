@@ -5,6 +5,10 @@ This is a public repository following [18F's Open Source Policy](https://github.
 
 See also: https://github.com/18F/compliance-docs
 
+# A note on the status of this material
+As we've moved cloud.gov through the FedRAMP compliance process, we've had to revise our SSP and related docs at a rate that exceeded our ability to capture every change in Compliance Masonry YAML. This leaves us in the same state as many compliance efforts: A single person holds the reins on a single canonical Word .docx version, and all changes are funneling through her. 
+The bad news is that the material in this repository is out of date. The good news is that we're now working on Compliance Masonry with _that much more empathy_ for the pain people normally go through. We're now focused on the ability to [diff the YAML sources with the content of a Word .docx](https://github.com/opencontrol/fedramp-templater/issues/13). This feature will help us bring all of the YAML in this repository up-to-date, and will also help anyone who collaborates on FedRAMP materials with people who will only provide changes in Word.
+
 # Starting ATO Documentation for cloud.gov applications
 0. Install [Compliance Masonry CLI](https://github.com/opencontrol/compliance-masonry)
 0. [Create an opencontrol.yaml](https://github.com/opencontrol/compliance-masonry#creating-an-opencontrol-project) based on the data below.
