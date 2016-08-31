@@ -20,7 +20,8 @@ satisfies:
       This 18F policy contains a protection policy that addresses purpose, scope, roles, responsibilities, management commitment, coordination among organizational entities, and compliance.
 
       18F's "Before You Ship" guide facilitates the implementation of the system and communications protection policy and associated system and communications protection controls.
-    link: https://github.com/18F/before-you-ship/
+
+      See https://github.com/18F/before-you-ship/ for more information.
   - key: b
     text: |
       Reviews and updates the current System and Communications Protection Policy every three years.
@@ -54,7 +55,7 @@ satisfies:
       cloud.gov limits the effects of Volume Based and Protocol DoS type attacks by utilizing the following groups of technical measures:
 
       18F administrative staff maintains hardened Amazon Managed Images (AMI) and Cloud Foundry custom buildpacks with the latest patches and updates.
-      
+
       Buildpacks provide framework and runtime support for applications that are deployed on cloud.gov.  The AMI and custom buildpacks are maintained and secured within 18F's software repository, GitHub.
 
       cloud.gov also uses AWS's IaaS services with well-formed Virtual Private Cloud (VPC) firewall rules to reduce the attack surface, while service resiliency is maintained by utilizing AWS Availability Zones, Elastic Load Balancing, and Auto Scaling services.

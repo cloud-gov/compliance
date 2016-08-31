@@ -324,13 +324,6 @@ satisfies:
   - key: b
     text: |-
       cloud.gov performs unit and integration testing on the sytem on each deployment.
-    parameters:
-      - key: SA-11
-        text: |
-          unit and integration
-      - key: SA-11
-        text: |
-          cloud.gov
   - key: c
     text: |-
       Testing is done automatically and tracked using tools like Nessus, OWASP and Concourse.
@@ -340,6 +333,11 @@ satisfies:
   - key: e
     text: |-
       Flaws are identified by automated tools and false positives are marked as such.
+  parameters:
+  - key: SA-11
+    text: unit and integration
+  - key: SA-11
+    text: cloud.gov
   standard_key: NIST-800-53
 - control_key: SA-11 (1)
   covered_by:
