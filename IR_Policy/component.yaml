@@ -1,5 +1,5 @@
 ---
-schema_version: 3.0.0
+schema_version: 3.1.0
 documentation_complete: false
 name: Incident Response for cloud.gov
 satisfies:
@@ -35,9 +35,8 @@ satisfies:
   implementation_status: planned
   narrative:
   - text: |
-      cloud.gov will create test plans and exercises in accordance to NIST 800-62, and it will present these to the cloud.gov Authorizing Official for their approval.
+      cloud.gov will create test plans and exercises in accordance to NIST 800-61 (http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf), and it will present these to the cloud.gov Authorizing Official for their approval.
       cloud.gov will test its incident response capabilities and related exercises annually.
-    link: http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf
   standard_key: NIST-800-53
 - control_key: IR-3 (2)
   covered_by: []

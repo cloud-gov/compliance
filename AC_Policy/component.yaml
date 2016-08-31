@@ -239,7 +239,7 @@ satisfies:
   narrative:
   - key: a
     text: |
-      18F implements Identity and Access Management (IAM) 
+      18F implements Identity and Access Management (IAM)
       roles and individual user accounts for separation of duties at the AWS layer.
       For Cloud Foundry access, cloud.gov uses UAA role based access controls (RBAC) to
       maintain separation of duties.
@@ -481,7 +481,7 @@ satisfies:
       be handled at the application level and is the responsibility of the application
       system owner.
   standard_key: NIST-800-53
-schema_version: "3.0.0"
+schema_version: "3.1.0"
 verifications:
 - key: POLICY_DOC
   name: Policy Document

@@ -7,11 +7,8 @@ python:
 
 cache: pip
 
-install:
+before_install:
   - git clone https://github.com/opencontrol/schemas
-  - travis_retry pip install pytest
-  - travis_retry pip install pykwalify
-  - travis_retry pip install pyyaml
 
 script:
   - py.test

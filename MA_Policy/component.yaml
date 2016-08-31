@@ -143,7 +143,7 @@ satisfies:
     - text: |
         This control is inherited from the AWS GovCloud FedRAMP implementation.
   standard_key: NIST-800-53
-schema_version: 3.0.0
+schema_version: 3.1.0
 system: 18F
 verifications:
 - key: POLICY_DOC

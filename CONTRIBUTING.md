@@ -17,3 +17,27 @@ the [CC0 1.0 Universal public domain dedication](https://creativecommons.org/pub
 All contributions to this project will be released under the CC0
 dedication. By submitting a pull request, you are agreeing to comply
 with this waiver of copyright interest.
+
+## Validating the data
+
+To check that the schema is valid, run:
+
+1. Clone (or update) the [schemas](https://github.com/opencontrol/schemas) repository into this one.
+
+    ```bash
+    git clone https://github.com/opencontrol/schemas.git
+    # or
+    cd schemas && git pull origin master && cd ..
+    ```
+
+1. Install the dependencies.
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+1. Run the tests.
+
+    ```bash
+    py.test
+    ```
