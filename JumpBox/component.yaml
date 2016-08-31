@@ -71,4 +71,4 @@ satisfies:
     - text: |
         Access keys and user accounts can be revoked using IAM. Sessions terminate after 10 minutes.
   standard_key: NIST-800-53
-schema_version: 3.0.0
+schema_version: 3.1.0

@@ -53,7 +53,7 @@ satisfies:
         security awareness training for 18F staff. currently reviewing the SEI training
         programs for Secure DevOps and Online line Learning management system.
   standard_key: NIST-800-53
-schema_version: 3.0.0
+schema_version: 3.1.0
 system: 18F
 verifications:
 - key: POLICY_DOC

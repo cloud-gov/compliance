@@ -337,7 +337,7 @@ satisfies:
     - text: |
         This control is not applicable to the cloud.gov information system. cloud.gov is not transaction based.
   standard_key: NIST-800-53
-schema_version: 3.0.0
+schema_version: 3.1.0
 system: 18F
 verifications:
 - description: "GIVEN the github link - <policy> THEN the policy has been updated\

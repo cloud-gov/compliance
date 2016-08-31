@@ -28,4 +28,4 @@ satisfies:
       Application developers push their code using the Cloud Foundry API. Cloud Foundry
       secures each call to the CF API using the UAA and SSL
   standard_key: NIST-800-53
-schema_version: 3.0.0
+schema_version: 3.1.0

@@ -103,7 +103,7 @@ satisfies:
     - text: |
         This control is not Applicable to the Cloud.Gov Platform. There are no physical media devices used and Cloud.Gov information system components are virtualized. All network hardware and server components are the responsibility of the underlying Infrastructure as a service provider
   standard_key: NIST-800-53
-schema_version: 3.0.0
+schema_version: 3.1.0
 system: 18F
 verifications:
 - description: "GIVEN the github link - <policy> THEN the policy has been updated\

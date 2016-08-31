@@ -74,4 +74,4 @@ satisfies:
     - text: |
         The cloud.gov platform as a service generates audit logs from its Loggregator component and is passed through the ELK stack to produce audit records which contain sufficient information to establish at a minimum: what type of event occurred, when (date and time the event occurrence) the source of the event the outcome (success or failure) of the event the identity of any user/subject associated with the event
   standard_key: NIST-800-53
-schema_version: 3.0.0
+schema_version: 3.1.0
