@@ -24,7 +24,7 @@ To check that the schema is valid, run:
 
 1. Clone (or update) the [schemas](https://github.com/opencontrol/schemas) repository into this one.
 
-    ```bash
+    ```shell
     git clone https://github.com/opencontrol/schemas.git
     # or
     cd schemas && git pull origin master && cd ..
@@ -32,12 +32,22 @@ To check that the schema is valid, run:
 
 1. Install the dependencies.
 
-    ```bash
+    ```shell
     pip install -r requirements.txt
     ```
 
 1. Run the tests.
 
-    ```bash
+    ```shell
     py.test
     ```
+
+## Viewing as a GitBook
+
+```shell
+make serve
+```
+
+## BDD tests
+
+This repository also contains [setup and run instructions for a set of BDD tests](https://github.com/18F/cg-compliance/tree/master/BDD) that help verify Cloud Foundry control implementations.
