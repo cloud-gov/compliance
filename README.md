@@ -45,7 +45,7 @@ The get command will import all the data from the cg-compliance repository and d
 To view the documentation as a GitBook, run
 
 ```shell
-./build_gitbook.sh
+make serve
 ```
 
 See the [compliance-masonry](https://github.com/opencontrol/compliance-masonry) README for more information.
