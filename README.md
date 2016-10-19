@@ -40,9 +40,15 @@ We're working on a way to [diff the YAML sources with the content of a Word .doc
   compliance-masonry get
   ```
 
-The get command will import all the data from the cg-compliance repository and drop them into the `opencontrol` directory to serve as a baseline for your SSP
+The get command will import all the data from the cg-compliance repository and drop them into the `opencontrol` directory to serve as a baseline for your SSP.
 
-For viewing the documentation in various formats (e.g. gitbook, docx), use the instructions in the [compliance-masonry](https://github.com/opencontrol/compliance-masonry) repository.
+To view the documentation as a GitBook, run
+
+```shell
+./build_gitbook.sh
+```
+
+See the [compliance-masonry](https://github.com/opencontrol/compliance-masonry) README for more information.
 
 # BDD Tests
 This repository also contains [setup and run instructions for a set of BDD tests](https://github.com/18F/cg-compliance/tree/master/BDD) that help verify Cloud Foundry control implementations.
