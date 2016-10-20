@@ -4,7 +4,7 @@ This is a public repository following [18F's Open Source Policy](https://github.
 
 See also: https://github.com/18F/compliance-docs
 
-# What's currently in this repository
+## What's in this repository
 
 This is a **draft** of federal information system security compliance documentation for [cloud.gov](https://cloud.gov/), written in a structured format suited for processing into reader-friendly documents using [Compliance Masonry](https://github.com/opencontrol/compliance-masonry).
 
@@ -14,7 +14,8 @@ The bad news is that the material in this repository is currently out of date. T
 
 We're working on a way to [diff the YAML sources with the content of a Word .docx](https://github.com/opencontrol/fedramp-templater/issues/13) and [building a templating tool](https://github.com/opencontrol/fedramp-templater) that will generate a FedRAMP-style Word doc out of Compliance Masonry YAML. This work will help us bring all of the YAML in this repository up to date (and keep it up to date), and it will also help anyone else who collaborates on FedRAMP materials with people who prefer to make change in Word doc format (rather than YAML files).
 
-# Starting ATO Documentation for cloud.gov applications
+## Starting ATO Documentation for cloud.gov applications
+
 0. Install [Compliance Masonry CLI](https://github.com/opencontrol/compliance-masonry)
 0. [Create an opencontrol.yaml](https://github.com/opencontrol/compliance-masonry#creating-an-opencontrol-project) based on the data below.
   ```yaml
@@ -44,5 +45,4 @@ The get command will import all the data from the cg-compliance repository and d
 
 For viewing the documentation in various formats (e.g. gitbook, docx), use the instructions in the [compliance-masonry](https://github.com/opencontrol/compliance-masonry) repository.
 
-# BDD Tests
-This repository also contains [setup and run instructions for a set of BDD tests](https://github.com/18F/cg-compliance/tree/master/BDD) that help verify Cloud Foundry control implementations.
+For information about working on this repository, see the [contributor documentation](CONTRIBUTING.md).
