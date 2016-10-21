@@ -29,7 +29,7 @@ We're working on a way to [diff the YAML sources with the content of a Word .doc
     - ./your_app_component
   dependencies:
     systems:
-      - url: github.com/18F/cg-compliance
+      - url: https://github.com/18F/cg-compliance
         revision: master
   ```
 
