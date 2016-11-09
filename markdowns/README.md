@@ -1,6 +1,6 @@
 # FedRAMP Moderate System Security Plan
 
-Note: compliance.cloud.gov is a proof of concept with [old draft content about cloud.gov](https://github.com/18F/cg-compliance#whats-in-this-repository). We're not currently working on this proof of concept (November 2016), but we do plan to get back to it when we can.
+Note as of November 2016: compliance.cloud.gov is a proof of concept with [old draft content about cloud.gov](https://github.com/18F/cg-compliance#whats-in-this-repository). We're not currently working on updating this site, but we're still working on our SSP separately and plan to update this in the future with our improved SSP.
 
 ### 18F - cloud.gov  
 
