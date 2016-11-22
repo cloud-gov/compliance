@@ -2,7 +2,7 @@
 
 This is a public repository following [18F's Open Source Policy](https://github.com/18F/open-source-policy/blob/master/policy.md). See our [LICENSE.md](LICENSE.md) and [CONTRIBUTING.md](CONTRIBUTING.md) files.
 
-See also: https://github.com/18F/compliance-docs
+See also: https://github.com/18F/compliance-docs and https://github.com/18F/cg-deploy-compliance-documentation
 
 ## What's in this repository
 
