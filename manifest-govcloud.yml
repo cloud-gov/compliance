@@ -1,0 +1,4 @@
+---
+inherit: manifest.yml
+routes:
+  - route: compliance.fr.cloud.gov
