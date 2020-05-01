@@ -1,0 +1,9 @@
+non-admins:
+  - ramona.quimby
+  - beverly.cleary
+  - beezus.quimby
+admins:
+  - meg.murry  
+  - calvin.okeefe
+  - charles.murry
+  - mrs.whatsit
