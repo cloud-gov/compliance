@@ -1,0 +1,10 @@
+name: MFA
+title: Test AWS MVA
+version: 0.1.0
+license: CC0
+summary: Demonstrates the use of an InSpec Compliance Profile on AWS
+supports:
+  - platform: aws
+depends:
+  - name: inspec-aws
+    url: https://github.com/inspec/inspec-aws/archive/master.tar.gz

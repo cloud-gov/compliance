@@ -1,0 +1,10 @@
+name: SC
+title: cloud.gov InSPEC SC controls profile
+maintainer: cloud.gov
+license: cc0
+version: 0.1.0
+supports:
+  - platform: aws
+depends:
+  - name: inspec-aws
+    url: https://github.com/inspec/inspec-aws/archive/master.tar.gz

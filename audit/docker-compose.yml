@@ -1,0 +1,16 @@
+version: '3.2'
+services:
+  inspec:
+    image: chef/inspec 
+    working_dir: /app
+    volumes:
+      - ./:/app
+    environment:
+      AWS_SESSION_TOKEN:
+      AWS_VAULT:
+      AWS_DEFAULT_REGION:
+      AWS_SESSION_EXPIRATION:
+      AWS_SECRET_ACCESS_KEY:
+      AWS_REGION:
+      AWS_ACCESS_KEY_ID:
+      AWS_SECURITY_TOKEN:
