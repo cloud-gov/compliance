@@ -1,6 +1,6 @@
 # preload AWS API calls
-#all_users = aws_iam_users
-#smc_policy=aws_iam_policy('self-managed-credentials')
+all_users = aws_iam_users
+smc_policy=aws_iam_policy('self-managed-credentials')
 
 input('non-admins', value: [])
 input('admins', value: [])
