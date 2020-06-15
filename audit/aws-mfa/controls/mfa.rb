@@ -30,7 +30,7 @@ control '1.1-count-console-users' do
     console_users = all_users.where(has_console_password?: true)
 
     describe console_users.usernames.length do
-        it { should be == 11 }
+        it { should be == 10 }
     end
 end
 
@@ -61,18 +61,35 @@ end
 control '1.4-mfa-enforcement-attached-to-admins' do
     impact 1.0
     title 'Ensure the MFA enforcement policy is attached to Administrators'
+    
+    only_if('region is US GovCloud') { (ENV['AWS_DEFAULT_REGION'].match?(/us-gov-(east|west)-1/)) }
 
     describe smc_policy do
         it { should be_attached_to_group('Administrators') }
     end
 end
 
-control '1.5-admin-group-membership' do
+control '1.5-admin-group-membership in AWS us-gov' do
     impact 1.0
     title 'Ensure our admins exactly match our known sorted list'
     our_admins=input('admins').sort
 
+    only_if('region is US GovCloud') { (ENV['AWS_DEFAULT_REGION'].match?(/us-gov-(east|west)-1/)) }
+
     describe aws_iam_group('Administrators').users.sort do
         it { should cmp our_admins }
+    end
+end
+
+control '1.6-admins-have-self-managed-credentials in aws-east-west' do
+    impact 1.0
+    title 'Ensure admins have the policy that enforces MFA for all access'
+
+    only_if('region is US Commercial E-W') { ENV['AWS_DEFAULT_REGION'].match?(/us-(east|west)-\d/) }
+
+    input('admins').each do |user| 
+        describe aws_iam_user(user) do
+            its('attached_policy_names') { should include('self-managed-credentials') }
+        end
     end
 end
