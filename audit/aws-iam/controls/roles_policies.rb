@@ -3,22 +3,12 @@
 # aip.where(policy_name: /cg-s3.*/).
 # notcgs3=aip.where{ policy_name !~ /^cg-s3/ && arn !~ /::aws:policy/ }
 
-class AwsIamPolicy
-  def resource_count
-    return false unless @policy_document
-    document = JSON.parse(URI.decode_www_form_component(@policy_document.policy_version.document), { symbolize_names: true })
-    statements = document[:Statement].is_a?(Hash) ? [document[:Statement]] : document[:Statement]
-    statements.collect{ |s| s[:Resource] }.count
-  end
-end
-
-
-aip = aws_iam_policies.where(policy_name: /^cg-s3/)
+aip = aws_iam_policies.where(policy_name: /^cg-s3-0/)
 control '1.0-s3-iams' do
     impact 1.0
     title 'Ensure s3 iams are only s3'
     aip.entries.each do | policy_name |
-        policy_name = "cg-s3-17d833e5-af5d-4913-abae-332376bb01be"
+        policy_name = "cg-s3-000a0b6a-e9ca-46d5-9040-98710b153a67"
         policy = aws_iam_policy(policy_name)
         describe policy do
             it { should have_statement(
@@ -33,11 +23,7 @@ control '1.0-s3-iams' do
                     ]
                 )
             }
-        end
-        resource_count = policy.policy["Statement"].collect{ |s| s[:resource] }.count
-
-        describe resource_count do
-            it { should == 2}
+            its('statement_count') { should cmp 2 }
         end
     end
 end
