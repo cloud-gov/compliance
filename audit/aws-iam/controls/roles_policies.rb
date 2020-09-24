@@ -33,12 +33,4 @@ control '1.0-s3-iams' do
     describe aws_iam_users.where(user_name: /#{s3_iam_pattern}/) do
       its('count') { should cmp s3_policy_count }
     end
-
-
-
 end
-
-
-s3_policy_count = aip.count
-
-# count of s3 users should match o
