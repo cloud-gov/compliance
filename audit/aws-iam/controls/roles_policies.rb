@@ -3,7 +3,7 @@
 # aip.where(policy_name: /cg-s3.*/).
 # notcgs3=aip.where{ policy_name !~ /^cg-s3/ && arn !~ /::aws:policy/ }
 
-s3_iam_pattern='^cg-s3-0'
+s3_iam_pattern='^cg-s3-'
 
 aip = aws_iam_policies.where(policy_name: /#{s3_iam_pattern}/)
 control '1.0-s3-iams' do
