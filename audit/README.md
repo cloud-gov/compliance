@@ -19,9 +19,9 @@ The AWS tests need to run with an IAM user, and for operators we use `aws-vault`
 
 Run the profile for each of the AWS GovCloud and E-W Commercial accounts:
 
-    aws-vault exec cg-govcloud -- bin/inspec exec ./aws-mfa/ -t aws:// --input-file inputs.yml
+    aws-vault exec cg-govcloud -- bin/inspec exec ./aws-mfa/ -t aws:// --input-file inputs.yml --silence-deprecations=aws
     aws-vault exec cg-ew -- bin/inspec exec ./aws-mfa/ -t aws:// --input-file inputs.yml
-    aws-vault exec cg-govcloud -- bin/inspec exec ./aws-iam/ -t aws:// 
+    aws-vault exec cg-govcloud -- bin/inspec exec ./aws-iam/ -t aws:// --silence-deprecations=aws
     inspec exec ./SC
 
 Take note of any failures and correct them
