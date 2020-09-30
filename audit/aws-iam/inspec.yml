@@ -1,0 +1,10 @@
+name: IAM
+title: Test AWS roles and policies
+version: 0.1.0
+license: CC0
+summary: Replace manual role/policy assessment
+supports:
+  - platform: aws
+depends:
+  - name: inspec-aws
+    url: https://github.com/inspec/inspec-aws/archive/master.tar.gz
