@@ -1,36 +1,37 @@
 # preload AWS API calls
 # notcgs3=aip.where{ policy_name !~ /^cg-s3/ && arn !~ /::aws:policy/ }
 
-#s3_iam_pattern='^cg-s3-1'
-s3_iam_pattern='^cg-s3'
+#s3_iam_pattern='cg-s3-[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}'
+s3_iam_pattern='cg-s3-16[0-9a-fA-F]{7}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}'
 
 s3_policies = aws_iam_policies.where(policy_name: /#{s3_iam_pattern}/).entries
+s3_policy_count = s3_policies.count
 
 snowflake_iam_policy = "cg-s3-16709a09-0eca-4597-bbf5-b1df98e41cae" 
 s3_policies.delete_if{ |p| p.policy_name == snowflake_iam_policy }
 
-s3_policy_count = s3_policies.count
-control 'X S3 IAM policies match S3 IAM users' do
-    impact 1.0
-    title 'Ensure s3 iams are only s3'
+# There's a 'cg-s3-' user with no matching policy...
+control 'S3 IAM policy and user congruence' do
+    title 'Ensure number of s3 policies matches number of s3 users'
 
     describe aws_iam_users.where(user_name: /#{s3_iam_pattern}/) do
       its('count') { should cmp s3_policy_count }
     end
 end
 
-control "Ensure Snowflake policy is well-formed" do
+control "Ensure S3 Snowflake for Federalist staging docker registry is well-formed" do
     snowflake = aws_iam_policy(snowflake_iam_policy)
     describe snowflake do 
+        it { should be_attached_to_user('cg-s3-b0cd0c6e-5e27-4813-9d31-a2b5a9579129') }
         it { should have_statement(
                 Resource: [
-                    /^arn:aws-us-gov:s3:::(staging-)?cg-[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$/
+                    /^arn:aws-us-gov:s3:::cg-[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$/
                 ]
             )
         }
         it { should have_statement(
                 Resource: [
-                    /^arn:aws-us-gov:s3:::(staging-)?cg-[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}\/\*$/
+                    /^arn:aws-us-gov:s3:::cg-[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}\/\*$/
                 ]
             )
         }

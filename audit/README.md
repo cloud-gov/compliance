@@ -21,7 +21,8 @@ Run the profile for each of the AWS GovCloud and E-W Commercial accounts:
 
     aws-vault exec cg-govcloud -- bin/inspec exec ./aws-mfa/ -t aws:// --input-file inputs.yml --silence-deprecations=aws
     aws-vault exec cg-ew -- bin/inspec exec ./aws-mfa/ -t aws:// --input-file inputs.yml
-    aws-vault exec cg-govcloud -- bin/inspec exec ./aws-iam/ -t aws:// --silence-deprecations=aws
+    aws-vault exec cg-govcloud -- bin/inspec exec ./aws-iam/ -t aws:// --silence-deprecations=all # takes 11 minutes
+    
     inspec exec ./SC
 
 Take note of any failures and correct them
