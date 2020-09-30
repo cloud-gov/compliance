@@ -1,8 +1,9 @@
 # preload AWS API calls
 # notcgs3=aip.where{ policy_name !~ /^cg-s3/ && arn !~ /::aws:policy/ }
 
-#s3_iam_pattern='cg-s3-[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}'
-s3_iam_pattern='cg-s3-16[0-9a-fA-F]{7}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}'
+s3_iam_pattern='cg-s3-[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}'
+# use next pattern for testing the snowflake
+#s3_iam_pattern='cg-s3-16[0-9a-fA-F]{7}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}'
 
 s3_policies = aws_iam_policies.where(policy_name: /#{s3_iam_pattern}/).entries
 s3_policy_count = s3_policies.count
