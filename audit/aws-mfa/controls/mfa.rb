@@ -30,7 +30,7 @@ control '1.1-count-console-users' do
     console_users = all_users.where(has_console_password?: true)
 
     describe console_users.usernames.length do
-        it { should be == 10 }
+        it { should be == 12 }
     end
 end
 
