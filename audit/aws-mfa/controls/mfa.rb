@@ -28,9 +28,10 @@ control '1.1-count-console-users' do
     impact 1.0
     title 'Ensure all console users match number of audited users'
     console_users = all_users.where(has_console_password?: true)
+    user_count = input('admins').length + input('non-admins').length
 
     describe console_users.usernames.length do
-        it { should be == 13 }
+        it { should eq user_count }
     end
 end
 
