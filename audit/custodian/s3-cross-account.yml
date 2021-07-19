@@ -1,0 +1,17 @@
+policies:
+  - name: s3-cross-account
+    description: |
+      Checks S3 for buckets with cross-account access enabled
+    resource: aws.s3
+    region: us-gov-west-1
+    filters:
+      - type: cross-account 
+      
+# - name: CheckForPublicAclBlock-Off
+#    resource: aws.s3
+#    region: us-gov-west-1
+##    filters:
+#      - type: check-public-block
+#        BlockPublicAcls: true
+#        BlockPublicPolicy: true
+#
