@@ -7,16 +7,17 @@ The directory includes the MacOS GoLang exec `custodian-cask` for running custod
 
 Examples:
 
-* List all the S3 buckets that have cross-account ownership
+* Analyze all the S3 buckets' cross-account ownership
     ```
-    aws-vault exec cg-govcloud -- ./custodian-cask report -s ./out s3-cross-account.yml
-    ```
-    * This saves the results in `./out/s3-cross-account`
-* List all the S3 buckets that have cross-account ownership
-    ```
-    aws-vault exec cg-govcloud -- ./custodian-cask report -s ./out not-s3-cross-account.yml
+    aws-vault exec cg-govcloud -- ./custodian-cask run -s ./out s3-cross-account.yml
     ```
     * This saves the results in `./out/s3-cross-account`
+* List all the S3 buckets that have cross-account ownership (must do `run` first)
+    ```
+    aws-vault exec cg-govcloud -- ./custodian-cask report -s ./out s3-cross-account.yml -p 's3-cross-account'
+* List all the S3 buckets that DO NOT have cross-account ownership (must do `run` first)
+    ```
+    aws-vault exec cg-govcloud -- ./custodian-cask report -s ./out s3-cross-account.yml -p 'not-s3-cross-account'
 * List all CloudFront distributions that have logging enabled:
     ```
     aws-vault exec cg-ew -- ./custodian-cask run -s ./out s3-cross-account.yml
