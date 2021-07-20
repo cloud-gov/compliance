@@ -1,0 +1,13 @@
+policies:
+  - name: logging-enabled
+    resource: aws.distribution
+    filters:
+      - type: distribution-config
+        key: Logging.Enabled
+        value: True
+  - name: logging-disabled
+    resource: aws.distribution
+    filters:
+      - type: distribution-config
+        key: Logging.Enabled
+        value: False
