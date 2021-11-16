@@ -1,6 +1,7 @@
 non-admins:
   - peter.burkholder
   - lindsay.young
+  - david.anderson
 admins:
   - andrew.burnes
   - ben.berry
