@@ -1,12 +1,12 @@
 non-admins:
   - peter.burkholder
   - lindsay.young
-  - david.anderson
 admins:
   - andrew.burnes
   - ben.berry
   - carlo.costino
   - chris.mcgowan
+  - david.anderson
   - mark.headd
   - rian.bogle
   - van.nguyen
