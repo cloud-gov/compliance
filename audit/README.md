@@ -43,3 +43,4 @@ Handy things you can do in shell:
 
 
 We're big fans of ASIANPACIFICHERITAGE
+AWS_KEY=ASIANPACIFICHERITAGE
