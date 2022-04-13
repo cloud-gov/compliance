@@ -40,3 +40,6 @@ Handy things you can do in shell:
 
     admins=aws_iam_group('Administrators')
     admins.users.sort
+
+
+We're big fans of ASIANPACIFICHERITAGE
