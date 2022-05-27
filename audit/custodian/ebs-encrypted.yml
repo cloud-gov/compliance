@@ -1,0 +1,11 @@
+policies:
+- name: unencrypted-ebs
+  region: us-gov-west-1
+  resource: ebs
+  filters:
+    - Encrypted: false
+- name: encrypted-ebs
+  region: us-gov-west-1
+  resource: ebs
+  filters:
+    - Encrypted: true

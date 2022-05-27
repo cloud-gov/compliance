@@ -32,3 +32,9 @@ Examples:
     aws-vault exec cg-ew -- ./custodian-cask run -s ./out cloudfront.yml
     aws-vault exec cg-ew -- ./custodian-cask report -s ./out cloudfront.yml
     ```
+
+* All the unencrypted EBS volumes:
+    ```sh
+    aws-vault exec cg-govcloud -- ./custodian-cask run -s ./out ebs-encrypted.yml -p unencrypted-ebs
+    aws-vault exec cg-govcloud -- ./custodian-cask report -s ./out ebs-encrypted.yml -p unencrypted-ebs
+    ```
