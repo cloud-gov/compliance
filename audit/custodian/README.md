@@ -3,7 +3,13 @@
 This is a demonstration of using cloud custodian (https://cloudcustodian.io/docs/aws/gettingstarted.html)
 for some auditing of cloud.gov S3 and Cloudfront resources.
 
-The directory includes the MacOS GoLang exec `custodian-cask` for running custodian via a Docker image.
+I recommend installing `custodian-cask`, a GoLang exec for running `custodian`
+via a Docker image:
+
+```
+curl -fsSLO https://cloudcustodian.io/downloads/custodian-cask/darwin-latest/custodian-cask && chmod +x ./custodian-cask
+```
+
 
 Examples:
 
