@@ -1,0 +1,27 @@
+policies:
+- name: s3-bucket-not-encrypted
+  description: |
+    Checks S3 for buckets encryption
+  resource: s3
+  region: us-gov-west-1
+  filters:
+    - type: bucket-encryption
+      state: False
+- name: s3-bucket-encrypted-AES256
+  description: |
+    Checks S3 for buckets with AES-256 encryption
+  resource: s3
+  region: us-gov-west-1
+  filters:
+    - type: bucket-encryption
+      state: True
+      crypto: AES256
+- name: s3-bucket-encrypted-kms
+  description: |
+    Checks S3 for buckets with AES-256 encryption
+  resource: s3
+  region: us-gov-west-1
+  filters:
+    - type: bucket-encryption
+      state: True
+      crypto: AES256

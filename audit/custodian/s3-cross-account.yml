@@ -1,0 +1,36 @@
+
+policies:
+- name: s3-cross-account
+  description: |
+    Checks S3 for buckets with cross-account access
+  resource: s3
+  region: us-gov-west-1
+  filters:
+    - type: cross-account
+- name: not-s3-cross-account
+  description: |
+    Checks S3 for buckets without cross-account access
+  resource: s3
+  region: us-gov-west-1
+  filters:
+    - not:
+      - type: cross-account
+- name: s3-bucket-not-encrypted-AES256
+  description: |
+    Checks S3 for buckets WITHOUT AES-256 encryption
+  resource: s3
+  region: us-gov-west-1
+  filters:
+    - not:
+      - type: bucket-encryption
+        state: True
+        crypto: AES256
+- name: s3-bucket-encrypted-AES256
+  description: |
+    Checks S3 for buckets with AES-256 encryption
+  resource: s3
+  region: us-gov-west-1
+  filters:
+    - type: bucket-encryption
+      state: True
+      crypto: AES256

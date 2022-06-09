@@ -1,0 +1,27 @@
+policies:
+- name: unencrypted-public-rds
+  description: |
+    find all unencrypted RDS
+  resource: rds
+  region: us-gov-west-1
+  filters:
+    - and:
+      - type: value
+        key: "DBSubnetGroup.DBSubnetGroupName"
+        value: production
+        op: eq
+      - StorageEncrypted: false
+- name: encrypted-public-rds
+  description: |
+    find all unencrypted RDS
+  resource: rds
+  region: us-gov-west-1
+  filters:
+    - and:
+      - type: value
+        key: "DBSubnetGroup.DBSubnetGroupName"
+        value: production
+        op: eq
+      - type: value
+        key: StorageEncrypted
+        value: true
