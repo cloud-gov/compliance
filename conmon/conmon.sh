@@ -9,14 +9,16 @@ cmfail() {
 }
 
 setup_dirs() {
-  year=$(date +%Y)
-  mo=$1
-  [ -z "$mo" ] && cmfail "Call 'setup_dirs MM DD'"
-  dy=$2
-  [ -z "$dy" ] && cmfail "Call 'setup_dirs MM DD'"
+  year=$1
+  [ -z "$year" ] && cmfail "Call 'setup_dirs YYYY MM DD'"
+  mo=$2
+  [ -z "$mo" ] && cmfail "Call 'setup_dirs YYYY MM DD'"
+  dy=$3
+  [ -z "$dy" ] && cmfail "Call 'setup_dirs YYYY MM DD'"
   MonthDir="$CMROOT/$year/$mo"
   ProdToolDir=$MonthDir/Production-and-Tooling-Vulnerability-and-Compliance-scans_$year-$mo-$dy
   RDSDir=$MonthDir/RDS_Compliance_Scans_$year-$mo-$dy
+  nessus_scans="$ProdToolDir/Production_Vulnerability_?can*.nessus $ProdToolDir/Tooling_Vulnerability_?can*.nessus"
   echo mkdir -p \""$ProdToolDir\""
   echo mkdir -p \""$RDSDir\""
   echo "export MonthDir=\""$MonthDir\"""
@@ -27,7 +29,13 @@ setup_dirs() {
   echo "export CMDY=$dy"
 }
 
-nessus_scans="$ProdToolDir/Production_Vulnerability_?can*.nessus $ProdToolDir/Tooling_Vulnerability_?can*.nessus"
+nessus_log4j() {
+  parse-nessus-xml.py -l $nessus_scans
+}
+
+nessus_daemons() {
+  parse-nessus-xml.py -d $nessus_scans
+}
 
 prep_nessus() {
   set -x
@@ -43,7 +51,7 @@ prep_nessus() {
     last=$CMROOT/$CMYEAR/$last_mo.nessus_summary
   fi
 
-  parse-nessus-xml.py -s $nessus_scans |
+  parse-nessus-xml.py -s $nessus_scans -m 1 |
       grep -Ev '(SUMMARY|CSV)' |  grep -v '^33851,' | # 33851 is unmanaged daemons
       grep -v '^$' | gsed -e 's/\t/../' > $this
 
