@@ -27,22 +27,11 @@ setup_dirs() {
   echo "export CMDY=$dy"
 }
 
-populate_dirs() {
-  [ -z "$ProdToolDir" ] && cmfail "Run 'setup_dirs' first and export vars"
-  [ -d "$REMOTEROOT" ] && echo OK
-  set -x
-  cp "$REMOTEROOT/${CMYEAR}${CMMO}${CMDY}-??ternal.html" "$MonthDir" || return
-  cp "$REMOTEROOT/${CMYEAR}${CMMO}${CMDY}-??ternal.xml" "$MonthDir" || return
-  cp "${REMOTEROOT}"/Prod*nessus "$ProdToolDir/" || return
-  cp "${REMOTEROOT}"/Tool*nessus "$ProdToolDir/" || return
-  cp "${REMOTEROOT}"/RDS*nessus "$RDSDir/" || return
-  set +x
-}
-
+nessus_scans="$ProdToolDir/Production_Vulnerability_?can*.nessus $ProdToolDir/Tooling_Vulnerability_?can*.nessus"
 
 prep_nessus() {
   set -x
-  [ -z "$CMMO" ] && fail "need to set CMMO"
+  [ -z "$CMMO" ] && cmfail "need to set CMMO"
   this=$CMROOT/$CMYEAR/$CMMO.nessus_summary
   if [ "$CMMO" == 01 ]; then
     last_mo=12
@@ -54,10 +43,8 @@ prep_nessus() {
     last=$CMROOT/$CMYEAR/$last_mo.nessus_summary
   fi
 
-  #parse-nessus-xml.py $ProdToolDir/Production_Vulnerability_?can*.nessus |
-  #$ProdToolDir/Production_Vulnerability_?can*.nessus |
-  parse-nessus-xml.py $ProdToolDir/Production_Vulnerability_?can*.nessus $ProdToolDir/Tooling_Vulnerability_?can*.nessus |
-      awk '/SUMMARY/,/CSV/' | grep -Ev '(SUMMARY|CSV)' |
+  parse-nessus-xml.py -s $nessus_scans |
+      grep -Ev '(SUMMARY|CSV)' |  grep -v '^33851,' | # 33851 is unmanaged daemons
       grep -v '^$' | gsed -e 's/\t/../' > $this
 
   cat > $CMROOT/$CMYEAR/$CMMO.nessus_work <<END
@@ -68,12 +55,6 @@ END
   comm $last $this >> $CMROOT/$CMYEAR/$CMMO.nessus_work
   set +x
   echo "$CMMO.nessus_work ready"
-}
-
-# once the work file is down to only the new findings...
-emit_nessus_csv() {
-  parse-nessus-xml.py $ProdToolDir/Production_Vulnerability_scan*.nessus |
-      awk '/CSV/,0' | grep -Ev '(SUMMARY|CSV)' 
 }
 
 prep_zap() {
@@ -94,49 +75,4 @@ LAST MONTH (fixed)
 END
   comm $last $this >> $CMROOT/$CMYEAR/$CMMO.zap_work
   echo "$CMMO.zap_work ready"
-}
-
-prep_upload() {
-  [ -r ~/Downloads/"FedRAMP-Inventory-cloud.gov - Inventory.xlsx" ] || fail Download Inventory
-  [ -r ~/Downloads/"FedRAMP-POAM-cloud.gov - ConMon POAM.xlsx" ] || fail Download Inventory
-  today=$(date +%Y-%m-%d)
-  then="2020-12-23"
-  MonthDir="$HOME/Documents/ConMon/2020/12"
-
-  CMYEAR=2020
-  CMMO=12
-  CMDY=23
-  poam_name="FedRAMP-POAM-cloud.gov - ConMon POAM ${today}.xlsx"
-  inventory_name="FedRAMP-Inventory-cloud.gov - Inventory ${then}.xlsx"
-  set -x
-  mv "$HOME/Downloads/FedRAMP-Inventory-cloud.gov - Inventory.xlsx" "$MonthDir/$inventory_name"
-  mv "$HOME/Downloads/FedRAMP-POAM-cloud.gov - ConMon POAM.xlsx" "$MonthDir/$poam_name"
-  zip -r $MonthDir/Production-and-Tooling-Vulnerability-and-Compliance-scans_$then.zip $ProdToolDir
-  cp $MonthDir/*ZAP.xml $MonthDir/cloud.gov_OWASP_ZAP_Scan_2020-12-28.xml
-  return
-  set +x
-  pushd $MonthDir
-  echo; echo;
-  ls *POAM*
-  ls *Inventory*
-  ls *zip
-  echo -n \"
-  ls -1 RDS*nessus
-  echo -n \"; echo
-
-  ls cloud*xml
-
-  echo; echo
-  popd
-
-
-}
-
-data() {
-FedRAMP-POAM-cloud.gov - ConMon POAM 2020-11-02.xlsx
-FedRAMP-Inventory-cloud.gov - Inventory 2020-10-25.xlsx
-Production and Tooling Vulnerability and Compliance Scans - 2020-10-25.zip
-"RDS_Compliance_Scan_Bosh_Prod_cpczu5.nessus
-RDS_Compliance_Scan_CF_Prod_buyfv1.nessus"
-cloud.gov_OWASP_ZAP_Scan-2020-10-25
 }
