@@ -1,3 +1,4 @@
+# https://cloudcustodian.io/docs/aws/resources/distribution.html#aws-distribution-filters-distribution-config
 policies:
   - name: logging-enabled
     resource: aws.distribution
@@ -21,3 +22,14 @@ policies:
     filters:
       - type: shield-enabled
 
+# TLS will be in
+#"DistributionConfig": {
+#      "ViewerCertificate": {
+#            "MinimumProtocolVersion": "TLSv1.2_2018",
+    #resource: distribution
+  - name: tls-policy
+    resource: aws.distribution
+    filters:
+      - type: distribution-config
+        key: ViewerCertificate.MinimumProtocolVersion
+        value: "TLSv1.2_2018"
