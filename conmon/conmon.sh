@@ -73,7 +73,7 @@ prep_zap() {
   last_mo=$(printf "%02d\n" $(( $this_mo - 1 ))) 
   last=$CMROOT/$CMYEAR/$last_mo.zap_summary
 
-  parse-owasp-zap-xml.py $MonthDir/$CMYEAR$CMMO$CMDY-ZAP-*.xml | 
+  parse-owasp-zap-xml.py $MonthDir/*-ZAP-*.xml | 
     gsed 's/\t/../' > $this
 
   cat > $CMROOT/$CMYEAR/$CMMO.zap_work <<END
