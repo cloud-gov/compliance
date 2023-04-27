@@ -51,7 +51,7 @@ prep_nessus() {
     last=$CMROOT/$CMYEAR/$last_mo.nessus_summary
   fi
 
-  parse-nessus-xml.py -s $nessus_scans -m 1 |
+  parse-nessus-xml.py -m 9 -s $nessus_scans |
       grep -Ev '(SUMMARY|CSV)' |  grep -v '^33851,' | # 33851 is unmanaged daemons
       grep -v '^$' | gsed -e 's/\t/../' > $this
 
