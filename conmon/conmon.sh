@@ -74,7 +74,7 @@ prep_zap() {
   last=$CMROOT/$CMYEAR/$last_mo.zap_summary
 
   parse-owasp-zap-xml.py $MonthDir/*-ZAP-*.xml | 
-    gsed 's/\t/../' > $this
+    gsed 's/\t/../' | uniq > $this
 
   cat > $CMROOT/$CMYEAR/$CMMO.zap_work <<END
 LAST MONTH (fixed)
