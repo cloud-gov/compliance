@@ -19,14 +19,25 @@ setup_dirs() {
   ProdToolDir=$MonthDir/Production-and-Tooling-Vulnerability-and-Compliance-scans_$year-$mo-$dy
   RDSDir=$MonthDir/RDS_Compliance_Scans_$year-$mo-$dy
   nessus_scans="$ProdToolDir/Production_Vulnerability_?can*.nessus $ProdToolDir/Tooling_Vulnerability_?can*.nessus"
-  echo mkdir -p \""$ProdToolDir\""
-  echo mkdir -p \""$RDSDir\""
-  echo "export MonthDir=\""$MonthDir\"""
-  echo "export ProdToolDir=\""$ProdToolDir\"""
-  echo "export REMOTEROOT=\""$SCANROOT/${year}${mo}${dy}-ZAP-Nessus\"""
-  echo "export CMYEAR=$year"
-  echo "export CMMO=$mo"
-  echo "export CMDY=$dy"
+  echo "Setting up directories and env vars"
+  set -x
+  mkdir -p "$ProdToolDir"
+  mkdir -p "$RDSDir"
+  export MonthDir="$MonthDir"
+  export ProdToolDir="$ProdToolDir"
+  export REMOTEROOT="$SCANROOT/${year}${mo}${dy}-ZAP-Nessus"
+  export CMYEAR=$year
+  export CMMO=$mo
+  export CMDY=$dy
+  set +x
+}
+
+spaces2underscore () {
+    for i in *\ *;
+    do
+        new=$(echo $i | sed -e 's/ /_/g');
+        mv "$i" $new;
+    done
 }
 
 nessus_log4j() {
