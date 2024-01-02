@@ -1,7 +1,7 @@
 
 GFSROOT=/Volumes/GoogleDrive/My\ Drive/18F_ISSO/FedRAMP\ JAB\ -\ cloud.gov\ -\ 3PAO\ Access
 SCANROOT=${GFSROOT}/ZAP\ and\ Nessus\ results/
-CMROOT=/Users/peterdburkholder/Documents/ConMon
+CMROOT=/Users/$(whoami)/Documents/ConMon
 
 cmfail() {
   echo "FAIL: $*"
@@ -48,50 +48,59 @@ nessus_daemons() {
   parse-nessus-xml.py -d $nessus_scans
 }
 
+nessus_csv() {
+  [ -z "$CMMO" ] && cmfail "need to set CMMO"
+  this=$CMROOT/$CMYEAR/$CMMO.nessus.csv
+  parse-nessus-xml.py -m 9 -c $nessus_scans 2>/dev/null | tail +3 > $this
+  echo "$this ready"
+}
+
 prep_nessus() {
   set -x
   [ -z "$CMMO" ] && cmfail "need to set CMMO"
-  this=$CMROOT/$CMYEAR/$CMMO.nessus_summary
+  this=$CMROOT/$CMYEAR/$CMMO.nessus_summary.txt
   if [ "$CMMO" == 01 ]; then
     last_mo=12
     last_yr=$(( $CMYEAR - 1 ))
-    last=$CMROOT/$last_yr/$last_mo.nessus_summary
+    last=$CMROOT/$last_yr/$last_mo.nessus_summary.txt
   else
     this_mo=$(echo $CMMO | sed 's/^0*//')
     last_mo=$(printf "%02d\n" $(( $this_mo - 1 ))) #
-    last=$CMROOT/$CMYEAR/$last_mo.nessus_summary
+    last=$CMROOT/$CMYEAR/$last_mo.nessus_summary.txt
   fi
 
   parse-nessus-xml.py -m 9 -s $nessus_scans |
       grep -Ev '(SUMMARY|CSV)' |  grep -v '^33851,' | # 33851 is unmanaged daemons
       grep -v '^$' | gsed -e 's/\t/../' > $this
 
-  cat > $CMROOT/$CMYEAR/$CMMO.nessus_work <<END
+  work="$CMROOT/$CMYEAR/$CMMO.nessus_work.txt"
+  cat > $work <<END
 LAST MONTH (fixed)
 	THIS MONTH (new)
 		BOTH  (persisting)
 END
-  comm $last $this >> $CMROOT/$CMYEAR/$CMMO.nessus_work
+  comm $last $this >> $work
   set +x
-  echo "$CMMO.nessus_work ready"
+  echo "$work ready"
 }
 
 prep_zap() {
   [ -z "$CMMO" ] && fail "need to set CMMO"
   [ "$CMMO" == 1 ] && fail "not set up for year rollover"
-  this=$CMROOT/$CMYEAR/$CMMO.zap_summary
+  this=$CMROOT/$CMYEAR/$CMMO.zap_summary.txt
   this_mo=$(echo $CMMO | sed 's/^0*//')
   last_mo=$(printf "%02d\n" $(( $this_mo - 1 ))) 
-  last=$CMROOT/$CMYEAR/$last_mo.zap_summary
+  last=$CMROOT/$CMYEAR/$last_mo.zap_summary.txt
 
   parse-owasp-zap-xml.py $MonthDir/*-ZAP-*.xml | 
     gsed 's/\t/../' | uniq > $this
 
-  cat > $CMROOT/$CMYEAR/$CMMO.zap_work <<END
+  work="$CMROOT/$CMYEAR/$CMMO.zap_work.txt"
+  cat > $work <<END
 LAST MONTH (fixed)
 	THIS MONTH (new)
 		BOTH  (persisting)
 END
-  comm $last $this >> $CMROOT/$CMYEAR/$CMMO.zap_work
-  echo "$CMMO.zap_work ready"
+  comm $last $this >> $work
+  echo "$work ready"
 }
