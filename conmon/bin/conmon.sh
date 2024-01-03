@@ -18,7 +18,7 @@ setup_dirs() {
   MonthDir="$CMROOT/$year/$mo"
   ProdToolDir=$MonthDir/Production-and-Tooling-Vulnerability-and-Compliance-scans_$year-$mo-$dy
   RDSDir=$MonthDir/RDS_Compliance_Scans_$year-$mo-$dy
-  nessus_scans="$ProdToolDir/Production_Vulnerability_?can*.nessus $ProdToolDir/Tooling_Vulnerability_?can*.nessus"
+  nessus_scans="$ProdToolDir/Production\ Vulnerability\ ?can*.nessus $ProdToolDir/Tooling\ Vulnerability\ ?can*.nessus"
   echo "Setting up directories and env vars"
   set -x
   mkdir -p "$ProdToolDir"
@@ -41,11 +41,14 @@ spaces2underscore () {
 }
 
 nessus_log4j() {
-  parse-nessus-xml.py -l $nessus_scans
+  printf "======\nFULL REPORT\n=====\n"
+  eval parse-nessus-xml.py -l $nessus_scans
+  printf "\n\n======\nSUMMARY FOR CONMON\n=====\n"
+  eval parse-nessus-xml.py -l $nessus_scans | egrep '(UNSAFE|plugin)'
 }
 
 nessus_daemons() {
-  parse-nessus-xml.py -d $nessus_scans
+  eval parse-nessus-xml.py -d $nessus_scans
 }
 
 nessus_csv() {
@@ -69,7 +72,7 @@ prep_nessus() {
     last=$CMROOT/$CMYEAR/$last_mo.nessus_summary.txt
   fi
 
-  parse-nessus-xml.py -m 9 -s $nessus_scans |
+  eval parse-nessus-xml.py -m 9 -s $nessus_scans |
       grep -Ev '(SUMMARY|CSV)' |  grep -v '^33851,' | # 33851 is unmanaged daemons
       grep -v '^$' | gsed -e 's/\t/../' > $this
 
