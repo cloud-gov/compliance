@@ -62,7 +62,7 @@ prep_nessus() {
   set -x
   [ -z "$CMMO" ] && cmfail "need to set CMMO"
   this=$CMROOT/$CMYEAR/$CMMO.nessus_summary.txt
-  if [ "$CMMO" == 01 ]; then
+  if [ "$CMMO" = 01 ]; then
     last_mo=12
     last_yr=$(( $CMYEAR - 1 ))
     last=$CMROOT/$last_yr/$last_mo.nessus_summary.txt
