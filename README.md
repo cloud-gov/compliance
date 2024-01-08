@@ -2,16 +2,20 @@
 
 Compliance documentation and automation.
 
-## Historical / OpenControl note
+## Continuous Monitoring tooling
 
-This repository was originally intended to document cloud.gov's SSP using 
-[Compliance Masonry](https://github.com/opencontrol/compliance-masonry), but by 2020 that effort had been dormant for 4 years, and is now archived [here in the `opencontrol` tag](https://github.com/cloud-gov/cg-compliance/tree/opencontrol). We aim to revive that effort using [NIST's OSCAL](https://pages.nist.gov/OSCAL/)
-
+Some shortcuts/tools for our monthly ConMon are in the ./ConMon directory
 
 ## Audit
 
 See the [Audit directory README](./README.md) for guidance on running
 automated audits.
+
+# Historical / OpenControl note
+
+This repository was originally intended to document cloud.gov's SSP using 
+[Compliance Masonry](https://github.com/opencontrol/compliance-masonry), but by 2020 that effort had been dormant for 4 years, and is now archived [here in the `opencontrol` tag](https://github.com/cloud-gov/cg-compliance/tree/opencontrol). We aim to revive that effort using [NIST's OSCAL](https://pages.nist.gov/OSCAL/)
+
 
 ## Contributing
 
