@@ -89,7 +89,7 @@ END
 
 prep_zap() {
   [ -z "$CMMO" ] && fail "need to set CMMO"
-  [ "$CMMO" == 1 ] && fail "not set up for year rollover"
+  [ "$CMMO" = 1 ] && fail "not set up for year rollover"
   this=$CMROOT/$CMYEAR/$CMMO.zap_summary.txt
   this_mo=$(echo $CMMO | sed 's/^0*//')
   last_mo=$(printf "%02d\n" $(( $this_mo - 1 ))) 
