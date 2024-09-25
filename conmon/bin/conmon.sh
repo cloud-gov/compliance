@@ -1,7 +1,10 @@
+#!/bin/bash
 
-GFSROOT=/Volumes/GoogleDrive/My\ Drive/18F_ISSO/FedRAMP\ JAB\ -\ cloud.gov\ -\ 3PAO\ Access
-SCANROOT=${GFSROOT}/ZAP\ and\ Nessus\ results/
-CMROOT=/Users/$(whoami)/Documents/ConMon
+# conmon.sh
+
+GFSROOT="/Volumes/GoogleDrive/My Drive/18F_ISSO/FedRAMP JAB - cloud.gov - 3PAO Access"
+SCANROOT="${GFSROOT}/ZAP and Nessus results"
+CMROOT="$HOME/Documents/ConMon"
 
 cmfail() {
   echo "FAIL: $*"
@@ -9,101 +12,194 @@ cmfail() {
 }
 
 setup_dirs() {
-  year=$1
-  [ -z "$year" ] && cmfail "Call 'setup_dirs YYYY MM DD'"
-  mo=$2
-  [ -z "$mo" ] && cmfail "Call 'setup_dirs YYYY MM DD'"
-  dy=$3
-  [ -z "$dy" ] && cmfail "Call 'setup_dirs YYYY MM DD'"
+  local year="$1"
+  local mo="$2"
+  local dy="$3"
+
+  if [[ -z "$year" || -z "$mo" || -z "$dy" ]]; then
+    cmfail "Call 'setup_dirs YYYY MM DD'"
+    return 1
+  fi
+
   MonthDir="$CMROOT/$year/$mo"
-  ProdToolDir=$MonthDir/Production-and-Tooling-Vulnerability-and-Compliance-scans_$year-$mo-$dy
-  RDSDir=$MonthDir/RDS_Compliance_Scans_$year-$mo-$dy
-  nessus_scans="$ProdToolDir/Production\ Vulnerability\ ?can*.nessus $ProdToolDir/Tooling\ Vulnerability\ ?can*.nessus"
-  echo "Setting up directories and env vars"
-  set -x
-  mkdir -p "$ProdToolDir"
-  mkdir -p "$RDSDir"
-  export MonthDir="$MonthDir"
-  export ProdToolDir="$ProdToolDir"
+
+  # Ensure the directory exists
+  mkdir -p "$MonthDir"
+
+  echo "Directory created: $MonthDir"
+  echo "Please move all Nessus scan files into this directory."
+
+  export MonthDir
   export REMOTEROOT="$SCANROOT/${year}${mo}${dy}-ZAP-Nessus"
-  export CMYEAR=$year
-  export CMMO=$mo
-  export CMDY=$dy
-  set +x
+  export CMYEAR="$year"
+  export CMMO="$mo"
+  export CMDY="$dy"
 }
 
-spaces2underscore () {
-    for i in *\ *;
-    do
-        new=$(echo $i | sed -e 's/ /_/g');
-        mv "$i" $new;
-    done
+collect_nessus_scans() {
+  # Initialize nessus_scans array
+  nessus_scans=()
+
+  # Verify that MonthDir is set
+  if [[ -z "$MonthDir" ]]; then
+    cmfail "MonthDir is not set. Please run setup_dirs YYYY MM DD"
+    return 1
+  fi
+
+  # Find Nessus files in MonthDir
+  if [[ -d "$MonthDir" ]]; then
+    while IFS= read -r -d '' file; do
+      nessus_scans+=("$file")
+    done < <(find "$MonthDir" -maxdepth 1 -type f -iname "*.nessus" -print0)
+  else
+    cmfail "MonthDir does not exist: $MonthDir"
+    return 1
+  fi
 }
 
 nessus_log4j() {
+  collect_nessus_scans
+  if [[ ${#nessus_scans[@]} -eq 0 ]]; then
+    echo "No Nessus scan files found. Please ensure the files are in the MonthDir."
+    return 1
+  fi
+
+  # Filter files for Production and Tooling scans
+  local filtered_scans=()
+  for file in "${nessus_scans[@]}"; do
+    if [[ "$(basename "$file")" =~ ^(Production|Tooling).*\.nessus$ ]]; then
+      filtered_scans+=("$file")
+    fi
+  done
+
+  if [[ ${#filtered_scans[@]} -eq 0 ]]; then
+    echo "No Production or Tooling Nessus scan files found."
+    return 1
+  fi
+
   printf "======\nFULL REPORT\n=====\n"
-  eval parse-nessus-xml.py -l $nessus_scans
+  parse-nessus-xml.py -l "${filtered_scans[@]}"
   printf "\n\n======\nSUMMARY FOR CONMON\n=====\n"
-  eval parse-nessus-xml.py -l $nessus_scans | egrep '(UNSAFE|plugin)'
+  parse-nessus-xml.py -l "${filtered_scans[@]}" | grep -E '(UNSAFE|plugin)'
 }
 
 nessus_daemons() {
-  eval parse-nessus-xml.py -d $nessus_scans
+  collect_nessus_scans
+  if [[ ${#nessus_scans[@]} -eq 0 ]]; then
+    echo "No Nessus scan files found. Please ensure the files are in the MonthDir."
+    return 1
+  fi
+
+  # Filter files for Production and Tooling scans
+  local filtered_scans=()
+  for file in "${nessus_scans[@]}"; do
+    if [[ "$(basename "$file")" =~ ^(Production|Tooling).*\.nessus$ ]]; then
+      filtered_scans+=("$file")
+    fi
+  done
+
+  if [[ ${#filtered_scans[@]} -eq 0 ]]; then
+    echo "No Production or Tooling Nessus scan files found."
+    return 1
+  fi
+
+  parse-nessus-xml.py -d "${filtered_scans[@]}"
 }
 
 nessus_csv() {
-  [ -z "$CMMO" ] && cmfail "need to set CMMO"
-  this=$CMROOT/$CMYEAR/$CMMO.nessus.csv
-  parse-nessus-xml.py -m 9 -c $nessus_scans 2>/dev/null | tail +3 > $this
+  if [[ -z "$CMMO" ]]; then
+    cmfail "CMMO is not set. Please run setup_dirs YYYY MM DD"
+    return 1
+  fi
+
+  collect_nessus_scans
+  if [[ ${#nessus_scans[@]} -eq 0 ]]; then
+    echo "No Nessus scan files found. Please ensure the files are in the MonthDir."
+    return 1
+  fi
+
+  # Process all Nessus scans for the CSV
+  local this="$CMROOT/$CMYEAR/$CMMO.nessus.csv"
+  parse-nessus-xml.py -m 9 -c "${nessus_scans[@]}" 2>/dev/null | tail -n +2 > "$this"
   echo "$this ready"
 }
 
 prep_nessus() {
   set -x
-  [ -z "$CMMO" ] && cmfail "need to set CMMO"
-  this=$CMROOT/$CMYEAR/$CMMO.nessus_summary.txt
-  if [ "$CMMO" = 01 ]; then
-    last_mo=12
-    last_yr=$(( $CMYEAR - 1 ))
-    last=$CMROOT/$last_yr/$last_mo.nessus_summary.txt
-  else
-    this_mo=$(echo $CMMO | sed 's/^0*//')
-    last_mo=$(printf "%02d\n" $(( $this_mo - 1 ))) #
-    last=$CMROOT/$CMYEAR/$last_mo.nessus_summary.txt
+  if [[ -z "$CMMO" ]]; then
+    cmfail "CMMO is not set. Please run setup_dirs YYYY MM DD"
+    return 1
   fi
 
-  eval parse-nessus-xml.py -m 9 -s $nessus_scans |
-      grep -Ev '(SUMMARY|CSV)' |  grep -v '^33851,' | # 33851 is unmanaged daemons
-      grep -v '^$' | gsed -e 's/\t/../' > $this
+  collect_nessus_scans
+  if [[ ${#nessus_scans[@]} -eq 0 ]]; then
+    echo "No Nessus scan files found. Please ensure the files are in the MonthDir."
+    return 1
+  fi
 
-  work="$CMROOT/$CMYEAR/$CMMO.nessus_work.txt"
-  cat > $work <<END
-LAST MONTH (fixed)
-	THIS MONTH (new)
-		BOTH  (persisting)
-END
-  comm $last $this >> $work
+  local this="$CMROOT/$CMYEAR/$CMMO.nessus_summary.txt"
+  local last
+  if [[ "$CMMO" == "01" ]]; then
+    local last_mo="12"
+    local last_yr=$(( CMYEAR - 1 ))
+    last="$CMROOT/$last_yr/$last_mo.nessus_summary.txt"
+  else
+    local this_mo="${CMMO#0}"
+    local last_mo
+    printf -v last_mo "%02d" $(( this_mo - 1 ))
+    last="$CMROOT/$CMYEAR/$last_mo.nessus_summary.txt"
+  fi
+
+  # Process all Nessus scans for the summary
+  parse-nessus-xml.py -m 9 -s "${nessus_scans[@]}" |
+    grep -Ev '(SUMMARY|CSV)' | grep -v '^33851,' |  # 33851 is unmanaged daemons
+    grep -E '.' | sed 's/\t/../' > "$this"
+
+  local work="$CMROOT/$CMYEAR/$CMMO.nessus_work.txt"
+  {
+    echo "LAST MONTH (fixed)"
+    echo "  THIS MONTH (new)"
+    echo "    BOTH  (persisting)"
+    if [[ -f "$last" ]]; then
+      comm -3 "$last" "$this"
+    else
+      echo "No previous month's summary available."
+      cat "$this"
+    fi
+  } > "$work"
   set +x
   echo "$work ready"
 }
 
 prep_zap() {
-  [ -z "$CMMO" ] && fail "need to set CMMO"
-  [ "$CMMO" = 1 ] && fail "not set up for year rollover"
-  this=$CMROOT/$CMYEAR/$CMMO.zap_summary.txt
-  this_mo=$(echo $CMMO | sed 's/^0*//')
-  last_mo=$(printf "%02d\n" $(( $this_mo - 1 ))) 
-  last=$CMROOT/$CMYEAR/$last_mo.zap_summary.txt
+  if [[ -z "$CMMO" ]]; then
+    cmfail "CMMO is not set. Please run setup_dirs YYYY MM DD"
+    return 1
+  fi
+  if [[ "$CMMO" == "01" ]]; then
+    cmfail "Year rollover not yet implemented"
+    return 1
+  fi
+  local this="$CMROOT/$CMYEAR/$CMMO.zap_summary.txt"
+  local this_mo="${CMMO#0}"
+  local last_mo
+  printf -v last_mo "%02d" $(( this_mo - 1 ))
+  local last="$CMROOT/$CMYEAR/$last_mo.zap_summary.txt"
 
-  parse-owasp-zap-xml.py $MonthDir/*-ZAP-*.xml | 
-    gsed 's/\t/../' | uniq > $this
+  parse-owasp-zap-xml.py "$MonthDir"/*-ZAP-*.xml |
+    sed 's/\t/../' | uniq > "$this"
 
-  work="$CMROOT/$CMYEAR/$CMMO.zap_work.txt"
-  cat > $work <<END
-LAST MONTH (fixed)
-	THIS MONTH (new)
-		BOTH  (persisting)
-END
-  comm $last $this >> $work
+  local work="$CMROOT/$CMYEAR/$CMMO.zap_work.txt"
+  {
+    echo "LAST MONTH (fixed)"
+    echo "  THIS MONTH (new)"
+    echo "    BOTH  (persisting)"
+    if [[ -f "$last" ]]; then
+      comm -3 "$last" "$this"
+    else
+      echo "No previous month's summary available."
+      cat "$this"
+    fi
+  } > "$work"
   echo "$work ready"
 }
