@@ -1,0 +1,19 @@
+policies:
+  - name: app-elb-valid-ciphers
+    resource: app-elb
+    filters:
+      - type: listener
+        key: SslPolicy
+        value: ELBSecurityPolicy-TLS-1-2-2017-01
+  - name: app-elb-invalid-ciphers
+    resource: app-elb
+    filters:
+      - not: 
+        - type: listener
+          key: SslPolicy
+          value: ELBSecurityPolicy-TLS-1-2-2017-01
+  - name: classic-elb-valid
+    resource: elb
+    filters:
+      - type: ssl-policy
+            - "Protocol-TLSv1.2"
